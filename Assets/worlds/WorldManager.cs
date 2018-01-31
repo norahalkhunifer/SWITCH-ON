@@ -6,7 +6,7 @@ using UnityEngine.EventSystems;
 
 public class WorldManager : MonoBehaviour {
 
-
+	int state ;
 	[System.Serializable]
 	public class Level
 	{
@@ -15,8 +15,8 @@ public class WorldManager : MonoBehaviour {
 		public bool isintractible;
 		public Button.ButtonClickedEvent onclick;
 	}
-	public List<Level> levels;
-	public GameObject levelButton;
+	//public List<Level> levels;
+	//public GameObject levelButton;
 
 
 	void Start () {
