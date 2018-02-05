@@ -4,68 +4,44 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using System.Collections;
-
+using UnityEngine.SceneManagement;
 
 public class WorldManager : MonoBehaviour {
-	bool nextavi=true;
 
-	int state ;
-	[System.Serializable]
-	public class Level
+	public Button level02Button, level03Button;
+	int levelPassed;
+	public Image Image02, Image03;
+
+	void Start(){
+
+		levelPassed = PlayerPrefs.GetInt ("LevelPassed");
+		level02Button.interactable = false;
+		level03Button.interactable = false;
+		Image02.enabled = true;
+		Image02.enabled = true;
+
+
+		switch (levelPassed) {
+
+		case 1:
+			level02Button.interactable = true;
+			Image02.enabled = false;
+			break;
+
+		case 2:
+			level03Button.interactable = true;
+			Image03.enabled = false;
+			break;
+
+		}
+	}
+
+
+	public void levelToLoad (int level)
 	{
-		public string leveltitle;
-		public int state;
-		public bool isintractible;
-		public Button.ButtonClickedEvent onclick;
+		SceneManager.LoadScene (level);
 	}
-	//Level +world lists
-	//public List<Level> levels;
-	//public GameObject levelButton;
-
-
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
-
-	//animate x pos 
-	//slide to next world
-	public void next(Animator anim){
-
-		if (nextavi) {
-			anim.SetBool ("thereisnext", true);
-			nextavi = false;
-		}
-	}
-	//slide to previos world
-	public void previos(Animator anim){
-
-		if (!nextavi) {
-			anim.SetBool ("thereisnext", false);
-
-			nextavi = true;
-		}
-	}
-	//animate y+x pos
-	//slide to setting panel
-	public void opensettings(Animator anim){
-		anim.SetBool ("settings", true);
-
-	}
-	public void closesettings(Animator anim){
-		anim.SetBool ("settings", false);
-
-	}
-
-	//go to level(dialog) scenes or give close feedback
-	public void gotolevel(string level){
-		//check if close or open!
-
-
-		Application.LoadLevel (level);
+	public void reset(){
+		PlayerPrefs.DeleteAll();
 	}
 }
