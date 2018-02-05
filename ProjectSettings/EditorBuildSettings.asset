@@ -5,6 +5,7 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
+<<<<<<< HEAD
   - enabled: 0
     path: Assets/UnityARKitPlugin/Examples/UnityARKitScene/UnityARKitScene.unity
     guid: c159f2591a9b5c843b0a0442451f78f8
@@ -35,15 +36,14 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/UnityARKitPlugin/Examples/FaceTracking/FaceDirectionalLightEstimate.unity
     guid: 360fd35caee4f4e069485021a27c0b06
+=======
+>>>>>>> 0d18faa41ef993c8a4b172a66f8c94fb5d77dae4
   - enabled: 1
     path: Assets/scenes/world.unity
     guid: 0a3fa204485b0478b845522a82bb59c8
-  - enabled: 0
-    path: Assets/scenes/level1.unity
-    guid: 04527a83f2b094bff9f27f1cc9c98794
-  - enabled: 0
-    path: Assets/scenes/level2.unity
-    guid: a6ca230432167488a96206f1bf253b30
   - enabled: 1
-    path: Assets/scenes/boxes.unity
-    guid: 95805c6ba628948f9856b8cb5d39b3d7
+    path: Assets/scenes/level1.unity
+    guid: 9fef3101f33424b9d9ec48b3bdeb2cb1
+  - enabled: 1
+    path: Assets/scenes/level2.unity
+    guid: 517b1fcedf56441029cbbe3a720c417d
