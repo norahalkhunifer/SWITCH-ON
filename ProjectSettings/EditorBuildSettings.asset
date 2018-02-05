@@ -4,4 +4,50 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
+<<<<<<< HEAD
   m_Scenes: []
+=======
+  m_Scenes:
+  - enabled: 0
+    path: Assets/UnityARKitPlugin/Examples/UnityARKitScene/UnityARKitScene.unity
+    guid: c159f2591a9b5c843b0a0442451f78f8
+  - enabled: 0
+    path: Assets/UnityARKitPlugin/Examples/UnityParticlePainter/UnityParticlePainter.unity
+    guid: 0327f0aa0142146c291df8203b848257
+  - enabled: 0
+    path: Assets/UnityARKitPlugin/Examples/UnityARBallz/UnityARBallz.unity
+    guid: 75972bcfc855b486593ec2ec68da0b81
+  - enabled: 0
+    path: Assets/UnityARKitPlugin/Examples/UnityARShadows/UnityARShadows.unity
+    guid: 14d17ec7304f440b48e6b953ba7a5895
+  - enabled: 0
+    path: Assets/UnityARKitPlugin/ARKitRemote/UnityARKitRemote.unity
+    guid: 3ed73c0c9d4b76a418a0541c0cefd3ac
+  - enabled: 0
+    path: Assets/UnityARKitPlugin/Examples/FocusSquare/FocusSquareScene.unity
+    guid: 3c9ef824a7b95400bade362484e9b6af
+  - enabled: 0
+    path: Assets/UnityARKitPlugin/Examples/FaceTracking/FaceAnchorScene.unity
+    guid: 46e299c2ec1244fbaa1b9b14e2ab198a
+  - enabled: 0
+    path: Assets/UnityARKitPlugin/Examples/FaceTracking/FaceMeshScene.unity
+    guid: e95b28d2a95b34b868e407dc86a3e6d2
+  - enabled: 0
+    path: Assets/UnityARKitPlugin/Examples/FaceTracking/FaceBlendshapeScene.unity
+    guid: 74c2619dd419d4704bba49146f77161d
+  - enabled: 0
+    path: Assets/UnityARKitPlugin/Examples/FaceTracking/FaceDirectionalLightEstimate.unity
+    guid: 360fd35caee4f4e069485021a27c0b06
+  - enabled: 0
+    path: Assets/scenes/world.unity
+    guid: 0a3fa204485b0478b845522a82bb59c8
+  - enabled: 0
+    path: Assets/scenes/level1.unity
+    guid: 04527a83f2b094bff9f27f1cc9c98794
+  - enabled: 0
+    path: Assets/scenes/level2.unity
+    guid: a6ca230432167488a96206f1bf253b30
+  - enabled: 1
+    path: Assets/scenes/boxes.unity
+    guid: 95805c6ba628948f9856b8cb5d39b3d7
+>>>>>>> 14d090ae5015cb87596382af2044429be0c0d234
