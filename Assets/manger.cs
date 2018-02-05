@@ -6,12 +6,12 @@ public class manger : MonoBehaviour {
 
 	public void testwinlose(bool wrl){
 		if (wrl)
-			PlayerPrefs.SetInt ("LevelPassed", 1);
+			PlayerPrefs.SetInt ("LevelPassed", 2);
 		SceneManager.LoadScene ("world");
 	}
 	public void testwinlose2(bool wrl){
 		if (wrl)
-			PlayerPrefs.SetInt ("LevelPassed", 2);
+			PlayerPrefs.SetInt ("LevelPassed", 1);
 		SceneManager.LoadScene ("world");
 	}
 

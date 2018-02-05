@@ -26,5 +26,10 @@ public class level3manger : MonoBehaviour {
 
 
 	}
+	public void save(){
+		PlayerPrefs.SetInt("level3Score",3);
+
+	}
+
 
 }
