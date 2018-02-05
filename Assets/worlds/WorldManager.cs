@@ -19,26 +19,21 @@ public class WorldManager : MonoBehaviour {
 	public Sprite win, close, current;
 	bool nextavi=true;
 
+	public float Shakespeed=50f;
+	public Vector3 Shakerange =new Vector3(1,1,1);
+
 	//do once in the bigining 
 	void Start(){
-
+		//get the last passed level from playerprefs
 		levelPassed = PlayerPrefs.GetInt ("LevelPassed");
-		//level02Button.interactable = false;
-		//level03Button.interactable = false;
-		//Image02.enabled = true;
-		//Image03.enabled = true;
-
+		//to change doors images depend on last passed level
 		switch (levelPassed) {
 		case 6:
-
 			goto case 5;
 		case 5:
-
 			goto case 4;
 		case 4:
-
 			goto case 3;
-
 		case 3:
 			//Image04.enabled = false;
 			level03Button.image.overrideSprite = win;
@@ -51,7 +46,6 @@ public class WorldManager : MonoBehaviour {
 
 		case 1:
 			Image02.enabled = false;
-	     	//level02Button.image.overrideSprite = current;
 			level01Button.image.overrideSprite = win;
 			break;
 		}
@@ -60,27 +54,27 @@ public class WorldManager : MonoBehaviour {
 	//to made animation between the world and level we use invoke("method",sf)
 	public void levelToLoad (int level)
 	{
-		if (level <= levelPassed)
+		if (level - 1 <= levelPassed)
 			SceneManager.LoadScene (level);
-		//other 
+		//loud the level dialog 
+		//oth	er 
 		//Application.LoadLevel (level);
-		else {//shake the world 
 
+		else {//shake the world 
+			//Animator
+			//shake();
 		}
 
 	}
-
+	//settings page animations 
 	public void opensettings(Animator anim){
 			anim.SetBool ("settings", true);
 			}
-		public void closesettings(Animator anim){
+	public void closesettings(Animator anim){
 		anim.SetBool ("settings", false);
 	}
-
-	//animate y+x pos
-		//slide to setting panel
+    //world animations 
 	public void next(Animator anim){
-
 			if (nextavi) {
 					anim.SetBool ("thereisnext", true);
 					nextavi = false;
@@ -88,11 +82,15 @@ public class WorldManager : MonoBehaviour {
 			}
 	//slide to previos world
 	public void previos(Animator anim){
-
 		if (!nextavi) {
 			anim.SetBool ("thereisnext", false);
 			nextavi = true;}
 	}
+	/*public void shakeworld(){
+		//anim.SetBool ("shake", true);
+		Originalpos=;
+		Camera.main.transform.position=Originalpos +Vector3.Scale(SmoothRandom.GetVector2(Shakespeed--),Shakerange);
+	}*/
 	//method for test the system 
 	public void reset(){
 		PlayerPrefs.DeleteAll();
