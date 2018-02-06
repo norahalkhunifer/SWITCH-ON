@@ -7,13 +7,13 @@ public class settingManger : MonoBehaviour {
 	public void ContactUs()
 	{
 		string email = "renadalmalki2@gmail.com"; 
-		string subject = MyEscapeURL ("SUGGESTION"); 
-		string body = MyEscapeURL ("Please enter your message");
+		string title = GoURL ("FEEDBACK"); 
+		string msg = GoURL ("Please enter your message");
 
-		Application.OpenURL ("mailto:" + email + "?subject=" + subject + "&body=" + body); //open iphone mail 
+		Application.OpenURL ("mailto:" + email + "?subject=" + title + "&body=" + msg); //open iphone mail 
 	}
 
-	string MyEscapeURL(string url){
+	string GoURL(string url){
 
 		return WWW.EscapeURL (url).Replace ("+", "%20");
 	}
