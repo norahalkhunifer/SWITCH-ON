@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
-using System.Collections;
+//using System.Collections;
 using UnityEngine.SceneManagement;
 
 public class WorldManager : MonoBehaviour {
@@ -60,9 +60,8 @@ public class WorldManager : MonoBehaviour {
 		//oth	er 
 		//Application.LoadLevel (level);
 
-		else {//shake the world 
-			//Animator
-			//shake();
+		else {
+			shakeworld ();
 		}
 
 	}
@@ -75,10 +74,13 @@ public class WorldManager : MonoBehaviour {
 	}
     //world animations 
 	public void next(Animator anim){
-			if (nextavi) {
-					anim.SetBool ("thereisnext", true);
-					nextavi = false;
-				}
+		if (anim==null)			shakeworld ();
+
+		if (nextavi) {
+			anim.SetBool ("thereisnext", true);
+			nextavi = false;
+		}
+
 			}
 	//slide to previos world
 	public void previos(Animator anim){
@@ -86,11 +88,13 @@ public class WorldManager : MonoBehaviour {
 			anim.SetBool ("thereisnext", false);
 			nextavi = true;}
 	}
-	/*public void shakeworld(){
+	public void shakeworld(){
+		//GetComponent<CameraShake>().ShakeCamera(20f, 1f);
+		Camera.main.gameObject.GetComponent<CameraShake>().ShakeCamera(20f, 1f);
 		//anim.SetBool ("shake", true);
-		Originalpos=;
-		Camera.main.transform.position=Originalpos +Vector3.Scale(SmoothRandom.GetVector2(Shakespeed--),Shakerange);
-	}*/
+		//Originalpos=;
+		//Camera.main.transform.position=Originalpos +Vector3.Scale(SmoothRandom.GetVector2(Shakespeed--),Shakerange);
+	}
 	//method for test the system 
 	public void reset(){
 		PlayerPrefs.DeleteAll();

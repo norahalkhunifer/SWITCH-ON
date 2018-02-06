@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class level3manger : MonoBehaviour {
 
@@ -14,8 +15,8 @@ public class level3manger : MonoBehaviour {
 		
 	}
 	public void home(){
+		SceneManager.LoadScene ("world");
 
-		Application.LoadLevel("world");
 
 	}
 	public void open(){
