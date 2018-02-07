@@ -1389,7 +1389,6 @@ GameObject:
   - component: {fileID: 920711939}
   - component: {fileID: 920711938}
   - component: {fileID: 920711937}
-  - component: {fileID: 920711936}
   m_Layer: 5
   m_Name: level3
   m_TagString: Untagged
@@ -1417,27 +1416,6 @@ RectTransform:
   m_AnchoredPosition: {x: 3, y: 2}
   m_SizeDelta: {x: 85, y: 120}
   m_Pivot: {x: 0.5000001, y: 0.5}
---- !u!114 &920711936
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 920711934}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f34fac856c0041fcb5877b4c50d6e33, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  level01Button: {fileID: 0}
-  level02Button: {fileID: 0}
-  level03Button: {fileID: 0}
-  Image02: {fileID: 0}
-  Image03: {fileID: 0}
-  win: {fileID: 0}
-  close: {fileID: 0}
-  current: {fileID: 0}
-  Shakespeed: 50
-  Shakerange: {x: 1, y: 1, z: 1}
 --- !u!114 &920711937
 MonoBehaviour:
   m_ObjectHideFlags: 0
