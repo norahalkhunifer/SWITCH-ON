@@ -12,15 +12,14 @@ public class WorldManager : MonoBehaviour {
 
 	//if the vareble or method didn't appear on unity use [System.Serializable]
 	//doors button 
-	public Button level01Button,level02Button, level03Button;
+	public Button level01Button,level02Button, level03Button, level04Button, level05Button, level06Button;
 	int levelPassed;
-	public Image Image02, Image03;
+	public Image Image02, Image03, Image04, Image05, Image06;
 	//doors changes
 	public Sprite win, close, current;
 	bool nextavi=true;
+	public Animator shaking;
 
-	public float Shakespeed=50f;
-	public Vector3 Shakerange =new Vector3(1,1,1);
 
 	//do once in the bigining 
 	void Start(){
@@ -43,7 +42,6 @@ public class WorldManager : MonoBehaviour {
 			//level03Button.image.overrideSprite = current; we change it to close and win only 
 			level02Button.image.overrideSprite = win;
 			goto case 1;
-
 		case 1:
 			Image02.enabled = false;
 			level01Button.image.overrideSprite = win;
@@ -51,6 +49,12 @@ public class WorldManager : MonoBehaviour {
 		}
 	}
 
+	/*void Update(){
+
+		Vector2 shakePostion = Random.insideUnitCircle * shakeAmount;
+		transform.position 
+
+	}*/
 	//to made animation between the world and level we use invoke("method",sf)
 	public void levelToLoad (int level)
 	{
@@ -74,8 +78,6 @@ public class WorldManager : MonoBehaviour {
 	}
     //world animations 
 	public void next(Animator anim){
-		if (anim==null)			shakeworld ();
-
 		if (nextavi) {
 			anim.SetBool ("thereisnext", true);
 			nextavi = false;
@@ -86,15 +88,24 @@ public class WorldManager : MonoBehaviour {
 	public void previos(Animator anim){
 		if (!nextavi) {
 			anim.SetBool ("thereisnext", false);
-			nextavi = true;}
+			nextavi = true;
+		}
 	}
 	public void shakeworld(){
+		
+		shaking.SetBool ("shake", true);
+		Invoke ("stopshakeworld",2);
 		//GetComponent<CameraShake>().ShakeCamera(20f, 1f);
-		Camera.main.gameObject.GetComponent<CameraShake>().ShakeCamera(20f, 1f);
+		//Camera.main.gameObject.GetComponent<CameraShake>().ShakeCamera(20f, 1f);
 		//anim.SetBool ("shake", true);
 		//Originalpos=;
 		//Camera.main.transform.position=Originalpos +Vector3.Scale(SmoothRandom.GetVector2(Shakespeed--),Shakerange);
 	}
+	public void stopshakeworld(){
+		shaking.SetBool ("shake", false);
+
+	}
+
 	//method for test the system 
 	public void reset(){
 		PlayerPrefs.DeleteAll();
