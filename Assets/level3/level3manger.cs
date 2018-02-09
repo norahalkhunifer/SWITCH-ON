@@ -4,10 +4,9 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class level3manger : MonoBehaviour {
-
 	// Use this for initialization
 	void Start () {
-		
+
 	}
 	
 	// Update is called once per frame
@@ -19,6 +18,8 @@ public class level3manger : MonoBehaviour {
 
 
 	}
+
+	/*
 	public void open(){
 
 
@@ -27,6 +28,7 @@ public class level3manger : MonoBehaviour {
 
 
 	}
+	*/
 	public void save(){
 		PlayerPrefs.SetInt("level3Score",3);
 

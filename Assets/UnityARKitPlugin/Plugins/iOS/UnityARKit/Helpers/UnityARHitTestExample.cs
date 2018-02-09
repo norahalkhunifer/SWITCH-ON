@@ -1,6 +1,6 @@
 using System;
 using System.Collections.Generic;
-
+using UnityEngine.EventSystems;
 namespace UnityEngine.XR.iOS
 {
 	public class UnityARHitTestExample : MonoBehaviour
@@ -42,11 +42,12 @@ namespace UnityEngine.XR.iOS
 					m_HitTransform.rotation = hit.transform.rotation;
 				}
 			}
-			#else
+
+			//#else
 			if (Input.touchCount > 0 && m_HitTransform != null)
 			{
 				var touch = Input.GetTouch(0);
-				if (touch.phase == TouchPhase.Began || touch.phase == TouchPhase.Moved)
+			if (touch.phase == TouchPhase.Began || touch.phase == TouchPhase.Moved && EventSystem.current.IsPointerOverGameObject(0))
 				{
 					var screenPosition = Camera.main.ScreenToViewportPoint(touch.position);
 					ARPoint point = new ARPoint {
@@ -72,7 +73,7 @@ namespace UnityEngine.XR.iOS
                     }
 				}
 			}
-			#endif
+			//#endif
 
 		}
 
