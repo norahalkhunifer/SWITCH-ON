@@ -47,7 +47,7 @@ namespace UnityEngine.XR.iOS
 				}
 			}
 			//#elif
-			#else */
+			#else*/
 			//Debug.Log ("iphone ");
 			if (Input.touchCount > 0 && m_HitTransform != null)
 			{
