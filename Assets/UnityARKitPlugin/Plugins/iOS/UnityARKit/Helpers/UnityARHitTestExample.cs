@@ -29,7 +29,7 @@ namespace UnityEngine.XR.iOS
 			}
 			return false;
 		}
-		void Start () {
+		void Awake () {
 			//get the mager to send tutched object to it 
 			levelmanger = GameObject.Find("manger").GetComponent<level3manger>();
 

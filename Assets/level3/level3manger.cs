@@ -2,16 +2,33 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class level3manger : MonoBehaviour {
 
 	public List<GameObject> boxes = new List<GameObject>(); //array used to keep track of boxes objects
-	public int boxnum;//same as array of boxes/2 almost!
+	public int size;//same as array of boxes/2 almost!
 	BoxControl current;
 	private BoxControl[] currentboxes = new BoxControl[2];
 	private int nroftries = 0;
+	public Text time;
+	private float timer;
+	public float timelimitbysec;
+	private Text score;
+
 	// Use this for initialization
 	void Start () {
+		timer = Time.time+timelimitbysec;
+	}
+	void Update () {
+		float t = timer - Time.time;
+		string min=((int)t / 60).ToString();
+		string sec=((int)t % 60).ToString();
+		if (t <= 0) {
+			time.text ="done";
+
+		}else//we can change it to red if its close to end by 5 or 10 sec 
+		time.text = min + ":" + sec;
 
 	}
 	public void touchsomething (GameObject hitobject) {
@@ -32,8 +49,6 @@ public class level3manger : MonoBehaviour {
 	}
 	public void home(){
 		//SceneManager.LoadScene ("world");
-
-
 	}
 
 	//check if there is 2 opened before 
@@ -57,8 +72,8 @@ public class level3manger : MonoBehaviour {
 		currentboxes[0].mached();
 		currentboxes[1].mached();
 
-		boxnum--;
-		if(boxnum == 0)
+		size--;
+		if(size == 0)
 			GameEnd();
 	}
 	public void BoxesNotMatching(){
