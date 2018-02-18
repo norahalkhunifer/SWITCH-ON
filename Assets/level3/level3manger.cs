@@ -52,7 +52,7 @@ public class level3manger : MonoBehaviour {
 	}
 
 	//check if there is 2 opened before 
-	public void CheckBoxes(BoxControl bc){
+	public void CheckBoxes(BoxControl bc){//null point why?
 		if(currentboxes[0] == null)
 			currentboxes[0] = bc;
 		else{
@@ -90,9 +90,8 @@ public class level3manger : MonoBehaviour {
 		//check wining or loosing
 		Debug.Log("Game has ended, number of tries: " + nroftries);
 	}
-	public void save(){
-		PlayerPrefs.SetInt("level3Score",3);
-
+	public void save(int winscore){
+		PlayerPrefs.SetInt("level3Score",winscore);
 	}
 
 
