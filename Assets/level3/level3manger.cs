@@ -26,6 +26,7 @@ public class level3manger : MonoBehaviour {
 		string sec=((int)t % 60).ToString();
 		if (t <= 0) {
 			time.text ="done";
+			home ();
 
 		}else//we can change it to red if its close to end by 5 or 10 sec 
 		time.text = min + ":" + sec;
@@ -48,7 +49,7 @@ public class level3manger : MonoBehaviour {
 
 	}
 	public void home(){
-		//SceneManager.LoadScene ("world");
+		SceneManager.LoadScene ("world");
 	}
 
 	//check if there is 2 opened before 
