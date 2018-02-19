@@ -25,6 +25,7 @@ public class ThenderDisable : MonoBehaviour {
 	public Text scoreTextWin;
 	public Resume_Paused resume;
 	public instruction instruc;
+	private LevelManger levelmanger;
 
 		private int score=0;
 
@@ -165,7 +166,7 @@ public class ThenderDisable : MonoBehaviour {
 			battryHide.enabled = false;
 			jump.enabled = false;
 			resume.enabled = false;
-
+			levelmanger.win (1, score,"time" );
 		}	
 }
 		}

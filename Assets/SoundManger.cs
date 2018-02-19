@@ -15,6 +15,7 @@ public class SoundManger : MonoBehaviour {
 		[Range(0f,1f)]
 		public float Volume;
 
+
 	}
 	// Use this for initialization
 	void Start () {
