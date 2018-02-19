@@ -20,7 +20,6 @@ public class WorldManager : MonoBehaviour {
 	bool nextavi=true;
 	public Animator shaking;
 
-
 	//do once in the bigining 
 	void Start(){
 		//get the last passed level from playerprefs
@@ -32,6 +31,7 @@ public class WorldManager : MonoBehaviour {
 		case 5:
 			goto case 4;
 		case 4:
+			
 			goto case 3;
 		case 3:
 			//Image04.enabled = false;
