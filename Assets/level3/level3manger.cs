@@ -92,7 +92,7 @@ public class level3manger : MonoBehaviour {
 		Debug.Log("Game has ended, number of tries: " + nroftries);
 	}
 	public void save(int winscore){
-		PlayerPrefs.SetInt("level3Score",winscore);
+		PlayerPrefs.SetInt("Level3Score",winscore);
 	}
 
 

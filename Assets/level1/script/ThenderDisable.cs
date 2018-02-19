@@ -166,7 +166,7 @@ public class ThenderDisable : MonoBehaviour {
 			battryHide.enabled = false;
 			jump.enabled = false;
 			resume.enabled = false;
-			levelmanger.win (1, finalScore.text,"time" );
+			levelmanger.win (1, score,"time" );
 		}	
 }
 		}
