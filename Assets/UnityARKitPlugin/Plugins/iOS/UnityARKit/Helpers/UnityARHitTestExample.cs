@@ -10,14 +10,14 @@ namespace UnityEngine.XR.iOS
 		public Transform m_HitTransform;
 		public static Ray ray;//this will be the ray that we cast from our touch into the scene
 		private static RaycastHit hit;
-		//private static Touch _instance;
 		private static level3manger levelmanger; 
 
-		//!!!!!!!never called why ???/
+
 		bool HitTestWithResultType (ARPoint point, ARHitTestResultType resultTypes)
 		{
 			List<ARHitTestResult> hitResults = UnityARSessionNativeInterface.GetARSessionNativeInterface ().HitTest (point, resultTypes);
 			if (hitResults.Count > 0) {
+				//!!!!!!!never called why ???/
 				foreach (var hitResult in hitResults) {
 					Debug.Log ("Go hit!");
 					m_HitTransform.position = UnityARMatrixOps.GetPosition (hitResult.worldTransform);//returns a Vector3 in Unity Coordinates
@@ -32,24 +32,21 @@ namespace UnityEngine.XR.iOS
 		void Awake () {
 			//get the mager to send tutched object to it 
 			levelmanger = GameObject.Find("manger").GetComponent<level3manger>();
-
 			//place the boxes container on detected ground 
 			ARPoint point = new ARPoint { 
-				x = 0.5f, //do a hit test at the center of the screen
-				y = 0.5f
+				x = 0.1f, //do a hit test at the center of the screen
+				y = 0.4f
 			};
-			/*var screenPosition = Camera.main.ScreenToViewportPoint();
-			ARPoint point = new ARPoint {
-				x = screenPosition.x,///where ?
-				y = screenPosition.y
-			};*/
+
 			ARHitTestResultType[] resultTypes = {
 				ARHitTestResultType.ARHitTestResultTypeExistingPlaneUsingExtent, //if you want to use bounded planes
 				//ARHitTestResultType.ARHitTestResultTypeExistingPlane,// if you want to use infinite planes use this
-				//ARHitTestResultType.ARHitTestResultTypeHorizontalPlane, 
+				ARHitTestResultType.ARHitTestResultTypeHorizontalPlane,
 				ARHitTestResultType.ARHitTestResultTypeFeaturePoint// if you want to hit test on feature points
-			}; 
+			};
 			foreach (ARHitTestResultType resultType in resultTypes) {
+				//2times 
+				Debug.Log ("ressult type" + resultType.ToString());
 				if (HitTestWithResultType (point, resultType)) {
 					return;
 				}
@@ -57,9 +54,11 @@ namespace UnityEngine.XR.iOS
 		}
 		// Update is called once per frame
 		void Update () {
+			
 			if (Input.touchCount > 0) {
 				var touch = Input.GetTouch (0);
 				//var screenPosition = Camera.main.ScreenToViewportPoint(touch.position);
+				//Debug.Log ("x" + screenPosition.x+"y"+screenPosition.y+"all"+ screenPosition.ToString());
 
 				ray = Camera.main.ScreenPointToRay (touch.position);//creates ray from screen point position
 				if (Physics.Raycast (ray, out hit)) {//Physics.Raycast (ray, out hit, maxRayDistance, collisionLayer)
@@ -70,6 +69,31 @@ namespace UnityEngine.XR.iOS
 
 				}
 			}
+
+			/*var screenPosition = Camera.main.ScreenToViewportPoint(new Vector2(Screen.width/2,Screen.height/2));
+
+
+			ARPoint point = new ARPoint {
+				x = screenPosition.x,
+				y = screenPosition.y
+			};
+
+			// prioritize reults types
+			ARHitTestResultType[] resultTypes = {
+				ARHitTestResultType.ARHitTestResultTypeExistingPlaneUsingExtent, 
+				// if you want to use infinite planes use this:
+				//ARHitTestResultType.ARHitTestResultTypeExistingPlane,
+				// ARHitTestResultType.ARHitTestResultTypeHorizontalPlane, 
+				ARHitTestResultType.ARHitTestResultTypeFeaturePoint
+			}; 
+
+			foreach (ARHitTestResultType resultType in resultTypes)
+			{
+				if (HitTestWithResultType (point, resultType))
+				{
+					return;
+				}
+			}*/
 				//m_HitTransform.position = hit.point;
 			///	m_HitTransform.rotation = hit.transform.rotation;
 //#if !UNITY_EDITOR
