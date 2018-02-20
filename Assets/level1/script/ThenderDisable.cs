@@ -155,6 +155,7 @@ public class ThenderDisable : MonoBehaviour {
 
 		}
 		if (score == 9) {
+
 			timer.enabled= false;
 			instruc.enabled = false;
 			finalScore.text=score.ToString();
@@ -166,7 +167,9 @@ public class ThenderDisable : MonoBehaviour {
 			battryHide.enabled = false;
 			jump.enabled = false;
 			resume.enabled = false;
-			levelmanger.win (1, score,"time" );
+			levelmanger.win (1,score ,	timer.finalTimerWin.ToString () );
+
+		//	timer.finalTimerWin.ToString ();
 		}	
 }
 		}
