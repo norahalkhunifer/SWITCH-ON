@@ -12,13 +12,20 @@ public class level3manger : MonoBehaviour {
 	private BoxControl[] currentboxes = new BoxControl[2];
 	private int nroftries = 0;
 	public Text time;
+	public Text debugbox;
 	private float timer;
 	public float timelimitbysec;
 	private Text score;
 
 	// Use this for initialization
 	void Start () {
+		//start timer depend on the complexity 
 		timer = Time.time+timelimitbysec;
+		//add all boxes to array why ? couse they will have same index as there random object insaide 
+			foreach (GameObject box in boxes)
+			{
+				
+			}
 	}
 	void Update () {
 		float t = timer - Time.time;

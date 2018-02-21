@@ -11,7 +11,7 @@ public class BoxControl: MonoBehaviour {
 	public static Ray ray;//this will be the ray that we cast from our touch into the scene
 	private static level3manger levelmanger; 
 	public int boxnum;//each box have uniqe num
-
+	public bool testit=false;
 
 	// Use this for initialization
 	//Awake
@@ -24,6 +24,8 @@ public class BoxControl: MonoBehaviour {
 		
 	// Update is called once per frame
 	void Update () {
+		if (testit)
+			openit ();
 		
 	}
 	public void openit(){
