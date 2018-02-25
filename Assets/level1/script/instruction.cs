@@ -9,24 +9,27 @@ public class instruction : MonoBehaviour {
 	public AccelerationControlScript grass;
 	public GameObject jumpDilog ;
 	public TimeText time;
+	//public GameObject resume;
 
 	public GameObject ins ;
+	//public GameObject home ;
 
 	// Use this for initialization
 	void Start () {
+
 		instruc.SetActive (true);
 		time.enabled= false;
 		grass.enabled = false;
 		jumpDilog.SetActive (false);
-
+		//resume.SetActive (true);
+		//home.SetActive (true);
 
 	}
 	
 	// Update is called once per frame
 	 void Update ()
-	{		
+	{				
 		//this time passed
-
 		timer += Time.deltaTime;    
 		if (timer >= 4) {
 

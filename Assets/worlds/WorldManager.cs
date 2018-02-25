@@ -19,6 +19,7 @@ public class WorldManager : MonoBehaviour {
 	public Sprite win, close, current;
 	bool nextavi=true;
 	public Animator shaking;
+	public LevelManger lvlmanger;
 
 
 	//do once in the bigining 
@@ -62,8 +63,12 @@ public class WorldManager : MonoBehaviour {
 	//to made animation between the world and level we use invoke("method",sf)
 	public void levelToLoad (int level)
 	{
-		if (level - 1 <= levelPassed)
+		if (level - 1 <= levelPassed) {
+			lvlmanger.leveldetails (level);
+
+
 			SceneManager.LoadScene (level);
+		}
 		//loud the level dialog 
 		//oth	er 
 		//Application.LoadLevel (level);
