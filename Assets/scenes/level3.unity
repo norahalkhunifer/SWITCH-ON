@@ -458,7 +458,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   boxnum: 1
   insaideobj: {fileID: 0}
-  speed: 1
 --- !u!111 &95492621
 Animation:
   m_ObjectHideFlags: 0
@@ -1492,7 +1491,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   boxnum: 2
   insaideobj: {fileID: 0}
-  speed: 1
 --- !u!54 &640089967
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2375,7 +2373,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   boxnum: 3
   insaideobj: {fileID: 0}
-  speed: 1
 --- !u!111 &1330024308
 Animation:
   m_ObjectHideFlags: 0
@@ -2976,7 +2973,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   boxnum: 4
   insaideobj: {fileID: 0}
-  speed: 1
 --- !u!111 &1671482189
 Animation:
   m_ObjectHideFlags: 0
