@@ -6,68 +6,88 @@ using UnityEngine.SceneManagement;
 
 public class LevelManger : MonoBehaviour {
 
-
+	/// <summary>
+	/// this class is countain the shared metods for all levels 
+	/// </summary>
 
 	int levelpassed=PlayerPrefs.GetInt ("LevelPassed");
-	public int leveltopscore;
-	int leveltime;
-	public int leveltoptime;
-	public GameObject levelDetails;
-	public Text scoreText;
-	public Text timeText;
-	public Text levelnumber;
-
+    int leveltopscore;
+	string leveltime;
+    int leveltoptime;
 
 	public void win (int levelnum,int cscore, string ctime){
-		leveltopscore=PlayerPrefs.GetInt ("Level"+levelnum+"Score");
-		leveltime=PlayerPrefs.GetInt ("Level"+levelnum+"Time");
+		leveltopscore = getTopScore (levelnum);
+		leveltime = getTime (levelnum);
 
-		if(cscore>=leveltopscore){
-			PlayerPrefs.SetInt ("Level"+levelnum+"Score",cscore);
-			PlayerPrefs.SetString ("Level"+levelnum+"Time",ctime);
-
+		if (cscore >= leveltopscore) {
+			setTopScore (levelnum, cscore);
+			setTime (levelnum, ctime);
 		}
 		if (levelnum > levelpassed) {
 			PlayerPrefs.SetInt ("LevelPassed", levelnum);
 		}
-
 	}
 	public void lose(int level){
+		
 	}
-
-
 
 	public void LoudHome(){
 		SceneManager.LoadScene ("world");
 
 	}
-	public int gettopScore (int levelnum){
+	public void LoudLevel(int levelnum){//or string 
+		if(levelnum!=-1)
+		SceneManager.LoadScene (levelnum);
+
+	}
+	/// <summary>
+	/// *Level(level number)Score type:int
+	/*The top score of winning level 
+	Ex:Level3Score,5
+	*Level(level number)Time type:string as mm:ss
+	The time related to top score 
+	Ex:Level3Time,1:50
+
+	*LevelPassed type:int 
+	The last level passed 
+	If (LevelPassed>=current level )
+	Don’t change 
+	Else 
+	LevelPassed=current level
+
+
+		*Username type:string
+		Username dash 
+
+		*TotalScore type:int 
+		The total score change when top score change totalscor—=topscore 
+		*CapeColor type:int or bool or any   
+		*Sound type:bool*/
+	/// </summary>
+	
+	public int getTopScore (int levelnum){
 		return PlayerPrefs.GetInt ("Level"+levelnum+"Score");
 
 	}
+	public string getTime (int levelnum){
+		return PlayerPrefs.GetString ("Level"+levelnum+"Time");
 
+	}
+	public void setTopScore (int levelnum,int topscore){
+		 PlayerPrefs.SetInt ("Level"+levelnum+"Score",topscore);
 
-	public void Replay(int level){
-		Application.LoadLevel ("Level1");
+	}
+	public void setTime (int levelnum,string time){
+		 PlayerPrefs.SetString ("Level"+levelnum+"Time",time);
+
+	}
+
+	public void Replay(int level){//or could be astring 
+		Application.LoadLevel (level);
 	}
 
 
-	public void leveldetails(int levelnum){
-		levelDetails.SetActive (true);
-		leveltopscore=PlayerPrefs.GetInt ("Level"+levelnum+"Score");
-		leveltoptime=PlayerPrefs.GetInt ("Level"+levelnum+"topTime");
 
-		scoreText.text=PlayerPrefs.GetInt ("Level"+levelnum+"Score").ToString();
-		timeText.text=PlayerPrefs.GetInt ("Level"+levelnum+"topTime").ToString();
-
-		levelnumber.text = levelnum.ToString();
-
-
-
-	}
-	public void closeLevelDetails() {
-		levelDetails.SetActive (false); 
-	}
 
 
 
