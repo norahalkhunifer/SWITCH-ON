@@ -15,7 +15,6 @@ public class BoxControl: MonoBehaviour
 	private static level3manger levelmanger;
 	public int boxnum;
 //each box have uniqe num
-	public int testit;
 	public GameObject insaideobj;
 	public float speed = 0.7F;
 	private float startTime;
@@ -34,10 +33,6 @@ public class BoxControl: MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{
-		if (testit == 1)
-			openit ();
-		else if (testit == 2)
-			closeit ();
 	}
 
 	public void openit ()
@@ -64,8 +59,6 @@ public class BoxControl: MonoBehaviour
 	{
 		print ("matchyaay");
 		Destroy (insaideobj);
-		levelmanger.addscore (2);
-
 		//if get the cads match it 
 	}
 
