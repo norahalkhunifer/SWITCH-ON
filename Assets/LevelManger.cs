@@ -62,6 +62,9 @@ public class LevelManger : MonoBehaviour {
 
 
 	}
+	public void closeLevelDetails() {
+		levelDetails.SetActive (false); 
+	}
 
 
 
