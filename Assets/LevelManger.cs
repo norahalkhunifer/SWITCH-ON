@@ -6,9 +6,18 @@ using UnityEngine.SceneManagement;
 
 public class LevelManger : MonoBehaviour {
 
+
+
 	int levelpassed=PlayerPrefs.GetInt ("LevelPassed");
-	int leveltopscore;
+	public int leveltopscore;
 	int leveltime;
+	public int leveltoptime;
+	public GameObject levelDetails;
+	public Text scoreText;
+	public Text timeText;
+	public Text levelnumber;
+
+
 	public void win (int levelnum,int cscore, string ctime){
 		leveltopscore=PlayerPrefs.GetInt ("Level"+levelnum+"Score");
 		leveltime=PlayerPrefs.GetInt ("Level"+levelnum+"Time");
@@ -21,15 +30,42 @@ public class LevelManger : MonoBehaviour {
 		if (levelnum > levelpassed) {
 			PlayerPrefs.SetInt ("LevelPassed", levelnum);
 		}
-	
+
 	}
-public void lose(int level){
-			}
+	public void lose(int level){
+	}
+
+
+
 	public void LoudHome(){
 		SceneManager.LoadScene ("world");
 
 	}
+
+
+
 	public void Replay(int level){
 		Application.LoadLevel ("Level1");
 	}
+
+
+	public void leveldetails(int levelnum){
+		levelDetails.SetActive (true);
+		leveltopscore=PlayerPrefs.GetInt ("Level"+levelnum+"Score");
+		leveltoptime=PlayerPrefs.GetInt ("Level"+levelnum+"topTime");
+
+		scoreText.text=PlayerPrefs.GetInt ("Level"+levelnum+"Score").ToString();
+		timeText.text=PlayerPrefs.GetInt ("Level"+levelnum+"topTime").ToString();
+
+		levelnumber.text = levelnum.ToString();
+
+
+
+	}
+	public void closeLevelDetails() {
+		levelDetails.SetActive (false); 
+	}
+
+
+
 }

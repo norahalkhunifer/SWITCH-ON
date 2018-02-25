@@ -1,0 +1,357 @@
+fileFormatVersion: 2
+guid: 29f724b8080334542b6b6286328e5805
+timeCreated: 1519238724
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: Blue_Brick_Cube2
+    100002: Blue_Brick_Cylinder1
+    100004: Blue_Brick_Cylinder_1
+    100006: Blue_Brick_Cylinder_22
+    100008: Blue_Brick_Cylinder_3
+    100010: Blue_Brick_Cylinder_42
+    100012: Blue_Brick_Cylinder_51
+    100014: Blue_Brick_Cylinder_61
+    100016: Blue_Brick_Cylinder_7
+    100018: //RootNode
+    100020: Red_Brick_Cube
+    100022: Red_Brick_Cylinder2
+    100024: Red_Brick_Cylinder_11
+    100026: Red_Brick_Cylinder_21
+    100028: Red_Brick_Cylinder_32
+    100030: Red_Brick_Cylinder_4
+    100032: Red_Brick_Cylinder_52
+    100034: Red_Brick_Cylinder_62
+    100036: Red_Brick_Cylinder_72
+    100038: Yellow_Brick_Cube1
+    100040: Yellow_Brick_Cylinder
+    100042: Yellow_Brick_Cylinder_12
+    100044: Yellow_Brick_Cylinder_2
+    100046: Yellow_Brick_Cylinder_31
+    100048: Yellow_Brick_Cylinder_41
+    100050: Yellow_Brick_Cylinder_5
+    100052: Yellow_Brick_Cylinder_6
+    100054: Yellow_Brick_Cylinder_71
+    400000: Blue_Brick_Cube2
+    400002: Blue_Brick_Cylinder1
+    400004: Blue_Brick_Cylinder_1
+    400006: Blue_Brick_Cylinder_22
+    400008: Blue_Brick_Cylinder_3
+    400010: Blue_Brick_Cylinder_42
+    400012: Blue_Brick_Cylinder_51
+    400014: Blue_Brick_Cylinder_61
+    400016: Blue_Brick_Cylinder_7
+    400018: //RootNode
+    400020: Red_Brick_Cube
+    400022: Red_Brick_Cylinder2
+    400024: Red_Brick_Cylinder_11
+    400026: Red_Brick_Cylinder_21
+    400028: Red_Brick_Cylinder_32
+    400030: Red_Brick_Cylinder_4
+    400032: Red_Brick_Cylinder_52
+    400034: Red_Brick_Cylinder_62
+    400036: Red_Brick_Cylinder_72
+    400038: Yellow_Brick_Cube1
+    400040: Yellow_Brick_Cylinder
+    400042: Yellow_Brick_Cylinder_12
+    400044: Yellow_Brick_Cylinder_2
+    400046: Yellow_Brick_Cylinder_31
+    400048: Yellow_Brick_Cylinder_41
+    400050: Yellow_Brick_Cylinder_5
+    400052: Yellow_Brick_Cylinder_6
+    400054: Yellow_Brick_Cylinder_71
+    2300000: Blue_Brick_Cube2
+    2300002: Blue_Brick_Cylinder1
+    2300004: Blue_Brick_Cylinder_1
+    2300006: Blue_Brick_Cylinder_22
+    2300008: Blue_Brick_Cylinder_3
+    2300010: Blue_Brick_Cylinder_42
+    2300012: Blue_Brick_Cylinder_51
+    2300014: Blue_Brick_Cylinder_61
+    2300016: Blue_Brick_Cylinder_7
+    2300018: Red_Brick_Cube
+    2300020: Red_Brick_Cylinder2
+    2300022: Red_Brick_Cylinder_11
+    2300024: Red_Brick_Cylinder_21
+    2300026: Red_Brick_Cylinder_32
+    2300028: Red_Brick_Cylinder_4
+    2300030: Red_Brick_Cylinder_52
+    2300032: Red_Brick_Cylinder_62
+    2300034: Red_Brick_Cylinder_72
+    2300036: Yellow_Brick_Cube1
+    2300038: Yellow_Brick_Cylinder
+    2300040: Yellow_Brick_Cylinder_12
+    2300042: Yellow_Brick_Cylinder_2
+    2300044: Yellow_Brick_Cylinder_31
+    2300046: Yellow_Brick_Cylinder_41
+    2300048: Yellow_Brick_Cylinder_5
+    2300050: Yellow_Brick_Cylinder_6
+    2300052: Yellow_Brick_Cylinder_71
+    3300000: Blue_Brick_Cube2
+    3300002: Blue_Brick_Cylinder1
+    3300004: Blue_Brick_Cylinder_1
+    3300006: Blue_Brick_Cylinder_22
+    3300008: Blue_Brick_Cylinder_3
+    3300010: Blue_Brick_Cylinder_42
+    3300012: Blue_Brick_Cylinder_51
+    3300014: Blue_Brick_Cylinder_61
+    3300016: Blue_Brick_Cylinder_7
+    3300018: Red_Brick_Cube
+    3300020: Red_Brick_Cylinder2
+    3300022: Red_Brick_Cylinder_11
+    3300024: Red_Brick_Cylinder_21
+    3300026: Red_Brick_Cylinder_32
+    3300028: Red_Brick_Cylinder_4
+    3300030: Red_Brick_Cylinder_52
+    3300032: Red_Brick_Cylinder_62
+    3300034: Red_Brick_Cylinder_72
+    3300036: Yellow_Brick_Cube1
+    3300038: Yellow_Brick_Cylinder
+    3300040: Yellow_Brick_Cylinder_12
+    3300042: Yellow_Brick_Cylinder_2
+    3300044: Yellow_Brick_Cylinder_31
+    3300046: Yellow_Brick_Cylinder_41
+    3300048: Yellow_Brick_Cylinder_5
+    3300050: Yellow_Brick_Cylinder_6
+    3300052: Yellow_Brick_Cylinder_71
+    4300000: Blue_Brick_Cube2
+    4300002: Blue_Brick_Cylinder1
+    4300004: Blue_Brick_Cylinder_1
+    4300006: Blue_Brick_Cylinder_22
+    4300008: Blue_Brick_Cylinder_3
+    4300010: Blue_Brick_Cylinder_42
+    4300012: Blue_Brick_Cylinder_51
+    4300014: Blue_Brick_Cylinder_61
+    4300016: Blue_Brick_Cylinder_7
+    4300018: Red_Brick_Cube
+    4300020: Red_Brick_Cylinder2
+    4300022: Red_Brick_Cylinder_11
+    4300024: Red_Brick_Cylinder_21
+    4300026: Red_Brick_Cylinder_32
+    4300028: Red_Brick_Cylinder_4
+    4300030: Red_Brick_Cylinder_52
+    4300032: Red_Brick_Cylinder_62
+    4300034: Red_Brick_Cylinder_72
+    4300036: Yellow_Brick_Cube1
+    4300038: Yellow_Brick_Cylinder
+    4300040: Yellow_Brick_Cylinder_12
+    4300042: Yellow_Brick_Cylinder_2
+    4300044: Yellow_Brick_Cylinder_31
+    4300046: Yellow_Brick_Cylinder_41
+    4300048: Yellow_Brick_Cylinder_5
+    4300050: Yellow_Brick_Cylinder_6
+    4300052: Yellow_Brick_Cylinder_71
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Blue_Brick_Cube2Mat
+    second: {fileID: 2100000, guid: e7f5cf96c7b54458dbd131e332e1662c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Blue_Brick_Cylinder1Mat
+    second: {fileID: 2100000, guid: eef1b63ef9041418fb699539e2aa04bb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Blue_Brick_Cylinder_1Mat
+    second: {fileID: 2100000, guid: fdf583c8c6cd54f4ab4ccf21fdc87d8e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Blue_Brick_Cylinder_22Mat
+    second: {fileID: 2100000, guid: a9ed1ce7458ac43378a51cba2a056cc4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Blue_Brick_Cylinder_3Mat
+    second: {fileID: 2100000, guid: 51b58b81bd3ed46378a8bd552c73292e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Blue_Brick_Cylinder_42Mat
+    second: {fileID: 2100000, guid: 2791792369cd74adcb00622872c1b4c1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Blue_Brick_Cylinder_51Mat
+    second: {fileID: 2100000, guid: 8074b93157a82400fb68c489b615ea6e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Blue_Brick_Cylinder_61Mat
+    second: {fileID: 2100000, guid: ebdc5011a7907450c92ace4daa65e505, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Blue_Brick_Cylinder_7Mat
+    second: {fileID: 2100000, guid: a90b2f1fc887e4dd79eb4216bc68ffc8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Red_Brick_CubeMat
+    second: {fileID: 2100000, guid: 1ccb239cb02284e9fbdb0a7156fd9447, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Red_Brick_Cylinder2Mat
+    second: {fileID: 2100000, guid: bdbbc88ce392544fc9fcd8d650021e49, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Red_Brick_Cylinder_11Mat
+    second: {fileID: 2100000, guid: b84c82af399714870802fd4b4ad6d2f2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Red_Brick_Cylinder_21Mat
+    second: {fileID: 2100000, guid: c33bf24a239f8474195f40ec0f31cfdb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Red_Brick_Cylinder_32Mat
+    second: {fileID: 2100000, guid: 9c3f7de3d7c6f4ed08bbafbddb9342cf, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Red_Brick_Cylinder_4Mat
+    second: {fileID: 2100000, guid: 407e943394f4f479aa3ee5c18b2f65c0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Red_Brick_Cylinder_52Mat
+    second: {fileID: 2100000, guid: 6c0de48a0a6104e589d57ad27db9bf0b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Red_Brick_Cylinder_62Mat
+    second: {fileID: 2100000, guid: 976b31a840b4649a5b9b346a4cfe1924, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Red_Brick_Cylinder_72Mat
+    second: {fileID: 2100000, guid: 645c91429d8884080bb6735d2cbee9f8, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Yellow_Brick_Cube1Mat
+    second: {fileID: 2100000, guid: 484865f422db84864a954cead6552694, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Yellow_Brick_CylinderMat
+    second: {fileID: 2100000, guid: 7408dde7163e34696880b676f6547237, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Yellow_Brick_Cylinder_12Mat
+    second: {fileID: 2100000, guid: b9a1fe2dd1e1546739b579c7af9a6719, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Yellow_Brick_Cylinder_2Mat
+    second: {fileID: 2100000, guid: fbf5258cff651434084b64ab2948a585, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Yellow_Brick_Cylinder_31Mat
+    second: {fileID: 2100000, guid: e8d3677de0d1e47efa5c1a77ef0dc44f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Yellow_Brick_Cylinder_41Mat
+    second: {fileID: 2100000, guid: 1c42d64a391b1499393f818cc3150ca4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Yellow_Brick_Cylinder_5Mat
+    second: {fileID: 2100000, guid: 669b6a1e891bb45bcaf5184142329276, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Yellow_Brick_Cylinder_6Mat
+    second: {fileID: 2100000, guid: bf1f206eed6e84d76b8cf9faeee16e42, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Yellow_Brick_Cylinder_71Mat
+    second: {fileID: 2100000, guid: 27a2bebebf2274b43b791de0ef1ad088, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

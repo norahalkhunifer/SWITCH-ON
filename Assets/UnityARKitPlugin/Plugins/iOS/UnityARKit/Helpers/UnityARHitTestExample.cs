@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine.EventSystems;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
+
 namespace UnityEngine.XR.iOS
 {//change name
 	public class UnityARHitTestExample : MonoBehaviour
@@ -11,6 +13,8 @@ namespace UnityEngine.XR.iOS
 		public static Ray ray;//this will be the ray that we cast from our touch into the scene
 		private static RaycastHit hit;
 		private static level3manger levelmanger; 
+		//public Text debugbox;
+
 
 
 		bool HitTestWithResultType (ARPoint point, ARHitTestResultType resultTypes)
@@ -46,7 +50,7 @@ namespace UnityEngine.XR.iOS
 			};
 			foreach (ARHitTestResultType resultType in resultTypes) {
 				//2times 
-				Debug.Log ("ressult type" + resultType.ToString());
+				//Debug.Log ("ressult type" + resultType.ToString());
 				if (HitTestWithResultType (point, resultType)) {
 					return;
 				}
@@ -64,7 +68,7 @@ namespace UnityEngine.XR.iOS
 				if (Physics.Raycast (ray, out hit)) {//Physics.Raycast (ray, out hit, maxRayDistance, collisionLayer)
 
 					GameObject item = hit.collider.transform.gameObject; //parent is what is stored in our area;
-					print ("Hit  " + item.name);
+					//print ("Hit  " + item.name);
 					levelmanger.touchsomething (item);
 
 				}
