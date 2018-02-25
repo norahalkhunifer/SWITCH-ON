@@ -2285,7 +2285,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 16, y: -107}
+  m_AnchoredPosition: {x: 12.300003, y: -107}
   m_SizeDelta: {x: 517, y: 183}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &762674446
@@ -6988,9 +6988,7 @@ MonoBehaviour:
   grass: {fileID: 342927298}
   jumpDilog: {fileID: 1711739362}
   time: {fileID: 1173190886}
-  resume: {fileID: 407123005}
   ins: {fileID: 1973901254}
-  home: {fileID: 1129406495}
 --- !u!4 &1973901256
 Transform:
   m_ObjectHideFlags: 0

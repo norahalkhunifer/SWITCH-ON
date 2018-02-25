@@ -31,6 +31,7 @@ public class Resume_Paused : MonoBehaviour {
 			Time.timeScale = 0;
 			resume.SetActive (true);
 			back.SetActive (true);
+
 		}
 		
 	}
