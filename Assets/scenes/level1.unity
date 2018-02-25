@@ -1035,7 +1035,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 019d91c0c39c64cd6834e26b500b78d7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 57ac917c6ae0f436598bffbe5b44d6bf, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1082,7 +1082,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -0.79999, y: -3}
+  m_AnchoredPosition: {x: 12.300003, y: 14.5}
   m_SizeDelta: {x: 299.9, y: -219}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &407123007
@@ -2285,7 +2285,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 10, y: -121.76999}
+  m_AnchoredPosition: {x: 16, y: -107}
   m_SizeDelta: {x: 517, y: 183}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &762674446
@@ -2307,7 +2307,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 41e29941fb7c3455d91342869caeaea3, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 73abbae1c95554967b46255fbd2ed162, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2968,7 +2968,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: -0.875, y: -6}
+  m_AnchoredPosition: {x: 12.3, y: -11}
   m_SizeDelta: {x: 326.25, y: 195}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1040281525
@@ -3273,7 +3273,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -11.225006}
+  m_AnchoredPosition: {x: -3.1000004, y: 14.5}
   m_SizeDelta: {x: 271, y: 498}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1129406497
@@ -6988,7 +6988,9 @@ MonoBehaviour:
   grass: {fileID: 342927298}
   jumpDilog: {fileID: 1711739362}
   time: {fileID: 1173190886}
+  resume: {fileID: 407123005}
   ins: {fileID: 1973901254}
+  home: {fileID: 1129406495}
 --- !u!4 &1973901256
 Transform:
   m_ObjectHideFlags: 0
@@ -7437,6 +7439,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8b0e1cb06e8a480d8d3894f110d6170, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  leveltopscore: 0
+  leveltoptime: 0
+  levelDetails: {fileID: 0}
+  scoreText: {fileID: 0}
+  timeText: {fileID: 0}
+  levelnumber: {fileID: 0}
 --- !u!4 &2016296082
 Transform:
   m_ObjectHideFlags: 0
