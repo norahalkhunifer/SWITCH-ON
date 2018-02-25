@@ -16,7 +16,7 @@ public class BoxControl: MonoBehaviour
 	public int boxnum;
 //each box have uniqe num
 	public GameObject insaideobj;
-	public float speed = 0.7F;
+	private float speed = 0.7f;
 	private float startTime;
 	private float journeyLength;
 	// Use this for initialization
@@ -68,8 +68,9 @@ public class BoxControl: MonoBehaviour
 		float fracJourney = distCovered / journeyLength;
 		switch (upordown) {
 		case 1:
-			insaideobj.transform.position = Vector3.Lerp (insaideobj.transform.position, new Vector3 (insaideobj.transform.position.x, insaideobj.transform.position.y + 0.01f, insaideobj.transform.position.z), fracJourney);
-			//pMenu.transform.position = Vector3.Lerp(pMenu.transform.position, endPosition, speed * Time.deltaTime); 
+			//insaideobj.transform.position = Vector3.Lerp (insaideobj.transform.position, new Vector3 (insaideobj.transform.position.x, insaideobj.transform.position.y + 0.01f, insaideobj.transform.position.z), fracJourney);
+			insaideobj.transform.position = Vector3.Lerp (insaideobj.transform.position, new Vector3 (insaideobj.transform.position.x, insaideobj.transform.position.y + 0.5f, insaideobj.transform.position.z), speed * Time.deltaTime); 
+			Debug.Log (insaideobj.transform.position);
 			break;
 		case -1:
 			insaideobj.transform.position = Vector3.Lerp (insaideobj.transform.position, new Vector3 (insaideobj.transform.position.x, insaideobj.transform.position.y - 0.01f, insaideobj.transform.position.z), fracJourney);

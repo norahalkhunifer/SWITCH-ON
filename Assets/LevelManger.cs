@@ -41,7 +41,10 @@ public class LevelManger : MonoBehaviour {
 		SceneManager.LoadScene ("world");
 
 	}
+	public int gettopScore (int levelnum){
+		return PlayerPrefs.GetInt ("Level"+levelnum+"Score");
 
+	}
 
 
 	public void Replay(int level){

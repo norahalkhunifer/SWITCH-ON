@@ -47,7 +47,7 @@ public class level3manger : MonoBehaviour
 		if (randomthingsrepet [randomInt] % 2 != 0 || (randomthingsrepet [randomInt] < (size / 2))) {
 			Vector3 newpos = new Vector3 (box.transform.position.x, box.transform.position.y + 0.05f, box.transform.position.z);
 			GameObject newObject = Instantiate (random [randomInt], newpos, box.transform.rotation, box.transform)as GameObject;
-			newObject.transform.localScale = new Vector3 (box.transform.localScale.x-0.05f,box.transform.localScale.y-0.05f,box.transform.localScale.z-0.05f); //(0.005f, 0.005f, 0.005f);//box.transform.localScale.x, box.transform.localScale.y, box.transform.localScale.z); // change its local scale in x y z format
+			newObject.transform.localScale = new Vector3 (0.007f, 0.007f, 0.007f);// (box.transform.localScale.x-1f, box.transform.localScale.y-1f, box.transform.localScale.z-1f);//(0.005f, 0.005f, 0.005f);// // change its local scale in x y z format
 			randomthingsrepet [randomInt] += 1;
 			box.GetComponent<BoxControl> ().insaideobj = newObject;
 		} else
@@ -142,6 +142,7 @@ public class level3manger : MonoBehaviour
 	private void setScore(){
 		score.text = scorenum.ToString ();
 	}
+
 	void GameEnd ()
 	{
 		//check wining or loosing
@@ -151,6 +152,7 @@ public class level3manger : MonoBehaviour
 	public void save (int winscore)
 	{
 		PlayerPrefs.SetInt ("Level3Score", winscore);
+
 	}
 	public void home ()
 	{

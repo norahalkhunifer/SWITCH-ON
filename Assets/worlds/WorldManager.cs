@@ -20,9 +20,13 @@ public class WorldManager : MonoBehaviour {
 	bool nextavi=true;
 	public Animator shaking;
 
+
 	//do once in the bigining 
 	void Start(){
 		//get the last passed level from playerprefs
+		//int totalscore = PlayerPrefs.GetInt ("total ");
+
+
 		levelPassed = PlayerPrefs.GetInt ("LevelPassed");
 		//to change doors images depend on last passed level
 		switch (levelPassed) {

@@ -65,7 +65,7 @@ namespace UnityEngine.XR.iOS
 				//Debug.Log ("x" + screenPosition.x+"y"+screenPosition.y+"all"+ screenPosition.ToString());
 
 				ray = Camera.main.ScreenPointToRay (touch.position);//creates ray from screen point position
-				if (Physics.Raycast (ray, out hit)) {//Physics.Raycast (ray, out hit, maxRayDistance, collisionLayer)
+				if (Physics.Raycast (ray, out hit)){//&& EventSystem.current.IsPointerOverGameObject()) {//Physics.Raycast (ray, out hit, maxRayDistance, collisionLayer)
 
 					GameObject item = hit.collider.transform.gameObject; //parent is what is stored in our area;
 					//print ("Hit  " + item.name);
