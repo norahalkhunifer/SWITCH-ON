@@ -35,7 +35,7 @@ public class WorldManager : MonoBehaviour {
 	int clevel=-1;
 	public Button playbtn;
 	bool dialogactive=false;
-
+	static bool firsttime;
 
 	//do once in the bigining 
 	void Start(){
@@ -44,6 +44,9 @@ public class WorldManager : MonoBehaviour {
 		totalScore.text=getTotalScore().ToString();
 		levelsmanger=new LevelManger();
 		playbtn.onClick.AddListener(loudlevel);
+		firsttime = SetGetName.firsttime ();
+		instructionfirsttime ();
+		
 		//get the last passed level from playerprefs
 		levelPassed = PlayerPrefs.GetInt ("LevelPassed");
 		//to change doors images depend on last passed level
@@ -156,7 +159,20 @@ public class WorldManager : MonoBehaviour {
 	void loudlevel(){
 		levelsmanger.LoudLevel (clevel);
 	}
-	void ShowInstruction(bool show){
-		instruction.SetActive (show); 
+
+	void instructionfirsttime(){
+		//after closing welcome dialogs 
+		if (firsttime) {
+			//ShowInstruction (true,0f);
+			StartCoroutine (ShowInstruction (true, 0f));
+			StartCoroutine (ShowInstruction (false, 20f));
+		}
 	}
+
+	IEnumerator ShowInstruction(bool show,float delayTime){
+		yield return new WaitForSeconds(delayTime);
+		instruction.SetActive (show); 
+
+	}
+
 }

@@ -10,23 +10,35 @@ public class SetGetName : MonoBehaviour {
 	public GameObject nameDialouge;
 	public GameObject welcomeDialouge;
 
-	// Use this for initialization
 	public void setget () {
 		//to save the written name into playerprefs
-		PlayerPrefs.SetString ("username",dispname.ToString());
+		SetUsername(nameFeild.text);
 		PlayerPrefs.Save();
-		Debug.Log(PlayerPrefs.GetString("username"));
 
 		//to display user in the next welcome dialouge 
 		dispname.text = nameFeild.text;
+		WelcomeDialouge (true);
 	}
 
-	public void disapearDialouge(){
-		nameDialouge.SetActive(false);
-	
+	public void disapearDialouge(bool show){
+		nameDialouge.SetActive(show);
 
 	}
-
+	public void WelcomeDialouge(bool show){
+		welcomeDialouge.SetActive(show);
+	}
+	public static void SetUsername(string name){
+		PlayerPrefs.SetString ("Username",name);
+	}
+	public static string GetUsername(){
+		return PlayerPrefs.GetString ("Username");
+	}
+	void Start (){
+		if (firsttime ()) {
+			disapearDialouge (true);
+		}
+	}
+		
 	void Update (){
 		//nameDialouge.SetActive (true);
 		//welcomeDialouge.SetActive (true);
@@ -40,5 +52,11 @@ public class SetGetName : MonoBehaviour {
 
 		}
 
+	}
+	public static bool firsttime(){
+		if (!PlayerPrefs.HasKey("Username")) {
+			return true;
+		}
+		return false;
 	}
 }
