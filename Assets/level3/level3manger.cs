@@ -26,6 +26,8 @@ public class level3manger : MonoBehaviour
 	public Text score;
 	private int scorenum=0;
 
+	//instruction
+	public GameObject instructionpanle;
 	// Use this for initialization
 	void Start ()
 	{
@@ -37,6 +39,8 @@ public class level3manger : MonoBehaviour
 			placeRandomobj (box);
 			//Instantiate (RandomGenrator.placeRandomobj(),box.transform.position,box.transform.rotation,box.transform);
 		}
+		GameObject newObject = Instantiate (random [1], new Vector3 (1f,1f,1f ),Quaternion.Euler(new Vector3 (0,0,0 )))as GameObject;
+		newObject.transform.localScale = new Vector3 (0.1f, 0.1f, 0.1f);
 		setScore ();
 	}
 	//to place objects insaid boxws 
@@ -61,6 +65,11 @@ public class level3manger : MonoBehaviour
 
 	void Update ()
 	{//time decreasing 
+		//if inst +pause+home not active 
+		//+stop if win or lose 
+		Timedecrising();
+	}
+	void Timedecrising(){
 		float t = timer - Time.time;
 		string min = ((int)t / 60).ToString ();
 		string sec = ((int)t % 60).ToString ();
@@ -68,9 +77,8 @@ public class level3manger : MonoBehaviour
 			time.text = "done";//game end 
 			//home ();
 		} else//we can change it to red if its close to end by 5 or 10 sec 
-		time.text = min + ":" + sec;
+			time.text = min + ":" + sec;
 	}
-
 	public void touchsomething (GameObject hitobject)//if player hit something the hit example will send the hited object to her e
 	{
 		//get it and openit or close it the mange will be in other method 
@@ -152,6 +160,10 @@ public class level3manger : MonoBehaviour
 	public void save (int winscore)
 	{
 		PlayerPrefs.SetInt ("Level3Score", winscore);
+
+	}
+	public void pause ()
+	{
 
 	}
 	public void home ()
