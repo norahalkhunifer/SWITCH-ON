@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
 public class ThenderDisable : MonoBehaviour {
 	public GameObject thender;
 	public GameObject thender1;
@@ -20,6 +19,8 @@ public class ThenderDisable : MonoBehaviour {
 	public GameObject gameWin;
 	public GameObject back;
 	public TimeText timer;
+	//public GameObject finalTimerWin;
+
 	public Text finalScore;
 	public Text scoreText;
 	public Text scoreTextWin;
@@ -27,33 +28,33 @@ public class ThenderDisable : MonoBehaviour {
 	public instruction instruc;
 	private LevelManger levelmanger;
 
-		private int score=0;
+	private int score=0;
 
 
 	void Start(){
 		gameWin.SetActive (false);
 		back.SetActive (false);
-	scoreText.text = score.ToString ();
+		scoreText.text = score.ToString ();
 		finalScore.text=score.ToString();
 		scoreTextWin.text=score.ToString();
 
-}
+	}
 
 	public void diseble(GameObject obj)
 	{
-//
-	
+		//
+
 		if (thender.name==obj.name) {
-		Debug.Log (score);
-		Debug.Log (thender.name == obj.name);
-	    thender.SetActive (false);//to disable thinder
-		score = score + 1;
-		Debug.Log (score);
-		scoreText.text = score.ToString ();
+			Debug.Log (score);
+			Debug.Log (thender.name == obj.name);
+			thender.SetActive (false);//to disable thinder
+			score = score + 1;
+			Debug.Log (score);
+			scoreText.text = score.ToString ();
 			finalScore.text=score.ToString();
 			scoreTextWin.text=score.ToString();
 
-	}
+		}
 
 
 
@@ -167,12 +168,14 @@ public class ThenderDisable : MonoBehaviour {
 			battryHide.enabled = false;
 			jump.enabled = false;
 			resume.enabled = false;
-			levelmanger.win (1,score ,	timer.finalTimerWin.ToString () );
+			timer.finalTimerWin.ToString ();
 
-		//	timer.finalTimerWin.ToString ();
+			levelmanger.win (1,score , timer.finalTimerWin.ToString () );
+
+			//	timer.finalTimerWin.ToString ();
 		}	
+	}
 }
-		}
-	
+
 
 

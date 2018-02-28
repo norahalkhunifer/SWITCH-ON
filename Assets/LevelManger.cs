@@ -11,9 +11,9 @@ public class LevelManger : MonoBehaviour {
 	/// </summary>
 
 	int levelpassed=PlayerPrefs.GetInt ("LevelPassed");
-    int leveltopscore;
+	int leveltopscore;
 	string leveltime;
-    int leveltoptime;
+	int leveltoptime;
 
 	public void win (int levelnum,int cscore, string ctime){
 		leveltopscore = getTopScore (levelnum);
@@ -38,7 +38,7 @@ public class LevelManger : MonoBehaviour {
 	}
 	public void LoudLevel(int levelnum){//or string 
 		if(levelnum!=-1)
-		SceneManager.LoadScene (levelnum);
+			SceneManager.LoadScene (levelnum);
 
 	}
 	/// <summary>
@@ -65,7 +65,7 @@ public class LevelManger : MonoBehaviour {
 		*CapeColor type:int or bool or any   
 		*Sound type:bool*/
 	/// </summary>
-	
+
 	public int getTopScore (int levelnum){
 		return PlayerPrefs.GetInt ("Level"+levelnum+"Score");
 
@@ -75,11 +75,11 @@ public class LevelManger : MonoBehaviour {
 
 	}
 	public void setTopScore (int levelnum,int topscore){
-		 PlayerPrefs.SetInt ("Level"+levelnum+"Score",topscore);
+		PlayerPrefs.SetInt ("Level"+levelnum+"Score",topscore);
 
 	}
 	public void setTime (int levelnum,string time){
-		 PlayerPrefs.SetString ("Level"+levelnum+"Time",time);
+		PlayerPrefs.SetString ("Level"+levelnum+"Time",time);
 
 	}
 

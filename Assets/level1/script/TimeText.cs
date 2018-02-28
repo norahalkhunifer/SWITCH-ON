@@ -2,12 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
 public class TimeText : MonoBehaviour {
 	public Text timer;
 	public Text finalTimer;
 	public Text finalTimerWin;
-	private LevelManger m;
+	//private LevelManger m;
 	public float timeStamp;
 	public bool usingT=false;
 	//public GameObject battry;
@@ -95,7 +94,7 @@ public class TimeText : MonoBehaviour {
 		battryHide.enabled = false;
 		jump.enabled = false;
 		usingT = false;
-		m.lose (1);
+	//	m.lose (1);
 
 	}
 }
