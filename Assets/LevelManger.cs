@@ -27,9 +27,10 @@ public class LevelManger : MonoBehaviour {
 			PlayerPrefs.SetInt ("LevelPassed", levelnum);
 		}
 	}
-	public void lose(int level){
-		
-	}
+
+
+	//we don't need lose method  , we well not save any data in db 
+
 
 	public void LoudHome(){
 		SceneManager.LoadScene ("world");
