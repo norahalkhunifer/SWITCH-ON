@@ -85,6 +85,7 @@ public class LevelManger : MonoBehaviour {
 
 	public void Replay(int level){//or could be astring 
 		Application.LoadLevel (level);
+
 	}
 
 
