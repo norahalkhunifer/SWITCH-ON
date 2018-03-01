@@ -28,7 +28,7 @@ public class WorldManager : MonoBehaviour {
 	LevelManger levelsmanger;
     int leveltopscore;
 	string leveltime;
-	public GameObject levelDetails;
+	public GameObject levelDetailsY , levelDetailsG;
 	public Text scoreText;
 	public Text timeText;
 	public Text levelnumber;
@@ -134,17 +134,33 @@ public class WorldManager : MonoBehaviour {
 
 	}
 	public void leveldetails(int levelnum){
+
 		clevel = levelnum;
-		levelDetails.SetActive (true);
 		leveltopscore = levelsmanger.getTopScore (levelnum);
-		leveltime=levelsmanger.getTime (levelnum);
+		leveltime = levelsmanger.getTime (levelnum);
+
+		if(leveltopscore==0 && leveltime=="0"){
+		levelDetailsY.SetActive (true);
+	}//end if 
+
+	else{
+			levelDetailsG.SetActive (true);
+
+	}
+	
+
 		scoreText.text=leveltopscore.ToString();
 		timeText.text=leveltime;
+		//may                  .ToString()
 		levelnumber.text = levelnum.ToString();
 	}
+
+
 	public void closeLevelDetails() {
 		clevel = -1;
-		levelDetails.SetActive (false); 
+		levelDetailsY.SetActive (false); 
+		levelDetailsG.SetActive (false); 
+
 	}
 	//method for test the system 
 	public void reset(){
