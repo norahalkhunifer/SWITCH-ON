@@ -20,7 +20,7 @@ public class ThenderDisable : MonoBehaviour {
 	public GameObject back;
 	public TimeText timer;
 	//public GameObject finalTimerWin;
-
+	public Text topScore;
 	public Text finalScore;
 	public Text scoreText;
 	public Text scoreTextWin;
@@ -161,6 +161,7 @@ public class ThenderDisable : MonoBehaviour {
 			instruc.enabled = false;
 			finalScore.text=score.ToString();
 			scoreTextWin.text=score.ToString();
+			topScore.text=levelmanger.getTopScore (1).ToString();
 			gameWin.SetActive (true);
 			back.SetActive (true);
 			script.enabled = false;
@@ -168,11 +169,9 @@ public class ThenderDisable : MonoBehaviour {
 			battryHide.enabled = false;
 			jump.enabled = false;
 			resume.enabled = false;
-			timer.finalTimerWin.ToString ();
+			string winT=timer.finalTimerWin.ToString();
+			levelmanger.win (1,score , winT);
 
-			levelmanger.win (1,score , timer.finalTimerWin.ToString () );
-
-			//	timer.finalTimerWin.ToString ();
 		}	
 	}
 }

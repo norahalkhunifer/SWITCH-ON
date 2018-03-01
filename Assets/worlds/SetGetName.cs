@@ -7,8 +7,11 @@ public class SetGetName : MonoBehaviour {
 	float timer = 0f;
 	public InputField nameFeild;
 	public Text dispname;
+	public Text dispname2;
+
 	public GameObject nameDialouge;
 	public GameObject welcomeDialouge;
+	public GameObject welcomeBack;
 
 	public void setget () {
 		//to save the written name into playerprefs
@@ -33,11 +36,31 @@ public class SetGetName : MonoBehaviour {
 	public static string GetUsername(){
 		return PlayerPrefs.GetString ("Username");
 	}
-	void Start (){
-		if (firsttime ()) {
-			disapearDialouge (true);
-		}
+
+	public void WelcomeBack(bool show){
+		welcomeBack.SetActive(show);
+
 	}
+
+	IEnumerator ShowWelcome(bool show,float delayTime){
+		yield return new WaitForSeconds(delayTime);
+		welcomeBack.SetActive (show); 
+
+	}
+
+	void Start (){
+		if (firsttime()) {
+			//if first time open app show enter username dialouge
+			disapearDialouge (true);
+		} else {
+			//to show welcome back dialouge & hide it after view of seconds 
+			dispname2.text = GetUsername ();
+			StartCoroutine (ShowWelcome (true, 0f));
+			StartCoroutine (ShowWelcome (false, 7f));
+		
+			}
+		}
+
 		
 	void Update (){
 		//nameDialouge.SetActive (true);
@@ -48,6 +71,7 @@ public class SetGetName : MonoBehaviour {
 			timer += Time.deltaTime;    
 			if (timer >= 2) {
 				welcomeDialouge.SetActive (false);
+
 			}
 
 		}
