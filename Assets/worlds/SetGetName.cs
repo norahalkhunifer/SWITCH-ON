@@ -50,15 +50,14 @@ public class SetGetName : MonoBehaviour {
 
 	void Start (){
 		if (firsttime()) {
+			//if first time open app show enter username dialouge
 			disapearDialouge (true);
 		} else {
-			//timer += Time.deltaTime;    
+			//to show welcome back dialouge & hide it after view of seconds 
 			dispname2.text = GetUsername ();
 			StartCoroutine (ShowWelcome (true, 0f));
-			StartCoroutine (ShowWelcome (false, 10f));
-				//WelcomeBack (true);
-			//if (timer >= 1) {
-				//welcomeBack.SetActive (false);
+			StartCoroutine (ShowWelcome (false, 7f));
+		
 			}
 		}
 
