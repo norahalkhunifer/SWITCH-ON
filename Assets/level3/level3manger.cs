@@ -39,7 +39,7 @@ public class level3manger : MonoBehaviour
 			placeRandomobj (box);
 			//Instantiate (RandomGenrator.placeRandomobj(),box.transform.position,box.transform.rotation,box.transform);
 		}
-		GameObject newObject = Instantiate (random [1], new Vector3 (1f,1f,1f ),Quaternion.Euler(new Vector3 (0,0,0 )))as GameObject;
+		GameObject newObject = Instantiate (random [1], new Vector3 (1f,1f,1f ),Quaternion.Euler(new Vector3 (0,0,0 )));//as GameObject;
 		newObject.transform.localScale = new Vector3 (0.1f, 0.1f, 0.1f);
 		setScore ();
 	}
@@ -50,7 +50,8 @@ public class level3manger : MonoBehaviour
 		//to be fair check if it not od or not all have same object 
 		if (randomthingsrepet [randomInt] % 2 != 0 || (randomthingsrepet [randomInt] < (size / 2))) {
 			Vector3 newpos = new Vector3 (box.transform.position.x, box.transform.position.y + 0.05f, box.transform.position.z);
-			GameObject newObject = Instantiate (random [randomInt], newpos, box.transform.rotation, box.transform)as GameObject;
+			GameObject newObject = Instantiate (random [randomInt],newpos, box.transform.rotation, box.transform)as GameObject;
+			if(newObject)
 			newObject.transform.localScale = new Vector3 (0.007f, 0.007f, 0.007f);// (box.transform.localScale.x-1f, box.transform.localScale.y-1f, box.transform.localScale.z-1f);//(0.005f, 0.005f, 0.005f);// // change its local scale in x y z format
 			randomthingsrepet [randomInt] += 1;
 			box.GetComponent<BoxControl> ().insaideobj = newObject;
@@ -74,7 +75,7 @@ public class level3manger : MonoBehaviour
 		string min = ((int)t / 60).ToString ();
 		string sec = ((int)t % 60).ToString ();
 		if (t <= 0) {//if time is up 
-			time.text = "done";//game end 
+			time.text = "0:15";//game end 
 			//home ();
 		} else//we can change it to red if its close to end by 5 or 10 sec 
 			time.text = min + ":" + sec;
@@ -83,9 +84,11 @@ public class level3manger : MonoBehaviour
 	{
 		//get it and openit or close it the mange will be in other method 
 		current = hitobject.GetComponent<BoxControl> ();
+
+		//check if there is more than 2 are open if yes then colse them thin opent the tutched one 
 		if (current != null) {
 			if (current.isOpen ()) {
-				current.closeit ();
+				//current.closeit ();
 			} else {
 				current.openit ();
 
@@ -125,7 +128,7 @@ public class level3manger : MonoBehaviour
 		size--;
 		debugbox.text= "metion compleat";
 		addscore (4);
-		//BoxesNotMatching ();
+		BoxesNotMatching ();
 		if (size == 0)
 			GameEnd ();
 	}
