@@ -7,6 +7,7 @@ public class Exit : MonoBehaviour {
 	public bool exitButton;
 	public GameObject exitDilog;
 	public GameObject back;
+
 	// Use this for initialization
 	void Start () {
 		exitButton = false;
@@ -21,13 +22,12 @@ public class Exit : MonoBehaviour {
 	}
 	public void onPause(){
 		exitButton = !exitButton;
-		//to resume the game
+		//to no button press
 		if (!exitButton) {
 			Time.timeScale = 1;
 			exitDilog.SetActive (false);
 			back.SetActive (false);
-
-			//to pause the level
+			//to exit the level
 		} else if (exitButton) {
 			Time.timeScale = 0;
 			exitDilog.SetActive (true);
