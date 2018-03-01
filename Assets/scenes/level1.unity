@@ -679,9 +679,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2016296080}
-        m_MethodName: 
-        m_Mode: 3
+      - m_Target: {fileID: 2016296081}
+        m_MethodName: Replay
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1177,7 +1177,8 @@ MonoBehaviour:
   jump: {fileID: 1926818291}
   gameWin: {fileID: 762674444}
   back: {fileID: 1514889679}
-  timer: {fileID: 0}
+  timer: {fileID: 1173190886}
+  topScore: {fileID: 1539330282}
   finalScore: {fileID: 1458157947}
   scoreText: {fileID: 2015186126}
   scoreTextWin: {fileID: 1715544407}
@@ -5932,7 +5933,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2016296081}
         m_MethodName: Replay
-        m_Mode: 3
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

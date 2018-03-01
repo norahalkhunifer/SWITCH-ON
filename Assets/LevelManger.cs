@@ -5,15 +5,16 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class LevelManger : MonoBehaviour {
-
-	/// <summary>
-	/// this class is countain the shared metods for all levels 
-	/// </summary>
-
-	int levelpassed=PlayerPrefs.GetInt ("LevelPassed");
+	int levelpassed ;
 	int leveltopscore;
 	string leveltime;
 	int leveltoptime;
+	/// <summary>
+	/// this class is countain the shared metods for all levels 
+	/// </summary>
+	void Start(){
+		levelpassed = PlayerPrefs.GetInt ("LevelPassed");
+	}
 
 	public void win (int levelnum,int cscore, string ctime){
 		leveltopscore = getTopScore (levelnum);
@@ -67,7 +68,9 @@ public class LevelManger : MonoBehaviour {
 	/// </summary>
 
 	public int getTopScore (int levelnum){
-		return PlayerPrefs.GetInt ("Level"+levelnum+"Score");
+		string t = levelnum.ToString ();
+		string top = "Level" + t + "Score";
+		return PlayerPrefs.GetInt (top);
 
 	}
 	public string getTime (int levelnum){
@@ -83,10 +86,8 @@ public class LevelManger : MonoBehaviour {
 
 	}
 
-	public void Replay(int level){//or could be astring 
-		Application.LoadLevel (level);
-
-	}
+	public void Replay(){//or could be astring 
+		SceneManager.LoadScene (SceneManager.GetActiveScene ().name);	}
 
 
 
