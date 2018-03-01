@@ -42,18 +42,26 @@ public class SetGetName : MonoBehaviour {
 
 	}
 
+	IEnumerator ShowWelcome(bool show,float delayTime){
+		yield return new WaitForSeconds(delayTime);
+		welcomeBack.SetActive (show); 
+
+	}
+
 	void Start (){
-		if (firsttime ()) {
+		if (firsttime()) {
 			disapearDialouge (true);
 		} else {
-			timer += Time.deltaTime;    
+			//timer += Time.deltaTime;    
 			dispname2.text = GetUsername ();
-				WelcomeBack (true);
-			if (timer >= 1) {
-				welcomeBack.SetActive (false);
+			StartCoroutine (ShowWelcome (true, 0f));
+			StartCoroutine (ShowWelcome (false, 10f));
+				//WelcomeBack (true);
+			//if (timer >= 1) {
+				//welcomeBack.SetActive (false);
 			}
 		}
-	}
+
 		
 	void Update (){
 		//nameDialouge.SetActive (true);
