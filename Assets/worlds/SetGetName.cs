@@ -7,8 +7,11 @@ public class SetGetName : MonoBehaviour {
 	float timer = 0f;
 	public InputField nameFeild;
 	public Text dispname;
+	public Text dispname2;
+
 	public GameObject nameDialouge;
 	public GameObject welcomeDialouge;
+	public GameObject welcomeBack;
 
 	public void setget () {
 		//to save the written name into playerprefs
@@ -33,9 +36,22 @@ public class SetGetName : MonoBehaviour {
 	public static string GetUsername(){
 		return PlayerPrefs.GetString ("Username");
 	}
+
+	public void WelcomeBack(bool show){
+		welcomeBack.SetActive(show);
+
+	}
+
 	void Start (){
 		if (firsttime ()) {
 			disapearDialouge (true);
+		} else {
+			timer += Time.deltaTime;    
+			dispname2.text = GetUsername ();
+				WelcomeBack (true);
+			if (timer >= 1) {
+				welcomeBack.SetActive (false);
+			}
 		}
 	}
 		
@@ -48,6 +64,7 @@ public class SetGetName : MonoBehaviour {
 			timer += Time.deltaTime;    
 			if (timer >= 2) {
 				welcomeDialouge.SetActive (false);
+
 			}
 
 		}
