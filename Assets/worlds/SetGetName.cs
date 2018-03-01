@@ -13,15 +13,36 @@ public class SetGetName : MonoBehaviour {
 	public GameObject welcomeDialouge;
 	public GameObject welcomeBack;
 
-	public void setget () {
-		//to save the written name into playerprefs
-		SetUsername(nameFeild.text);
-		PlayerPrefs.Save();
+	private string[] names = new string[] { "Peter", "Ron", "Satchmo" };
 
+	public void setget () {
+		if (nameFeild.text == "") {
+
+			randomName ();
+
+		}
+			//Debug.Log ("field is empty");
+		//to save the written name into playerprefs
+		else {
+			SetUsername (nameFeild.text);
+			PlayerPrefs.Save ();
 		//to display user in the next welcome dialouge 
 		dispname.text = nameFeild.text;
+		}//end else
+
 		WelcomeDialouge (true);
 	}
+
+
+	public void randomName(){
+		//dispname.text = "switch on player";
+		string nameGenerated=names[Random.Range(0, names.Length)];
+		dispname.text =nameGenerated;
+		SetUsername (nameGenerated);
+		PlayerPrefs.Save ();
+	
+	}
+
 
 	public void disapearDialouge(bool show){
 		nameDialouge.SetActive(show);
