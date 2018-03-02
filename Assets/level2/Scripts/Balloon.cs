@@ -5,12 +5,12 @@ using UnityEngine;
 public class Balloon : MonoBehaviour {
 
 	public GameObject balloon;
-	//public GameObject balloon1;
-	//public GameObject balloon2;
-	//public GameObject balloon3;
-	//public GameObject balloon4;
+	public GameObject balloon1;
+	public GameObject balloon2;
+	public GameObject balloon3;
+	public GameObject balloon4;
 	//public GameObject balloon5;
-
+	public AudioSource b1;
 	//public GameObject thunder;
 	public GameObject score;
 
@@ -20,22 +20,42 @@ public class Balloon : MonoBehaviour {
 		//thunder.SetActive (false);
 	}
 		
-	/*public void touchsomething (GameObject hitobject)//if player hit something the hit example will send the hited object to her e
+	public void touchsomething (GameObject hitobject)//if player hit something the hit example will send the hited object to her e
 	{
 		//get it and openit or close it the mange will be in other method 
-		balloon = hitobject.GetComponent<BoxControl> ();
-		if (balloon != null) {
-			if (balloon. {
-				balloon.closeit ();
-			} else {
-				balloon.openit ();
+		b1=GetComponent<AudioSource>();
+		//balloon = hitobject.GetComponent<balloon> ();
+		if (balloon!= null) {
+			balloon.SetActive (false);
+			b1.Play ();
+		} 
+		if (balloon1!= null) {
+			balloon.SetActive (false);
+			b1.Play ();
 
-			}	
-		} else
-			print ("not box!");//message that says tuch me again!
-	}*/
+		}
+		if (balloon2!= null) {
+			balloon.SetActive (false);
+			b1.Play ();
 
-	public void disappear(GameObject go){
+		}
+		if (balloon3!= null) {
+			balloon.SetActive (false);
+			b1.Play ();
+
+		}
+
+
+		if (balloon4!= null) {
+			balloon.SetActive (false);
+			b1.Play ();
+
+		}
+			//print ("not box!");//message that says tuch me again!
+
+	}
+
+	/*public void disappear(GameObject go){
 		
 		if ( balloon.name==go.name) {
 			Debug.Log (score);
@@ -49,7 +69,7 @@ public class Balloon : MonoBehaviour {
 
 		}
 
-		/*if ( balloon1.name==go.name) {
+		if ( balloon1.name==go.name) {
 			Debug.Log (score);
 
 			balloon1.SetActive (false);//to disable balloon
@@ -72,7 +92,7 @@ public class Balloon : MonoBehaviour {
 			//finalScore.text=score.ToString();
 			//scoreTextWin.text=score.ToString();
 
-		}/*
+		}
 
 		if ( balloon3.name==go.name) {
 			Debug.Log (score);
@@ -111,8 +131,8 @@ public class Balloon : MonoBehaviour {
 			//finalScore.text=score.ToString();
 			//scoreTextWin.text=score.ToString();
 
-		}*/
-	}
+		}
+	}*/
 
 
 	}

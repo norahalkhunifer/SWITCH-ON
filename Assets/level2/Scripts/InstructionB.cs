@@ -3,17 +3,18 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class InstructionB : MonoBehaviour {
+	
 	public GameObject instruc;
 	float timer = 0f;
 
 	//public AccelerationControlScript grass;
 	//public GameObject jumpDilog ;
 	public GameObject b;
-	public TimeText time;
+	public Balloon time;
 	//public Resume_Paused resume;
 
 	public GameObject ins ;
-	public Exit home ;
+	public ExitB home ;
 
 	// Use this for initialization
 	void Start () {

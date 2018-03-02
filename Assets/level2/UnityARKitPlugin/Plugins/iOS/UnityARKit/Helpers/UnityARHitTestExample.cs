@@ -47,8 +47,8 @@ namespace UnityEngine.XR.iOS
 				ARHitTestResultType.ARHitTestResultTypeExistingPlaneUsingExtent, 
 				// if you want to use infinite planes use this:
 				ARHitTestResultType.ARHitTestResultTypeExistingPlane,
-				ARHitTestResultType.ARHitTestResultTypeHorizontalPlane, 
-				ARHitTestResultType.ARHitTestResultTypeFeaturePoint
+				//ARHitTestResultType.ARHitTestResultTypeHorizontalPlane, 
+				//ARHitTestResultType.ARHitTestResultTypeFeaturePoint
 			};
 
 			foreach (ARHitTestResultType resultType in resultTypes)
@@ -74,7 +74,7 @@ namespace UnityEngine.XR.iOS
 					if (Physics.Raycast (ray, out hit)){//&& EventSystem.current.IsPointerOverGameObject()) {//Physics.Raycast (ray, out hit, maxRayDistance, collisionLayer)
 						GameObject item = hit.collider.transform.gameObject; //parent is what is stored in our area;
 						//print ("Hit  " + item.name);
-						//levelmanager.touchsomething(item);
+						levelmanager.touchsomething(item);
 						/*var screenPosition = Camera.main.ScreenToViewportPoint(new Vector2 (Screen.width / 2f, Screen.height / 2f));*/
 	}
 
