@@ -12,6 +12,10 @@ public class SetGetName : MonoBehaviour {
 	public GameObject nameDialouge;
 	public GameObject welcomeDialouge;
 	public GameObject welcomeBack;
+	public GameObject instruction;
+
+
+	//static bool firsttime;
 
 	private string[] names = new string[] { "Peter", "Ron", "Satchmo" };
 
@@ -70,9 +74,19 @@ public class SetGetName : MonoBehaviour {
 	}
 
 	void Start (){
-		if (firsttime()) {
+		if (firstTime()) {
 			//if first time open app show enter username dialouge
 			disapearDialouge (true);
+
+			if (nameDialouge.activeInHierarchy == false && welcomeDialouge.activeInHierarchy == false) {
+				//firsttime = firstTime ();
+
+				instructionfirsttime ();
+			
+			
+			}
+
+
 		} else {
 			//to show welcome back dialouge & hide it after view of seconds 
 			dispname2.text = GetUsername ();
@@ -98,10 +112,28 @@ public class SetGetName : MonoBehaviour {
 		}
 
 	}
-	public static bool firsttime(){
+	public static bool firstTime(){
 		if (!PlayerPrefs.HasKey("Username")) {
 			return true;
 		}
 		return false;
 	}
+
+
+	public void instructionfirsttime(){
+		//after closing welcome dialogs 
+
+		if (firstTime()==false) {
+			//ShowInstruction (true,0f);
+			StartCoroutine (ShowInstruction (true, 0f));
+			StartCoroutine (ShowInstruction (false, 16f));
+		}
+	}//END METHOD
+
+	IEnumerator ShowInstruction(bool show,float delayTime){
+		yield return new WaitForSeconds(delayTime);
+		instruction.SetActive (show); 
+
+	}
+
 }

@@ -19,7 +19,6 @@ public class WorldManager : MonoBehaviour {
 	//doors changes
 	public Sprite win, close;
 	bool nextavi=true;
-	public GameObject instruction;
 	int levelPassed;
 	public Animator shaking;
 	public Text totalScore;
@@ -29,13 +28,16 @@ public class WorldManager : MonoBehaviour {
     int leveltopscore;
 	string leveltime;
 	public GameObject levelDetailsY , levelDetailsG;
+	public GameObject nameDialouge;
+	public GameObject welcomeDialouge;
+
+
 	public Text scoreText;
 	public Text timeText;
 	public Text levelnumber;
 	int clevel=-1;
 	public Button playbtn;
 	bool dialogactive=false;
-	static bool firsttime;
 
 	//do once in the bigining 
 	void Start(){
@@ -44,9 +46,11 @@ public class WorldManager : MonoBehaviour {
 		totalScore.text=getTotalScore().ToString();
 		levelsmanger=new LevelManger();
 		playbtn.onClick.AddListener(loudlevel);
-		firsttime = SetGetName.firsttime ();
-		instructionfirsttime ();
-		
+		//firsttime = SetGetName.firsttime ();
+
+			//instructionfirsttime ();
+
+
 		//get the last passed level from playerprefs
 		levelPassed = PlayerPrefs.GetInt ("LevelPassed");
 		//to change doors images depend on last passed level
@@ -176,19 +180,5 @@ public class WorldManager : MonoBehaviour {
 		levelsmanger.LoudLevel (clevel);
 	}
 
-	void instructionfirsttime(){
-		//after closing welcome dialogs 
-		if (firsttime) {
-			//ShowInstruction (true,0f);
-			StartCoroutine (ShowInstruction (true, 0f));
-			StartCoroutine (ShowInstruction (false, 20f));
-		}
-	}
-
-	IEnumerator ShowInstruction(bool show,float delayTime){
-		yield return new WaitForSeconds(delayTime);
-		instruction.SetActive (show); 
-
-	}
 
 }
