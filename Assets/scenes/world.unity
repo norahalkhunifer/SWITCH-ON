@@ -2626,7 +2626,6 @@ MonoBehaviour:
   Image06: {fileID: 991641366}
   win: {fileID: 21300000, guid: ef0a7402ab9274a05a8d6afbb5a6a2c2, type: 3}
   close: {fileID: 21300000, guid: 8417ce7902e9f44869b9362a7b7cf067, type: 3}
-  instruction: {fileID: 1339775622}
   shaking: {fileID: 111567230}
   totalScore: {fileID: 1962072926}
   levelDetailsY: {fileID: 1817390284}
@@ -3604,6 +3603,7 @@ MonoBehaviour:
   nameDialouge: {fileID: 1598433247}
   welcomeDialouge: {fileID: 1795429315}
   welcomeBack: {fileID: 1534176973}
+  instruction: {fileID: 1339775622}
 --- !u!4 &1057262895
 Transform:
   m_ObjectHideFlags: 0
