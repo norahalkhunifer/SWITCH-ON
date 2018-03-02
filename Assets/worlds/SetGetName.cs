@@ -77,16 +77,9 @@ public class SetGetName : MonoBehaviour {
 		if (firstTime()) {
 			//if first time open app show enter username dialouge
 			disapearDialouge (true);
+			//if (nameDialouge.activeInHierarchy == false && welcomeDialouge.activeInHierarchy == false) {
 
-			if (nameDialouge.activeInHierarchy == false && welcomeDialouge.activeInHierarchy == false) {
-				//firsttime = firstTime ();
-
-				instructionfirsttime ();
 			
-			
-			}
-
-
 		} else {
 			//to show welcome back dialouge & hide it after view of seconds 
 			dispname2.text = GetUsername ();
@@ -106,10 +99,11 @@ public class SetGetName : MonoBehaviour {
 			timer += Time.deltaTime;    
 			if (timer >= 2) {
 				welcomeDialouge.SetActive (false);
+			
 
 			}
-
 		}
+
 
 	}
 	public static bool firstTime(){
@@ -123,7 +117,7 @@ public class SetGetName : MonoBehaviour {
 	public void instructionfirsttime(){
 		//after closing welcome dialogs 
 
-		if (firstTime()==false) {
+		if (firstTime()) {
 			//ShowInstruction (true,0f);
 			StartCoroutine (ShowInstruction (true, 0f));
 			StartCoroutine (ShowInstruction (false, 16f));

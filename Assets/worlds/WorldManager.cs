@@ -28,8 +28,7 @@ public class WorldManager : MonoBehaviour {
     int leveltopscore;
 	string leveltime;
 	public GameObject levelDetailsY , levelDetailsG;
-	public GameObject nameDialouge;
-	public GameObject welcomeDialouge;
+
 
 
 	public Text scoreText;
