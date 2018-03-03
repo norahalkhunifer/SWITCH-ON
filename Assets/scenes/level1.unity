@@ -1017,8 +1017,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 5, y: -226}
-  m_SizeDelta: {x: 631, y: 610}
+  m_AnchoredPosition: {x: -5, y: -507}
+  m_SizeDelta: {x: 622, y: 751}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &370684211
 MonoBehaviour:
@@ -1086,8 +1086,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 3.1625, y: 69.3}
-  m_SizeDelta: {x: 344.52, y: -346.6}
+  m_AnchoredPosition: {x: 7, y: -107}
+  m_SizeDelta: {x: 349, y: -520}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &407123007
 MonoBehaviour:
@@ -1184,6 +1184,7 @@ MonoBehaviour:
   scoreTextWin: {fileID: 1715544407}
   resume: {fileID: 1680822452}
   instruc: {fileID: 1973901255}
+  levelmanger: {fileID: 2016296081}
 --- !u!1 &440196352
 GameObject:
   m_ObjectHideFlags: 0
@@ -2746,7 +2747,7 @@ MonoBehaviour:
   exitButton: 0
   exitDilog: {fileID: 1129406495}
   back: {fileID: 1514889679}
-  re: {fileID: 0}
+  re: {fileID: 1680822452}
 --- !u!4 &887112110
 Transform:
   m_ObjectHideFlags: 0

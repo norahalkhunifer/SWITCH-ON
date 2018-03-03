@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class Exit : MonoBehaviour {
-
+	
 	public bool exitButton;
 	public GameObject exitDilog;
 	public GameObject back;
@@ -21,15 +21,17 @@ public class Exit : MonoBehaviour {
 
 	public void onNo(){
 		exitButton = !exitButton;
+
 		//to no button press
 		if (!exitButton) {
 			Time.timeScale = 1;
 			exitDilog.SetActive (false);
 			back.SetActive (false);
-			bool exitButton=re.GetPause ();
-			Debug.Log (exitButton);
-			if (exitButton) {
-				re.OnPause ();
+			bool pause=re.GetPause();
+			if (pause) {
+				Time.timeScale = 0;
+				back.SetActive (true);
+
 			}
 		} 
 

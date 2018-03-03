@@ -6,12 +6,12 @@ public class Resume_Paused : MonoBehaviour {
 	public bool pause;
 	public GameObject resume;
 	public GameObject back;
+
 	// Use this for initialization
 	void Start () {
 		pause = false;
 		resume.SetActive (false);
 		back.SetActive (false);
-
 	}
 
 	public void onResume(){
