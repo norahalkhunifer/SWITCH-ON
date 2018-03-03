@@ -17,7 +17,7 @@ public class SetGetName : MonoBehaviour {
 
 	//static bool firsttime;
 
-	private string[] names = new string[] { "Peter", "Ron", "Satchmo", "Iron-Cut", "Titanium", "Lightning", "Kevlar", "Rex", "Falcon" };
+	private string[] names = new string[] { "Peter", "Ron", "Satchmo", "Iron-Cut", "Titanium", "Lightning", "Kevlar", "Rex", "Falcon", "Switch on player" };
 
 	public void setget () {
 		if (nameFeild.text == "") {
@@ -50,6 +50,7 @@ public class SetGetName : MonoBehaviour {
 
 	public void disapearDialouge(bool show){
 		nameDialouge.SetActive(show);
+		instructionfirsttime ();
 
 	}
 	public void WelcomeDialouge(bool show){
