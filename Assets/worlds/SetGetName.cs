@@ -17,7 +17,7 @@ public class SetGetName : MonoBehaviour {
 
 	//static bool firsttime;
 
-	private string[] names = new string[] { "Peter", "Ron", "Satchmo" };
+	private string[] names = new string[] { "Peter", "Ron", "Satchmo", "Iron-Cut", "Titanium", "Lightning", "Kevlar", "Rex", "Falcon" };
 
 	public void setget () {
 		if (nameFeild.text == "") {
