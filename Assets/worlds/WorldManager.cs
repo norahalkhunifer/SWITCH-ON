@@ -8,14 +8,14 @@ using UnityEngine.SceneManagement;
 
 public class WorldManager : MonoBehaviour {
 	/// <summary>
-	/// this class countain the world mithods and dialogs 
+	/// this class countain the world mithods and dialogncs 
 	/// </summary>
 
 	//if the vareble or method didn't appear on unity use [System.Serializable]
 	//doors button 
 	public Button level01Button,level02Button, level03Button, level04Button, level05Button, level06Button;
 	//locked doors
-	public Image Image02, Image03, Image04, Image05, Image06;
+	public Image Image02, Image03, Image04, Image05, Image06, charcter1,charcter2;
 	//doors changes
 	public Sprite win, close;
 	bool nextavi=true;
@@ -45,6 +45,8 @@ public class WorldManager : MonoBehaviour {
 		totalScore.text=getTotalScore().ToString();
 		levelsmanger=new LevelManger();
 		playbtn.onClick.AddListener(loudlevel);
+
+
 		//firsttime = SetGetName.firsttime ();
 
 			//instructionfirsttime ();
@@ -76,6 +78,8 @@ public class WorldManager : MonoBehaviour {
 			level02Button.image.overrideSprite = win;
 			goto case 1;
 		case 1:
+			charcter1.enabled = false;
+
 			Image02.enabled = false;
 			level01Button.image.overrideSprite = win;
 			break;
