@@ -28,7 +28,6 @@ public class BoxControl: MonoBehaviour
 		//GameObject.Find("manger");
 		levelmanger = GameObject.Find("manger").GetComponent<level3manger> ();
 		startTime = Time.time;
-		journeyLength = Vector3.Distance (insaideobj.transform.position, new Vector3 (insaideobj.transform.position.x, insaideobj.transform.position.y + 0.03f, insaideobj.transform.position.z));
 	}
 	// Update is called once per frame
 	void Update ()
@@ -64,6 +63,7 @@ public class BoxControl: MonoBehaviour
 
 	private void changepos (int upordown)
 	{//1for up -1 for down 
+		journeyLength = Vector3.Distance (insaideobj.transform.position, new Vector3 (insaideobj.transform.position.x, insaideobj.transform.position.y + 0.03f, insaideobj.transform.position.z));
 		float distCovered = (Time.time - startTime) * speed;
 		float fracJourney = distCovered / journeyLength;
 		switch (upordown) {
