@@ -12,19 +12,45 @@ public class SetGetName : MonoBehaviour {
 	public GameObject nameDialouge;
 	public GameObject welcomeDialouge;
 	public GameObject welcomeBack;
+	public GameObject instruction;
+
+
+	//static bool firsttime;
+
+	private string[] names = new string[] { "Peter", "Ron", "Satchmo", "Iron-Cut", "Titanium", "Lightning", "Kevlar", "Rex", "Falcon", "Switch on player" };
 
 	public void setget () {
-		//to save the written name into playerprefs
-		SetUsername(nameFeild.text);
-		PlayerPrefs.Save();
+		if (nameFeild.text == "") {
 
+			randomName ();
+
+		}
+			//Debug.Log ("field is empty");
+		//to save the written name into playerprefs
+		else {
+			SetUsername (nameFeild.text);
+			PlayerPrefs.Save ();
 		//to display user in the next welcome dialouge 
 		dispname.text = nameFeild.text;
+		}//end else
+
 		WelcomeDialouge (true);
 	}
 
+
+	public void randomName(){
+		//dispname.text = "switch on player";
+		string nameGenerated=names[Random.Range(0, names.Length)];
+		dispname.text =nameGenerated;
+		SetUsername (nameGenerated);
+		PlayerPrefs.Save ();
+	
+	}
+
+
 	public void disapearDialouge(bool show){
 		nameDialouge.SetActive(show);
+		instructionfirsttime ();
 
 	}
 	public void WelcomeDialouge(bool show){
@@ -49,9 +75,12 @@ public class SetGetName : MonoBehaviour {
 	}
 
 	void Start (){
-		if (firsttime()) {
+		if (firstTime()) {
 			//if first time open app show enter username dialouge
 			disapearDialouge (true);
+			//if (nameDialouge.activeInHierarchy == false && welcomeDialouge.activeInHierarchy == false) {
+
+			
 		} else {
 			//to show welcome back dialouge & hide it after view of seconds 
 			dispname2.text = GetUsername ();
@@ -71,16 +100,35 @@ public class SetGetName : MonoBehaviour {
 			timer += Time.deltaTime;    
 			if (timer >= 2) {
 				welcomeDialouge.SetActive (false);
+			
 
 			}
-
 		}
 
+
 	}
-	public static bool firsttime(){
+	public static bool firstTime(){
 		if (!PlayerPrefs.HasKey("Username")) {
 			return true;
 		}
 		return false;
 	}
+
+
+	public void instructionfirsttime(){
+		//after closing welcome dialogs 
+
+		if (firstTime()) {
+			//ShowInstruction (true,0f);
+			StartCoroutine (ShowInstruction (true, 0f));
+			StartCoroutine (ShowInstruction (false, 16f));
+		}
+	}//END METHOD
+
+	IEnumerator ShowInstruction(bool show,float delayTime){
+		yield return new WaitForSeconds(delayTime);
+		instruction.SetActive (show); 
+
+	}
+
 }

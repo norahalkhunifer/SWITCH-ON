@@ -8,18 +8,17 @@ using UnityEngine.SceneManagement;
 
 public class WorldManager : MonoBehaviour {
 	/// <summary>
-	/// this class countain the world mithods and dialogs 
+	/// this class countain the world mithods and dialogncs 
 	/// </summary>
 
 	//if the vareble or method didn't appear on unity use [System.Serializable]
 	//doors button 
 	public Button level01Button,level02Button, level03Button, level04Button, level05Button, level06Button;
 	//locked doors
-	public Image Image02, Image03, Image04, Image05, Image06;
+	public Image Image02, Image03, Image04, Image05, Image06, charcter1,charcter2;
 	//doors changes
 	public Sprite win, close;
 	bool nextavi=true;
-	public GameObject instruction;
 	int levelPassed;
 	public Animator shaking;
 	public Text totalScore;
@@ -28,14 +27,16 @@ public class WorldManager : MonoBehaviour {
 	LevelManger levelsmanger;
     int leveltopscore;
 	string leveltime;
-	public GameObject levelDetails;
+	public GameObject levelDetailsY , levelDetailsG;
+
+
+
 	public Text scoreText;
 	public Text timeText;
 	public Text levelnumber;
 	int clevel=-1;
 	public Button playbtn;
 	bool dialogactive=false;
-	static bool firsttime;
 
 	//do once in the bigining 
 	void Start(){
@@ -44,9 +45,13 @@ public class WorldManager : MonoBehaviour {
 		totalScore.text=getTotalScore().ToString();
 		levelsmanger=new LevelManger();
 		playbtn.onClick.AddListener(loudlevel);
-		firsttime = SetGetName.firsttime ();
-		instructionfirsttime ();
-		
+
+
+		//firsttime = SetGetName.firsttime ();
+
+			//instructionfirsttime ();
+
+
 		//get the last passed level from playerprefs
 		levelPassed = PlayerPrefs.GetInt ("LevelPassed");
 		//to change doors images depend on last passed level
@@ -73,6 +78,8 @@ public class WorldManager : MonoBehaviour {
 			level02Button.image.overrideSprite = win;
 			goto case 1;
 		case 1:
+			charcter1.enabled = false;
+
 			Image02.enabled = false;
 			level01Button.image.overrideSprite = win;
 			break;
@@ -134,17 +141,33 @@ public class WorldManager : MonoBehaviour {
 
 	}
 	public void leveldetails(int levelnum){
+
 		clevel = levelnum;
-		levelDetails.SetActive (true);
 		leveltopscore = levelsmanger.getTopScore (levelnum);
-		leveltime=levelsmanger.getTime (levelnum);
+		leveltime = levelsmanger.getTime (levelnum);
+
+		if(leveltopscore==0 && leveltime=="0"){
+		levelDetailsY.SetActive (true);
+	}//end if 
+
+	else{
+			levelDetailsG.SetActive (true);
+
+	}
+	
+
 		scoreText.text=leveltopscore.ToString();
 		timeText.text=leveltime;
+		//may                  .ToString()
 		levelnumber.text = levelnum.ToString();
 	}
+
+
 	public void closeLevelDetails() {
 		clevel = -1;
-		levelDetails.SetActive (false); 
+		levelDetailsY.SetActive (false); 
+		levelDetailsG.SetActive (false); 
+
 	}
 	//method for test the system 
 	public void reset(){
@@ -160,19 +183,5 @@ public class WorldManager : MonoBehaviour {
 		levelsmanger.LoudLevel (clevel);
 	}
 
-	void instructionfirsttime(){
-		//after closing welcome dialogs 
-		if (firsttime) {
-			//ShowInstruction (true,0f);
-			StartCoroutine (ShowInstruction (true, 0f));
-			StartCoroutine (ShowInstruction (false, 20f));
-		}
-	}
-
-	IEnumerator ShowInstruction(bool show,float delayTime){
-		yield return new WaitForSeconds(delayTime);
-		instruction.SetActive (show); 
-
-	}
 
 }

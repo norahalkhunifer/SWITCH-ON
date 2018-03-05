@@ -26,7 +26,7 @@ public class ThenderDisable : MonoBehaviour {
 	public Text scoreTextWin;
 	public Resume_Paused resume;
 	public instruction instruc;
-	private LevelManger levelmanger;
+public LevelManger levelmanger;
 
 	private int score=0;
 
@@ -37,6 +37,7 @@ public class ThenderDisable : MonoBehaviour {
 		scoreText.text = score.ToString ();
 		finalScore.text=score.ToString();
 		scoreTextWin.text=score.ToString();
+		//topScore= GetComponent<LevelManger>();
 
 	}
 
@@ -161,7 +162,6 @@ public class ThenderDisable : MonoBehaviour {
 			instruc.enabled = false;
 			finalScore.text=score.ToString();
 			scoreTextWin.text=score.ToString();
-			topScore.text=levelmanger.getTopScore (1).ToString();
 			gameWin.SetActive (true);
 			back.SetActive (true);
 			script.enabled = false;
@@ -171,6 +171,8 @@ public class ThenderDisable : MonoBehaviour {
 			resume.enabled = false;
 			string winT=timer.finalTimerWin.ToString();
 			levelmanger.win (1,score , winT);
+			topScore.text=levelmanger.getTopScore (1).ToString();
+
 
 		}	
 	}

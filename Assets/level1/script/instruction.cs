@@ -9,10 +9,10 @@ public class instruction : MonoBehaviour {
 	public AccelerationControlScript grass;
 	public GameObject jumpDilog ;
 	public TimeText time;
-	//public GameObject resume;
+	public Resume_Paused resume;
 
 	public GameObject ins ;
-	//public GameObject home ;
+	public Exit home ;
 
 	// Use this for initialization
 	void Start () {
@@ -21,8 +21,8 @@ public class instruction : MonoBehaviour {
 		time.enabled= false;
 		grass.enabled = false;
 		jumpDilog.SetActive (false);
-		//resume.SetActive (true);
-		//home.SetActive (true);
+		resume.enabled =true;
+		home.enabled =true;
 
 	}
 	
