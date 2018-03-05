@@ -39,8 +39,6 @@ public class level3manger : MonoBehaviour
 			placeRandomobj (box);
 			//Instantiate (RandomGenrator.placeRandomobj(),box.transform.position,box.transform.rotation,box.transform);
 		}
-		GameObject newObject = Instantiate (random [1], new Vector3 (1f,1f,1f ),Quaternion.Euler(new Vector3 (0,0,0 )));//as GameObject;
-		newObject.transform.localScale = new Vector3 (0.1f, 0.1f, 0.1f);
 		setScore ();
 	}
 	//to place objects insaid boxws 
