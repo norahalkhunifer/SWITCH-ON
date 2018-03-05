@@ -1,9 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-//using UnityEditor;
+using UnityEditor;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using UnityEngine.Networking;
 
 public class level3manger : MonoBehaviour
 {
@@ -25,6 +26,7 @@ public class level3manger : MonoBehaviour
 	public float timelimitbysec;
 	public Text score;
 	private int scorenum=0;
+	NetworkClient myClient;
 
 	//instruction
 	public GameObject instructionpanle;
@@ -34,14 +36,27 @@ public class level3manger : MonoBehaviour
 		//start timer depend on the complexity 
 		timer = Time.time + timelimitbysec;
 		randomthingsrepet = new int[random.Length];
+		SetupClient ();
 		//add all boxes to array why ? couse they will have same index as there random object insaide 
 		foreach (GameObject box in boxes) {
 			placeRandomobj (box);
 			//Instantiate (RandomGenrator.placeRandomobj(),box.transform.position,box.transform.rotation,box.transform);
 		}
-		GameObject newObject = Instantiate (random [1], new Vector3 (1f,1f,1f ),Quaternion.Euler(new Vector3 (0,0,0 )));//as GameObject;
-		newObject.transform.localScale = new Vector3 (0.1f, 0.1f, 0.1f);
 		setScore ();
+	}
+	public void SetupClient()
+	{
+		for(int i=0;i<random.Length;i++)
+			ClientScene.RegisterPrefab(random[i]);
+
+		myClient = new NetworkClient();
+
+		myClient.RegisterHandler(MsgType.Connect, OnConnected);
+		myClient.Connect("127.0.0.1", 4444);
+	}
+	void OnConnected(NetworkMessage netMsg)
+	{
+		Debug.Log("Client connected");
 	}
 	//to place objects insaid boxws 
 	public void placeRandomobj (GameObject box)
@@ -50,9 +65,12 @@ public class level3manger : MonoBehaviour
 		//to be fair check if it not od or not all have same object 
 		if (randomthingsrepet [randomInt] % 2 != 0 || (randomthingsrepet [randomInt] < (size / 2))) {
 			Vector3 newpos = new Vector3 (box.transform.position.x, box.transform.position.y + 0.05f, box.transform.position.z);
-			GameObject newObject = Instantiate (random [randomInt],newpos, box.transform.rotation, box.transform)as GameObject;
+			GameObject newObject = (GameObject)Instantiate (random [randomInt],newpos, box.transform.rotation, box.transform)as GameObject;
 			if(newObject)
 			newObject.transform.localScale = new Vector3 (0.007f, 0.007f, 0.007f);// (box.transform.localScale.x-1f, box.transform.localScale.y-1f, box.transform.localScale.z-1f);//(0.005f, 0.005f, 0.005f);// // change its local scale in x y z format
+			#if UNITY_EDITOR
+			UnityEditor.Selection.activeObject = newObject;
+			#endif
 			randomthingsrepet [randomInt] += 1;
 			box.GetComponent<BoxControl> ().insaideobj = newObject;
 		} else
