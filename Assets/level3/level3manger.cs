@@ -33,6 +33,7 @@ public class level3manger : MonoBehaviour
 	// Use this for initialization
 	void Start ()
 	{
+		Resources.Load ("Assets\\Level3\\randoms");
 		//start timer depend on the complexity 
 		timer = Time.time + timelimitbysec;
 		randomthingsrepet = new int[random.Length];
@@ -71,6 +72,8 @@ public class level3manger : MonoBehaviour
 			#if UNITY_EDITOR
 			UnityEditor.Selection.activeObject = newObject;
 			#endif
+			//newObject.AddComponent<>();
+			NetworkServer.Spawn (newObject);
 			randomthingsrepet [randomInt] += 1;
 			box.GetComponent<BoxControl> ().insaideobj = newObject;
 		} else
