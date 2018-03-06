@@ -2527,8 +2527,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   charcter1: {fileID: 1676353957}
   charcter2: {fileID: 459645539}
+  help: {fileID: 1339775622}
   RedChar: {fileID: 1005399044}
   BlueChar: {fileID: 2080801120}
+  closed: {fileID: 1796650591}
+  start: {fileID: 2141806253}
 --- !u!4 &778974390
 Transform:
   m_ObjectHideFlags: 0

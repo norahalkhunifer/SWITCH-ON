@@ -4,9 +4,10 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class settingManger : MonoBehaviour {
-	public GameObject charcter1, charcter2;
+	public GameObject charcter1, charcter2, help;
 	public Button RedChar, BlueChar;
 	 WorldManager manger;
+	public Image closed, start;
 
 	public void Start(){
 		manger= GameObject.Find("worlds manger").GetComponent<WorldManager> ();
@@ -55,7 +56,7 @@ public class settingManger : MonoBehaviour {
 			swapToRed ();
 
 	}
-	/*public void showinst(Animator anim){
+	public void showinst(Animator anim){
 		manger.closesettings (anim);
 
 		StartCoroutine (ShowInstruction (true, 0f));
@@ -64,8 +65,13 @@ public class settingManger : MonoBehaviour {
 
 	IEnumerator ShowInstruction(bool show,float delayTime){
 		yield return new WaitForSeconds(delayTime);
-		instruction.SetActive (show); 
-	}*/
+
+		//closed.enabled = false;
+		//start.enabled = false;
+		help.SetActive (show); 
+		//closed.GetComponent<Text>().enabled = false;
+	
+	}
 }
 
 
