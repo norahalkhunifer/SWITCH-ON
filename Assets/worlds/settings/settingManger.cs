@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-
 public class settingManger : MonoBehaviour {
 	public GameObject charcter1, charcter2;
 	public Button RedChar, BlueChar;
 	 WorldManager manger;
+
 	public void Start(){
 		manger= GameObject.Find("worlds manger").GetComponent<WorldManager> ();
+
 
 	}
 	public void ContactUs()
@@ -54,9 +55,17 @@ public class settingManger : MonoBehaviour {
 			swapToRed ();
 
 	}
-	public void showinst(Animator anim){
+	/*public void showinst(Animator anim){
 		manger.closesettings (anim);
-		//manger.in
+
+		StartCoroutine (ShowInstruction (true, 0f));
+		StartCoroutine (ShowInstruction (false, 10f));
 	}
-	 }
+
+	IEnumerator ShowInstruction(bool show,float delayTime){
+		yield return new WaitForSeconds(delayTime);
+		instruction.SetActive (show); 
+	}*/
+}
+
 
