@@ -13,7 +13,7 @@ public class WorldManager : MonoBehaviour {
 
 	//if the vareble or method didn't appear on unity use [System.Serializable]
 	//doors button 
-	public Button level01Button,level02Button, level03Button, level04Button, level05Button, level06Button, RedChar, BlueChar;
+	public Button level01Button,level02Button, level03Button, level04Button, level05Button, level06Button;
 	//locked doors
 	public Image Image02, Image03, Image04, Image05, Image06;
 	//doors changes
@@ -27,9 +27,8 @@ public class WorldManager : MonoBehaviour {
 	LevelManger levelsmanger;
     int leveltopscore;
 	string leveltime;
-	public GameObject levelDetailsY , levelDetailsG, charcter1, charcter2;
-
-
+	public GameObject levelDetailsY, levelDetailsG;
+	public settingManger setting;
 
 	public Text scoreText;
 	public Text timeText;
@@ -44,6 +43,7 @@ public class WorldManager : MonoBehaviour {
 		//get total score 
 		totalScore.text=getTotalScore().ToString();
 		levelsmanger=new LevelManger();
+		setting = GameObject.Find("setting manger").GetComponent<settingManger> ();
 		playbtn.onClick.AddListener(loudlevel);
 
 
@@ -82,6 +82,7 @@ public class WorldManager : MonoBehaviour {
 			level01Button.image.overrideSprite = win;
 			break;
 		}
+		setting.getCapeColor ();
 	}
 
 	void Update(){
@@ -182,20 +183,7 @@ public class WorldManager : MonoBehaviour {
 	}
 
 	//method to change red cape to blue
-	public void swapToBlue(){
 
-		charcter1.SetActive (true);
-		charcter2.SetActive (false);
-
-	}
-
-	//method to change blue cape to red
-	public void swapToRed(){
-
-		charcter2.SetActive (true);
-		charcter1.SetActive (false);
-
-	}
 	 }
 
 
