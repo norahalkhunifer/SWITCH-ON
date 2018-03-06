@@ -13,7 +13,7 @@ public class GameTimer: MonoBehaviour {
 
 		int seconds = (int)(Timer % 60);
 		int minutes = (int)(Timer / 60) % 60;
-		int hours = (int)(Timer / 3600) % 24;
+//		int hours = (int)(Timer / 3600) % 24;
 
 		string timerString = string.Format("{0}:{1}",minutes,seconds);
 

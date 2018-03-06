@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEditor;
+//using UnityEditor;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using UnityEngine.Networking;
@@ -33,7 +33,7 @@ public class level3manger : MonoBehaviour
 	// Use this for initialization
 	void Start ()
 	{
-		Resources.Load ("Assets\\Level3\\randoms");
+		Resources.Load ("Assets\\Level3\\randoms\\Football");
 		//start timer depend on the complexity 
 		timer = Time.time + timelimitbysec;
 		randomthingsrepet = new int[random.Length];
