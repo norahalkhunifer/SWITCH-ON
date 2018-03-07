@@ -8,6 +8,7 @@ public class settingManger : MonoBehaviour {
 	public Button RedChar, BlueChar;
 	 WorldManager manger;
 	public Image closed, start;
+	GameObject text1, text2;
 
 	public void Start(){
 		manger= GameObject.Find("worlds manger").GetComponent<WorldManager> ();
@@ -66,10 +67,19 @@ public class settingManger : MonoBehaviour {
 	IEnumerator ShowInstruction(bool show,float delayTime){
 		yield return new WaitForSeconds(delayTime);
 
-		//closed.enabled = false;
-		//start.enabled = false;
+
 		help.SetActive (show); 
-		//closed.GetComponent<Text>().enabled = false;
+
+		closed.enabled = false;
+		start.enabled = false;
+
+		text1 = GameObject.Find ("Text1");
+		text1.GetComponent<Text>().enabled = false;
+
+		text2 = GameObject.Find ("Text2");
+		text2.GetComponent<Text>().enabled = false;
+
+
 	
 	}
 }
