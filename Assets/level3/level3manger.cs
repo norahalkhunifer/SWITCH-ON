@@ -33,6 +33,7 @@ public class level3manger : MonoBehaviour
 
 	//instruction dialog 
 	public GameObject instructionpanle;
+	private float insttimer=0f;
 	//exit dialog
 	public GameObject exitD;
 	public GameObject panleOncamera;
@@ -57,6 +58,7 @@ public class level3manger : MonoBehaviour
 		foreach (GameObject box in boxes) {
 			placeRandomobj (box);
 		}
+		Showinstruction (true);
 		setScore ();
 	}
 	public void SetupClient()
@@ -107,12 +109,17 @@ public class level3manger : MonoBehaviour
 	{//time decreasing 
 		//if inst +pause+home not active 
 		//+stop if win or lose 
-		Timedecrising();
 		if (paused) {
 			Time.timeScale = 0;
 		} else if (!paused) {
 			Time.timeScale = 1;
 		}
+		insttimer += Time.deltaTime;    
+		if (insttimer >= 4) {
+			Showinstruction (false);
+			Timedecrising();
+		}
+
 
 
 	}
@@ -121,8 +128,7 @@ public class level3manger : MonoBehaviour
 		string min = ((int)t / 60).ToString ();
 		string sec = ((int)t % 60).ToString ();
 		if (t <= 0) {//if time is up 
-			time.text = "0:15";//game end 
-			//home ();
+			timeend();
 		} else//we can change it to red if its close to end by 5 or 10 sec 
 			time.text = min + ":" + sec;
 	}
@@ -176,10 +182,11 @@ public class level3manger : MonoBehaviour
 		currentboxes [0].mached ();
 		currentboxes [1].mached ();
 		size--;
-		debugbox.text= "YaaY you match 2 boxes ";
+		debugbox.text= "YaaY";
+		//play yay sound 
 		addscore (4);
 		if (size == 0)
-			GameEnd ();
+			GameEnd (true);
 	}
 
 	public void BoxesNotMatching ()
@@ -202,9 +209,12 @@ public class level3manger : MonoBehaviour
 	currentboxes [1] = null;
 	}
 
-	public void timelimit ()
+	public void timeend ()
 	{
-
+		if (size == 0)
+			GameEnd (true);
+		else
+			GameEnd (false);
 
 	}
 	public void addscore (int addedscore)
@@ -216,10 +226,15 @@ public class level3manger : MonoBehaviour
 		score.text = scorenum.ToString ();
 	}
 
-	void GameEnd ()
+	void GameEnd (bool win)
 	{
-		//check wining or loosing
-		debugbox.text=  "tries: " + nroftries;
+		activateGray (true);
+		
+		if (win) {
+			debugbox.text = "tries: " + nroftries;
+		} else {
+			debugbox.text = "you lost";
+		}
 	}
 
 	public void save (int winscore)
@@ -235,13 +250,21 @@ public class level3manger : MonoBehaviour
 	{
 		exitD.SetActive(open);
 		paused = open;
+		activateGray (open);
+	}
+	 void activateGray (bool open)
+	{
 		panleOncamera.SetActive (open);
-		//SceneManager.LoadScene ("world");
 	}
 	public void closeLevel ()
 	{
 		levelmanger.LoudHome ();
 	}
+    void Showinstruction (bool show)
+	{
+		instructionpanle.SetActive (show);
+	}
+
 
 
 
