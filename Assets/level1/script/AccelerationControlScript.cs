@@ -21,7 +21,7 @@ public class AccelerationControlScript : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		//read the shake of phone
-		accelerationDir = Input.acceleration;
+		accelerationDir = new Vector3(Input.acceleration.x,0,0);
 		//this time betwwen two grass
 		timePassed += Time.deltaTime; 
 		timer+= Time.deltaTime; 
