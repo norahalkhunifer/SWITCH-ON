@@ -80,14 +80,4 @@ public class BoxControl: MonoBehaviour
 		return isopen;
 	}
 
-	public void setbumb ()
-	{
-		//StartCoroutine("Bumb");
-	}
-
-	IEnumerator Bumb ()
-	{
-		yield return new WaitForSeconds (.5f);
-		//Destroy(gameObject);
-	}
 }
