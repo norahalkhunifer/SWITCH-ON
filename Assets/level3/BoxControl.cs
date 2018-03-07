@@ -7,7 +7,6 @@ using UnityEngine.EventSystems;
 [RequireComponent (typeof(AudioSource))]
 public class BoxControl: MonoBehaviour
 {
-
 	private Animation opining;
 	private bool isopen = false;
 	public static Ray ray;
@@ -25,7 +24,6 @@ public class BoxControl: MonoBehaviour
 	void Start ()
 	{
 		opining = GetComponent<Animation> ();
-		//GameObject.Find("manger");
 		levelmanger = GameObject.Find("manger").GetComponent<level3manger> ();
 	    audio = GetComponent<AudioSource> ();
 		startTime = Time.time;
@@ -48,23 +46,18 @@ public class BoxControl: MonoBehaviour
 		levelmanger.CheckBoxes (this);
 	}
 
-	public void closeit (/* box number !*/)
+	public void closeit ()
 	{
 		changepos (-1);
 		opining.Play ("box_close");
 		audio.Play ();
-		//opining.Stop ();
 		isopen = false;
 	}
 
 	public void mached ()
 	{
-		//insaideobj.SetActive(false);
-		insaideobj=null;
-		//Destroy (insaideobj);
-		closeit ();
-		//and i will but an empty one 
-		//if get the cads match it 
+		Destroy (insaideobj);
+		//closeit ();
 	}
 
 	private void changepos (int upordown)
