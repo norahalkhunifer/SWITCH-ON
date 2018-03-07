@@ -44,7 +44,7 @@ public class WorldManager : MonoBehaviour {
 		totalScore.text=getTotalScore().ToString();
 		levelsmanger=new LevelManger();
 		setting = GameObject.Find("setting manger").GetComponent<settingManger> ();
-		playbtn.onClick.AddListener(loudlevel);
+		//playbtn.onClick.AddListener(loudlevel);
 
 
 		//firsttime = SetGetName.firsttime ();
@@ -180,9 +180,9 @@ public class WorldManager : MonoBehaviour {
 	public void setTotalScore(int totalscore){
 		PlayerPrefs.SetInt("TotalScore",totalscore);
 	}
-   void loudlevel(){
+   //void loudlevel(){
 		//levelsmanger.LoudLevel (clevel);
-	}
+	//}
 
 	//method to change red cape to blue
 
