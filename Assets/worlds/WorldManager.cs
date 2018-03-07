@@ -47,9 +47,6 @@ public class WorldManager : MonoBehaviour {
 		//playbtn.onClick.AddListener(loudlevel);
 
 
-		//firsttime = SetGetName.firsttime ();
-
-			//instructionfirsttime ();
 
 		//get the last passed level from playerprefs
 		levelPassed = PlayerPrefs.GetInt ("LevelPassed");
@@ -92,26 +89,32 @@ public class WorldManager : MonoBehaviour {
 	//to made animation between the world and level we use invoke("method",sf)
 	public void levelToLoad (int level)
 	{
+		//WE DON'T NEED IT , I PUT IT WITH LEVELDETAILS METHOD
+
 		//loud the level dialog 
-		if (level - 1 <= levelPassed && !dialogactive) {
+		//if (level - 1 <= levelPassed && !dialogactive ) { 
 			leveldetails (level);
 			levelsmanger.LoudLevel (level);
+		//}
 
-		} else if (dialogactive) {
+		//} else if (dialogactive) {
 			//if dailog is already open 
-		}
-		else {
-			shakeworld ();
-		}
+		//}
+		//else {
+			//shakeworld ();
+		//}
 
 	}
+
 	//settings page animations 
 	public void opensettings(Animator anim){
 			anim.SetBool ("settings", true);
 			}
+
 	public void closesettings(Animator anim){
 		anim.SetBool ("settings", false);
 	}
+
     //world animations 
 	public void next(Animator anim){
 		if (nextavi) {
@@ -120,6 +123,7 @@ public class WorldManager : MonoBehaviour {
 		}
 
 			}
+
 	//slide to previos world
 	public void previos(Animator anim){
 		if (!nextavi) {
@@ -127,6 +131,7 @@ public class WorldManager : MonoBehaviour {
 			nextavi = true;
 		}
 	}
+
 	public void shakeworld(){
 		
 		shaking.SetBool ("shake", true);
@@ -142,26 +147,40 @@ public class WorldManager : MonoBehaviour {
 
 	}
 	public void leveldetails(int levelnum){
+		//if (level - 1 <= levelPassed && !dialogactive) {}else {  shakeworld ();  }    LOGIC 
+		if (levelnum - 1 <= levelPassed && !dialogactive) {
 
-		clevel = levelnum;
-		leveltopscore = levelsmanger.getTopScore (levelnum);
-		leveltime = levelsmanger.getTime (levelnum);
+			clevel = levelnum;
+			leveltopscore = levelsmanger.getTopScore (levelnum);
+			leveltime = levelsmanger.getTime (levelnum);
 
-		if(leveltopscore==0 && leveltime=="0"){
-		levelDetailsY.SetActive (true);
-	}//end if 
+			if (leveltopscore == 0 && leveltime == "0") {
+				levelDetailsY.SetActive (true);
+			}//end if 
 
-	else{
-			levelDetailsG.SetActive (true);
+	else {
+				levelDetailsG.SetActive (true);
 
-	}
+			}
 	
 
-		scoreText.text=leveltopscore.ToString();
-		timeText.text=leveltime;
-		//may                  .ToString()
-		levelnumber.text = levelnum.ToString();
+			scoreText.text = leveltopscore.ToString ();
+			timeText.text = leveltime;
+			//may                  .ToString()
+			levelnumber.text = levelnum.ToString ();
+
+		}
+
+
+		else {  
+			shakeworld ();  
+		}
+
+
+
 	}
+	/// Closes the level details.
+
 
 
 	public void closeLevelDetails() {
