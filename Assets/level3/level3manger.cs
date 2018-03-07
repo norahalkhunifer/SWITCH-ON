@@ -1,14 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-//using UnityEditor;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using UnityEngine.Networking;
 
 public class level3manger : MonoBehaviour
 {
-
 	public List<GameObject> boxes = new List<GameObject> ();
 	//array used to keep track of boxes objects
 	public GameObject[] random;
@@ -34,10 +32,11 @@ public class level3manger : MonoBehaviour
 	void Start ()
 	{
 		Resources.Load ("Assets\\Level3\\randoms\\Football");
+		SetupClient ();
+
 		//start timer depend on the complexity 
 		timer = Time.time + timelimitbysec;
 		randomthingsrepet = new int[random.Length];
-		SetupClient ();
 		//add all boxes to array why ? couse they will have same index as there random object insaide 
 		foreach (GameObject box in boxes) {
 			placeRandomobj (box);
@@ -109,7 +108,7 @@ public class level3manger : MonoBehaviour
 		//check if there is more than 2 are open if yes then colse them thin opent the tutched one 
 		if (current != null) {
 			if (current.isOpen ()) {
-				//current.closeit ();
+				//current.closeit ();//its alredy open 
 			} else {
 				current.openit ();
 
@@ -121,8 +120,9 @@ public class level3manger : MonoBehaviour
 	//check if there is 2 opened before
 	public void CheckBoxes (BoxControl bc)
 	{
+		if(bc==null)Debug.Log("null box");
+			
 		//PrefabUtility.GetPrefabParent(gameObject) == null && PrefabUtility.GetPrefabObject(go) != null; // Is a prefab
-
 		if (currentboxes [0] == null && bc!=currentboxes [0])
 			currentboxes [0] = bc;
 		else {
@@ -137,8 +137,9 @@ public class level3manger : MonoBehaviour
 			else
 				BoxesNotMatching ();
 
-			currentboxes [0] = null;
-			currentboxes [1] = null;
+			StartCoroutine("emptyCurrentBoxes");
+
+
 		}
 	}
 
@@ -147,18 +148,30 @@ public class level3manger : MonoBehaviour
 		currentboxes [0].mached ();
 		currentboxes [1].mached ();
 		size--;
-		debugbox.text= "metion compleat";
+		debugbox.text= "YaaY you match 2 boxes ";
 		addscore (4);
-		BoxesNotMatching ();
 		if (size == 0)
 			GameEnd ();
 	}
 
 	public void BoxesNotMatching ()
 	{
+		StartCoroutine("closeCurrentBoxes");
+		//closeCurrentBoxes();
+	}
 
+	IEnumerator closeCurrentBoxes()
+	{
+		yield return new WaitForSeconds(2);
 		currentboxes [0].closeit ();
 		currentboxes [1].closeit ();
+	}
+	IEnumerator emptyCurrentBoxes()
+	{
+		yield return new WaitForSeconds(2);
+
+	currentboxes [0] = null;
+	currentboxes [1] = null;
 	}
 
 	public void timelimit ()

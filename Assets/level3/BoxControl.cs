@@ -19,15 +19,18 @@ public class BoxControl: MonoBehaviour
 	private float speed = 0.7f;
 	private float startTime;
 	private float journeyLength;
+	AudioSource audio;
 	// Use this for initialization
 	//Awake
 	void Start ()
 	{
-
 		opining = GetComponent<Animation> ();
 		//GameObject.Find("manger");
 		levelmanger = GameObject.Find("manger").GetComponent<level3manger> ();
+	    audio = GetComponent<AudioSource> ();
 		startTime = Time.time;
+		journeyLength = Vector3.Distance (insaideobj.transform.position, new Vector3 (insaideobj.transform.position.x, insaideobj.transform.position.y + 0.3f, insaideobj.transform.position.z));
+
 	}
 	// Update is called once per frame
 	void Update ()
@@ -39,7 +42,6 @@ public class BoxControl: MonoBehaviour
 		//animation.CrossFade ("walk");
 		opining.Play ("box_open");
 		isopen = true;
-		AudioSource audio = GetComponent<AudioSource> ();
 		audio.Play ();
 		//	insaideobj.transform.position = new Vector3 ();
 		changepos (1);
@@ -50,30 +52,32 @@ public class BoxControl: MonoBehaviour
 	{
 		changepos (-1);
 		opining.Play ("box_close");
+		audio.Play ();
 		//opining.Stop ();
 		isopen = false;
 	}
 
 	public void mached ()
 	{
-		print ("matchyaay");
-		Destroy (insaideobj);
+		//insaideobj.SetActive(false);
+		insaideobj=null;
+		//Destroy (insaideobj);
+		closeit ();
+		//and i will but an empty one 
 		//if get the cads match it 
 	}
 
 	private void changepos (int upordown)
 	{//1for up -1 for down 
-		journeyLength = Vector3.Distance (insaideobj.transform.position, new Vector3 (insaideobj.transform.position.x, insaideobj.transform.position.y + 0.03f, insaideobj.transform.position.z));
 		float distCovered = (Time.time - startTime) * speed;
 		float fracJourney = distCovered / journeyLength;
 		switch (upordown) {
 		case 1:
-			//insaideobj.transform.position = Vector3.Lerp (insaideobj.transform.position, new Vector3 (insaideobj.transform.position.x, insaideobj.transform.position.y + 0.01f, insaideobj.transform.position.z), fracJourney);
-			insaideobj.transform.position = Vector3.Lerp (insaideobj.transform.position, new Vector3 (insaideobj.transform.position.x, insaideobj.transform.position.y + 0.5f, insaideobj.transform.position.z), speed * Time.deltaTime); 
-			Debug.Log (insaideobj.transform.position);
+			insaideobj.transform.position = Vector3.Lerp (insaideobj.transform.position, new Vector3 (insaideobj.transform.position.x, insaideobj.transform.position.y + 0.3f, insaideobj.transform.position.z), fracJourney);
+			//insaideobj.transform.position = Vector3.Lerp (insaideobj.transform.position, new Vector3 (insaideobj.transform.position.x, insaideobj.transform.position.y + 0.5f, insaideobj.transform.position.z), speed * Time.deltaTime); 
 			break;
 		case -1:
-			insaideobj.transform.position = Vector3.Lerp (insaideobj.transform.position, new Vector3 (insaideobj.transform.position.x, insaideobj.transform.position.y - 0.01f, insaideobj.transform.position.z), fracJourney);
+			insaideobj.transform.position = Vector3.Lerp (insaideobj.transform.position, new Vector3 (insaideobj.transform.position.x, insaideobj.transform.position.y - 0.3f, insaideobj.transform.position.z), fracJourney);
 			break;
 		}
 	}
