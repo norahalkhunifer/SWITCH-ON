@@ -326,7 +326,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 17406927}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 320.3814, y: -0.8832092, z: -0.0000044483}
+  m_LocalPosition: {x: 320.3814, y: -0.88931274, z: -0.0000044483}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2130986473}
@@ -394,7 +394,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 55248051}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -7.1499634, y: 329.6235, z: 0}
+  m_LocalPosition: {x: -7.1499634, y: 329.76923, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1439512310}
@@ -495,7 +495,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 205
   DopplerLevel: 1
-  MinDistance: 1
+  MinDistance: 1.3856496
   MaxDistance: 500
   Pan2D: 0
   rolloffMode: 0
@@ -841,8 +841,8 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 342319878}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 282.5, y: 502, z: 0}
-  m_LocalScale: {x: 0.70625, y: 0.70625, z: 0.70625}
+  m_LocalPosition: {x: 283.5, y: 504, z: 0}
+  m_LocalScale: {x: 0.70875, y: 0.70875, z: 0.70875}
   m_Children:
   - {fileID: 1689493521}
   - {fileID: 55248052}
@@ -2208,7 +2208,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1032172409}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.0569458, y: -9.90979, z: 0}
+  m_LocalPosition: {x: 0.0569458, y: -9.914795, z: 0}
   m_LocalScale: {x: 0.40107095, y: 0.40107092, z: 0.40107092}
   m_Children: []
   m_Father: {fileID: 55248052}
@@ -2251,7 +2251,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Try to mach what's hidden in the treasure boxes
+  m_Text: 'Try to mach what''s hidden in the  boxes around you '
 --- !u!222 &1032172412
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2671,7 +2671,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1439512309}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.07244873, y: 152.94516, z: 0}
+  m_LocalPosition: {x: -0.07244873, y: 153.01437, z: 0}
   m_LocalScale: {x: 0.40107098, y: 0.40107098, z: 0.40107098}
   m_Children: []
   m_Father: {fileID: 55248052}
@@ -3044,16 +3044,16 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1617618471}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.0009765625, y: 581.6, z: 0}
+  m_LocalPosition: {x: -0.0009765625, y: 581.50006, z: 0}
   m_LocalScale: {x: 0.19679643, y: 0.17493095, z: 0.17493095}
   m_Children: []
   m_Father: {fileID: 342319882}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.00094604, y: 581.6}
-  m_SizeDelta: {x: 4065.1, y: 657}
+  m_AnchorMin: {x: 0, y: 0.8534063}
+  m_AnchorMax: {x: 1, y: 0.9318438}
+  m_AnchoredPosition: {x: -0.0009460449, y: 23.099976}
+  m_SizeDelta: {x: 3265.1, y: 546}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1617618473
 MonoBehaviour:
@@ -3197,7 +3197,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 640089965}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -16.025757, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -9.402854, y: 0, z: 0}
 --- !u!23 &1660351853
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -3483,7 +3483,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1689493520}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 9.617096, y: 667.2492, z: 0}
+  m_LocalPosition: {x: 9.617096, y: 667.53284, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1549975492}

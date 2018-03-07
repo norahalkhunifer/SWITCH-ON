@@ -108,10 +108,9 @@ public class level3manger : MonoBehaviour
 		//check if there is more than 2 are open if yes then colse them thin opent the tutched one 
 		if (current != null) {
 			if (current.isOpen ()) {
-				//current.closeit ();//its alredy open 
+				debugbox.text= "This box is already open!";
 			} else {
 				current.openit ();
-
 			}	
 		} else
 			print ("not box!");//message that says tuch me again!
@@ -120,8 +119,11 @@ public class level3manger : MonoBehaviour
 	//check if there is 2 opened before
 	public void CheckBoxes (BoxControl bc)
 	{
-		if(bc==null)Debug.Log("null box");
-			
+		//not executed 
+		if(bc.insaideobj==null) {
+			Debug.Log("null thing");
+			bc.closeit();
+		}
 		//PrefabUtility.GetPrefabParent(gameObject) == null && PrefabUtility.GetPrefabObject(go) != null; // Is a prefab
 		if (currentboxes [0] == null && bc!=currentboxes [0])
 			currentboxes [0] = bc;
