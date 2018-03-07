@@ -6,6 +6,8 @@ using UnityEngine.UI;
 public class SetGetName : MonoBehaviour {
 	float timer = 0f;
 	public InputField nameFeild;
+	public InputField changeNameFeild;
+
 	public Text dispname;
 	public Text dispname2;
 
@@ -15,11 +17,24 @@ public class SetGetName : MonoBehaviour {
 	public GameObject instruction;
 
 
-	public Image sittingButton;
-
 	//static bool firsttime;
 
 	private string[] names = new string[] { "Peter", "Ron", "Satchmo", "Iron-Cut", "Titanium", "Lightning", "Kevlar", "Rex", "Falcon", "Switch on player" };
+
+
+	public void changeName() {
+		
+		//Debug.Log ("field is empty");
+		//to save the written name into playerprefs
+
+		SetUsername (changeNameFeild.text);
+			PlayerPrefs.Save ();
+			//to display user in the next welcome dialouge 
+		dispname.text = changeNameFeild.text;
+	
+	}
+
+
 
 	public void setget () {
 		if (nameFeild.text == "") {
@@ -78,7 +93,6 @@ public class SetGetName : MonoBehaviour {
 
 	void Start (){
 	//	if (nameDialouge.activeInHierarchy == true && welcomeDialouge.activeInHierarchy == false  ) {
-			//sittingButton.enabled = false;
 
 		//}
 		if (firstTime()) {
@@ -91,7 +105,7 @@ public class SetGetName : MonoBehaviour {
 			//to show welcome back dialouge & hide it after view of seconds 
 			dispname2.text = GetUsername ();
 			StartCoroutine (ShowWelcome (true, 0f));
-			StartCoroutine (ShowWelcome (false, 7f));
+			StartCoroutine (ShowWelcome (false, 5f));
 		
 			}
 		}
