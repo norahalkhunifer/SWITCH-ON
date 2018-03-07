@@ -15,6 +15,8 @@ public class SetGetName : MonoBehaviour {
 	public GameObject instruction;
 
 
+	public Image sittingButton;
+
 	//static bool firsttime;
 
 	private string[] names = new string[] { "Peter", "Ron", "Satchmo", "Iron-Cut", "Titanium", "Lightning", "Kevlar", "Rex", "Falcon", "Switch on player" };
@@ -75,6 +77,10 @@ public class SetGetName : MonoBehaviour {
 	}
 
 	void Start (){
+	//	if (nameDialouge.activeInHierarchy == true && welcomeDialouge.activeInHierarchy == false  ) {
+			//sittingButton.enabled = false;
+
+		//}
 		if (firstTime()) {
 			//if first time open app show enter username dialouge
 			disapearDialouge (true);
