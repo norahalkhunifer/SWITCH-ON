@@ -95,6 +95,8 @@ public class WorldManager : MonoBehaviour {
 		//loud the level dialog 
 		if (level - 1 <= levelPassed && !dialogactive) {
 			leveldetails (level);
+			levelsmanger.LoudLevel (level);
+
 		} else if (dialogactive) {
 			//if dailog is already open 
 		}
@@ -178,8 +180,8 @@ public class WorldManager : MonoBehaviour {
 	public void setTotalScore(int totalscore){
 		PlayerPrefs.SetInt("TotalScore",totalscore);
 	}
-	void loudlevel(){
-		levelsmanger.LoudLevel (clevel);
+   void loudlevel(){
+		//levelsmanger.LoudLevel (clevel);
 	}
 
 	//method to change red cape to blue
