@@ -27,7 +27,7 @@ public class BattryShow : MonoBehaviour {
 	void Update () {
 		//read the jumping of phone
 
-		accelerationDir = Input.acceleration;
+		accelerationDir = new Vector3(0,Input.acceleration.y,0);
 		//this time betwwen two battry and jumping
 
 		timePassed += Time.deltaTime; 
