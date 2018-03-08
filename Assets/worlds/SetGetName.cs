@@ -15,6 +15,7 @@ public class SetGetName : MonoBehaviour {
 	public GameObject welcomeDialouge;
 	public GameObject welcomeBack;
 	public GameObject instruction;
+	public WorldManager worldObject;
 
 
 	public GameObject rightIcon;
@@ -24,38 +25,38 @@ public class SetGetName : MonoBehaviour {
 	private string[] names = new string[] { "Peter", "Ron", "Satchmo", "Iron-Cut", "Titanium", "Lightning", "Kevlar", "Rex", "Falcon", "Switch on player" };
 
 
+
+
 	public void changeName() {
 		
-		//Debug.Log ("field is empty");
-		//to save the written name into playerprefs
+		//check if the user click change without writing anythings 
+
 		if (changeNameFeild.text == "") {
 
 
 		} else {
 			SetUsername (changeNameFeild.text);
+			//to save the written name into playerprefs
 			PlayerPrefs.Save ();
 			//to display user in the next welcome dialouge 
 			dispname.text = changeNameFeild.text;
 
-
+			//right icon timer 
 			StartCoroutine (ShowRight (true, 0f));
 			StartCoroutine (ShowRight (false, 2f));
 		}
-			
-
 	}
+
 
 	IEnumerator ShowRight(bool show,float delayTime){
 		yield return new WaitForSeconds(delayTime);
 		rightIcon.SetActive(show); 
-
 	}
+
 
 	public void setget () {
 		if (nameFeild.text == "") {
-
 			randomName ();
-
 		}
 			//Debug.Log ("field is empty");
 		//to save the written name into playerprefs
@@ -70,6 +71,7 @@ public class SetGetName : MonoBehaviour {
 	}
 
 
+	//this method to generate random name from array of names
 	public void randomName(){
 		//dispname.text = "switch on player";
 		string nameGenerated=names[Random.Range(0, names.Length)];
@@ -79,12 +81,13 @@ public class SetGetName : MonoBehaviour {
 	
 	}
 
-
+	//right icon 
 	public void showRight(){
 		rightIcon.SetActive(true);
 
 	}
 
+	//this method to asking about the user name for the first time  
 	public void disapearDialouge(bool show){
 		nameDialouge.SetActive(show);
 		instructionfirsttime ();
@@ -118,7 +121,7 @@ public class SetGetName : MonoBehaviour {
 		if (firstTime()) {
 			//if first time open app show enter username dialouge
 			disapearDialouge (true);
-			//if (nameDialouge.activeInHierarchy == false && welcomeDialouge.activeInHierarchy == false) {
+		
 
 			
 		} else {
@@ -126,8 +129,15 @@ public class SetGetName : MonoBehaviour {
 			dispname2.text = GetUsername ();
 			StartCoroutine (ShowWelcome (true, 0f));
 			StartCoroutine (ShowWelcome (false, 5f));
-		
-			}
+		}
+
+
+		//if (welcomeBack.activeInHierarchy == true) {
+			//worldObject.enabled = false;
+		//} else {
+			//worldObject.enabled = true;
+
+		//}
 		}
 
 		
