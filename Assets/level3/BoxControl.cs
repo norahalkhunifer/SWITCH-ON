@@ -18,14 +18,14 @@ public class BoxControl: MonoBehaviour
 	private float speed = 0.7f;
 	private float startTime;
 	private float journeyLength;
-	AudioSource audio;
+	AudioSource boxAudio;
 	// Use this for initialization
 	//Awake
 	void Start ()
 	{
 		opining = GetComponent<Animation> ();
 		levelmanger = GameObject.Find("manger").GetComponent<level3manger> ();
-	    audio = GetComponent<AudioSource> ();
+		boxAudio = GetComponent<AudioSource> ();
 		startTime = Time.time;
 		journeyLength = Vector3.Distance (insaideobj.transform.position, new Vector3 (insaideobj.transform.position.x, insaideobj.transform.position.y + 0.3f, insaideobj.transform.position.z));
 
@@ -40,7 +40,7 @@ public class BoxControl: MonoBehaviour
 		//animation.CrossFade ("walk");
 		opining.Play ("box_open");
 		isopen = true;
-		audio.Play ();
+		boxAudio.Play ();
 		//	insaideobj.transform.position = new Vector3 ();
 		changepos (1);
 		levelmanger.CheckBoxes (this);
@@ -50,7 +50,7 @@ public class BoxControl: MonoBehaviour
 	{
 		changepos (-1);
 		opining.Play ("box_close");
-		audio.Play ();
+		boxAudio.Play ();
 		isopen = false;
 	}
 

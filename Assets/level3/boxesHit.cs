@@ -4,18 +4,14 @@ using UnityEngine.EventSystems;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.XR.iOS;
 
-namespace UnityEngine.XR.iOS
-{//change name
 	public class boxesHit : MonoBehaviour
 	{
 		public Transform m_HitTransform;
 		public static Ray ray;//this will be the ray that we cast from our touch into the scene
 		private static RaycastHit hit;
 		private static level3manger levelmanger; 
-		//public Text debugbox;
-
-
 
 		bool HitTestWithResultType (ARPoint point, ARHitTestResultType resultTypes)
 		{
@@ -59,13 +55,12 @@ namespace UnityEngine.XR.iOS
 		// Update is called once per frame
 		void Update () {
 			
-			if (Input.touchCount > 0) {
+			if (Input.touchCount > 0 &&(!EventSystem.current.IsPointerOverGameObject(Input.GetTouch (0).fingerId))) {
 				var touch = Input.GetTouch (0);
 				//var screenPosition = Camera.main.ScreenToViewportPoint(touch.position);
 				//Debug.Log ("x" + screenPosition.x+"y"+screenPosition.y+"all"+ screenPosition.ToString());
-
 				ray = Camera.main.ScreenPointToRay (touch.position);//creates ray from screen point position
-				if (Physics.Raycast (ray, out hit)){//&& EventSystem.current.IsPointerOverGameObject()) {//Physics.Raycast (ray, out hit, maxRayDistance, collisionLayer)
+				if (Physics.Raycast (ray, out hit)&& (!EventSystem.current.IsPointerOverGameObject(touch.fingerId))) {//Physics.Raycast (ray, out hit, maxRayDistance, collisionLayer)
 
 					GameObject item = hit.collider.transform.gameObject; //parent is what is stored in our area;
 					//print ("Hit  " + item.name);
@@ -114,5 +109,5 @@ namespace UnityEngine.XR.iOS
 
 
 	}
-}
+
 

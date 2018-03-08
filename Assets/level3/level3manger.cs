@@ -38,6 +38,8 @@ public class level3manger : MonoBehaviour
 	public GameObject exitD;
 	public GameObject panleOncamera;
 
+	GameObject hitObject;
+	public boxesHit hit;
 	bool paused=false;
 
 	//to mange level detels 
@@ -255,6 +257,8 @@ public class level3manger : MonoBehaviour
 	 void activateGray (bool open)
 	{
 		panleOncamera.SetActive (open);
+		//boxesHit test=hitObject.GetComponent ("boxesHit")as boxesHit;
+			hit.enabled = !open;
 	}
 	public void closeLevel ()
 	{
