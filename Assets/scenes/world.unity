@@ -2736,6 +2736,7 @@ MonoBehaviour:
   scoreText: {fileID: 1500422630}
   timeText: {fileID: 393649230}
   levelnumber: {fileID: 105011702}
+  levelnumber2: {fileID: 763708230}
   playbtn: {fileID: 1917975556}
 --- !u!4 &879330097
 Transform:

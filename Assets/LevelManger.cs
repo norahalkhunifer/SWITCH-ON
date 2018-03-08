@@ -21,12 +21,27 @@ public class LevelManger : MonoBehaviour {
 		leveltime = getTime (levelnum);
 
 		if (cscore >= leveltopscore) {
+			subTotalScore (leveltopscore);
+			addTotalScore (cscore);
 			setTopScore (levelnum, cscore);
 			setTime (levelnum, ctime);
-		}
+		} 
 		if (levelnum > levelpassed) {
 			PlayerPrefs.SetInt ("LevelPassed", levelnum);
 		}
+	}
+
+	public void addTotalScore(int csore)
+	{
+		PlayerPrefs.SetInt ("TotalScore", getTotalScreore()+ csore);
+
+	}
+
+
+	public void subTotalScore(int csore)
+	{
+		PlayerPrefs.SetInt ("TotalScore", getTotalScreore() -  csore);
+
 	}
 
 
@@ -89,9 +104,8 @@ public class LevelManger : MonoBehaviour {
 	public void Replay(){//or could be astring 
 		SceneManager.LoadScene (SceneManager.GetActiveScene ().name);	}
 
-
-
-
-
-
+	public int getTotalScreore()
+	{
+		 return PlayerPrefs.GetInt ("TotalScore");
+	}
 }

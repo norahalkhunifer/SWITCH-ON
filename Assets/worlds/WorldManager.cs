@@ -26,16 +26,18 @@ public class WorldManager : MonoBehaviour {
 	//public
 	LevelManger levelsmanger;
     int leveltopscore;
+	int worldtopscore;
 	string leveltime;
 	public GameObject levelDetailsY, levelDetailsG;
 	public settingManger setting;
 
 	public Text scoreText;
 	public Text timeText;
-	public Text levelnumber;
+	public Text levelnumber, levelnumber2;
 	int clevel=-1;
 	public Button playbtn;
 	bool dialogactive=false;
+
 
 	//do once in the bigining 
 	void Start(){
@@ -80,6 +82,9 @@ public class WorldManager : MonoBehaviour {
 			break;
 		}
 		setting.getCapeColor ();
+
+		worldtopscore = levelsmanger.getTotalScreore ();
+		totalScore.text = worldtopscore.ToString ();
 	}
 
 	void Update(){
@@ -154,20 +159,20 @@ public class WorldManager : MonoBehaviour {
 			leveltopscore = levelsmanger.getTopScore (levelnum);
 			leveltime = levelsmanger.getTime (levelnum);
 
-			if (leveltopscore == 0 && leveltime == "0") {
-				levelDetailsY.SetActive (true);
+			scoreText.text = leveltopscore.ToString();
+			timeText.text = leveltime.ToString();
+			levelnumber.text = levelnum.ToString ();
+			levelnumber2.text = levelnum.ToString ();
+
+			if (leveltopscore == 0 ) {
+				levelDetailsG.SetActive (true);
 			}//end if 
 
 	else {
-				levelDetailsG.SetActive (true);
+				levelDetailsY.SetActive (true);
 
 			}
 	
-
-			scoreText.text = leveltopscore.ToString ();
-			timeText.text = leveltime;
-			//may                  .ToString()
-			levelnumber.text = levelnum.ToString ();
 
 		}
 
