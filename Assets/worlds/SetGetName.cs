@@ -28,19 +28,28 @@ public class SetGetName : MonoBehaviour {
 		
 		//Debug.Log ("field is empty");
 		//to save the written name into playerprefs
+		if (changeNameFeild.text == "") {
 
 
+		} else {
 			SetUsername (changeNameFeild.text);
 			PlayerPrefs.Save ();
 			//to display user in the next welcome dialouge 
 			dispname.text = changeNameFeild.text;
 
-			rightIcon.SetActive(true);
-	
+
+			StartCoroutine (ShowRight (true, 0f));
+			StartCoroutine (ShowRight (false, 2f));
+		}
+			
 
 	}
 
+	IEnumerator ShowRight(bool show,float delayTime){
+		yield return new WaitForSeconds(delayTime);
+		rightIcon.SetActive(show); 
 
+	}
 
 	public void setget () {
 		if (nameFeild.text == "") {
