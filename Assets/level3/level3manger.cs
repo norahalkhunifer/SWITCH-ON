@@ -7,27 +7,45 @@ using UnityEngine.Networking;
 
 public class level3manger : MonoBehaviour
 {
+	//array of boxes in the scean 
 	public List<GameObject> boxes = new List<GameObject> ();
-	//array used to keep track of boxes objects
+	//array countains random objects
 	public GameObject[] random;
-	//array of objects name
+	//array of objects repetesion 
 	private int[] randomthingsrepet;
-	//array of objects name
+	//game size (if there is 4 boxes =>size=2)
 	public int size;
-//same as array of boxes/2 almost!
+    //current tutched box
 	BoxControl current;
+	//current opend boxes 2 at time 
 	private BoxControl[] currentboxes = new BoxControl[2];
+	//number of tries 
 	private int nroftries = 0;
+	//time
 	public Text time;
-	public Text debugbox;
 	private float timer;
 	public float timelimitbysec;
+	//score
 	public Text score;
 	private int scorenum=0;
+	//if anyy thing goes wrong
+	public Text debugbox;
+
+	//instruction dialog 
+	public GameObject instructionpanle;
+	private float insttimer=0f;
+	//exit dialog
+	public GameObject exitD;
+	public GameObject panleOncamera;
+
+	bool paused=false;
+
+	//to mange level detels 
+	LevelManger levelmanger=new LevelManger();
+
 	NetworkClient myClient;
 
-	//instruction
-	public GameObject instructionpanle;
+
 	// Use this for initialization
 	void Start ()
 	{
@@ -37,11 +55,10 @@ public class level3manger : MonoBehaviour
 		//start timer depend on the complexity 
 		timer = Time.time + timelimitbysec;
 		randomthingsrepet = new int[random.Length];
-		//add all boxes to array why ? couse they will have same index as there random object insaide 
 		foreach (GameObject box in boxes) {
 			placeRandomobj (box);
-			//Instantiate (RandomGenrator.placeRandomobj(),box.transform.position,box.transform.rotation,box.transform);
 		}
+		Showinstruction (true);
 		setScore ();
 	}
 	public void SetupClient()
@@ -61,42 +78,57 @@ public class level3manger : MonoBehaviour
 	//to place objects insaid boxws 
 	public void placeRandomobj (GameObject box)
 	{
-		int randomInt = GetRandom (random.Length);
+		int randomInt = GetRandom ();
 		//to be fair check if it not od or not all have same object 
 		if (randomthingsrepet [randomInt] % 2 != 0 || (randomthingsrepet [randomInt] < (size / 2))) {
 			Vector3 newpos = new Vector3 (box.transform.position.x, box.transform.position.y + 0.05f, box.transform.position.z);
 			GameObject newObject = (GameObject)Instantiate (random [randomInt],newpos, box.transform.rotation, box.transform)as GameObject;
 			if(newObject)
 			newObject.transform.localScale = new Vector3 (0.007f, 0.007f, 0.007f);// (box.transform.localScale.x-1f, box.transform.localScale.y-1f, box.transform.localScale.z-1f);//(0.005f, 0.005f, 0.005f);// // change its local scale in x y z format
+
+
 			#if UNITY_EDITOR
 			UnityEditor.Selection.activeObject = newObject;
 			#endif
 			//newObject.AddComponent<>();
 			NetworkServer.Spawn (newObject);
+
+
 			randomthingsrepet [randomInt] += 1;
 			box.GetComponent<BoxControl> ().insaideobj = newObject;
 		} else
 			placeRandomobj (box);
 	}
 
-	int GetRandom (int count)
+	int GetRandom ()
 	{
-		return Random.Range (0, count);
+		return Random.Range (0, random.Length);
 	}
 
 	void Update ()
 	{//time decreasing 
 		//if inst +pause+home not active 
 		//+stop if win or lose 
-		Timedecrising();
+		if (paused) {
+			Time.timeScale = 0;
+		} else if (!paused) {
+			Time.timeScale = 1;
+		}
+		insttimer += Time.deltaTime;    
+		if (insttimer >= 4) {
+			Showinstruction (false);
+			Timedecrising();
+		}
+
+
+
 	}
 	void Timedecrising(){
 		float t = timer - Time.time;
 		string min = ((int)t / 60).ToString ();
 		string sec = ((int)t % 60).ToString ();
 		if (t <= 0) {//if time is up 
-			time.text = "0:15";//game end 
-			//home ();
+			timeend();
 		} else//we can change it to red if its close to end by 5 or 10 sec 
 			time.text = min + ":" + sec;
 	}
@@ -150,10 +182,11 @@ public class level3manger : MonoBehaviour
 		currentboxes [0].mached ();
 		currentboxes [1].mached ();
 		size--;
-		debugbox.text= "YaaY you match 2 boxes ";
+		debugbox.text= "YaaY";
+		//play yay sound 
 		addscore (4);
 		if (size == 0)
-			GameEnd ();
+			GameEnd (true);
 	}
 
 	public void BoxesNotMatching ()
@@ -176,9 +209,12 @@ public class level3manger : MonoBehaviour
 	currentboxes [1] = null;
 	}
 
-	public void timelimit ()
+	public void timeend ()
 	{
-
+		if (size == 0)
+			GameEnd (true);
+		else
+			GameEnd (false);
 
 	}
 	public void addscore (int addedscore)
@@ -190,10 +226,15 @@ public class level3manger : MonoBehaviour
 		score.text = scorenum.ToString ();
 	}
 
-	void GameEnd ()
+	void GameEnd (bool win)
 	{
-		//check wining or loosing
-		debugbox.text=  "tries: " + nroftries;
+		activateGray (true);
+		
+		if (win) {
+			debugbox.text = "tries: " + nroftries;
+		} else {
+			debugbox.text = "you lost";
+		}
 	}
 
 	public void save (int winscore)
@@ -205,10 +246,26 @@ public class level3manger : MonoBehaviour
 	{
 
 	}
-	public void home ()
+	public void home (bool open)
 	{
-		SceneManager.LoadScene ("world");
+		exitD.SetActive(open);
+		paused = open;
+		activateGray (open);
 	}
+	 void activateGray (bool open)
+	{
+		panleOncamera.SetActive (open);
+	}
+	public void closeLevel ()
+	{
+		levelmanger.LoudHome ();
+	}
+    void Showinstruction (bool show)
+	{
+		instructionpanle.SetActive (show);
+	}
+
+
 
 
 }

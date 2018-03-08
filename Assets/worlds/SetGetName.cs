@@ -17,6 +17,8 @@ public class SetGetName : MonoBehaviour {
 	public GameObject instruction;
 
 
+	public GameObject rightIcon;
+
 	//static bool firsttime;
 
 	private string[] names = new string[] { "Peter", "Ron", "Satchmo", "Iron-Cut", "Titanium", "Lightning", "Kevlar", "Rex", "Falcon", "Switch on player" };
@@ -27,11 +29,15 @@ public class SetGetName : MonoBehaviour {
 		//Debug.Log ("field is empty");
 		//to save the written name into playerprefs
 
-		SetUsername (changeNameFeild.text);
+
+			SetUsername (changeNameFeild.text);
 			PlayerPrefs.Save ();
 			//to display user in the next welcome dialouge 
-		dispname.text = changeNameFeild.text;
+			dispname.text = changeNameFeild.text;
+
+			rightIcon.SetActive(true);
 	
+
 	}
 
 
@@ -64,6 +70,11 @@ public class SetGetName : MonoBehaviour {
 	
 	}
 
+
+	public void showRight(){
+		rightIcon.SetActive(true);
+
+	}
 
 	public void disapearDialouge(bool show){
 		nameDialouge.SetActive(show);
