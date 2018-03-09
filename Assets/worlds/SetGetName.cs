@@ -128,7 +128,9 @@ public class SetGetName : MonoBehaviour {
 			//to show welcome back dialouge & hide it after view of seconds 
 			dispname2.text = GetUsername ();
 			StartCoroutine (ShowWelcome (true, 0f));
+			//StartCoroutine (unactiveD (true, 0f));
 			StartCoroutine (ShowWelcome (false, 5f));
+			//StartCoroutine (unactiveD (false, 20f));
 		}
 
 		//if (welcomeBack.activeInHierarchy == true) {
@@ -183,5 +185,13 @@ public class SetGetName : MonoBehaviour {
 
 	public void activateDialog(bool show){
 		worldObject.dialogactive = show;
+	}
+
+
+	IEnumerator unactiveD(bool show,float delayTime){
+		yield return new WaitForSeconds(delayTime);
+
+		worldObject.dialogactive = show;
+
 	}
 }
