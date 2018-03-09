@@ -54,8 +54,6 @@ public class level3manger : MonoBehaviour
 	// Use this for initialization
 	void Start ()
 	{
-		//Resources.Load ("Assets\\Level3\\randoms\\Football");
-		//SetupClient ();
 
 		//start timer depend on the complexity 
 		timer = Time.time + timelimitbysec;
@@ -66,20 +64,7 @@ public class level3manger : MonoBehaviour
 		Showinstruction (true);
 		setScore ();
 	}
-	public void SetupClient()
-	{
-		for(int i=0;i<random.Length;i++)
-			ClientScene.RegisterPrefab(random[i]);
 
-		myClient = new NetworkClient();
-
-		myClient.RegisterHandler(MsgType.Connect, OnConnected);
-		myClient.Connect("127.0.0.1", 4444);
-	}
-	void OnConnected(NetworkMessage netMsg)
-	{
-		Debug.Log("Client connected");
-	}
 	//to place objects insaid boxws 
 	public void placeRandomobj (GameObject box)
 	{
@@ -241,8 +226,8 @@ public class level3manger : MonoBehaviour
 		cscoretext.text = score.text;
 		if (win) {
 			wining.SetActive (true);
-			Topscore.text = levelmanger.getTopScore (3).ToString();
-			levelmanger.win (3,scorenum,time.text.ToString());
+			Topscore.text = scorenum.ToString();
+			levelmanger.win (2,scorenum,time.text.ToString());
 			debugbox.text = "tries: " + nroftries;
 		} else {
 			lose.SetActive (true);

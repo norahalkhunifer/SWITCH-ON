@@ -28,15 +28,15 @@ public class WorldManager : MonoBehaviour {
     int leveltopscore;
 	int worldtopscore;
 	string leveltime;
-	public GameObject levelDetailsY, levelDetailsG;
+	public GameObject levelDetailsY, levelDetailsG,levelDetails;
 	public settingManger setting;
 
 	public Text scoreText;
 	public Text timeText;
-	public Text levelnumber, levelnumber2;
+	public Text levelnumber;
 	int clevel=-1;
 	public Button playbtn;
-	bool dialogactive=false;
+	public bool dialogactive=false;
 
 
 	//do once in the bigining 
@@ -46,7 +46,7 @@ public class WorldManager : MonoBehaviour {
 		totalScore.text=getTotalScore().ToString();
 		levelsmanger=new LevelManger();
 		setting = GameObject.Find("setting manger").GetComponent<settingManger> ();
-		//playbtn.onClick.AddListener(loudlevel);
+		playbtn.onClick.AddListener(levelToLoad);
 
 
 
@@ -92,14 +92,13 @@ public class WorldManager : MonoBehaviour {
 
 	}
 	//to made animation between the world and level we use invoke("method",sf)
-	public void levelToLoad (int level)
+	public void levelToLoad ()
 	{
-		//WE DON'T NEED IT , I PUT IT WITH LEVELDETAILS METHOD
-
+		levelsmanger.LoudLevel (clevel);
 		//loud the level dialog 
 		//if (level - 1 <= levelPassed && !dialogactive ) { 
-			leveldetails (level);
-			levelsmanger.LoudLevel (level);
+			//leveldetails (level);
+			//levelsmanger.LoudLevel (level);
 		//}
 
 		//} else if (dialogactive) {
@@ -113,6 +112,7 @@ public class WorldManager : MonoBehaviour {
 
 	//settings page animations 
 	public void opensettings(Animator anim){
+		if(!dialogactive)
 			anim.SetBool ("settings", true);
 			}
 
@@ -153,18 +153,17 @@ public class WorldManager : MonoBehaviour {
 	}
 	public void leveldetails(int levelnum){
 		//if (level - 1 <= levelPassed && !dialogactive) {}else {  shakeworld ();  }    LOGIC 
-		if (levelnum - 1 <= levelPassed && !dialogactive) {
+		if (levelnum - 1 <= levelPassed && !dialogactive ) {
 
 			clevel = levelnum;
 			leveltopscore = levelsmanger.getTopScore (levelnum);
 			leveltime = levelsmanger.getTime (levelnum);
-
 			scoreText.text = leveltopscore.ToString();
 			timeText.text = leveltime.ToString();
 			levelnumber.text = levelnum.ToString ();
-			levelnumber2.text = levelnum.ToString ();
-
+			levelDetails.SetActive (true);
 			if (leveltopscore == 0 ) {
+				timeText.text = "0:00";
 				levelDetailsG.SetActive (true);
 			}//end if 
 
@@ -190,6 +189,7 @@ public class WorldManager : MonoBehaviour {
 
 	public void closeLevelDetails() {
 		clevel = -1;
+		levelDetails.SetActive (false);
 		levelDetailsY.SetActive (false); 
 		levelDetailsG.SetActive (false); 
 
@@ -204,12 +204,7 @@ public class WorldManager : MonoBehaviour {
 	public void setTotalScore(int totalscore){
 		PlayerPrefs.SetInt("TotalScore",totalscore);
 	}
-   //void loudlevel(){
-		//levelsmanger.LoudLevel (clevel);
-	//}
-
-	//method to change red cape to blue
-
+  
 	 }
 
 

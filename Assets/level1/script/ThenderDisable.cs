@@ -169,7 +169,7 @@ public LevelManger levelmanger;
 			battryHide.enabled = false;
 			jump.enabled = false;
 			resume.enabled = false;
-			string winT=timer.finalTimerWin.ToString();
+			string winT=timer.finalTimerWin.text;
 			levelmanger.win (1,score , winT);
 			topScore.text=levelmanger.getTopScore (1).ToString();
 
