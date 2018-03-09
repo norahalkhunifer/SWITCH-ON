@@ -37,10 +37,13 @@ public class level3manger : MonoBehaviour
 	//exit dialog
 	public GameObject exitD;
 	public GameObject panleOncamera;
-
 	GameObject hitObject;
 	public boxesHit hit;
 	bool paused=false;
+	//win and lose objects 
+	public GameObject endpanle,wining,lose;
+	public Text Topscore,timetext,cscoretext;
+	bool end=false;
 
 	//to mange level detels 
 	LevelManger levelmanger=new LevelManger();
@@ -51,8 +54,8 @@ public class level3manger : MonoBehaviour
 	// Use this for initialization
 	void Start ()
 	{
-		Resources.Load ("Assets\\Level3\\randoms\\Football");
-		SetupClient ();
+		//Resources.Load ("Assets\\Level3\\randoms\\Football");
+		//SetupClient ();
 
 		//start timer depend on the complexity 
 		timer = Time.time + timelimitbysec;
@@ -116,8 +119,9 @@ public class level3manger : MonoBehaviour
 		} else if (!paused) {
 			Time.timeScale = 1;
 		}
-		insttimer += Time.deltaTime;    
-		if (insttimer >= 4) {
+		insttimer += Time.deltaTime;   
+		//time untile instruction closes 
+		if (insttimer >= 4&& !end) {
 			Showinstruction (false);
 			Timedecrising();
 		}
@@ -142,7 +146,7 @@ public class level3manger : MonoBehaviour
 		//check if there is more than 2 are open if yes then colse them thin opent the tutched one 
 		if (current != null) {
 			if (current.isOpen ()) {
-				debugbox.text= "This box is already open!";
+				//debugbox.text= "This box is already open!";//thats not efftint 
 			} else {
 				current.openit ();
 			}	
@@ -184,7 +188,7 @@ public class level3manger : MonoBehaviour
 		currentboxes [0].mached ();
 		currentboxes [1].mached ();
 		size--;
-		debugbox.text= "YaaY";
+		debugbox.text= "YaaY +4 ⚡ ";
 		//play yay sound 
 		addscore (4);
 		if (size == 0)
@@ -230,13 +234,19 @@ public class level3manger : MonoBehaviour
 
 	void GameEnd (bool win)
 	{
+		end = !end;
 		activateGray (true);
-		
+		endpanle.SetActive (true);
+		timetext.text = time.text;
+		cscoretext.text = score.text;
 		if (win) {
+			wining.SetActive (true);
+			Topscore.text = levelmanger.getTopScore (3).ToString();
+			levelmanger.win (3,scorenum,time.text.ToString());
 			debugbox.text = "tries: " + nroftries;
 		} else {
-			debugbox.text = "you lost";
-		}
+			lose.SetActive (true);
+			}
 	}
 
 	public void save (int winscore)
@@ -263,6 +273,10 @@ public class level3manger : MonoBehaviour
 	public void closeLevel ()
 	{
 		levelmanger.LoudHome ();
+	}
+	public void ReplayLevel ()
+	{
+		levelmanger.Replay ();
 	}
     void Showinstruction (bool show)
 	{
