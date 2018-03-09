@@ -91,15 +91,14 @@ public class SetGetName : MonoBehaviour {
 	public void disapearDialouge(bool show){
 		nameDialouge.SetActive(show);
 		instructionfirsttime ();
-		if (show)
-			activateDialog ();
+			activateDialog (show);
 
 	}
+	//first welcome 
 	public void WelcomeDialouge(bool show){
 
 		welcomeDialouge.SetActive(show);
-		if (show)
-			activateDialog ();
+			activateDialog (show);
 	}
 	public static void SetUsername(string name){
 		PlayerPrefs.SetString ("Username",name);
@@ -108,16 +107,13 @@ public class SetGetName : MonoBehaviour {
 		return PlayerPrefs.GetString ("Username");
 	}
 
-	public void WelcomeBack(bool show){
-		welcomeBack.SetActive(show);
-		if (show)
-			activateDialog ();
-
-	}
-
+	//welcome back
 	IEnumerator ShowWelcome(bool show,float delayTime){
+		
+			activateDialog (show);
 		yield return new WaitForSeconds(delayTime);
 		welcomeBack.SetActive (show); 
+
 
 	}
 
@@ -156,7 +152,7 @@ public class SetGetName : MonoBehaviour {
 
 			timer += Time.deltaTime;    
 			if (timer >= 2) {
-				welcomeDialouge.SetActive (false);
+				WelcomeDialouge(false);
 			
 
 			}
@@ -189,7 +185,7 @@ public class SetGetName : MonoBehaviour {
 	}
 
 
-	public void activateDialog(){
-		worldObject.dialogactive = true;
+	public void activateDialog(bool show){
+		worldObject.dialogactive = show;
 	}
 }
