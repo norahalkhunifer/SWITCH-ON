@@ -22,6 +22,7 @@ public class TimeText : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		//here to set how many time you want
+		Screen.orientation = ScreenOrientation.Portrait;
 		setTimer (44);
 		gameOver.SetActive (false);
 		back.SetActive (false);

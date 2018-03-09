@@ -50,7 +50,6 @@ public class CameraShake : MonoBehaviour {
 	public float smoothAmount = 5f;//Amount to smooth
 
 	void Start () {
-
 		if(debugMode) ShakeCamera ();
 	}
 
