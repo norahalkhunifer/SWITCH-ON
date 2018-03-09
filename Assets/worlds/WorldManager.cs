@@ -152,7 +152,7 @@ public class WorldManager : MonoBehaviour {
 
 	}
 	public void leveldetails(int levelnum){
-		//if (level - 1 <= levelPassed && !dialogactive) {}else {  shakeworld ();  }    LOGIC 
+		//if (level - 1 <= levelPassed && !dialogactive) {}else {  shakeworld ();  }     
 		if (levelnum - 1 <= levelPassed&& !dialogactive ) {
 
 			clevel = levelnum;
