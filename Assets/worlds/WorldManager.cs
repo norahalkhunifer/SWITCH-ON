@@ -153,7 +153,7 @@ public class WorldManager : MonoBehaviour {
 	}
 	public void leveldetails(int levelnum){
 		//if (level - 1 <= levelPassed && !dialogactive) {}else {  shakeworld ();  }    LOGIC 
-		if (levelnum - 1 <= levelPassed ) {
+		if (levelnum - 1 <= levelPassed&& !dialogactive ) {
 
 			clevel = levelnum;
 			leveltopscore = levelsmanger.getTopScore (levelnum);

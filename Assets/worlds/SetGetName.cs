@@ -110,30 +110,26 @@ public class SetGetName : MonoBehaviour {
 	//welcome back
 	IEnumerator ShowWelcome(bool show,float delayTime){
 		
-			activateDialog (show);
 		yield return new WaitForSeconds(delayTime);
 		welcomeBack.SetActive (show); 
+		activateDialog (show);
+
 
 
 	}
 
 	void Start (){
 	//	if (nameDialouge.activeInHierarchy == true && welcomeDialouge.activeInHierarchy == false  ) {
-
 		//}
 		if (firstTime()) {
 			//if first time open app show enter username dialouge
 			disapearDialouge (true);
-		
-
-			
 		} else {
 			//to show welcome back dialouge & hide it after view of seconds 
 			dispname2.text = GetUsername ();
 			StartCoroutine (ShowWelcome (true, 0f));
 			StartCoroutine (ShowWelcome (false, 5f));
 		}
-
 
 		//if (welcomeBack.activeInHierarchy == true) {
 			//worldObject.enabled = false;
