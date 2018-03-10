@@ -44,11 +44,13 @@ public class level3manger : MonoBehaviour
 	public GameObject endpanle,wining,lose;
 	public Text Topscore,timetext,cscoretext;
 	bool end=false;
+	//sounds 
+	public AudioSource pickup,mismatch,Endwin,Endlose,background;
 
 	//to mange level detels 
 	LevelManger levelmanger=new LevelManger();
 
-	NetworkClient myClient;
+	//NetworkClient myClient;
 
 
 	// Use this for initialization
@@ -81,7 +83,7 @@ public class level3manger : MonoBehaviour
 			UnityEditor.Selection.activeObject = newObject;
 			#endif
 			//newObject.AddComponent<>();
-			NetworkServer.Spawn (newObject);
+			//NetworkServer.Spawn (newObject);
 
 
 			randomthingsrepet [randomInt] += 1;
@@ -175,6 +177,7 @@ public class level3manger : MonoBehaviour
 		size--;
 		debugbox.text= "YaaY +4 ⚡ ";
 		//play yay sound 
+		pickup.Play();
 		addscore (4);
 		if (size == 0)
 			GameEnd (true);
