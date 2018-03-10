@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class settingManger : MonoBehaviour {
-	public GameObject charcter1, charcter2, help;
+	public GameObject charcter1, charcter2, help, skip;
 	public Button RedChar, BlueChar;
 	 WorldManager manger;
 	public Image closed, start;
@@ -70,6 +70,7 @@ public class settingManger : MonoBehaviour {
 
 		help.SetActive (show); 
 
+		skip.SetActive (true);
 		closed.enabled = false;
 		start.enabled = false;
 
@@ -82,6 +83,12 @@ public class settingManger : MonoBehaviour {
 
 	
 	}
+
+	public void closeInstruction()
+	{
+
+		help.SetActive (false);
 }
 
+}
 

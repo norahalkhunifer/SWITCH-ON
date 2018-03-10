@@ -128,7 +128,6 @@ public class WorldManager : MonoBehaviour {
 			anim.SetBool ("thereisnext", true);
 			nextavi = false;
 		}
-
 			}
 
 	//slide to previos world
@@ -173,17 +172,12 @@ public class WorldManager : MonoBehaviour {
 				levelDetailsY.SetActive (true);
 
 			}
-	
-
 		}
 
 
 		else {  
 			shakeworld ();  
 		}
-
-
-
 	}
 	/// Closes the level details.
 
@@ -211,7 +205,7 @@ public class WorldManager : MonoBehaviour {
 			return true;
 		return false;
 	}
-
+		
   
 	 }
 
