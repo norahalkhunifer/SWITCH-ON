@@ -41,6 +41,8 @@ public class WorldManager : MonoBehaviour {
 
 	//do once in the bigining 
 	void Start(){
+		Screen.orientation = ScreenOrientation.Landscape;
+
 		//ShowInstruction (true);
 		//get total score 
 		totalScore.text=getTotalScore().ToString();

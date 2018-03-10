@@ -56,6 +56,7 @@ public class level3manger : MonoBehaviour
 	// Use this for initialization
 	void Start ()
 	{
+		//Screen.orientation = ScreenOrientation.Portrait;
 
 		//start timer depend on the complexity 
 		timer = Time.time + timelimitbysec;
