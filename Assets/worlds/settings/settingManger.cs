@@ -61,7 +61,6 @@ public class settingManger : MonoBehaviour {
 		manger.closesettings (anim);
 
 		StartCoroutine (ShowInstruction (true, 0f));
-		StartCoroutine (ShowInstruction (false, 10f));
 	}
 
 	IEnumerator ShowInstruction(bool show,float delayTime){
