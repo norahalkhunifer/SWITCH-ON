@@ -85,15 +85,15 @@ public class WorldManager : MonoBehaviour {
 			goto case 2;
 		case 2:
 			setting.charcter1.transform.position = level03Button.transform.position;
-			setting.charcter2.transform.position = level03Button.transform.position;
+			setting.charcter2.transform.localPosition = new Vector3(204f,55f,0f);//level02Button.transform.position;//change posiition of red character
 
 		    Image03.enabled = false;
 			//level03Button.image.overrideSprite = current; we change it to close and win only 
 			level02Button.image.overrideSprite = win;
 			goto case 1;
 		case 1:
-			setting.charcter1.transform.position = level02Button.transform.position;//change position of blue character
-			setting.charcter2.transform.position = level02Button.transform.position;//change posiition of red character
+			//setting.charcter1.transform.position = level02Button.transform.position;//change position of blue character
+			setting.charcter2.transform.localPosition = new Vector3(-26.025f,-84f);//level02Button.transform.position;//change posiition of red character
 
 			Image02.enabled = false;
 			level01Button.image.overrideSprite = win;
