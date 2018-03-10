@@ -36,7 +36,6 @@ public class WorldManager : MonoBehaviour {
 	public Text levelnumber;
 	int clevel=-1;
 	public Button playbtn;
-	public bool dialogactive=false;
 	public SetGetName dialogsmanger;
 
 	//do once in the bigining 
@@ -181,7 +180,7 @@ public class WorldManager : MonoBehaviour {
 			levelnumber.text = levelnum.ToString ();
 			levelDetails.SetActive (true);
 			if (leveltopscore == 0 ) {
-				timeText.text = "0:00";
+				//timeText.text = "0:00";
 				levelDetailsG.SetActive (true);
 			}//end if 
 
