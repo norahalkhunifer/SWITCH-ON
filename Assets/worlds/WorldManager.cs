@@ -163,8 +163,8 @@ public class WorldManager : MonoBehaviour {
 			timeText.text = leveltime.ToString();
 			levelnumber.text = levelnum.ToString ();
 			levelDetails.SetActive (true);
-			if (leveltopscore == 0 ) {
-				timeText.text = "0:00";
+		//	if (leveltopscore == 0 ) {
+			//	timeText.text = "0:00";
 				levelDetailsG.SetActive (true);
 			}//end if 
 

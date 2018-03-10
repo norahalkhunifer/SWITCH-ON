@@ -89,7 +89,7 @@ public class LevelManger : MonoBehaviour {
 
 	}
 	public string getTime (int levelnum){
-		return PlayerPrefs.GetString ("Level"+levelnum+"Time");
+		return PlayerPrefs.GetString ("Level"+levelnum+"Time","0:00");
 
 	}
 	public void setTopScore (int levelnum,int topscore){
