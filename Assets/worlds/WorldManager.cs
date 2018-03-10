@@ -43,6 +43,9 @@ public class WorldManager : MonoBehaviour {
 	void Start(){
 		Screen.orientation = ScreenOrientation.Landscape;
 
+		//setting.charcter1.transform.position = level02Button.transform.position;//change position of blue character
+		//setting.charcter2.transform.position = level02Button.transform.position;//change posiition of red character
+
 		//ShowInstruction (true);
 		//get total score 
 		totalScore.text=getTotalScore().ToString();
@@ -50,35 +53,49 @@ public class WorldManager : MonoBehaviour {
 		setting = GameObject.Find("setting manger").GetComponent<settingManger> ();
 		playbtn.onClick.AddListener(levelToLoad);
 
-
-
 		//get the last passed level from playerprefs
 		levelPassed = PlayerPrefs.GetInt ("LevelPassed");
 		//to change doors images depend on last passed level
 		switch (levelPassed) {
 		case 6:
-			//Image07.enabled = false;next world
+			setting.charcter1.transform.position = level06Button.transform.position;
+			setting.charcter2.transform.position = level06Button.transform.position;
+
 			level06Button.image.overrideSprite = win;
 			goto case 5;
 		case 5:
+			setting.charcter1.transform.position = level06Button.transform.position;
+			setting.charcter2.transform.position = level06Button.transform.position;
+
 			Image06.enabled = false;
 			level05Button.image.overrideSprite = win;
 			goto case 4;
 		case 4:
+			setting.charcter1.transform.position = level05Button.transform.position;
+			setting.charcter2.transform.position = level05Button.transform.position;
+
 			Image05.enabled = false;
 			level04Button.image.overrideSprite = win;
 			goto case 3;
 		case 3:
+			setting.charcter1.transform.position = level04Button.transform.position;
+			setting.charcter2.transform.position = level04Button.transform.position;
+
 			Image04.enabled = false;
 			level03Button.image.overrideSprite = win;
 			goto case 2;
 		case 2:
+			setting.charcter1.transform.position = level03Button.transform.position;
+			setting.charcter2.transform.position = level03Button.transform.position;
+
 		    Image03.enabled = false;
 			//level03Button.image.overrideSprite = current; we change it to close and win only 
 			level02Button.image.overrideSprite = win;
 			goto case 1;
 		case 1:
-			//charcter1.enabled = false;
+			setting.charcter1.transform.position = level02Button.transform.position;//change position of blue character
+			setting.charcter2.transform.position = level02Button.transform.position;//change posiition of red character
+
 			Image02.enabled = false;
 			level01Button.image.overrideSprite = win;
 			break;

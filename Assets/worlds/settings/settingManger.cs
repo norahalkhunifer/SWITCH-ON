@@ -13,8 +13,9 @@ public class settingManger : MonoBehaviour {
 	public void Start(){
 		manger= GameObject.Find("worlds manger").GetComponent<WorldManager> ();
 
-
 	}
+
+	//method to send email 
 	public void ContactUs()
 	{
 		string email = "renadalmalki2@gmail.com"; 
@@ -63,6 +64,8 @@ public class settingManger : MonoBehaviour {
 		StartCoroutine (ShowInstruction (true, 0f));
 	}
 
+
+	//show instruction using help button 
 	IEnumerator ShowInstruction(bool show,float delayTime){
 		yield return new WaitForSeconds(delayTime);
 
@@ -83,6 +86,7 @@ public class settingManger : MonoBehaviour {
 	
 	}
 
+	//Close instruction using SKIP button
 	public void closeInstruction()
 	{
 
