@@ -37,7 +37,7 @@ public class WorldManager : MonoBehaviour {
 	int clevel=-1;
 	public Button playbtn;
 	public bool dialogactive=false;
-
+	public SetGetName dialogsmanger;
 
 	//do once in the bigining 
 	void Start(){
@@ -112,7 +112,7 @@ public class WorldManager : MonoBehaviour {
 
 	//settings page animations 
 	public void opensettings(Animator anim){
-		if(!dialogactive)
+		if(!isDActivated())
 			anim.SetBool ("settings", true);
 			}
 
@@ -153,7 +153,7 @@ public class WorldManager : MonoBehaviour {
 	}
 	public void leveldetails(int levelnum){
 		//if (level - 1 <= levelPassed && !dialogactive) {}else {  shakeworld ();  }     
-		if (levelnum - 1 <= levelPassed&& !dialogactive ) {
+		if (levelnum - 1 <= levelPassed && !isDActivated() ) {
 
 			clevel = levelnum;
 			leveltopscore = levelsmanger.getTopScore (levelnum);
@@ -204,6 +204,12 @@ public class WorldManager : MonoBehaviour {
 	public void setTotalScore(int totalscore){
 		PlayerPrefs.SetInt("TotalScore",totalscore);
 	}
+	bool isDActivated(){
+		if (dialogsmanger.nameDialouge.activeInHierarchy || dialogsmanger.welcomeBack.activeInHierarchy || dialogsmanger.welcomeDialouge.activeInHierarchy)
+			return true;
+		return false;
+	}
+
   
 	 }
 
