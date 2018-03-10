@@ -53,8 +53,13 @@ public class LevelManger : MonoBehaviour {
 
 	}
 	public void LoudLevel(int levelnum){//or string 
-		if(levelnum!=-1)
+		if (levelnum != -1) {
+			//Screen.orientation = ScreenOrientation.AutoRotation;
+			Screen.orientation = ScreenOrientation.Portrait;
 			SceneManager.LoadScene (levelnum);
+
+
+		}
 
 	}
 	/// <summary>
@@ -102,7 +107,9 @@ public class LevelManger : MonoBehaviour {
 	}
 
 	public void Replay(){//or could be astring 
-		SceneManager.LoadScene (SceneManager.GetActiveScene ().name);	}
+		
+		SceneManager.LoadScene (SceneManager.GetActiveScene ().name);
+		}
 
 	public int getTotalScreore()
 	{
