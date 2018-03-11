@@ -18,9 +18,9 @@ public class WorldManager : MonoBehaviour {
 	public Image Image02, Image03, Image04, Image05, Image06;
 	//doors changes
 	public Sprite win, close;
-	bool nextavi=true;
+	public bool nextavi=true;
 	int levelPassed;
-	public Animator shaking;
+	public Animator shaking,shaking2;
 	public Text totalScore;
 	//levels dialogs 
 	//public
@@ -137,10 +137,14 @@ public class WorldManager : MonoBehaviour {
 		}
 	}
 
-	public void shakeworld(){
-		
-		shaking.SetBool ("shake", true);
-		Invoke ("stopshakeworld",2);
+	public void shakeworld(int worldnum){
+		if (worldnum == 1) {
+			shaking.SetBool ("shake", true);
+			Invoke ("stopshakeworld", 2);
+		} else {
+			shaking2.SetBool ("shake2", true);
+			Invoke ("stopshakeworld2", 0.5f);
+		}
 		//GetComponent<CameraShake>().ShakeCamera(20f, 1f);
 		//Camera.main.gameObject.GetComponent<CameraShake>().ShakeCamera(20f, 1f);
 		//anim.SetBool ("shake", true);
@@ -149,6 +153,10 @@ public class WorldManager : MonoBehaviour {
 	}
 	public void stopshakeworld(){
 		shaking.SetBool ("shake", false);
+
+	}
+	public void stopshakeworld2(){
+		shaking2.SetBool ("shake2", false);
 
 	}
 	public void leveldetails(int levelnum){
@@ -174,9 +182,12 @@ public class WorldManager : MonoBehaviour {
 		}
 
 
-		else {  
-			shakeworld ();  
-		}
+		else if(levelnum>3)
+			shakeworld (2);  
+		
+		else
+			shakeworld (1);  
+		
 	}
 	/// Closes the level details.
 
@@ -233,6 +244,7 @@ public class WorldManager : MonoBehaviour {
 
 	}//end switch 
 	 }
+
 }//end whole
 
 

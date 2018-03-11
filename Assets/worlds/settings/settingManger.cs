@@ -69,7 +69,8 @@ public class settingManger : MonoBehaviour {
 	IEnumerator ShowInstruction(bool show,float delayTime){
 		yield return new WaitForSeconds(delayTime);
 
-
+		if (!manger.nextavi)
+			manger.previos (manger.shaking2);
 		help.SetActive (show); 
 
 		skip.SetActive (true);
