@@ -210,7 +210,7 @@ public class WorldManager : MonoBehaviour {
 	public void setTotalScore(int totalscore){
 		PlayerPrefs.SetInt("TotalScore",totalscore);
 	}
-	bool isDActivated(){
+	public bool isDActivated(){
 		if (dialogsmanger.nameDialouge.activeInHierarchy || dialogsmanger.welcomeBack.activeInHierarchy || dialogsmanger.welcomeDialouge.activeInHierarchy)
 			return true;
 		return false;

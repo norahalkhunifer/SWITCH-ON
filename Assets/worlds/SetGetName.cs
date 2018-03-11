@@ -66,8 +66,10 @@ public class SetGetName : MonoBehaviour {
 		//to display user in the next welcome dialouge 
 		dispname.text = nameFeild.text;
 		}//end else
+		StartCoroutine (WelcomeDialouge (true, 0f));
+		StartCoroutine (WelcomeDialouge (false, 4f));
 
-		WelcomeDialouge (true);
+		//WelcomeDialouge (true);
 	}
 
 
@@ -90,13 +92,23 @@ public class SetGetName : MonoBehaviour {
 	//this method to asking about the user name for the first time  
 	public void disapearDialouge(bool show){
 		nameDialouge.SetActive(show);
-		instructionfirsttime ();
 
 	}
 	//first welcome 
-	public void WelcomeDialouge(bool show){
+/*	public void WelcomeDialouge(bool show){
 
 		welcomeDialouge.SetActive(show);
+		instructionfirsttime (show);
+
+	}*/
+	IEnumerator WelcomeDialouge(bool show,float delayTime){
+
+		yield return new WaitForSeconds(delayTime);
+		welcomeDialouge.SetActive(show);
+
+		instructionfirsttime (show);
+
+
 	}
 	public static void SetUsername(string name){
 		PlayerPrefs.SetString ("Username",name);
@@ -143,7 +155,7 @@ public class SetGetName : MonoBehaviour {
 		//nameDialouge.SetActive (true);
 		//welcomeDialouge.SetActive (true);
 
-		if (nameDialouge.activeInHierarchy==false){
+		/*if (nameDialouge.activeInHierarchy==false){
 
 			timer += Time.deltaTime;    
 			if (timer >= 2) {
@@ -151,7 +163,7 @@ public class SetGetName : MonoBehaviour {
 			
 
 			}
-		}
+		}*/
 
 
 	}
@@ -163,13 +175,13 @@ public class SetGetName : MonoBehaviour {
 	}
 
 
-	public void instructionfirsttime(){
+	public void instructionfirsttime(bool show){
 		//after closing welcome dialogs 
 
-		if (firstTime()) {
+		if (!show) {
 			//ShowInstruction (true,0f);
 			StartCoroutine (ShowInstruction (true, 0f));
-			StartCoroutine (ShowInstruction (false, 16f));
+			StartCoroutine (ShowInstruction (false, 8f));
 		}
 	}//END METHOD
 
