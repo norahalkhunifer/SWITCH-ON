@@ -58,7 +58,6 @@ public class SetGetName : MonoBehaviour {
 		if (nameFeild.text == "") {
 			randomName ();
 		}
-			//Debug.Log ("field is empty");
 		//to save the written name into playerprefs
 		else {
 			SetUsername (nameFeild.text);
@@ -69,13 +68,11 @@ public class SetGetName : MonoBehaviour {
 		StartCoroutine (WelcomeDialouge (true, 0f));
 		StartCoroutine (WelcomeDialouge (false, 4f));
 
-		//WelcomeDialouge (true);
 	}
 
 
 	//this method to generate random name from array of names
 	public void randomName(){
-		//dispname.text = "switch on player";
 		string nameGenerated=names[Random.Range(0, names.Length)];
 		dispname.text =nameGenerated;
 		SetUsername (nameGenerated);
@@ -95,12 +92,6 @@ public class SetGetName : MonoBehaviour {
 
 	}
 	//first welcome 
-/*	public void WelcomeDialouge(bool show){
-
-		welcomeDialouge.SetActive(show);
-		instructionfirsttime (show);
-
-	}*/
 	IEnumerator WelcomeDialouge(bool show,float delayTime){
 
 		yield return new WaitForSeconds(delayTime);
@@ -128,8 +119,6 @@ public class SetGetName : MonoBehaviour {
 	}
 
 	void Start (){
-	//	if (nameDialouge.activeInHierarchy == true && welcomeDialouge.activeInHierarchy == false  ) {
-		//}
 		if (firstTime()) {
 			//if first time open app show enter username dialouge
 			disapearDialouge (true);
@@ -137,36 +126,13 @@ public class SetGetName : MonoBehaviour {
 			//to show welcome back dialouge & hide it after view of seconds 
 			dispname2.text = GetUsername ();
 			StartCoroutine (ShowWelcome (true, 0f));
-			//StartCoroutine (unactiveD (true, 0f));
 			StartCoroutine (ShowWelcome (false, 5f));
-			//StartCoroutine (unactiveD (false, 20f));
 		}
 
-		//if (welcomeBack.activeInHierarchy == true) {
-			//worldObject.enabled = false;
-		//} else {
-			//worldObject.enabled = true;
 
-		//}
 		}
 
-		
-	void Update (){
-		//nameDialouge.SetActive (true);
-		//welcomeDialouge.SetActive (true);
 
-		/*if (nameDialouge.activeInHierarchy==false){
-
-			timer += Time.deltaTime;    
-			if (timer >= 2) {
-				WelcomeDialouge(false);
-			
-
-			}
-		}*/
-
-
-	}
 	public static bool firstTime(){
 		if (!PlayerPrefs.HasKey("Username")) {
 			return true;
@@ -179,7 +145,6 @@ public class SetGetName : MonoBehaviour {
 		//after closing welcome dialogs 
 
 		if (!show) {
-			//ShowInstruction (true,0f);
 			StartCoroutine (ShowInstruction (true, 0f));
 			StartCoroutine (ShowInstruction (false, 8f));
 		}
