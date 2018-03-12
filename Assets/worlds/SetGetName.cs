@@ -122,12 +122,12 @@ public class SetGetName : MonoBehaviour {
 		if (firstTime()) {
 			//if first time open app show enter username dialouge
 			disapearDialouge (true);
-		} else {
+		} /*else {
 			//to show welcome back dialouge & hide it after view of seconds 
 			dispname2.text = GetUsername ();
 			StartCoroutine (ShowWelcome (true, 0f));
 			StartCoroutine (ShowWelcome (false, 5f));
-		}
+		}*/
 
 
 		}
