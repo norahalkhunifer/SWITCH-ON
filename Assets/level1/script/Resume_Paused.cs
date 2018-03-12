@@ -6,12 +6,18 @@ public class Resume_Paused : MonoBehaviour {
 	public bool pause;
 	public GameObject resume;
 	public GameObject back;
-
+	public GameObject inss;
+	public GameObject inssAnim;
 	// Use this for initialization
 	void Start () {
+		Time.timeScale = 0;
+
 		pause = false;
 		resume.SetActive (false);
 		back.SetActive (false);
+		inss.SetActive (true);
+		inssAnim.SetActive (true);
+
 	}
 
 	public void onResume(){
@@ -25,7 +31,7 @@ public class Resume_Paused : MonoBehaviour {
 	//to pause the level
 
 		public void OnPause (){
-		pause = !pause;
+		pause = true;
  		if (pause) {
 			Time.timeScale = 0;
 			resume.SetActive (true);
@@ -38,6 +44,32 @@ public class Resume_Paused : MonoBehaviour {
 		return pause;	}
 	public void setPause(bool pa){
 		 pause=pa;	}
+	
+	public void OnIns(){
+		//pause = !pause;
+		if (pause) {
+			Time.timeScale = 0;
+			resume.SetActive (false);
+			back.SetActive (false);
+			inss.SetActive (true);
+			inssAnim.SetActive (true);
+
+		}
+	}
+	public void onSkip(){
+		pause = true;
+		//to no button press
+		if (pause) {
+			Time.timeScale = 1;
+			back.SetActive (false);
+			resume.SetActive (false);
+			inss.SetActive (false);
+			inssAnim.SetActive (false);
+
+
+			}
+		} 
+
 		
 	}
 

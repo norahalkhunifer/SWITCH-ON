@@ -15,39 +15,39 @@ public class instruction : MonoBehaviour {
 	public Exit home ;
 
 	// Use this for initialization
-	void Start () {
-		//skip = true;
-
-		//to no button press
-			Time.timeScale = 1;
-			instruc.SetActive (true);
-			time.enabled = false;
-			grass.enabled = false;
-			jumpDilog.enabled= false;
-		resume.enabled = true;
-		home.enabled = true;
-//		bool pause=re.GetPause();
-//		if (pause) {
-//			Time.timeScale = 0;
-//		//	back.SetActive (true);
-
-
-	}
-	
+//	void Start () {
+//		//skip = true;
+//
+//		//to no button press
+//			Time.timeScale = 1;
+//			instruc.SetActive (true);
+//			//time.enabled = false;
+//			//grass.enabled = false;
+//		//	jumpDilog.enabled= false;
+//		resume.enabled = true;
+//		//home.enabled = true;
+////		bool pause=re.GetPause();
+////		if (pause) {
+////			Time.timeScale = 0;
+////		//	back.SetActive (true);
+//
+//
+//	}
+//	
 	// Update is called once per frame
-	 void Update ()
-	{				
-		//this time passed
-		timer += Time.deltaTime;    
-		if (timer >= 4) {
-
-			instruc.SetActive (false);
-			grass.enabled = true;
-
-			time.enabled = true;
-			ins.SetActive (false);
-
-			}	}
+//	 void Update ()
+//	{				
+//		//this time passed
+//		timer += Time.deltaTime;    
+//		if (timer >= 4) {
+//
+//			instruc.SetActive (false);
+//			grass.enabled = true;
+//
+//			time.enabled = true;
+//			ins.SetActive (false);
+//
+//			}	}
 
 //	public void Skip(){
 //		skip = !skip;
