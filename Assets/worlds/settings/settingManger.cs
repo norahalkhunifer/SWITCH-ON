@@ -18,7 +18,7 @@ public class settingManger : MonoBehaviour {
 	//method to send email 
 	public void ContactUs()
 	{
-		string email = "renadalmalki2@gmail.com"; 
+		string email = "switchOn.ksu@gmail.com"; 
 		string title = emailURL ("FEEDBACK"); 
 		string msg = emailURL ("Please enter your message");
 
