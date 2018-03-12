@@ -8,18 +8,20 @@ public class Resume_Paused : MonoBehaviour {
 	public GameObject back;
 	public GameObject inss;
 	public GameObject inssAnim;
+	public AccelerationControlScript grass;
 	// Use this for initialization
 	void Start () {
-		Time.timeScale = 0;
 
+		Time.timeScale = 0;
+		instru ();
+	}
+	public void instru(){
 		pause = false;
 		resume.SetActive (false);
 		back.SetActive (false);
 		inss.SetActive (true);
-		inssAnim.SetActive (true);
-
+		inssAnim.SetActive(true);
 	}
-
 	public void onResume(){
 		pause = !pause;
 		//to resume the game
@@ -33,6 +35,7 @@ public class Resume_Paused : MonoBehaviour {
 		public void OnPause (){
 		pause = true;
  		if (pause) {
+
 			Time.timeScale = 0;
 			resume.SetActive (true);
 			back.SetActive (true);
@@ -53,7 +56,6 @@ public class Resume_Paused : MonoBehaviour {
 			back.SetActive (false);
 			inss.SetActive (true);
 			inssAnim.SetActive (true);
-
 		}
 	}
 	public void onSkip(){
