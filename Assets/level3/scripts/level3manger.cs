@@ -188,13 +188,13 @@ public class level3manger : MonoBehaviour
 
 	IEnumerator closeCurrentBoxes()
 	{
-		yield return new WaitForSeconds(2);
+		yield return new WaitForSeconds(1);
 		currentboxes [0].closeit ();
 		currentboxes [1].closeit ();
 	}
 	IEnumerator emptyCurrentBoxes()
 	{
-		yield return new WaitForSeconds(2);
+		yield return new WaitForSeconds(1);
 
 	currentboxes [0] = null;
 	currentboxes [1] = null;
