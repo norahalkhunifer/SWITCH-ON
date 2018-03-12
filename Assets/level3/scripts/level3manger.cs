@@ -41,7 +41,7 @@ public class level3manger : MonoBehaviour
 	//win and lose objects 
 	public GameObject endpanle,wining,lose;
 	public Text Topscore,timetext,cscoretext;
-	bool end=false;
+	bool end=false,started=false;
 	//sounds 
 	public AudioSource pickup,mismatch,Endwin,Endlose,background;
 
@@ -62,7 +62,7 @@ public class level3manger : MonoBehaviour
 		foreach (GameObject box in boxes) {
 			placeRandomobj (box);
 		}
-		Showinstruction (true);
+		//Showinstruction (true);
 		setScore ();
 	}
 
@@ -106,7 +106,7 @@ public class level3manger : MonoBehaviour
 			Time.timeScale = 1;
 		}
 		//time untile instruction closes 
-		if (!instructionpanle.activeInHierarchy&& !end) {
+		if (started&& !end) {
 			Timedecrising();
 		}
 
@@ -267,6 +267,7 @@ public class level3manger : MonoBehaviour
    public void Showinstruction (bool show)
 	{
 		instructionpanle.SetActive (show);
+		started = true;
 	}
 
 
