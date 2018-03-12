@@ -19,11 +19,12 @@ public class TimeText : MonoBehaviour {
 	public Resume_Paused resume;
 	public instruction instruc;
 	public GameObject chare;
+	public string winT;
 	// Use this for initialization
 	void Start () {
 		//here to set how many time you want
 		Screen.orientation = ScreenOrientation.Portrait;
-		setTimer (44);
+		setTimer (40);
 		gameOver.SetActive (false);
 		back.SetActive (false);
 	}
@@ -61,15 +62,26 @@ public class TimeText : MonoBehaviour {
 		if (hours > 0) {
 			timer.text = string.Format ("{0}", hours, minu);
 			finalTimer.text = string.Format ("{0}", hours, minu);
-			finalTimerWin.text= string.Format ("{0}", hours, minu);
+			winT=finalTimer.text;
+			int tt = 40-int.Parse (winT);
+			string ww = tt.ToString ();
+			finalTimerWin.text = ww;
+
 		} else if (minu > 0) {
 			timer.text = string.Format ("{0}", minu, sec);
 			finalTimer.text = string.Format ("{0}", minu, sec);
-			finalTimerWin.text=string.Format ("{0}", minu, sec);
+
+			winT=finalTimer.text;
+			int tt = 40-int.Parse (winT);
+			string ww = tt.ToString ();
+			finalTimerWin.text = ww;
 		} else {
 			timer.text = string.Format ("{0}", sec, minisSecound);
 			finalTimer.text=string.Format ("{0}", sec, minisSecound);
-			finalTimerWin.text=string.Format ("{0}", sec, minisSecound);
+			winT=finalTimer.text;
+			int tt = 40-int.Parse (winT);
+			string ww = tt.ToString ();
+			finalTimerWin.text = ww;
 		}
 		
 	}
@@ -83,11 +95,11 @@ public class TimeText : MonoBehaviour {
 	}
 	//if timer finish this things will apper
 	public void FinishTimer(){
-		timer.text = "00";
+		timer.text = "40";
 		gameOver.SetActive (true);
 		back.SetActive (true);
 		chare.SetActive (false);
-		finalTimer.text ="00";
+		finalTimer.text ="40";
 		resume.enabled = false;
 		thender.enabled = false;
 		grass.enabled = false;
