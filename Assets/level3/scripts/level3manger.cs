@@ -172,7 +172,7 @@ public class level3manger : MonoBehaviour
 		currentboxes [0].mached ();
 		currentboxes [1].mached ();
 		size--;
-		debugbox.text= "YaaY +4 ⚡ ";
+		debugbox.text= "YaaY +4 ";
 		//play yay sound 
 		pickup.Play();
 		addscore (4);
