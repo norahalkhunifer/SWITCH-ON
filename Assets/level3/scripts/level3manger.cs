@@ -241,6 +241,8 @@ public class level3manger : MonoBehaviour
 	}
 	public void pause (bool open)
 	{
+		if (instructionpanle.activeInHierarchy)
+			Showinstruction (false);
 		pauseslider.SetActive(open);
 		paused = open;
 		activateGray (open);
