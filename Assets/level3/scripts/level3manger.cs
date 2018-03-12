@@ -33,10 +33,8 @@ public class level3manger : MonoBehaviour
 
 	//instruction dialog 
 	public GameObject instructionpanle;
-	private float insttimer=0f;
-	//exit dialog
-	public GameObject exitD;
-	public GameObject panleOncamera;
+	//exit + pause dialog
+	public GameObject exitD,pauseslider,panleOncamera;
 	GameObject hitObject;
 	public boxesHit hit;
 	bool paused=false;
@@ -107,7 +105,6 @@ public class level3manger : MonoBehaviour
 		} else if (!paused) {
 			Time.timeScale = 1;
 		}
-		insttimer += Time.deltaTime;   
 		//time untile instruction closes 
 		if (!instructionpanle.activeInHierarchy&& !end) {
 			Timedecrising();
@@ -242,15 +239,16 @@ public class level3manger : MonoBehaviour
 		PlayerPrefs.SetInt ("Level3Score", winscore);
 
 	}
-	public void pause ()
+	public void pause (bool open)
 	{
-
+		pauseslider.SetActive(open);
+		paused = open;
+		activateGray (open);
 	}
 	public void home (bool open)
 	{
 		exitD.SetActive(open);
 		paused = open;
-		activateGray (open);
 	}
 	 void activateGray (bool open)
 	{
