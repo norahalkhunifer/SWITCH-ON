@@ -109,8 +109,7 @@ public class level3manger : MonoBehaviour
 		}
 		insttimer += Time.deltaTime;   
 		//time untile instruction closes 
-		if (insttimer >= 4&& !end) {
-			Showinstruction (false);
+		if (!instructionpanle.activeInHierarchy&& !end) {
 			Timedecrising();
 		}
 
@@ -267,7 +266,7 @@ public class level3manger : MonoBehaviour
 	{
 		levelmanger.Replay ();
 	}
-    void Showinstruction (bool show)
+   public void Showinstruction (bool show)
 	{
 		instructionpanle.SetActive (show);
 	}
