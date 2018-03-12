@@ -8,7 +8,7 @@ public class Resume_Paused : MonoBehaviour {
 	public GameObject back;
 	public GameObject inss;
 	public GameObject inssAnim;
-	public AccelerationControlScript grass;
+
 	// Use this for initialization
 	void Start () {
 
@@ -16,9 +16,11 @@ public class Resume_Paused : MonoBehaviour {
 		instru ();
 	}
 	public void instru(){
+		
 		pause = false;
 		resume.SetActive (false);
 		back.SetActive (false);
+	
 		inss.SetActive (true);
 		inssAnim.SetActive(true);
 	}

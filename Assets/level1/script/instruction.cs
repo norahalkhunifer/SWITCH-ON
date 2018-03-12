@@ -15,39 +15,28 @@ public class instruction : MonoBehaviour {
 	public Exit home ;
 
 	// Use this for initialization
-//	void Start () {
-//		//skip = true;
+//void Start () {
 //
-//		//to no button press
-//			Time.timeScale = 1;
-//			instruc.SetActive (true);
-//			//time.enabled = false;
-//			//grass.enabled = false;
-//		//	jumpDilog.enabled= false;
-//		resume.enabled = true;
-//		//home.enabled = true;
-////		bool pause=re.GetPause();
-////		if (pause) {
-////			Time.timeScale = 0;
-////		//	back.SetActive (true);
+//instruc.SetActive (true);
+//
+//grass.enabled = false;
+//jumpDilog.enabled= false;
 //
 //
-//	}
-//	
+//	}د
+
 	// Update is called once per frame
-//	 void Update ()
-//	{				
-//		//this time passed
-//		timer += Time.deltaTime;    
-//		if (timer >= 4) {
+// void Update ()
+//{				
+////		//this time passed
+////		timer += Time.deltaTime;    
+////		if (timer >= 4) {
+////
+////			instruc.SetActive (false);
 //
-//			instruc.SetActive (false);
-//			grass.enabled = true;
-//
-//			time.enabled = true;
-//			ins.SetActive (false);
-//
-//			}	}
+////	ins.SetActive (false);
+////
+//}	
 
 //	public void Skip(){
 //		skip = !skip;
