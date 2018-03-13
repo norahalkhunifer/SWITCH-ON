@@ -16,6 +16,8 @@ public class SetGetName : MonoBehaviour {
 	public GameObject welcomeBack;
 	public GameObject instruction;
 	public WorldManager worldObject;
+	public bool welcombbool=false; 
+
 
 
 	public GameObject rightIcon;
@@ -119,18 +121,42 @@ public class SetGetName : MonoBehaviour {
 	}
 
 	void Start (){
-		if (firstTime()) {
-			//if first time open app show enter username dialouge
-			disapearDialouge (true);
-		} /*else {
-			//to show welcome back dialouge & hide it after view of seconds 
-			dispname2.text = GetUsername ();
-			StartCoroutine (ShowWelcome (true, 0f));
-			StartCoroutine (ShowWelcome (false, 5f));
-		}*/
+		        //Application.Quit();
+		        if (firstTime ()) {
+			            //if first time open app show enter username dialouge
+			            disapearDialouge (true);
 
+		        } else {
 
-		}
+			            if (PlayerPrefs.GetInt ("welcombbool1") == 1)
+				                welcombbool = true;
+
+			        if (welcombbool == true)  {
+				                //to show welcome back dialouge & hide it after view of seconds
+
+				                dispname2.text = GetUsername ();
+				                StartCoroutine (ShowWelcome (true, 0f));
+				                StartCoroutine (ShowWelcome (false, 5f));
+
+				                welcombbool = false;
+				                PlayerPrefs.SetInt("welcombbool1", welcombbool ? 1 : 0);
+				                PlayerPrefs.Save();
+
+				                    print ("a"+welcombbool);
+
+				            }//if
+			        }
+
+		    }//start
+
+	    void OnApplicationQuit(){
+
+		        welcombbool = true;
+		        PlayerPrefs.SetInt("welcombbool1", welcombbool ? 1 : 0);
+		        print ("sara"+ PlayerPrefs.GetInt ("welcombbool1"));
+		        PlayerPrefs.Save();
+
+		    }
 
 
 	public static bool firstTime(){
