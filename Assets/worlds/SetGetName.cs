@@ -146,7 +146,7 @@ public class SetGetName : MonoBehaviour {
 
 		if (!show) {
 			StartCoroutine (ShowInstruction (true, 0f));
-			StartCoroutine (ShowInstruction (false, 8f));
+			StartCoroutine (ShowInstruction (false, 10f));
 		}
 	}//END METHOD
 
