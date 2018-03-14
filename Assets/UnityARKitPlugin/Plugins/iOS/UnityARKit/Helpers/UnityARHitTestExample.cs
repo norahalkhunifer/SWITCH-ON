@@ -12,7 +12,7 @@ namespace UnityEngine.XR.iOS
 		public Transform m_HitTransform;
 		public static Ray ray;//this will be the ray that we cast from our touch into the scene
 		private static RaycastHit hit;
-		private static Balloon levelmanager;
+		private static Level2Manager levelmanager;
 
 		bool HitTestWithResultType (ARPoint point, ARHitTestResultType resultTypes)
 		{
@@ -36,7 +36,7 @@ namespace UnityEngine.XR.iOS
 
 		void Awake () {
 			//get the mager to send tutched object to it 
-			levelmanager = GameObject.Find ("manger").GetComponent<Balloon> ();
+			levelmanager = GameObject.Find("Balloons").GetComponent<Level2Manager> ();
 			//place the boxes container on detected ground 
 			ARPoint point = new ARPoint { 
 				x = 0.1f, //do a hit test at the center of the screen
@@ -64,17 +64,16 @@ namespace UnityEngine.XR.iOS
 		// Update is called once per frame
 		void Update () {
 
-			if (Input.touchCount > 0 )
+			if (Input.touchCount > 0)
 			{
 				var touch = Input.GetTouch(0);
-				//if ((touch.phase == TouchPhase.Began || touch.phase == TouchPhase.Moved )&& !EventSystem.current.IsPointerOverGameObject(0))
-				//{
-				//	transform.localPosition = Vector3.zero;*/
+
 					var ray = Camera.main.ScreenPointToRay (touch.position);//creates ray from screen point position
 					if (Physics.Raycast (ray, out hit)){//&& EventSystem.current.IsPointerOverGameObject()) {//Physics.Raycast (ray, out hit, maxRayDistance, collisionLayer)
 						GameObject item = hit.collider.transform.gameObject; //parent is what is stored in our area;
-						//print ("Hit  " + item.name);
-						levelmanager.touchsomething(item);
+					print ("sara");
+					levelmanager.touchsomething(item);
+					//print (item.name);
 						/*var screenPosition = Camera.main.ScreenToViewportPoint(new Vector2 (Screen.width / 2f, Screen.height / 2f));*/
 	}
 
