@@ -1955,7 +1955,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: 3e7b438c693790d4f9c67acef4e43944, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.34
+      value: -0.3
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: 3e7b438c693790d4f9c67acef4e43944, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2314,8 +2314,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.6465565, y: 1.4424304, z: 0.5046404}
-  m_Center: {x: 0.17672186, y: 0.22121492, z: 0.24767981}
+  m_Size: {x: 0.31099612, y: 1.4424304, z: 0.20699339}
+  m_Center: {x: 0.008941603, y: 0.22121492, z: 0.09885631}
 --- !u!82 &894336792
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2656,11 +2656,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4023412880410692, guid: 696855730620a483c9ae4c242e312b28, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -0.173
+      value: -0.17
       objectReference: {fileID: 0}
     - target: {fileID: 4023412880410692, guid: 696855730620a483c9ae4c242e312b28, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 1.058
+      value: 0.02
       objectReference: {fileID: 0}
     - target: {fileID: 4023412880410692, guid: 696855730620a483c9ae4c242e312b28, type: 2}
       propertyPath: m_LocalRotation.x
@@ -2864,8 +2864,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.3988923, y: 1.9436153, z: 0.777434}
-  m_Center: {x: 5.0491385, y: 0.88987774, z: 0.77572614}
+  m_Size: {x: 0.6915016, y: 2.1504657, z: 1}
+  m_Center: {x: 3.8203137, y: 0.7999121, z: -2.6327902e-17}
 --- !u!114 &1069765712
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3142,15 +3142,15 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4023412880410692, guid: 696855730620a483c9ae4c242e312b28, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 3.64
+      value: 0.04
       objectReference: {fileID: 0}
     - target: {fileID: 4023412880410692, guid: 696855730620a483c9ae4c242e312b28, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0.5
+      value: -1.87
       objectReference: {fileID: 0}
     - target: {fileID: 4023412880410692, guid: 696855730620a483c9ae4c242e312b28, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -10.8
+      value: -11.73
       objectReference: {fileID: 0}
     - target: {fileID: 4023412880410692, guid: 696855730620a483c9ae4c242e312b28, type: 2}
       propertyPath: m_LocalRotation.x
@@ -3485,7 +3485,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4023412880410692, guid: 696855730620a483c9ae4c242e312b28, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 3.48
       objectReference: {fileID: 0}
     - target: {fileID: 4023412880410692, guid: 696855730620a483c9ae4c242e312b28, type: 2}
       propertyPath: m_LocalPosition.y
@@ -3676,8 +3676,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.792923, y: 2.1539087, z: 1.3537464}
-  m_Center: {x: -5.5897255, y: 1.2759664, z: -10.1994505}
+  m_Size: {x: 1.3812923, y: 3.723524, z: 1.021821}
+  m_Center: {x: -5.3653297, y: 1.2012932, z: -8.87916}
 --- !u!54 &1515369048
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3713,7 +3713,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1.8428297
-  MaxDistance: 500
+  MaxDistance: 108350.63
   Pan2D: 0
   rolloffMode: 0
   BypassEffects: 0
@@ -4106,11 +4106,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4023412880410692, guid: 696855730620a483c9ae4c242e312b28, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0.82
+      value: -0.15
       objectReference: {fileID: 0}
     - target: {fileID: 4023412880410692, guid: 696855730620a483c9ae4c242e312b28, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -8.29
+      value: -8.61
       objectReference: {fileID: 0}
     - target: {fileID: 4023412880410692, guid: 696855730620a483c9ae4c242e312b28, type: 2}
       propertyPath: m_LocalRotation.x
@@ -4508,8 +4508,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.5827415, y: 1.4173512, z: 0.27965182}
-  m_Center: {x: -4.29, y: 0.35, z: 4.77}
+  m_Size: {x: 0.18425125, y: 1.4151721, z: 0.23672438}
+  m_Center: {x: 0.042778224, y: 0.20758605, z: 0.005375728}
 --- !u!54 &2004565151
 Rigidbody:
   m_ObjectHideFlags: 0
