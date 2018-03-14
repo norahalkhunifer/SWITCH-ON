@@ -7,40 +7,42 @@ public class ExitB : MonoBehaviour {
 
 	public bool exitButton;
 	public GameObject exitDilog;
-	public GameObject yes;
-	private Balloon level;
-	//public Resume_Paused re;
+	//public GameObject back;
+	private LevelManger level;
+	public Resumepaused re;
 	// Use this for initialization
 	void Start () {
 		exitButton = false;
 		exitDilog.SetActive (false);
-		yes.SetActive (false);
+		//back.SetActive (false);
 
 	}
 
 
-	/*public void onNo(){
+	public void onNo(){
 		exitButton = !exitButton;
+
 		//to no button press
 		if (!exitButton) {
 			Time.timeScale = 1;
 			exitDilog.SetActive (false);
-			back.SetActive (false);
-			bool exitButton=re.GetPause ();
-			Debug.Log (exitButton);
-			if (exitButton) {
-				re.OnPause ();
+			//back.SetActive (false);
+			bool pause=re.GetPause();
+			if (pause) {
+				Time.timeScale = 0;
+				//back.SetActive (true);
+
 			}
 		} 
 
 
-	}*/
+	}
 	public void onHome(){
 		exitButton = !exitButton;
 		if (exitButton) {
 			Time.timeScale = 0;
 			exitDilog.SetActive (true);
-			yes.SetActive (true);
+			//back.SetActive (true);
 		}
 	}
 
@@ -52,7 +54,7 @@ public class ExitB : MonoBehaviour {
 			SceneManager.LoadScene ("world");
 			Time.timeScale = 1;
 			exitDilog.SetActive (false);
-			yes.SetActive (false);
+			//back.SetActive (false);
 		}
 	}
 }

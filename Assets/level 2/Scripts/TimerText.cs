@@ -12,10 +12,10 @@ public class TimerText: MonoBehaviour {
 		Timer -= Time.deltaTime;
 		if(Timer<=0){
 			Timer = 0;
-			Timertext.text = Timer.ToString ("f0");//f9 indicates no. of digits
+			Timertext.text = Timer.ToString ("f2");//f9 indicates no. of digits
 			print (Timer);
 		}
-		Timertext.text = Timer.ToString ("f0");//f9 indicates no. of digits
+		Timertext.text = Timer.ToString ("f2");//f9 indicates no. of digits
 		print (Timer);
 
 
