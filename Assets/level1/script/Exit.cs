@@ -10,6 +10,8 @@ public class Exit : MonoBehaviour {
 	public GameObject back;
 	private LevelManger level;
 	public Resume_Paused re;
+
+
 	// Use this for initialization
 	void Start () {
 		exitButton = false;

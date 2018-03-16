@@ -1,20 +1,23 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 
 public class ExitB : MonoBehaviour {
 
 	public bool exitButton;
 	public GameObject exitDilog;
-	//public GameObject back;
+    public GameObject back;
 	private LevelManger level;
-	public Resumepaused re;
+	public Resume_Paused re;
+
+
 	// Use this for initialization
 	void Start () {
+		
 		exitButton = false;
 		exitDilog.SetActive (false);
-		//back.SetActive (false);
 
 	}
 
@@ -23,9 +26,9 @@ public class ExitB : MonoBehaviour {
 		exitButton = !exitButton;
 
 		//to no button press
-		if (!exitButton) {
+		//if (!exitButton) {
 			Time.timeScale = 1;
-			exitDilog.SetActive (false);
+		    exitDilog.SetActive (false);
 			//back.SetActive (false);
 			bool pause=re.GetPause();
 			if (pause) {
@@ -33,28 +36,34 @@ public class ExitB : MonoBehaviour {
 				//back.SetActive (true);
 
 			}
-		} 
+		//} 
 
 
 	}
+
+
 	public void onHome(){
-		exitButton = !exitButton;
-		if (exitButton) {
+
 			Time.timeScale = 0;
-			exitDilog.SetActive (true);
-			//back.SetActive (true);
+		exitDilog.SetActive (true);
+
+		if (exitDilog.activeSelf == true) {
+			print ("ll");
+			back.SetActive (false);
 		}
+			
 	}
+
 
 
 	public void onYes(){
 		exitButton = !exitButton;
 		//to no button press
-		if (!exitButton) {
+		//if (!exitButton) {
 			SceneManager.LoadScene ("world");
 			Time.timeScale = 1;
-			exitDilog.SetActive (false);
+		exitDilog.SetActive (false);
 			//back.SetActive (false);
-		}
+		//}
 	}
 }

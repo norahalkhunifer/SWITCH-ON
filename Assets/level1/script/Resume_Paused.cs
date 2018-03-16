@@ -45,8 +45,10 @@ public class Resume_Paused : MonoBehaviour {
 			setPause (pause);
 			}
 		}
+
 	public bool GetPause(){
 		return pause;	}
+	
 	public void setPause(bool pa){
 		 pause=pa;	}
 	
