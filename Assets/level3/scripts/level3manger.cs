@@ -99,13 +99,15 @@ public class level3manger : MonoBehaviour
 	{//time decreasing 
 		//if inst +pause+home not active 
 		//+stop if win or lose 
-		if (paused) {
-			Time.timeScale = 0;
-		} else if (!paused) {
+		//if (paused) {
+		//} else
+		if (!paused && started) {
 			Time.timeScale = 1;
-		}
+		}else 
+			Time.timeScale = 0;
+		
 		//time untile instruction closes 
-		if ((instructionpanle.activeInHierarchy==false) && (!end)) {
+		if (started && (!end)) {
 			Timedecrising();
 		}
 
@@ -274,5 +276,6 @@ public class level3manger : MonoBehaviour
 	{
 		instructionpanle.SetActive (show);
 		activateGray (show);
+		started = true;
 	}
 }
