@@ -23,7 +23,7 @@ public class level3manger : MonoBehaviour
 	private int nroftries = 0;
 	//time
 	public Text time;
-	private float timer;
+	private float timer,timeongoing;
 	public float timelimitbysec;
 	//score
 	public Text score;
@@ -62,7 +62,6 @@ public class level3manger : MonoBehaviour
 		foreach (GameObject box in boxes) {
 			placeRandomobj (box);
 		}
-		//Showinstruction (true);
 		setScore ();
 	}
 
@@ -106,7 +105,7 @@ public class level3manger : MonoBehaviour
 			Time.timeScale = 1;
 		}
 		//time untile instruction closes 
-		if (started&& !end) {
+		if ((instructionpanle.activeInHierarchy==false) && (!end)) {
 			Timedecrising();
 		}
 
@@ -114,10 +113,10 @@ public class level3manger : MonoBehaviour
 
 	}
 	void Timedecrising(){
-		float t = timer - Time.time;
-		string min = ((int)t / 60).ToString ();
-		string sec = ((int)t % 60).ToString ();
-		if (t <= 0) {//if time is up 
+		timeongoing= timer - Time.time;
+		string min = ((int)timeongoing / 60).ToString ();
+		string sec = ((int)timeongoing % 60).ToString ();
+		if (timeongoing <= 0) {//if time is up 
 			timeend();
 		} else//we can change it to red if its close to end by 5 or 10 sec 
 			time.text = min + ":" + sec;
@@ -202,6 +201,7 @@ public class level3manger : MonoBehaviour
 
 	public void timeend ()
 	{
+		
 		if (size == 0)
 			GameEnd (true);
 		else
@@ -222,16 +222,20 @@ public class level3manger : MonoBehaviour
 		end = !end;
 		activateGray (true);
 		endpanle.SetActive (true);
-		timetext.text = time.text;
+		timetext.text = doneTime();
 		cscoretext.text = score.text;
 		if (win) {
 			wining.SetActive (true);
 			Topscore.text = scorenum.ToString();
-			levelmanger.win (2,scorenum,time.text.ToString());
+			levelmanger.win (2,scorenum,timetext.text.ToString());
 			debugbox.text = "tries: " + nroftries;
 		} else {
 			lose.SetActive (true);
 			}
+	}
+	string doneTime(){
+		return((int)(timer - timeongoing)/60).ToString ()+":"+((int)(timer - timeongoing) % 60).ToString();
+
 	}
 
 	public void save (int winscore)
@@ -244,7 +248,6 @@ public class level3manger : MonoBehaviour
 		if (instructionpanle.activeInHierarchy)
 			Showinstruction (false);
 		pauseslider.SetActive(open);
-		paused = open;
 		activateGray (open);
 	}
 	public void home (bool open)
@@ -255,6 +258,7 @@ public class level3manger : MonoBehaviour
 	 void activateGray (bool open)
 	{
 		panleOncamera.SetActive (open);
+		paused = open;
 		//boxesHit test=hitObject.GetComponent ("boxesHit")as boxesHit;
 			hit.enabled = !open;
 	}
@@ -269,10 +273,6 @@ public class level3manger : MonoBehaviour
    public void Showinstruction (bool show)
 	{
 		instructionpanle.SetActive (show);
-		started = true;
+		activateGray (show);
 	}
-
-
-
-
 }
