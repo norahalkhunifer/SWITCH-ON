@@ -124,7 +124,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2655050
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1986,54 +1986,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 532739178}
---- !u!1 &535021944
-GameObject:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 5
-  m_Component:
-  - component: {fileID: 535021946}
-  - component: {fileID: 535021945}
-  m_Layer: 0
-  m_Name: Acc_instruc
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!114 &535021945
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 535021944}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6a6a1f0a91abb4fecb3acb98ea7efe56, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  instruc: {fileID: 0}
-  skip: 0
-  grass: {fileID: 0}
-  jumpDilog: {fileID: 0}
-  time: {fileID: 0}
-  resume: {fileID: 0}
-  ins: {fileID: 535021944}
-  home: {fileID: 0}
---- !u!4 &535021946
-Transform:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 535021944}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 158.73547, y: 164.16656, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 7
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &547494037
 GameObject:
   m_ObjectHideFlags: 0
@@ -2781,7 +2733,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &757310410
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4126,7 +4078,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1020710529
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5420,7 +5372,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pause: 0
-  resume: {fileID: 1020710528}
+  resume: {fileID: 1276885023}
   back: {fileID: 330004994}
   inss: {fileID: 966103786}
   inssAnim: {fileID: 1007402295}
@@ -7060,7 +7012,7 @@ MonoBehaviour:
   scoreText: {fileID: 329268561}
   scoreTextWin: {fileID: 2060908541}
   resume: {fileID: 1276885024}
-  instruc: {fileID: 535021945}
+  instruc: {fileID: 0}
   levelmanger: {fileID: 247530389}
 --- !u!4 &1748644315
 Transform:
@@ -8340,7 +8292,7 @@ MonoBehaviour:
   jump: {fileID: 97825324}
   back: {fileID: 330004994}
   resume: {fileID: 1276885024}
-  instruc: {fileID: 535021945}
+  instruc: {fileID: 0}
   chare: {fileID: 1394887792}
   winT: 
 --- !u!81 &2079479083
