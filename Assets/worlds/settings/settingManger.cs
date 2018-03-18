@@ -10,9 +10,14 @@ public class settingManger : MonoBehaviour {
 	public Image closed, start;
 	GameObject text1, text2;
 
+	private AudioManager audiomanager;
+	public Button MusicToggle; 
+	public Sprite MusicOff, MusicOn;
+
 	public void Start(){
 		manger= GameObject.Find("worlds manger").GetComponent<WorldManager> ();
-
+		audiomanager = GameObject.FindObjectOfType<AudioManager> ();
+		updateMusic ();
 	}
 
 	//method to send email 
@@ -83,8 +88,6 @@ public class settingManger : MonoBehaviour {
 		text2 = GameObject.Find ("Text2");
 		text2.GetComponent<Text>().enabled = false;
 
-
-	
 	}
 
 	//Close instruction using SKIP button
@@ -94,5 +97,21 @@ public class settingManger : MonoBehaviour {
 		help.SetActive (false);
 }
 
-}
+	public void PauseMusic(){
+		audiomanager.ToggleSound();
+		updateMusic ();
+	}
 
+	void updateMusic(){
+		if(PlayerPrefs.GetInt("Mute",0) == 0)
+		{
+			AudioListener.volume = 1;
+			MusicToggle.image.overrideSprite = MusicOn;
+		}
+		else{
+			AudioListener.volume = 0;
+			MusicToggle.image.overrideSprite = MusicOff;
+		}
+	}
+
+}
