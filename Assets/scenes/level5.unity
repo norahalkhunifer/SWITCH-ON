@@ -5232,8 +5232,8 @@ MonoBehaviour:
   bug3: {fileID: 1381370910}
   bug4: {fileID: 57693653}
   bug5: {fileID: 1553527270}
-  bug6: {fileID: 0}
-  bug7: {fileID: 0}
+  bug6: {fileID: 1576814825}
+  bug7: {fileID: 191032851}
   grass: {fileID: 1684934836}
   script: {fileID: 1292393599}
   battryHide: {fileID: 417534971}
@@ -7877,7 +7877,7 @@ GameObject:
   - component: {fileID: 1750341891}
   - component: {fileID: 1750341892}
   m_Layer: 0
-  m_Name: Acc_Bugs
+  m_Name: Acc_ThHide
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7907,13 +7907,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b49d99fd49574efda857c4b135deb7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bug0: {fileID: 1365154784}
-  bug1: {fileID: 1342284488}
-  bug2: {fileID: 1880196203}
-  bug3: {fileID: 1381370910}
-  bug4: {fileID: 57693653}
-  bug5: {fileID: 1553527270}
-  scoreTh: {fileID: 1292393599}
+  thender: {fileID: 1918344338}
+  thender1: {fileID: 661922155}
+  thender2: {fileID: 649620851}
+  thender3: {fileID: 1222834878}
+  thender4: {fileID: 1589547371}
+  thender5: {fileID: 52428694}
+  thender6: {fileID: 257160601}
+  thender7: {fileID: 197953926}
+  thender8: {fileID: 1647641530}
+  grass0: {fileID: 1519085421}
+  scoreTh: {fileID: 0}
 --- !u!1 &1780483394
 GameObject:
   m_ObjectHideFlags: 0

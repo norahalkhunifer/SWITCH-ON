@@ -53,16 +53,18 @@ public LevelManger levelmanger;
 	{
 		//
 
-		if (thender.name==obj.name) {
-			Debug.Log (score);
-			Debug.Log (thender.name == obj.name);
-			thender.SetActive (false);//to disable thinder
-			score = score + 1;
-			Debug.Log (score);
-			scoreText.text = score.ToString ();
-			finalScore.text=score.ToString();
-			scoreTextWin.text=score.ToString();
+		if (thender.name == obj.name ) {
 
+				Debug.Log (score);
+				Debug.Log (thender.name == obj.name);
+				thender.SetActive (false);//to disable thinder
+				score = score + 1;
+				Debug.Log (score);
+				scoreText.text = score.ToString ();
+				finalScore.text = score.ToString ();
+				scoreTextWin.text = score.ToString ();
+
+			
 		}
 
 
