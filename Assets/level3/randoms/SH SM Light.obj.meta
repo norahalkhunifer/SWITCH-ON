@@ -1,23 +1,33 @@
 fileFormatVersion: 2
-guid: 41244dc166b7641f7b8534a5fa5a62b6
-timeCreated: 1520668965
+guid: 5ef6bd4e68b324b8db98452267a51e8a
+timeCreated: 1521384588
 licenseType: Free
 ModelImporter:
   serializedVersion: 22
   fileIDToRecycleName:
-    100000: default
-    100002: //RootNode
-    400000: default
-    400002: //RootNode
-    2300000: default
-    3300000: default
-    4300000: default
+    100000: //RootNode
+    100002: SH_SM_Light_SH_SM_Lig_SH_SM_Light_SH_SM_Lig_material_38_177cc_SH_SM_Light_2.dds
+    100004: SH_SM_Light_SH_SM_SH_SM_Light_SH_SM_material_37_6905b_SH_SM_Light.dds
+    400000: //RootNode
+    400002: SH_SM_Light_SH_SM_Lig_SH_SM_Light_SH_SM_Lig_material_38_177cc_SH_SM_Light_2.dds
+    400004: SH_SM_Light_SH_SM_SH_SM_Light_SH_SM_material_37_6905b_SH_SM_Light.dds
+    2300000: SH_SM_Light_SH_SM_Lig_SH_SM_Light_SH_SM_Lig_material_38_177cc_SH_SM_Light_2.dds
+    2300002: SH_SM_Light_SH_SM_SH_SM_Light_SH_SM_material_37_6905b_SH_SM_Light.dds
+    3300000: SH_SM_Light_SH_SM_Lig_SH_SM_Light_SH_SM_Lig_material_38_177cc_SH_SM_Light_2.dds
+    3300002: SH_SM_Light_SH_SM_SH_SM_Light_SH_SM_material_37_6905b_SH_SM_Light.dds
+    4300000: SH_SM_Light_SH_SM_Lig_SH_SM_Light_SH_SM_Lig_material_38_177cc_SH_SM_Light_2.dds
+    4300002: SH_SM_Light_SH_SM_SH_SM_Light_SH_SM_material_37_6905b_SH_SM_Light.dds
   externalObjects:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: defaultMat
-    second: {fileID: 2100000, guid: 57c05c3531e384cd78debb586bd7f238, type: 2}
+      name: SH_SM_Light_SH_SM_Lig_SH_SM_Light_SH_SM_Lig_material_38_177cc_SH_SM_Light_2.ddsMat
+    second: {fileID: 2100000, guid: 2463dcdbfd8f3477fbdb71b08dcb13ef, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: SH_SM_Light_SH_SM_SH_SM_Light_SH_SM_material_37_6905b_SH_SM_Light.ddsMat
+    second: {fileID: 2100000, guid: 3de34ac4b17364d13a5cb1c85df2322d, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
