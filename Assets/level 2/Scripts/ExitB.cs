@@ -44,8 +44,9 @@ public class ExitB : MonoBehaviour {
 
 	public void onHome(){
 
-			Time.timeScale = 0;
+
 		exitDilog.SetActive (true);
+		Time.timeScale = 0;
 
 		if (exitDilog.activeSelf == true) {
 			print ("ll");
