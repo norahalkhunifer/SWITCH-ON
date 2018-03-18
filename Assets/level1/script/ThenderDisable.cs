@@ -12,6 +12,14 @@ public class ThenderDisable : MonoBehaviour {
 	public GameObject thender6;
 	public GameObject thender7;
 	public GameObject thender8;
+	public GameObject bug0;
+	public GameObject bug1;
+	public GameObject bug2;
+	public GameObject bug3;
+	public GameObject bug4;
+	public GameObject bug5;
+	public GameObject bug6;
+	public GameObject bug7;
 	public AccelerationControlScript grass;
 	public ThenderDisable script;
 	public BattryChange battryHide;
@@ -28,7 +36,7 @@ public class ThenderDisable : MonoBehaviour {
 	public instruction instruc;
 public LevelManger levelmanger;
 
-	private int score=0;
+	public int score=0;
 
 
 	void Start(){
@@ -174,7 +182,97 @@ public LevelManger levelmanger;
 			topScore.text=levelmanger.getTopScore (1).ToString();
 
 
-		}	
+		}
+		if (bug0.name == obj.name) {
+			Debug.Log (score);
+
+			bug0.SetActive (false);//to disable thinder
+			if (score >0) {
+				score = score - 1;
+			}
+			Debug.Log (score);
+			scoreText.text = score.ToString ();
+			finalScore.text=score.ToString();
+			scoreTextWin.text=score.ToString();
+		}
+		if (bug1.name == obj.name) {
+			Debug.Log (score);
+
+			bug1.SetActive (false);//to disable thinder
+			if (score >0) {
+				score = score - 1;
+			}			Debug.Log (score);
+			scoreText.text = score.ToString ();
+			finalScore.text=score.ToString();
+			scoreTextWin.text=score.ToString();
+		}
+		if (bug2.name == obj.name) {
+			Debug.Log (score);
+
+			bug2.SetActive (false);//to disable thinder
+			if (score >0) {
+				score = score - 1;
+			}			Debug.Log (score);
+			scoreText.text = score.ToString ();
+			finalScore.text=score.ToString();
+			scoreTextWin.text=score.ToString();
+		}
+		if (bug3.name == obj.name) {
+			Debug.Log (score);
+
+			bug3.SetActive (false);//to disable thinder
+			if (score >0) {
+				score = score - 1;
+			}			Debug.Log (score);
+			scoreText.text = score.ToString ();
+			finalScore.text=score.ToString();
+			scoreTextWin.text=score.ToString();
+		}
+		if (bug4.name == obj.name) {
+			Debug.Log (score);
+
+			bug4.SetActive (false);//to disable thinder
+			if (score >0) {
+				score = score - 1;
+			}			Debug.Log (score);
+			scoreText.text = score.ToString ();
+			finalScore.text=score.ToString();
+			scoreTextWin.text=score.ToString();
+		}
+		if (bug5.name == obj.name) {
+			Debug.Log (score);
+
+			bug5.SetActive (false);//to disable thinder
+			if (score >0) {
+				score = score - 1;
+			}			Debug.Log (score);
+			scoreText.text = score.ToString ();
+			finalScore.text=score.ToString();
+			scoreTextWin.text=score.ToString();
+		}
+
+		if (bug6.name == obj.name) {
+			Debug.Log (score);
+
+			bug6.SetActive (false);//to disable thinder
+			if (score >0) {
+				score = score - 1;
+			}			Debug.Log (score);
+			scoreText.text = score.ToString ();
+			finalScore.text=score.ToString();
+			scoreTextWin.text=score.ToString();
+		}
+		if (bug7.name == obj.name) {
+			Debug.Log (score);
+
+			bug7.SetActive (false);//to disable thinder
+			if (score >0) {
+				score = score - 1;
+			}			Debug.Log (score);
+			scoreText.text = score.ToString ();
+			finalScore.text=score.ToString();
+			scoreTextWin.text=score.ToString();
+		}
 	}
 }
 
