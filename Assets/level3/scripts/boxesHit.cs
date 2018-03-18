@@ -39,7 +39,7 @@ using UnityEngine.XR.iOS;
 			};
 
 			ARHitTestResultType[] resultTypes = {
-				ARHitTestResultType.ARHitTestResultTypeExistingPlaneUsingExtent, //if you want to use bounded planes
+				//ARHitTestResultType.ARHitTestResultTypeExistingPlaneUsingExtent, //if you want to use bounded planes
 				//ARHitTestResultType.ARHitTestResultTypeExistingPlane,// if you want to use infinite planes use this
 				ARHitTestResultType.ARHitTestResultTypeHorizontalPlane,
 				ARHitTestResultType.ARHitTestResultTypeFeaturePoint// if you want to hit test on feature points
