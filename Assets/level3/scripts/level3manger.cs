@@ -259,7 +259,8 @@ public class level3manger : MonoBehaviour
 	public void home (bool open)
 	{
 		exitD.SetActive(open);
-		paused = open;
+		activateGray (open);
+		//paused = open;
 	}
 	 void activateGray (bool open)
 	{
