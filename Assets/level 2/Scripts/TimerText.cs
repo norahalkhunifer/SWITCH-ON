@@ -4,20 +4,23 @@ using UnityEngine;
 using UnityEngine.UI;//importaaant
 
 public class TimerText: MonoBehaviour {
-	 float Timer= 60;
-	public Text Timertext;
+	
+	public Text gameTimerText;
+	float Timer=90;
 
-	void Update () {
-		Timertext = GetComponent<Text>();
-		Timer -= Time.deltaTime;
-		if(Timer<=0){
-			Timer = 0;
-			Timertext.text = Timer.ToString ("f2");//f9 indicates no. of digits
-			print (Timer);
+
+		void Update () {
+			Timer -= Time.deltaTime*24;
+
+			int seconds = (int)(Timer % 60);
+			int minutes = (int)(Timer / 60) % 60;
+			//		int hours = (int)(Timer / 3600) % 24;
+
+			string timerString = string.Format("{0}:{1}",minutes,seconds);
+
+			gameTimerText.text = timerString;
 		}
-		Timertext.text = Timer.ToString ("f2");//f9 indicates no. of digits
-		print (Timer);
 
 
-	}
+
 }

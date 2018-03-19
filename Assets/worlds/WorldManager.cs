@@ -123,7 +123,7 @@ public class WorldManager : MonoBehaviour {
 
     //world animations 
 	public void next(Animator anim){
-		if (nextavi) {
+		if (nextavi&& !isDActivated()) {
 			anim.SetBool ("thereisnext", true);
 			nextavi = false;
 		}
@@ -211,7 +211,7 @@ public class WorldManager : MonoBehaviour {
 		PlayerPrefs.SetInt("TotalScore",totalscore);
 	}
 	public bool isDActivated(){
-		if (dialogsmanger.nameDialouge.activeInHierarchy || dialogsmanger.welcomeDialouge.activeInHierarchy)
+		if (dialogsmanger.nameDialouge.activeInHierarchy || dialogsmanger.welcomeBack.activeInHierarchy || dialogsmanger.welcomeDialouge.activeInHierarchy)
 			return true;
 		return false;
 	}

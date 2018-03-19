@@ -114,7 +114,9 @@ public class level3manger : MonoBehaviour
 
 
 	}
+
 	void Timedecrising(){
+		print ("enter it");
 		timeongoing= timer - Time.time;
 		string min = ((int)timeongoing / 60).ToString ();
 		string sec = ((int)timeongoing % 60).ToString ();
@@ -123,6 +125,7 @@ public class level3manger : MonoBehaviour
 		} else//we can change it to red if its close to end by 5 or 10 sec 
 			time.text = min + ":" + sec;
 	}
+
 	public void touchsomething (GameObject hitobject)//if player hit something the hit example will send the hited object to her e
 	{
 		//get it and openit or close it the mange will be in other method 
@@ -252,6 +255,7 @@ public class level3manger : MonoBehaviour
 		pauseslider.SetActive(open);
 		activateGray (open);
 	}
+
 	public void home (bool open)
 	{
 		exitD.SetActive(open);
