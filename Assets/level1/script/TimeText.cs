@@ -20,6 +20,7 @@ public class TimeText : MonoBehaviour {
 	public instruction instruc;
 	public GameObject chare;
 	public string winT;
+	public GameObject gameWin;
 	// Use this for initialization
 	void Start () {
 		//here to set how many time you want
@@ -95,7 +96,9 @@ public class TimeText : MonoBehaviour {
 	}
 	//if timer finish this things will apper
 	public void FinishTimer(){
+
 		timer.text = "40";
+
 		gameOver.SetActive (true);
 		back.SetActive (true);
 		chare.SetActive (false);

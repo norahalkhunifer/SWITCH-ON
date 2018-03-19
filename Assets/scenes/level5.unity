@@ -1185,7 +1185,7 @@ AudioSource:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 186995538}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: aefadb1a9c7314e28b10fab3ff131abf, type: 3}
@@ -7760,6 +7760,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   keyDelay: 1
+  hide: {fileID: 1750341892}
+  thenderHi: {fileID: 1750341890}
+  temp: 
 --- !u!4 &1684934837
 Transform:
   m_ObjectHideFlags: 0
@@ -7907,7 +7910,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b49d99fd49574efda857c4b135deb7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thender: {fileID: 1918344338}
+  thender0: {fileID: 1918344338}
   thender1: {fileID: 661922155}
   thender2: {fileID: 649620851}
   thender3: {fileID: 1222834878}
@@ -7916,7 +7919,9 @@ MonoBehaviour:
   thender6: {fileID: 257160601}
   thender7: {fileID: 197953926}
   thender8: {fileID: 1647641530}
-  grass0: {fileID: 1519085421}
+  hide: {fileID: 1750341890}
+  str: 
+  script: {fileID: 1684934836}
 --- !u!1 &1780483394
 GameObject:
   m_ObjectHideFlags: 0
