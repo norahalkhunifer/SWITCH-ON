@@ -17,7 +17,7 @@ public class settingManger : MonoBehaviour {
 	public void Start(){
 		manger= GameObject.Find("worlds manger").GetComponent<WorldManager> ();
 		audiomanager = GameObject.FindObjectOfType<AudioManager> ();
-		updateMusic ();
+		Mute ();
 	}
 
 	//method to send email 
@@ -97,12 +97,13 @@ public class settingManger : MonoBehaviour {
 		help.SetActive (false);
 }
 
-	public void PauseMusic(){
-		audiomanager.ToggleSound();
-		updateMusic ();
+	public void StopMusic(){
+		audiomanager.ToggleMute();
+		Mute ();
 	}
 
-	void updateMusic(){
+	//change maute to unmute and the icon
+	void Mute(){
 		if(PlayerPrefs.GetInt("Mute",0) == 0)
 		{
 			AudioListener.volume = 1;
