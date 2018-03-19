@@ -9,7 +9,10 @@ public class ExitB : MonoBehaviour {
 	public bool exitButton;
 	public GameObject exitDilog;
     public GameObject back;
-	private LevelManger level;
+
+	public LevelManger level;
+
+	public Level2Manager l2m;
 	public Resume_Paused re;
 
 
@@ -23,14 +26,16 @@ public class ExitB : MonoBehaviour {
 
 
 	public void onNo(){
+		print ("no");
 		exitButton = !exitButton;
 
 		//to no button press
 		//if (!exitButton) {
 			Time.timeScale = 1;
 		    exitDilog.SetActive (false);
-			//back.SetActive (false);
+		l2m.activateGray (false);
 			bool pause=re.GetPause();
+	
 			if (pause) {
 				Time.timeScale = 0;
 				//back.SetActive (true);
@@ -58,10 +63,13 @@ public class ExitB : MonoBehaviour {
 
 
 	public void onYes(){
+		
+		print ("yes");
+		//level.LoudHome();
 		exitButton = !exitButton;
 		//to no button press
 		//if (!exitButton) {
-			SceneManager.LoadScene ("world");
+		SceneManager.LoadScene ("world");
 			Time.timeScale = 1;
 		exitDilog.SetActive (false);
 			//back.SetActive (false);
