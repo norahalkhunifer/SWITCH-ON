@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class Balloon: MonoBehaviour {
 
-	public GameObject balloon;
+	public AudioClip aC;
+	public AudioSource Baudio;
 	public GameObject balloon1;
 	public GameObject balloon2;
 	public GameObject balloon3;
@@ -32,6 +33,7 @@ public class Balloon: MonoBehaviour {
 	public GameObject Particle3;
 	public GameObject Particle4;
 	public GameObject Particle5;
+
 
 	//public GameObject thunder;
 	//public GameObject score;
@@ -136,6 +138,13 @@ public class Balloon: MonoBehaviour {
 			Particle3.gameObject.SetActive (true);
 		}
 	}
+
+	public void playSound(){
+
+		Baudio.clip = aC;
+		Baudio.Play ();
+	}
+
 	/*public void disappear(GameObject go){
 		
 		if ( balloon.name==go.name) {

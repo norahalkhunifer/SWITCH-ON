@@ -10,7 +10,7 @@ public class InstructionB : MonoBehaviour {
 	//public AccelerationControlScript grass;
 	//public GameObject jumpDilog ;
 	public GameObject b;
-	public Balloon time;
+	public Level2Manager l2m;
 	//public Resume_Paused resume;
 
 	//public GameObject ins ;
@@ -20,11 +20,12 @@ public class InstructionB : MonoBehaviour {
 	void Start () {
 
 		instruc.SetActive (true);
-		time.enabled= false;
+		l2m.time.enabled= false;
 		//grass.enabled = false;
 		b.SetActive (false);
 		//resume.enabled =true;
 		home.enabled =true;
+		l2m.activateGray (true);
 
 	}
 
@@ -32,13 +33,15 @@ public class InstructionB : MonoBehaviour {
 	void Update ()
 	{				
 		//this time passed
-		timer += Time.deltaTime;    
+		timer += Time.deltaTime; 
+
 		if (timer >= 6) {
 
 			instruc.SetActive (false);
 			//b.enabled = true;
 
-			time.enabled = true;
+			l2m.time.enabled = true;
+			l2m.activateGray (false);
 			//ins.SetActive (false);
 
 		}	
