@@ -110,7 +110,6 @@ public class WorldManager : MonoBehaviour {
 		//}
 
 	}
-
 	//settings page animations 
 	public void opensettings(Animator anim){
 		if(!isDActivated())
