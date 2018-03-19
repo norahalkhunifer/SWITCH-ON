@@ -8,7 +8,7 @@ public class AccelerationControlScript : MonoBehaviour {
 	public float keyDelay = 1f;
 	private float timePassed = 0;
 	private float timer = 0;
-
+	public ThenderHide hide;
 	int count = 0;
 	string str = "grass";
 	string temp;
@@ -39,16 +39,11 @@ public class AccelerationControlScript : MonoBehaviour {
 			timePassed = 0;
 			//here increes the counter to another object
 			count++;
+			Debug.Log (temp);
+			hide.diseble(temp);
 
 		}
 	}
 }
 		
-	
-
-	// Public method to reset the scene by pressing Reset UI button
-//	public void ResetScene()
-//	{
-//		SceneManager.LoadScene ("Scene01");
-//	}
 	

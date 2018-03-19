@@ -110,7 +110,6 @@ public class WorldManager : MonoBehaviour {
 		//}
 
 	}
-
 	//settings page animations 
 	public void opensettings(Animator anim){
 		if(!isDActivated())
@@ -160,8 +159,9 @@ public class WorldManager : MonoBehaviour {
 
 	}
 	public void leveldetails(int levelnum){
-		//if (level - 1 <= levelPassed && !dialogactive) {}else {  shakeworld ();  }     
-		if (levelnum - 1 <= levelPassed && !isDActivated() ) {
+		if (isDActivated()) {return;}  
+
+		if (levelnum - 1 <= levelPassed) {
 
 			clevel = levelnum;
 			leveltopscore = levelsmanger.getTopScore (levelnum);
@@ -175,13 +175,10 @@ public class WorldManager : MonoBehaviour {
 				levelDetailsG.SetActive (true);
 			}//end if 
 
-	else {
+	        else {
 				levelDetailsY.SetActive (true);
-
 			}
 		}
-
-
 		else if(levelnum>3)
 			shakeworld (2);  
 		

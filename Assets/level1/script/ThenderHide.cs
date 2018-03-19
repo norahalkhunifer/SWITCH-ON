@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class ThenderHide : MonoBehaviour {
-	public GameObject thender;
+	public GameObject thender0;
 	public GameObject thender1;
 	public GameObject thender2;
 	public GameObject thender3;
@@ -12,26 +12,51 @@ public class ThenderHide : MonoBehaviour {
 	public GameObject thender6;
 	public GameObject thender7;
 	public GameObject thender8;
-	public GameObject grass0;
-
-	private int scorebug;
+    public float timer = 0f;
+	public string str;
+	public AccelerationControlScript script;
 	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	public void diseble()
-	{
-		float timer = 0f;
-				timer += Time.deltaTime;    
 
 
-		if (timer>=2||grass0==null) {
+	public void diseble(string str)
+	{ 		
+		timer+= Time.deltaTime; 
 
-			thender.SetActive (false);//to disable thinder
-		
+		Debug.Log (timer+"ww");
 
+				
+		if (str.Equals ("grass0")) {
+			Debug.Log (str + "dd");
+			if (timer >= 1) {
+				Debug.Log (str + "ss");
+				Debug.Log (timer+"ss");
+
+				thender0.SetActive (false);//to disable thinder
+				timer=0f;
+			
+			}
+		}
+		if (str.Equals ("grass1")) {
+			Debug.Log (str + "dd");
+			if (timer >= 1) {
+				Debug.Log (str + "ss");
+				Debug.Log (timer+"ss");
+
+				thender1.SetActive (false);//to disable thinder
+				timer=0f;
+
+			}
+		}
+		if (str.Equals ("grass3")) {
+			Debug.Log (str + "dd");
+			if (timer >= 1) {
+				Debug.Log (str + "ss");
+				Debug.Log (timer+"ss");
+
+				thender2.SetActive (false);//to disable thinder
+				timer=0f;
+
+			}
 		}
 	}
 }
