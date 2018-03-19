@@ -9,9 +9,13 @@ using UnityEngine.XR.iOS;
 	public class boxesHit : MonoBehaviour
 	{
 		public Transform m_HitTransform;
+	public GameObject cam;
+	private float destance;
 		public static Ray ray;//this will be the ray that we cast from our touch into the scene
 		private static RaycastHit hit;
 		private static level3manger levelmanger; 
+
+
 
 		bool HitTestWithResultType (ARPoint point, ARHitTestResultType resultTypes)
 		{
@@ -60,10 +64,17 @@ using UnityEngine.XR.iOS;
 				//var screenPosition = Camera.main.ScreenToViewportPoint(touch.position);
 				//Debug.Log ("x" + screenPosition.x+"y"+screenPosition.y+"all"+ screenPosition.ToString());
 				ray = Camera.main.ScreenPointToRay (touch.position);//creates ray from screen point position
+
 				if (Physics.Raycast (ray, out hit)&& (!EventSystem.current.IsPointerOverGameObject(touch.fingerId))) {//Physics.Raycast (ray, out hit, maxRayDistance, collisionLayer)
 
 					GameObject item = hit.collider.transform.gameObject; //parent is what is stored in our area;
 					//print ("Hit  " + item.name);
+				destance=Vector3.Distance(item.transform.position,cam.transform.position);
+				if(destance<3f)Debug.Log ("less than 3");
+				Debug.Log (destance);
+
+					
+
 					levelmanger.touchsomething (item);
 
 				}

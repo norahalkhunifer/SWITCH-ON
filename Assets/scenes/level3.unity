@@ -4333,6 +4333,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_HitTransform: {fileID: 1286139108}
+  cam: {fileID: 7}
 --- !u!1 &1308259102
 GameObject:
   m_ObjectHideFlags: 0
