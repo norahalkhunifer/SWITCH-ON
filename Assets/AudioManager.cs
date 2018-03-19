@@ -7,8 +7,8 @@ using System;
 
 public class AudioManager : MonoBehaviour {
 
-
-	public void ToggleSound(){
+	//set mute status 
+	public void ToggleMute(){
 
 		if (PlayerPrefs.GetInt ("Mute", 0) == 0) {
 			PlayerPrefs.SetInt ("Mute", 1);
