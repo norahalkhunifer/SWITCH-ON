@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class settingManger : MonoBehaviour {
 	public GameObject charcter1, charcter2, help, skip;
 	public Button RedChar, BlueChar;
+	public Sprite RedOff, RedOn, BlueOn, BlueOff;
 	 WorldManager manger;
 	public Image closed, start;
 	GameObject text1, text2;
@@ -18,6 +19,7 @@ public class settingManger : MonoBehaviour {
 		manger= GameObject.Find("worlds manger").GetComponent<WorldManager> ();
 		audiomanager = GameObject.FindObjectOfType<AudioManager> ();
 		Mute ();
+		RedChar.image.overrideSprite = RedOn;
 	}
 
 	//method to send email 
@@ -38,6 +40,10 @@ public class settingManger : MonoBehaviour {
 
 		charcter1.SetActive (true);
 		charcter2.SetActive (false);
+
+		BlueChar.image.overrideSprite = BlueOn;
+		RedChar.image.overrideSprite = RedOff;
+
 		setCape ("Blue");
 
 	}
@@ -47,6 +53,10 @@ public class settingManger : MonoBehaviour {
 
 		charcter2.SetActive (true);
 		charcter1.SetActive (false);
+
+		BlueChar.image.overrideSprite = BlueOff;
+		RedChar.image.overrideSprite = RedOn;
+
 		setCape ("Red");
 
 
