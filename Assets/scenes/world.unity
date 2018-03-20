@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 235178835}
-  m_IndirectSpecularColor: {r: 0.3138947, g: 0.31904152, b: 0.32811323, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -3060,6 +3060,10 @@ MonoBehaviour:
   levelnumber: {fileID: 105011702}
   playbtn: {fileID: 1917975556}
   dialogsmanger: {fileID: 1057262894}
+  fakeIncrement: 1
+  fakeTiming: 1
+  loadingscreen: {fileID: 1998503895}
+  slider: {fileID: 1242345311}
 --- !u!4 &879330097
 Transform:
   m_ObjectHideFlags: 0
@@ -4567,7 +4571,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 1
+  m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -8020,7 +8024,7 @@ RectTransform:
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 10, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
