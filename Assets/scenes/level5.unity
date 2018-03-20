@@ -972,8 +972,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.0000038147, y: 71}
-  m_SizeDelta: {x: 1078, y: 247.25}
+  m_AnchoredPosition: {x: 11, y: 60}
+  m_SizeDelta: {x: 1099, y: 268}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &181583680
 MonoBehaviour:
@@ -1285,6 +1285,7 @@ MonoBehaviour:
   instruc: {fileID: 0}
   chare: {fileID: 1583079876}
   winT: 
+  gameWin: {fileID: 0}
 --- !u!1 &191032851
 GameObject:
   m_ObjectHideFlags: 0
@@ -7760,9 +7761,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   keyDelay: 1
+  timer: 0
   hide: {fileID: 1750341892}
   thenderHi: {fileID: 1750341890}
   temp: 
+  num: 0
+  thender0: {fileID: 1918344338}
+  thender1: {fileID: 661922155}
+  thender2: {fileID: 649620851}
+  thender3: {fileID: 1222834878}
+  thender4: {fileID: 1589547371}
+  thender5: {fileID: 52428694}
+  thender6: {fileID: 257160601}
+  thender7: {fileID: 197953926}
+  thender8: {fileID: 1647641530}
+  script: {fileID: 1684934836}
+  grass0: {fileID: 1519085421}
+  grass1: {fileID: 1537630431}
+  grass3: {fileID: 1997796853}
+  grass8: {fileID: 1780483394}
+  grass9: {fileID: 1651695528}
+  grass11: {fileID: 1427322177}
+  grass13: {fileID: 1073807162}
+  grass15: {fileID: 1170754802}
+  grass17: {fileID: 1009114742}
 --- !u!4 &1684934837
 Transform:
   m_ObjectHideFlags: 0
