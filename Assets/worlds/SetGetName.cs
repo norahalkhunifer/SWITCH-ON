@@ -121,6 +121,8 @@ public class SetGetName : MonoBehaviour {
 	}
 
 	void Start (){
+		changeNameFeild.GetComponent<InputField>().placeholder.GetComponent<Text>().text =GetUsername ();
+
 		        //Application.Quit();
 		        if (firstTime ()) {
 			            //if first time open app show enter username dialouge
