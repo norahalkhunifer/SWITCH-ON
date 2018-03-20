@@ -82,9 +82,20 @@ public class ForkParticlePlugin : MonoBehaviour {
 	private static ForkParticlePlugin _instance = null;
     public string TexturePath = "ForkFX/";
 
-	private ArrayList effectsList = new ArrayList(); 
+	private ArrayList effectsList = new ArrayList(); //array of effects
 	private bool bForkSDKShutdown = false;
 	public bool bForkSDKInit	= false; 
+	//No. of effects in the secne
+	public GameObject effect1;
+	public GameObject effect2;
+	public GameObject effect3;
+	public GameObject effect4;
+	public GameObject effect5;
+	public GameObject effect6;
+	public GameObject effect7;
+	public GameObject effect8;
+	public GameObject effect9;
+	public GameObject effect10;
 
 	public static ForkParticlePlugin Instance {
 		get {
@@ -160,11 +171,53 @@ public class ForkParticlePlugin : MonoBehaviour {
 		#endif
 	}
 
-    public void Test() {
-        for (int i = 0; i < effectsList.Count; i++) {
-            GameObject obj = (GameObject)effectsList [i];
-            obj.GetComponent<ForkParticleEffect>().PlayEffect();
-            obj.GetComponent<ForkParticleEffect>().RestartEffect();
-        }
+    public void Test(GameObject obj) {
+
+       // for (int i = 0; i < effectsList.Count; i++) {
+           // GameObject obj = (GameObject)effectsList [i];
+
+	if (obj.CompareTag("B1") ){
+	effect1.GetComponent<ForkParticleEffect>().PlayEffect();
+	effect1.GetComponent<ForkParticleEffect>().RestartEffect();}
+
+	if (obj.CompareTag("B2") ){
+	effect2.GetComponent<ForkParticleEffect>().PlayEffect();
+	effect2.GetComponent<ForkParticleEffect>().RestartEffect();}
+
+	if (obj.CompareTag("B3") ){
+	effect3.GetComponent<ForkParticleEffect>().PlayEffect();
+	effect3.GetComponent<ForkParticleEffect>().RestartEffect();}
+
+	if (obj.CompareTag("B4") ){
+	effect4.GetComponent<ForkParticleEffect>().PlayEffect();
+	effect4.GetComponent<ForkParticleEffect>().RestartEffect();	}
+
+	if (obj.CompareTag("B5") ){
+	effect5.GetComponent<ForkParticleEffect>().PlayEffect();
+	effect5.GetComponent<ForkParticleEffect>().RestartEffect();	}
+
+	if (obj.CompareTag("B6") ){
+	effect6.GetComponent<ForkParticleEffect>().PlayEffect();
+	effect6.GetComponent<ForkParticleEffect>().RestartEffect();	}
+
+	if (obj.CompareTag("B7") ){
+	effect7.GetComponent<ForkParticleEffect>().PlayEffect();
+	effect7.GetComponent<ForkParticleEffect>().RestartEffect();	}
+
+	if (obj.CompareTag("B8") ){
+	effect8.GetComponent<ForkParticleEffect>().PlayEffect();
+	effect8.GetComponent<ForkParticleEffect>().RestartEffect();	}
+
+	if (obj.CompareTag("B9") ){
+	effect9.GetComponent<ForkParticleEffect>().PlayEffect();
+	effect9.GetComponent<ForkParticleEffect>().RestartEffect();	}
+
+	if (obj.CompareTag("B10") ){
+	effect10.GetComponent<ForkParticleEffect>().PlayEffect();
+	effect10.GetComponent<ForkParticleEffect>().RestartEffect();}
+
+           /* effect2.GetComponent<ForkParticleEffect>().PlayEffect();
+            effect2.GetComponent<ForkParticleEffect>().RestartEffect();*/
+        //}
     }
 }

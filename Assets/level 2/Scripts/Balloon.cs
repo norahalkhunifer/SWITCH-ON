@@ -39,12 +39,6 @@ public class Balloon: MonoBehaviour {
 	//public GameObject score;
 	void Start(){
 
-		Particle1.gameObject.SetActive (false);
-		Particle2.gameObject.SetActive (false);
-		Particle3.gameObject.SetActive (false);
-		Particle4.gameObject.SetActive (false);
-		Particle5.gameObject.SetActive (false);
-
 	}
 
 	// Update is called once per frame
@@ -132,10 +126,23 @@ public class Balloon: MonoBehaviour {
 
 
 	public void showParticle(GameObject obj){
+		
+		if (obj.CompareTag("B1") ){
+			print ("showParticle");
+			ForkParticlePlugin.Instance.Test();
+		}
+		if (obj.CompareTag("B2") ){
+			print ("showParticle");
+			ForkParticlePlugin.Instance.Test();
+		}
 
 		if (obj.CompareTag("B3") ){
 			print ("showParticle");
-			Particle3.gameObject.SetActive (true);
+				ForkParticlePlugin.Instance.Test();
+		}
+		if (obj.CompareTag("B4") ){
+			print ("showParticle");
+			ForkParticlePlugin.Instance.Test();
 		}
 	}
 
