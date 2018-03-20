@@ -20,6 +20,6 @@ public class CanvasButtonController : MonoBehaviour {
 	}
 
     void OnButtonStartEffect () {
-        ForkParticlePlugin.Instance.Test();
+        ForkParticlePlugin.Instance.Test1();
 	}
 }

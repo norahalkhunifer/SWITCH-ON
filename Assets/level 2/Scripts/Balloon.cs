@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -28,11 +28,7 @@ public class Balloon: MonoBehaviour {
 	public int NO9=0;
 	public int NO10=0;
 
-	public GameObject Particle1;
-	public GameObject Particle2;
-	public GameObject Particle3;
-	public GameObject Particle4;
-	public GameObject Particle5;
+
 
 
 	//public GameObject thunder;
@@ -43,19 +39,19 @@ public class Balloon: MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		
+
 	}
 
 	//set no. of hits(toutch) on that obj
 	public void setNo(GameObject obj){
-		
+
 		if (obj.CompareTag ("B1")) {
 			NO1++;
 		}
-		 if (obj.CompareTag ("B2")) {
+		if (obj.CompareTag ("B2")) {
 			NO2++;
 		}
-		 if (obj.CompareTag ("B3")) {
+		if (obj.CompareTag ("B3")) {
 			NO3++;
 		}
 		if (obj.CompareTag ("B4")) {
@@ -88,10 +84,10 @@ public class Balloon: MonoBehaviour {
 		if (obj.CompareTag ("B1")) {
 			NO = NO1;
 		}
-		 if (obj.CompareTag ("B2")) {
+		if (obj.CompareTag ("B2")) {
 			NO = NO2;
 		}
-		 if (obj.CompareTag ("B3")) {
+		if (obj.CompareTag ("B3")) {
 			NO = NO3;
 		}
 		if (obj.CompareTag ("B4")) {
@@ -126,24 +122,9 @@ public class Balloon: MonoBehaviour {
 
 
 	public void showParticle(GameObject obj){
-		
-		if (obj.CompareTag("B1") ){
-			print ("showParticle");
-			ForkParticlePlugin.Instance.Test();
-		}
-		if (obj.CompareTag("B2") ){
-			print ("showParticle");
-			ForkParticlePlugin.Instance.Test();
-		}
 
-		if (obj.CompareTag("B3") ){
-			print ("showParticle");
-				ForkParticlePlugin.Instance.Test();
-		}
-		if (obj.CompareTag("B4") ){
-			print ("showParticle");
-			ForkParticlePlugin.Instance.Test();
-		}
+		ForkParticlePlugin.Instance.Test(obj);
+
 	}
 
 	public void playSound(){
@@ -165,8 +146,8 @@ public class Balloon: MonoBehaviour {
 			//scoreTextWin.text=score.ToString();
 
 		}*/
-	}
+}
 
 
-	
+
 

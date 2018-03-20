@@ -170,6 +170,11 @@ public class ForkParticlePlugin : MonoBehaviour {
 		}
 		#endif
 	}
+	public void Test1(){
+
+	effect1.GetComponent<ForkParticleEffect>().PlayEffect();
+	effect1.GetComponent<ForkParticleEffect>().RestartEffect();
+	}
 
     public void Test(GameObject obj) {
 
@@ -220,4 +225,5 @@ public class ForkParticlePlugin : MonoBehaviour {
             effect2.GetComponent<ForkParticleEffect>().RestartEffect();*/
         //}
     }
+
 }
