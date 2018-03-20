@@ -106,11 +106,9 @@ public class TimeText : MonoBehaviour {
 		resume.enabled = false;
 		thender.enabled = false;
 		grass.enabled = false;
-		instruc.enabled = false;
 		battryHide.enabled = false;
 		jump.enabled = false;
 		usingT = false;
-	//	m.lose (1);
 
 	}
 }
