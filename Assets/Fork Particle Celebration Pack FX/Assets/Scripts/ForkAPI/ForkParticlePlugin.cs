@@ -171,7 +171,7 @@ public class ForkParticlePlugin : MonoBehaviour {
 		#endif
 	}
 	public void Test1(){
-
+		print ("i enter it");
 	effect1.GetComponent<ForkParticleEffect>().PlayEffect();
 	effect1.GetComponent<ForkParticleEffect>().RestartEffect();
 	}
@@ -181,15 +181,20 @@ public class ForkParticlePlugin : MonoBehaviour {
        // for (int i = 0; i < effectsList.Count; i++) {
            // GameObject obj = (GameObject)effectsList [i];
 
+
 	if (obj.CompareTag("B1") ){
+			print ("test");
 	effect1.GetComponent<ForkParticleEffect>().PlayEffect();
 	effect1.GetComponent<ForkParticleEffect>().RestartEffect();}
 
 	if (obj.CompareTag("B2") ){
+	print ("test");
 	effect2.GetComponent<ForkParticleEffect>().PlayEffect();
 	effect2.GetComponent<ForkParticleEffect>().RestartEffect();}
 
 	if (obj.CompareTag("B3") ){
+	print ("test");
+
 	effect3.GetComponent<ForkParticleEffect>().PlayEffect();
 	effect3.GetComponent<ForkParticleEffect>().RestartEffect();}
 
@@ -198,32 +203,42 @@ public class ForkParticlePlugin : MonoBehaviour {
 	effect4.GetComponent<ForkParticleEffect>().RestartEffect();	}
 
 	if (obj.CompareTag("B5") ){
+	print ("test");
+
 	effect5.GetComponent<ForkParticleEffect>().PlayEffect();
 	effect5.GetComponent<ForkParticleEffect>().RestartEffect();	}
 
 	if (obj.CompareTag("B6") ){
+	print ("test");
+
 	effect6.GetComponent<ForkParticleEffect>().PlayEffect();
 	effect6.GetComponent<ForkParticleEffect>().RestartEffect();	}
 
 	if (obj.CompareTag("B7") ){
+	print ("test");
+
 	effect7.GetComponent<ForkParticleEffect>().PlayEffect();
 	effect7.GetComponent<ForkParticleEffect>().RestartEffect();	}
 
 	if (obj.CompareTag("B8") ){
+	print ("test");
+
 	effect8.GetComponent<ForkParticleEffect>().PlayEffect();
 	effect8.GetComponent<ForkParticleEffect>().RestartEffect();	}
 
 	if (obj.CompareTag("B9") ){
+	print ("test");
+
 	effect9.GetComponent<ForkParticleEffect>().PlayEffect();
 	effect9.GetComponent<ForkParticleEffect>().RestartEffect();	}
 
 	if (obj.CompareTag("B10") ){
+	print ("test");
+
 	effect10.GetComponent<ForkParticleEffect>().PlayEffect();
 	effect10.GetComponent<ForkParticleEffect>().RestartEffect();}
 
-           /* effect2.GetComponent<ForkParticleEffect>().PlayEffect();
-            effect2.GetComponent<ForkParticleEffect>().RestartEffect();*/
-        //}
+           
     }
 
 }

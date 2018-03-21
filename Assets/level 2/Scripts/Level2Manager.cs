@@ -34,7 +34,7 @@ public class Level2Manager : MonoBehaviour {
 	public bool paused=false;
 
     Balloon b;
-	private LevelManger levelM;
+	//public LevelManger levelM;
 
 	// Use this for initialization
 	void Start () {
@@ -59,7 +59,6 @@ public class Level2Manager : MonoBehaviour {
 	}
 
 	void Timedecrising(){
-		print ("enter it");
 		timeongoing= timer - Time.time;
 		string min = ((int)timeongoing / 60).ToString ();
 		string sec = ((int)timeongoing % 60).ToString ();
@@ -111,20 +110,21 @@ public class Level2Manager : MonoBehaviour {
 			b.setNo (hitobject);
 
 			if(b.getNo(hitobject) == 2) {
+				
 				print ("NO==2");
-				b.gameObject.SetActive (false);
+
 				b.playSound ();
-				//Particle.gameObject.SetActive (true);
+				b.gameObject.SetActive (false);
 				b.showParticle(hitobject);
 
 			}
+			else if (b.getNo (hitobject) > 2) {
+				print ("No>2");
+				Destroy (b);
+			}
 
-			b.changePos();
-		    //score = score + 1;
-		    //Debug.Log (score);
-			//scoreText.text = score.ToString ();
-			//finalScore.text=score.ToString();
-			//scoreTextWin.text=score.ToString();
+		else	b.changePos();
+		    
 		} 
 	}
 
