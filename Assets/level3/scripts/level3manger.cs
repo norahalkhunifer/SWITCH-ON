@@ -63,6 +63,7 @@ public class level3manger : MonoBehaviour
 			placeRandomobj (box);
 		}
 		setScore ();
+
 	}
 
 	//to place objects insaid boxws 
@@ -116,7 +117,6 @@ public class level3manger : MonoBehaviour
 	}
 
 	void Timedecrising(){
-		print ("enter it");
 		timeongoing= timer - Time.time;
 		string min = ((int)timeongoing / 60).ToString ();
 		string sec = ((int)timeongoing % 60).ToString ();
@@ -140,6 +140,14 @@ public class level3manger : MonoBehaviour
 			}	
 		} else
 			print ("not box!");//message that says tuch me again!
+	}
+	public void farAway(){
+		StartCoroutine("setDebugText", "get closer to it "); 
+
+
+	}
+	public void gettingClose(GameObject hitobject){
+
 	}
 
 	//check if there is 2 opened before
@@ -176,7 +184,7 @@ public class level3manger : MonoBehaviour
 		currentboxes [0].mached ();
 		currentboxes [1].mached ();
 		size--;
-		debugbox.text= "YaaY +4 ";
+		StartCoroutine("setDebugText", "YaaY +4 "); 
 		//play yay sound 
 		pickup.Play();
 		addscore (4);
@@ -283,4 +291,13 @@ public class level3manger : MonoBehaviour
 		activateGray (show);
 		started = true;
 	}
+	IEnumerator setDebugText(string textin )
+	{
+		debugbox.text = textin;
+		yield return new WaitForSeconds(1);
+		debugbox.text = "";
+
+	
+	}
+
 }

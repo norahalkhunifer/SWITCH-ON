@@ -70,12 +70,15 @@ using UnityEngine.XR.iOS;
 					GameObject item = hit.collider.transform.gameObject; //parent is what is stored in our area;
 					//print ("Hit  " + item.name);
 				destance=Vector3.Distance(item.transform.position,cam.transform.position);
-				if(destance<3f)Debug.Log ("less than 3");
-				Debug.Log (destance);
+				if(destance<3f)levelmanger.touchsomething (item);
+				else{
+					levelmanger.farAway ();
+				    Debug.Log (destance);
+				}
 
 					
 
-					levelmanger.touchsomething (item);
+					
 
 				}
 			}
@@ -117,8 +120,22 @@ using UnityEngine.XR.iOS;
 			matrix.SetColumn (3, cam.worldTransform.column3);
 			return UnityARMatrixOps.GetPosition (matrix);
 		}
-
-
+	GameObject FindClosestBox() {
+		GameObject[] gos;
+		gos = GameObject.FindGameObjectsWithTag("Enemy");
+		GameObject closest=null;
+		float distance = Mathf.Infinity;
+		Vector3 position = transform.position;
+		foreach (GameObject go in gos) {
+			Vector3 diff = go.transform.position - position;
+			float curDistance = diff.sqrMagnitude;
+			if (curDistance < distance) {
+				closest = go;
+				distance = curDistance;
+			}
+		}
+		return closest;
+	}
 	}
 
 
