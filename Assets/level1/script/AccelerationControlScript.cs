@@ -49,7 +49,7 @@ public class AccelerationControlScript : MonoBehaviour {
 			//reset the time passed to restart to another object 
 		//	timer=5f;
 			timePassed = 0;
-			StartCoroutine(disable(num));
+			//StartCoroutine(disable(num));
 
 			Debug.Log (num);
 			//here increes the counter to another object
@@ -68,109 +68,109 @@ public class AccelerationControlScript : MonoBehaviour {
 
 		}
 	}
-	IEnumerator disable(int num)
-	{ 				yield return new WaitForSeconds(9f);
-
-		if (num==0 && !grass0.activeInHierarchy) {
-			thender0.SetActive (false);//to disable thinder
-			Debug.Log (str + "dd");
-			num = 1;
-			Debug.Log (timer);
-
-			timer = 0f;
-			Debug.Log (timer);
-
-		}
-
-		if (num==1&&!grass3.activeInHierarchy) {
-			thender1.SetActive (false);//to disable thinder
-			Debug.Log (str + "dd");
-			num = 2;
-			Debug.Log (timer);
-
-			timer = 0f;
-			Debug.Log (timer);
-
-
-		}
-
-		if (num==2&&!grass5.activeInHierarchy) {
-			thender2.SetActive (false);//to disable thinder
-			Debug.Log (str + "dd");
-			num =3 ;
-			Debug.Log (timer);
-
-			timer = 0f;
-			Debug.Log (timer);
-
-		}
-
-		if (num==3&&!grass8.activeInHierarchy) {
-			thender3.SetActive (false);//to disable thinder
-			Debug.Log (str + "dd");
-			num =4 ;
-			Debug.Log (timer);
-
-			timer = 0f;
-			Debug.Log (timer);
-
-
-		}
-
-		if (num==4&&!grass9.activeInHierarchy) {
-			thender4.SetActive (false);//to disable thinder
-			Debug.Log (str + "dd");
-			num =5 ;
-			Debug.Log (timer);
-
-			timer = 0f;
-			Debug.Log (timer);
-		}
-		if (num==5&&!grass11.activeInHierarchy) {
-			thender5.SetActive (false);//to disable thinder
-			Debug.Log (str + "dd");
-			num =6 ;
-			Debug.Log (timer);
-
-			timer = 0f;
-			Debug.Log (timer);
-
-
-		}
-		if (num==6&&!grass13.activeInHierarchy) {
-			thender6.SetActive (false);//to disable thinder
-			Debug.Log (str + "dd");
-			num =7 ;
-			Debug.Log (timer);
-
-			timer = 0f;
-			Debug.Log (timer);
-
-
-		}
-		if (num==7&&!grass15.activeInHierarchy) {
-			thender7.SetActive (false);//to disable thinder
-			Debug.Log (str + "dd");
-			num =8;
-			Debug.Log (timer);
-
-			timer = 0f;
-			Debug.Log (timer);
-
-		}
-		if (num==8&&!grass17.activeInHierarchy) {
-			thender8.SetActive (false);//to disable thinder
-			Debug.Log (str + "dd");
-			num =9;
-			Debug.Log (timer);
-
-			timer = 0f;
-			Debug.Log (timer);
-
-
-		}
-
-	}
+//	IEnumerator disable(int num)
+//	{ 				yield return new WaitForSeconds(9f);
+//
+//		if (num==0 && !grass0.activeInHierarchy) {
+//			thender0.SetActive (false);//to disable thinder
+//			Debug.Log (str + "dd");
+//			num = 1;
+//			Debug.Log (timer);
+//
+//			timer = 0f;
+//			Debug.Log (timer);
+//
+//		}
+//
+//		if (num==1&&!grass3.activeInHierarchy) {
+//			thender1.SetActive (false);//to disable thinder
+//			Debug.Log (str + "dd");
+//			num = 2;
+//			Debug.Log (timer);
+//
+//			timer = 0f;
+//			Debug.Log (timer);
+//
+//
+//		}
+//
+//		if (num==2&&!grass5.activeInHierarchy) {
+//			thender2.SetActive (false);//to disable thinder
+//			Debug.Log (str + "dd");
+//			num =3 ;
+//			Debug.Log (timer);
+//
+//			timer = 0f;
+//			Debug.Log (timer);
+//
+//		}
+//
+//		if (num==3&&!grass8.activeInHierarchy) {
+//			thender3.SetActive (false);//to disable thinder
+//			Debug.Log (str + "dd");
+//			num =4 ;
+//			Debug.Log (timer);
+//
+//			timer = 0f;
+//			Debug.Log (timer);
+//
+//
+//		}
+//
+//		if (num==4&&!grass9.activeInHierarchy) {
+//			thender4.SetActive (false);//to disable thinder
+//			Debug.Log (str + "dd");
+//			num =5 ;
+//			Debug.Log (timer);
+//
+//			timer = 0f;
+//			Debug.Log (timer);
+//		}
+//		if (num==5&&!grass11.activeInHierarchy) {
+//			thender5.SetActive (false);//to disable thinder
+//			Debug.Log (str + "dd");
+//			num =6 ;
+//			Debug.Log (timer);
+//
+//			timer = 0f;
+//			Debug.Log (timer);
+//
+//
+//		}
+//		if (num==6&&!grass13.activeInHierarchy) {
+//			thender6.SetActive (false);//to disable thinder
+//			Debug.Log (str + "dd");
+//			num =7 ;
+//			Debug.Log (timer);
+//
+//			timer = 0f;
+//			Debug.Log (timer);
+//
+//
+//		}
+//		if (num==7&&!grass15.activeInHierarchy) {
+//			thender7.SetActive (false);//to disable thinder
+//			Debug.Log (str + "dd");
+//			num =8;
+//			Debug.Log (timer);
+//
+//			timer = 0f;
+//			Debug.Log (timer);
+//
+//		}
+//		if (num==8&&!grass17.activeInHierarchy) {
+//			thender8.SetActive (false);//to disable thinder
+//			Debug.Log (str + "dd");
+//			num =9;
+//			Debug.Log (timer);
+//
+//			timer = 0f;
+//			Debug.Log (timer);
+//
+//
+//		}
+//
+//	}
 
 }
 
