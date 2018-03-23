@@ -16,6 +16,7 @@ TagManager:
   - B8
   - B9
   - B10
+  - ARobject
   layers:
   - Default
   - TransparentFX
