@@ -3,61 +3,107 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class ThenderHide : MonoBehaviour {
-	public GameObject thender0;
-	public GameObject thender1;
-	public GameObject thender2;
-	public GameObject thender3;
-	public GameObject thender4;
-	public GameObject thender5;
-	public GameObject thender6;
-	public GameObject thender7;
-	public GameObject thender8;
-	public GameObject hide;
-
-	bool th0=false;
-	bool th1=false;
-	//bool th2=false;
-
- float timerr ;
-	public string str;
-	public AccelerationControlScript script;
-	// Use this for initialization
+	public GameObject bug0;
+	public GameObject bug1;
+	public GameObject bug2;
+	public GameObject bug3;
+	public GameObject bug4;
+	public GameObject bug5;
+	public GameObject bug6;
+	public GameObject bug7;
+	public ThenderDisable thender;
 
 
- void Update()
-	{ 		
-		str = script.temp;
-		timerr = script.timer;
-		if (timerr>=3) {
-			Debug.Log (str + "dd");
-				thender0.SetActive (false);//to disable thinder
-			hide.SetActive(false);
-			script.enabled = true;
-			script.timer=0;
-			th0 = true;
+	public void bugDis(GameObject obj){
+	if (bug0.name == obj.name) {
+		Debug.Log (thender.score);
 
+		bug0.SetActive (false);//to disable thinder
+		if (thender.score >0) {
+			thender.score = thender.score - 1;
+		}
+			Debug.Log (thender.score );
+		thender.scoreText.text = thender.score.ToString ();
+			thender.finalScore.text=thender.score.ToString();
+			thender.scoreTextWin.text=thender.score.ToString();
+	}
+	if (bug1.name == obj.name) {
+			Debug.Log (thender.score);
+
+		bug1.SetActive (false);//to disable thinder
+			if (thender.score >0) {
+				thender.score = thender.score - 1;
+			}			Debug.Log (thender.score);
+			thender.scoreText.text = thender.score.ToString ();
+			thender.finalScore.text=thender.score.ToString();
+			thender.scoreTextWin.text=thender.score.ToString();
+	}
+	if (bug2.name == obj.name) {
+			Debug.Log (thender.score);
+
+		bug2.SetActive (false);//to disable thinder
+			if (thender.score >0) {
+				thender.score = thender.score - 1;
+			}			Debug.Log (thender.score);
+			thender.scoreText.text = thender.score.ToString ();
+			thender.finalScore.text=thender.score.ToString();
+			thender.scoreTextWin.text=thender.score.ToString();
+	}
+	if (bug3.name == obj.name) {
+			Debug.Log (thender.score );
+
+		bug3.SetActive (false);//to disable thinder
+			if (thender.score >0) {
+				thender.score = thender.score - 1;
+			}			Debug.Log (thender.score);
+			thender.scoreText.text = thender.score.ToString ();
+			thender.finalScore.text=thender.score.ToString();
+			thender.scoreTextWin.text=thender.score.ToString();
+		}
+	if (bug4.name == obj.name) {
+			Debug.Log (thender.score );
+
+		bug4.SetActive (false);//to disable thinder
+			if (thender.score >0) {
+				thender.score = thender.score - 1;
+			}			Debug.Log (thender.score);
+			thender.scoreText.text = thender.score.ToString ();
+			thender.finalScore.text=thender.score.ToString();
+			thender.scoreTextWin.text=thender.score.ToString();
+		}
+	if (bug5.name == obj.name) {
+			Debug.Log (thender.score );
+
+		bug5.SetActive (false);//to disable thinder
+			if (thender.score >0) {
+				thender.score = thender.score - 1;
+			}			Debug.Log (thender.score);
+			thender.scoreText.text = thender.score.ToString ();
+			thender.finalScore.text=thender.score.ToString();
+			thender.scoreTextWin.text=thender.score.ToString();
 		}
 
-		if (timerr>=3&&th0==true) {
-	Debug.Log (str + "dd");
-Debug.Log (str + "ss");
-	thender1.SetActive (false);//to disable thinder
-		hide.SetActive(false);
-			script.enabled = true;
+	if (bug6.name == obj.name) {
+			Debug.Log (thender.score );
 
-			script.timer=0;
-			th1 = true;
+		bug6.SetActive (false);//to disable thinder
+			if (thender.score >0) {
+				thender.score = thender.score - 1;
+			}			Debug.Log (thender.score);
+			thender.scoreText.text = thender.score.ToString ();
+			thender.finalScore.text=thender.score.ToString();
+			thender.scoreTextWin.text=thender.score.ToString();
+		}
+	if (bug7.name == obj.name) {
+			Debug.Log (thender.score );
 
+		bug7.SetActive (false);//to disable thinder
+			if (thender.score >0) {
+				thender.score = thender.score - 1;
+			}			Debug.Log (thender.score);
+			thender.scoreText.text = thender.score.ToString ();
+			thender.finalScore.text=thender.score.ToString();
+			thender.scoreTextWin.text=thender.score.ToString();
+		}
 }
-		if (timerr>=3&&th1==true) {
-	Debug.Log (str + "dd");
-thender2.SetActive (false);//to disable thinder
-			hide.SetActive(false);
-			script.enabled = true;
-
-			script.timer=0;
-
-	}
-
-	}
 }

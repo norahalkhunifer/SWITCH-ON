@@ -7,7 +7,7 @@ public class Resume_Paused : MonoBehaviour {
 	public GameObject resume;
 	public GameObject back;
 	public GameObject inss;
-	public GameObject inssAnim;
+	//public GameObject inssAnim;
 
 	// Use this for initialization
 	void Start () {
@@ -22,7 +22,7 @@ public class Resume_Paused : MonoBehaviour {
 		back.SetActive (false);
 	
 		inss.SetActive (true);
-		inssAnim.SetActive(true);
+		//inssAnim.SetActive(true);
 	}
 	public void onResume(){
 		pause = !pause;
@@ -59,7 +59,7 @@ public class Resume_Paused : MonoBehaviour {
 			resume.SetActive (false);
 			back.SetActive (false);
 			inss.SetActive (true);
-			inssAnim.SetActive (true);
+			//inssAnim.SetActive (true);
 		}
 	}
 	public void onSkip(){
@@ -70,7 +70,7 @@ public class Resume_Paused : MonoBehaviour {
 			back.SetActive (false);
 			resume.SetActive (false);
 			inss.SetActive (false);
-			inssAnim.SetActive (false);
+//			inssAnim.SetActive (false);
 
 
 			}
