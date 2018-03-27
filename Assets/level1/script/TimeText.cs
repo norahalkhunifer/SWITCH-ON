@@ -21,6 +21,8 @@ public class TimeText : MonoBehaviour {
 	public GameObject chare;
 	public string winT;
 	public GameObject gameWin;
+	public LevelManger levelmanger;
+	public TimeText timeScript;
 	// Use this for initialization
 	void Start () {
 		//here to set how many time you want
@@ -98,17 +100,33 @@ public class TimeText : MonoBehaviour {
 	public void FinishTimer(){
 
 		timer.text = "40";
+		if (thender.score >=6) {
+			thender.finalScore.text=thender.score.ToString();
+			thender.scoreTextWin.text=thender.score.ToString();
+			gameWin.SetActive (true);
+			back.SetActive (true);
+			grass.enabled = false;
+			battryHide.enabled = false;
+			jump.enabled = false;
+			resume.enabled = false;
+			levelmanger.win (5,thender.score , "00");
+			thender.topScore.text=levelmanger.getTopScore (1).ToString();
+			thender.enabled = false;
+			timeScript.enabled = false;
+			usingT = false;
 
-		gameOver.SetActive (true);
+		}
+		else{
+			gameOver.SetActive (true);
 		back.SetActive (true);
 		chare.SetActive (false);
 		finalTimer.text ="40";
 		resume.enabled = false;
-		thender.enabled = false;
+		//thender.enabled = false;
 		grass.enabled = false;
 		battryHide.enabled = false;
 		jump.enabled = false;
 		usingT = false;
-
+		}
 	}
 }
