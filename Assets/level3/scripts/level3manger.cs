@@ -76,7 +76,10 @@ public class level3manger : MonoBehaviour
 			GameObject newObject = (GameObject)Instantiate (random [randomInt],newpos, box.transform.rotation, box.transform)as GameObject;
 			if(newObject)
 			newObject.transform.localScale = new Vector3 (0.007f, 0.007f, 0.007f);// (box.transform.localScale.x-1f, box.transform.localScale.y-1f, box.transform.localScale.z-1f);//(0.005f, 0.005f, 0.005f);// // change its local scale in x y z format
-
+			//newObject.AddComponent(LightType.Spot);
+		//	Behaviour halo = (Behaviour)gameObject.GetComponent("Halo");
+		//	halo.enabled = true;
+			//.AddComponent<Halo>();
 
 			#if UNITY_EDITOR
 			UnityEditor.Selection.activeObject = newObject;
@@ -291,7 +294,7 @@ public class level3manger : MonoBehaviour
 		activateGray (show);
 		started = true;
 	}
-	IEnumerator setDebugText(string textin )
+	public IEnumerator setDebugText(string textin )
 	{
 		debugbox.text = textin;
 		yield return new WaitForSeconds(1);

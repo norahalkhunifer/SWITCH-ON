@@ -57,6 +57,8 @@ public class BoxControl: MonoBehaviour
 	public void mached ()
 	{
 		Destroy (insaideobj);
+		transform.GetChild(1).gameObject.SetActive(false);
+		//transform.Find("Directional light").active = false;
 		//closeit ();
 	}
 
@@ -78,6 +80,10 @@ public class BoxControl: MonoBehaviour
 	public bool isOpen ()
 	{
 		return isopen;
+	}
+	public void ActivateIt ()
+	{
+		levelmanger.setDebugText ("close to "+boxnum);
 	}
 
 }

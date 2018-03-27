@@ -70,7 +70,8 @@ using UnityEngine.XR.iOS;
 					GameObject item = hit.collider.transform.gameObject; //parent is what is stored in our area;
 					//print ("Hit  " + item.name);
 				destance=Vector3.Distance(item.transform.position,cam.transform.position);
-				if(destance<3f)levelmanger.touchsomething (item);
+				if(destance<3f)
+					levelmanger.touchsomething (item);
 				else{
 					levelmanger.farAway ();
 				    Debug.Log (destance);
