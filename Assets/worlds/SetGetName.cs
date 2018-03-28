@@ -138,7 +138,7 @@ public class SetGetName : MonoBehaviour {
 
 				                dispname2.text = GetUsername ();
 				                StartCoroutine (ShowWelcome (true, 0f));
-				                StartCoroutine (ShowWelcome (false, 5f));
+				                StartCoroutine (ShowWelcome (false, 3f));
 
 				                welcombbool = false;
 				                PlayerPrefs.SetInt("welcombbool1", welcombbool ? 1 : 0);
