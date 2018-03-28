@@ -197,6 +197,7 @@ public class level3manger : MonoBehaviour
 
 	public void BoxesNotMatching ()
 	{
+		mismatch.Play ();
 		StartCoroutine("closeCurrentBoxes");
 		//closeCurrentBoxes();
 	}
@@ -229,23 +230,31 @@ public class level3manger : MonoBehaviour
 		scorenum += addedscore;
 		setScore ();
 	}
+	public void removescore (int removedscore)
+	{
+		scorenum -= removedscore;
+		setScore ();
+	}
 	private void setScore(){
 		score.text = scorenum.ToString ();
 	}
 
 	void GameEnd (bool win)
 	{
+		background.Stop ();
 		end = !end;
 		activateGray (true);
 		endpanle.SetActive (true);
 		timetext.text = doneTime();
 		cscoretext.text = score.text;
 		if (win) {
+			Endwin.Play();
 			wining.SetActive (true);
 			Topscore.text = scorenum.ToString();
 			levelmanger.win (2,scorenum,timetext.text.ToString());
 			debugbox.text = "tries: " + nroftries;
 		} else {
+			Endlose.Play ();
 			lose.SetActive (true);
 			}
 	}
