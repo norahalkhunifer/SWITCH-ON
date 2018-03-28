@@ -1534,6 +1534,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 091352cbfdb04468e8f6d5a13b296c10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pause: 0
   pausePar: {fileID: 727127845}
   pauseOBJ: {fileID: 1982478359}
   inss: {fileID: 548559662}
@@ -1724,10 +1725,9 @@ MonoBehaviour:
   exitButton: 0
   exitDilog: {fileID: 499092573}
   back: {fileID: 1982478359}
-  back2: {fileID: 717303116}
-  lm: {fileID: 109893354}
+  level: {fileID: 0}
   l2m: {fileID: 1274038465}
-  re: {fileID: 451779906}
+  re: {fileID: 0}
 --- !u!1 &548559662
 GameObject:
   m_ObjectHideFlags: 0
@@ -2204,7 +2204,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4042716073364612, guid: c9a8bce70a44619418923c000bea7bb6, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -3.8
+      value: -6.14
       objectReference: {fileID: 0}
     - target: {fileID: 4042716073364612, guid: c9a8bce70a44619418923c000bea7bb6, type: 2}
       propertyPath: m_LocalRotation.x
@@ -2254,7 +2254,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400000, guid: 3e7b438c693790d4f9c67acef4e43944, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 10.6
+      value: 31.3
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 3e7b438c693790d4f9c67acef4e43944, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2342,11 +2342,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: 3e7b438c693790d4f9c67acef4e43944, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.508
+      value: 0.51
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: 3e7b438c693790d4f9c67acef4e43944, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -13.82
+      value: -14.036
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: 3e7b438c693790d4f9c67acef4e43944, type: 3}
       propertyPath: m_LocalScale.y
@@ -2464,7 +2464,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4042716073364612, guid: c9a8bce70a44619418923c000bea7bb6, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 0.65
+      value: 33.9
       objectReference: {fileID: 0}
     - target: {fileID: 4042716073364612, guid: c9a8bce70a44619418923c000bea7bb6, type: 2}
       propertyPath: m_LocalPosition.y
@@ -2472,7 +2472,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4042716073364612, guid: c9a8bce70a44619418923c000bea7bb6, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 76
+      value: 26.7
       objectReference: {fileID: 0}
     - target: {fileID: 4042716073364612, guid: c9a8bce70a44619418923c000bea7bb6, type: 2}
       propertyPath: m_LocalRotation.x
@@ -3370,10 +3370,9 @@ MonoBehaviour:
   exitButton: 0
   exitDilog: {fileID: 499092573}
   back: {fileID: 1982478359}
-  back2: {fileID: 717303116}
-  lm: {fileID: 109893354}
+  level: {fileID: 0}
   l2m: {fileID: 1274038465}
-  re: {fileID: 451779906}
+  re: {fileID: 0}
 --- !u!4 &863519391
 Transform:
   m_ObjectHideFlags: 0
@@ -5169,24 +5168,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hit: {fileID: 1286139110}
   panleOncamera1: {fileID: 1182683349}
-  levelM: {fileID: 109893354}
-  exitDilog: {fileID: 499092573}
-  back: {fileID: 717303116}
-  scoreint: 0
-  scoret: {fileID: 1221088623}
+  size: 0
+  time: {fileID: 888655948}
+  timelimitbysec: 90
   Topscore: {fileID: 26598324}
   timetext: {fileID: 1917859378}
   cscoretext: {fileID: 838610148}
   score: {fileID: 1221088621}
-  time: {fileID: 888655948}
-  timelimitbysec: 90
-  re: {fileID: 451779906}
   paused: 0
-  end: 0
-  started: 0
-  endpanle: {fileID: 717303116}
-  wining: {fileID: 1680178844}
-  lose: {fileID: 2110490249}
 --- !u!4 &1274038466
 Transform:
   m_ObjectHideFlags: 0
@@ -5255,24 +5244,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hit: {fileID: 1286139110}
   panleOncamera1: {fileID: 1182683349}
-  levelM: {fileID: 109893354}
-  exitDilog: {fileID: 499092573}
-  back: {fileID: 717303116}
-  scoreint: 0
-  scoret: {fileID: 711398320}
+  size: 0
+  time: {fileID: 888655948}
+  timelimitbysec: 90
   Topscore: {fileID: 838610148}
   timetext: {fileID: 1917859378}
   cscoretext: {fileID: 838610148}
   score: {fileID: 1221088621}
-  time: {fileID: 888655948}
-  timelimitbysec: 90
-  re: {fileID: 451779906}
   paused: 0
-  end: 0
-  started: 0
-  endpanle: {fileID: 717303116}
-  wining: {fileID: 1680178844}
-  lose: {fileID: 2110490249}
 --- !u!114 &1286139110
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5285,7 +5264,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_HitTransform: {fileID: 1286139108}
-  cam: {fileID: 7}
 --- !u!114 &1286139111
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6068,15 +6046,15 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4042716073364612, guid: c9a8bce70a44619418923c000bea7bb6, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -0.81
+      value: -10.3
       objectReference: {fileID: 0}
     - target: {fileID: 4042716073364612, guid: c9a8bce70a44619418923c000bea7bb6, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 1.12
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 4042716073364612, guid: c9a8bce70a44619418923c000bea7bb6, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 0.18
+      value: 20.4
       objectReference: {fileID: 0}
     - target: {fileID: 4042716073364612, guid: c9a8bce70a44619418923c000bea7bb6, type: 2}
       propertyPath: m_LocalRotation.x
@@ -6970,7 +6948,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4042716073364612, guid: c9a8bce70a44619418923c000bea7bb6, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -8.82
+      value: 2.9
       objectReference: {fileID: 0}
     - target: {fileID: 4042716073364612, guid: c9a8bce70a44619418923c000bea7bb6, type: 2}
       propertyPath: m_LocalRotation.x
