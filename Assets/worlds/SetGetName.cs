@@ -53,6 +53,8 @@ public class SetGetName : MonoBehaviour {
 	IEnumerator ShowRight(bool show,float delayTime){
 		yield return new WaitForSeconds(delayTime);
 		rightIcon.SetActive(show); 
+		//if(show=false)
+		changeNameFeild.text = "";
 	}
 
 
@@ -119,9 +121,11 @@ public class SetGetName : MonoBehaviour {
 
 
 	}
-
-	void Start (){
+	void Update (){
 		changeNameFeild.GetComponent<InputField>().placeholder.GetComponent<Text>().text =GetUsername ();
+
+	}
+	void Start (){
 
 		        //Application.Quit();
 		        if (firstTime ()) {
