@@ -119,8 +119,10 @@ public class Level2Manager : MonoBehaviour {
 				print ("No>2");
 				Destroy (b);
 			} else{
-				b.changePos();
+				
+				b.changePos(hitObject);
 				debugbox.text = "Opps,pocket it again ";
+				emptyit ();
 			}
 		    
 		} 
@@ -135,8 +137,14 @@ public class Level2Manager : MonoBehaviour {
 	}
 
 	public void farAway(){
+		
 		debugbox.text = "get closer to it ";
+		emptyit ();
 
+	}
+
+	public void emptyit (){
+		debugbox.text = "   ";
 	}
 
 	public void Score(int sc){

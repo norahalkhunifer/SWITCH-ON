@@ -33,7 +33,7 @@ public class Balloon: MonoBehaviour {
 	private int NO9=0;
 	private int NO10=0;
 
-	private int[] randomNO = new int[]{2,3,4,-2,-3,-4};
+	private int[] randomNO = new int[]{10,13,14,-10,-13,-14};
 	int i=0;
 	private Vector3 startPos;
 	private Vector3 endPos;
@@ -62,6 +62,7 @@ public class Balloon: MonoBehaviour {
 			currentt = lerpt;
 
 		float t = currentt / lerpt;
+
 		if(object1!=null)
 		object1.transform.position = Vector3.Lerp (startPos, endPos, t);
 	}*/
@@ -157,23 +158,23 @@ public class Balloon: MonoBehaviour {
 	}
 
 
-	public void changePos(){
+	public void changePos(GameObject obj){
+		
+		//object1 = obj.getcomponent<Balloon>;
+
 		print ("lerp");
+
 		//v = new Vector3 ((transform.position.x + randomNO [i]), transform.position.y, (transform.position.z + randomNO [i]));
-		/*i++;
-		if (i == 5)
-			i = 0;*/
+
 		
 		//startPos = obj.transform.position;
 		//endPos = obj.transform.position + v * dis;
-		//object1=obj;
-		//endPos = specificEnd()+transform.position + v * dis;
-		transform.position = new Vector3 ((transform.position.x+randomNO [i]), transform.position.y,( transform.position.z+randomNO [i]) );
-	i++;
-	if (i == 5)
-		i = 0;
-		
 
+		//endPos = specificEnd()+transform.position + v * dis;
+		transform.position = new Vector3 ((transform.position.x+randomNO [i]), transform.position.y,( transform.position.z) );
+		i++;
+		if (i == 5)
+			i = 0;
 	}
 
 /*public GameObject getObj(GameObject obj){//////stooop here
@@ -184,7 +185,6 @@ public class Balloon: MonoBehaviour {
 
 	public void showParticle(GameObject obj){
 		print ("show particle");
-
 		ForkParticlePlugin.Instance.Test(obj);
 
 	}
