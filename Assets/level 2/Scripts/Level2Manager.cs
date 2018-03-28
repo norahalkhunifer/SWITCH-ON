@@ -17,6 +17,8 @@ public class Level2Manager : MonoBehaviour {
 	Balloon b;
 	int size=5;
 
+	public Text debugbox;
+
 	//on home
 	public GameObject exitDilog;
 	public GameObject back;
@@ -118,7 +120,7 @@ public class Level2Manager : MonoBehaviour {
 				Destroy (b);
 			} else{
 				b.changePos();
-				debug.log ("Pocket it again");
+				StartCoroutine("setDebugText", "Opps,pocket it again ");
 			}
 		    
 		} 
@@ -133,10 +135,7 @@ public class Level2Manager : MonoBehaviour {
 	}
 
 	public void farAway(){
-		print ("far away");
-
 		StartCoroutine("setDebugText", "get closer to it "); 
-
 	}
 
 	public void Score(int sc){
