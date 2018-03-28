@@ -117,8 +117,8 @@ public class Level2Manager : MonoBehaviour {
 				print ("No>2");
 				Destroy (b);
 			} else{
-				
 				b.changePos();
+				debug.log ("Pocket it again");
 			}
 		    
 		} 
