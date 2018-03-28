@@ -23,6 +23,10 @@ public class Level2Manager : MonoBehaviour {
 	public GameObject exitDilog;
 	public GameObject back;
 
+	//error audio
+	public AudioClip aC;
+	public AudioSource Baudio;
+
 	//score
 	public int scoreint;//for each hit and total
 	public Text scoret; //to show it in panel
@@ -122,7 +126,7 @@ public class Level2Manager : MonoBehaviour {
 				
 				b.changePos(hitObject);
 				debugbox.text = "Opps,pocket it again ";
-				emptyit ();
+
 			}
 		    
 		} 
@@ -139,8 +143,7 @@ public class Level2Manager : MonoBehaviour {
 	public void farAway(){
 		
 		debugbox.text = "get closer to it ";
-		emptyit ();
-
+		playSound ();
 	}
 
 	public void emptyit (){
@@ -194,6 +197,11 @@ public class Level2Manager : MonoBehaviour {
 		wining.SetActive (false);
 		lose.SetActive (false);
 
+	}
+	public void playSound(){
+		print ("play sounds");
+		Baudio.clip = aC;
+		Baudio.Play ();
 	}
 
 }
