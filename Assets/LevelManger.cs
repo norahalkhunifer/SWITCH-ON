@@ -9,6 +9,7 @@ public class LevelManger : MonoBehaviour {
 	int leveltopscore;
 	string leveltime;
 	int leveltoptime;
+
 	/// <summary>
 	/// this class is countain the shared metods for all levels 
 	/// </summary>

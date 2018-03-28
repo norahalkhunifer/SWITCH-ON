@@ -5,14 +5,18 @@ using UnityEngine.UI;
 
 public class Resumepaused : MonoBehaviour {
 
-		public bool pause;
+		 bool paused=false;
+	     bool started=false;
+
 	   // public Transform button;
         public Button pausePar;
 		public GameObject pauseOBJ;
 		//public GameObject back;
 		public GameObject inss;
 		//public GameObject inssAnim;
-	public Level2Manager l2m;
+	 public Level2Manager l2m;
+
+
 		// Use this for initialization
 		void Start () {
 
@@ -21,19 +25,26 @@ public class Resumepaused : MonoBehaviour {
 		}
 
 	public void instru(){
+		
 		pausePar.interactable = false;
-		pause = false;
+
 		l2m.activateGray (true);
 		pauseOBJ.SetActive (false);
 		//back.SetActive (false);
 		inss.SetActive (true);
+		paused = false;
 
 	}
 
+	public bool getStarted(){
+		return started;
+	}
+
+
 		public void onResume(){
-			pause = !pause;
+		paused = !paused;
 			//to resume the game
-			if (!pause) {
+		if (!paused) {
 				Time.timeScale = 1;
 			pauseOBJ.SetActive (false);
 			l2m.activateGray (false);
@@ -43,31 +54,31 @@ public class Resumepaused : MonoBehaviour {
 
 		public void OnPause (){
 		
-
-
-			pause = true;
-		if (pause ) {
+		paused = true;
+		if (paused ) {
 			
 			print ("paused");
 				Time.timeScale = 0;
 			pauseOBJ.SetActive (true);
 			l2m.activateGray (true);
 				//back.SetActive (true);
-				Debug.Log (pause);
-				setPause (pause);
+			Debug.Log (paused);
+			setPause (paused);
 			}
 		}
 
+
 		public bool GetPause(){
-			return pause;	}
+		
+		return paused;	}
 	
 		public void setPause(bool pa){
-			pause=pa;	}
+		paused=pa;	}
 
 		public void OnIns(){
 		//pausePar.interactable () = true;
 			//pause = !pause;
-			if (pause) {
+		if (paused) {
 				Time.timeScale = 0;
 			    pauseOBJ.SetActive (false);
 				//back.SetActive (false);
@@ -80,9 +91,10 @@ public class Resumepaused : MonoBehaviour {
 		public void onSkip(){
 		
 
-			pause = true;
+		paused = true;
+	
 			//to no button press
-			if (pause) {
+		if (paused) {
 			pausePar.interactable = true;
 				Time.timeScale = 1;
 				//back.SetActive (false);
@@ -90,9 +102,12 @@ public class Resumepaused : MonoBehaviour {
 				inss.SetActive (false);
 			    l2m.activateGray (false);
 				//inssAnim.SetActive (false);
-
+			started = true;
+			paused = false;
 
 			}
+
+
 		} 
 
 

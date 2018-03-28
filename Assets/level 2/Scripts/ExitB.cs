@@ -9,70 +9,52 @@ public class ExitB : MonoBehaviour {
 	public bool exitButton;
 	public GameObject exitDilog;
     public GameObject back;
+	public GameObject back2;
 
-	public LevelManger level;
-
+	public LevelManger lm;
 	public Level2Manager l2m;
-	public Resume_Paused re;
+
+     public Resumepaused re;
 
 
 	// Use this for initialization
 	void Start () {
-		
-		exitButton = false;
-		exitDilog.SetActive (false);
 
 	}
 
 
 	public void onNo(){
 		print ("no");
-		exitButton = !exitButton;
 
-		//to no button press
-		//if (!exitButton) {
-			Time.timeScale = 1;
-		    exitDilog.SetActive (false);
-		l2m.activateGray (false);
-			bool pause=re.GetPause();
+		Time.timeScale = 0;
+		exitDilog.SetActive (false);
+		l2m.activateGray (true);
+		re.setPause (true);
+
+
+		if(l2m.end==true)
+		back2.SetActive (true);	
+		else
+			back.SetActive (true);
 	
-			if (pause) {
-				Time.timeScale = 0;
-				//back.SetActive (true);
+	}
 
-			}
-		//} 
+	public void onyes(){
+		
+		lm.LoudHome ();
+		print ("yest entered");
+		Time.timeScale = 1;
+		exitDilog.SetActive (false);
 
 
 	}
-
 
 	public void onHome(){
-
-
 		exitDilog.SetActive (true);
 		Time.timeScale = 0;
-
-		if (exitDilog.activeSelf == true) {
-			print ("ll");
 			back.SetActive (false);
-		}
-			
+
 	}
-
-
-
-	public void onYes(){
 		
-		print ("yes");
-		//level.LoudHome();
-		exitButton = !exitButton;
-		//to no button press
-		//if (!exitButton) {
-		SceneManager.LoadScene ("world");
-			Time.timeScale = 1;
-		exitDilog.SetActive (false);
-			//back.SetActive (false);
-		//}
-	}
+
 }

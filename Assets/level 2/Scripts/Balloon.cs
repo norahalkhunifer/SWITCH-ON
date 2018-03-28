@@ -18,6 +18,10 @@ public class Balloon: MonoBehaviour {
 	public GameObject balloon9;
 	public GameObject balloon10;
 
+	 Balloon object1=null;
+
+
+
 	private int NO1=0;
 	private int NO2=0;
 	private int NO3=0;
@@ -29,19 +33,38 @@ public class Balloon: MonoBehaviour {
 	private int NO9=0;
 	private int NO10=0;
 
-
-
+	private int[] randomNO = new int[]{2,3,4,-2,-3,-4};
+	int i=0;
+	private Vector3 startPos;
+	private Vector3 endPos;
+	private float dis = 30f;
+	private float lerpt = 5;
+	private float currentt=0;
+	Vector3 v;
 
 	//public GameObject thunder;
 	//public GameObject score;
 	void Start(){
-
+		
 	}
 
 	// Update is called once per frame
 	void Update () {
-
+		
+		//startLerp ();
 	}
+
+	/*public void startLerp(){
+	
+		print ("update");
+		currentt += Time.deltaTime;
+		if (currentt > lerpt)
+			currentt = lerpt;
+
+		float t = currentt / lerpt;
+		if(object1!=null)
+		object1.transform.position = Vector3.Lerp (startPos, endPos, t);
+	}*/
 
 	//set no. of hits(toutch) on that obj
 	public void setNo(GameObject obj){
@@ -135,10 +158,29 @@ public class Balloon: MonoBehaviour {
 
 
 	public void changePos(){
+		print ("lerp");
+		//v = new Vector3 ((transform.position.x + randomNO [i]), transform.position.y, (transform.position.z + randomNO [i]));
+		/*i++;
+		if (i == 5)
+			i = 0;*/
+		
+		//startPos = obj.transform.position;
+		//endPos = obj.transform.position + v * dis;
+		//object1=obj;
+		//endPos = specificEnd()+transform.position + v * dis;
+		transform.position = new Vector3 ((transform.position.x+randomNO [i]), transform.position.y,( transform.position.z+randomNO [i]) );
+	i++;
+	if (i == 5)
+		i = 0;
+		
 
-		transform.position = new Vector3 (transform.position.x, transform.position.y, (transform.position.z - 3));
 	}
 
+/*public GameObject getObj(GameObject obj){//////stooop here
+
+		return obj;
+	
+	}*/
 
 	public void showParticle(GameObject obj){
 		print ("show particle");
@@ -153,19 +195,8 @@ public class Balloon: MonoBehaviour {
 		Baudio.Play ();
 	}
 
-	/*public void disappear(GameObject go){
-		
-		if ( balloon.name==go.name) {
-			Debug.Log (score);
-			balloon.SetActive (false);//to disable balloon
-		   // thunder.SetActive (true);
-			//score = score + 1;
-			//Debug.Log (score);
-			//scoreText.text = score.ToString ();
-			//finalScore.text=score.ToString();
-			//scoreTextWin.text=score.ToString();
 
-		}*/
+
 }
 
 

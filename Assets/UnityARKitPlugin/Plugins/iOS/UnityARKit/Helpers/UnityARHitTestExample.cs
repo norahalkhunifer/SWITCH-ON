@@ -13,6 +13,8 @@ namespace UnityEngine.XR.iOS
 		public static Ray ray;//this will be the ray that we cast from our touch into the scene
 		private static RaycastHit hit;
 		private static Level2Manager levelmanager;
+		private float distance;
+		public GameObject cam;
 
 		bool HitTestWithResultType (ARPoint point, ARHitTestResultType resultTypes)
 		{
@@ -69,17 +71,29 @@ namespace UnityEngine.XR.iOS
 				var touch = Input.GetTouch(0);
 
 					var ray = Camera.main.ScreenPointToRay (touch.position);//creates ray from screen point position
-					if (Physics.Raycast (ray, out hit)){//&& EventSystem.current.IsPointerOverGameObject()) {//Physics.Raycast (ray, out hit, maxRayDistance, collisionLayer)
+					
+				if (Physics.Raycast (ray, out hit)){//&& EventSystem.current.IsPointerOverGameObject()) {//Physics.Raycast (ray, out hit, maxRayDistance, collisionLayer)
 						GameObject item = hit.collider.transform.gameObject; //parent is what is stored in our area;
-					print ("sara");
-					levelmanager.touchsomething(item);
+
+					distance=Vector3.Distance(item.transform.position,cam.transform.position);
+
+					if (distance < 10f) {
+						print ("near");
+						levelmanager.touchsomething (item);
+					}
+					else{
+						levelmanager.farAway ();
+						print("D"+distance);
+					}
+
+
 					//print (item.name);
 						/*var screenPosition = Camera.main.ScreenToViewportPoint(new Vector2 (Screen.width / 2f, Screen.height / 2f));*/
 	}
 
 
 }
-		}
+		}//end of update
 	}
 }
 
