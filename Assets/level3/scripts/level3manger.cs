@@ -29,7 +29,7 @@ public class level3manger : MonoBehaviour
 	public Text score;
 	private int scorenum=0;
 	//if anyy thing goes wrong
-	public Text debugbox;
+	public GameObject debugbox;
 
 	//instruction dialog 
 	public GameObject instructionpanle;
@@ -55,7 +55,6 @@ public class level3manger : MonoBehaviour
 	void Start ()
 	{
 		//Screen.orientation = ScreenOrientation.Portrait;
-
 		//start timer depend on the complexity 
 		timer = Time.time + timelimitbysec;
 		randomthingsrepet = new int[random.Length];
@@ -63,6 +62,7 @@ public class level3manger : MonoBehaviour
 			placeRandomobj (box);
 		}
 		setScore ();
+
 
 	}
 
@@ -252,7 +252,9 @@ public class level3manger : MonoBehaviour
 			wining.SetActive (true);
 			Topscore.text = scorenum.ToString();
 			levelmanger.win (2,scorenum,timetext.text.ToString());
-			debugbox.text = "tries: " + nroftries;
+			debugbox.SetActive(true);
+			Text t =debugbox.GetComponentInChildren(typeof(Text))as Text;
+			t.text =  "tries: " + nroftries;
 		} else {
 			Endlose.Play ();
 			lose.SetActive (true);
@@ -305,9 +307,15 @@ public class level3manger : MonoBehaviour
 	}
 	public IEnumerator setDebugText(string textin )
 	{
-		debugbox.text = textin;
+		//debugbox.SetA
+		debugbox.SetActive(true);
+		Text t =debugbox.GetComponentInChildren(typeof(Text))as Text;
+		//	.SetActive(false);
+		t.text = textin;
 		yield return new WaitForSeconds(1);
-		debugbox.text = "";
+		t.text = "";
+		debugbox.SetActive(false);
+
 
 	
 	}

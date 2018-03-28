@@ -21,6 +21,7 @@ public class BattryShow : MonoBehaviour {
 	public ThenderDisable thender;
 
 	public GameObject ShowBattry;
+	public AudioSource increse;
 
 
 	// Update is called once per frame
@@ -44,12 +45,12 @@ public class BattryShow : MonoBehaviour {
 			if (count == 1) {
 				//disactive of battry red and active battry yallow
 				battry0.SetActive (false);
-
+				increse.Play();
 				battry1.SetActive (true);
 			}
 			if (count == 2) {
 				//disactive of battry yallow and active battry green
-
+				increse.Play();
 				battry1.SetActive (false);
 
 				battry2.SetActive (true);

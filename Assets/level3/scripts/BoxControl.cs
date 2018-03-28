@@ -101,7 +101,6 @@ public class BoxControl: MonoBehaviour
 			rend.material.shader = shader2;
 		else
 			rend.material.shader = shader1;
->>>>>>> dc9de636d34e5b6fda5be9d6262d433e74111e86
 
 	}*/
 }
