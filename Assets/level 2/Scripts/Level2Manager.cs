@@ -120,7 +120,7 @@ public class Level2Manager : MonoBehaviour {
 				Destroy (b);
 			} else{
 				b.changePos();
-				StartCoroutine("setDebugText", "Opps,pocket it again ");
+				debugbox.text = "Opps,pocket it again ";
 			}
 		    
 		} 
@@ -135,7 +135,8 @@ public class Level2Manager : MonoBehaviour {
 	}
 
 	public void farAway(){
-		StartCoroutine("setDebugText", "get closer to it "); 
+		debugbox.text = "get closer to it ";
+
 	}
 
 	public void Score(int sc){
