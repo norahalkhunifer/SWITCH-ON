@@ -12,6 +12,7 @@ public class ThenderDisable : MonoBehaviour {
 	public GameObject thender6;
 	public GameObject thender7;
 	public GameObject thender8;
+	public int num=0;
 
 	public AccelerationControlScript grass;
 	public ThenderDisable script;
@@ -23,6 +24,7 @@ public class ThenderDisable : MonoBehaviour {
 	public Text topScore;
 	public Text finalScore;
 	public Text scoreText;
+	public Text scoreText2;
 	public Text scoreTextWin;
 	public Resume_Paused resume;
 	public instruction instruc;
@@ -31,6 +33,8 @@ public class ThenderDisable : MonoBehaviour {
 	public GameObject text1;
 	public GameObject text2;
 	public GameObject text3;
+	public GameObject scordis;
+	public GameObject scordis1;
 
 public LevelManger levelmanger;
 
@@ -46,6 +50,8 @@ public LevelManger levelmanger;
 		text1.SetActive (false);
 		text2.SetActive (false);
 		text3.SetActive (false);
+		scordis.SetActive (false);
+
 
 	}
 	void Update(){
@@ -59,7 +65,6 @@ public LevelManger levelmanger;
 	{
 
 		if (thender.name == obj.name ) {
-
 				Debug.Log (score);
 				Debug.Log (thender.name == obj.name);
 				thender.SetActive (false);//to disable thinder
@@ -76,7 +81,6 @@ public LevelManger levelmanger;
 
 		if ( thender1.name==obj.name) {
 			Debug.Log (score);
-
 			thender1.SetActive (false);//to disable thinder
 			score = score + 1;
 			Debug.Log (score);
@@ -88,7 +92,6 @@ public LevelManger levelmanger;
 
 		if ( thender2.name==obj.name) {
 			Debug.Log (score);
-
 			thender2.SetActive (false);//to disable thinder
 			score = score + 1;
 			Debug.Log (score);
@@ -101,7 +104,6 @@ public LevelManger levelmanger;
 
 		if ( thender3.name==obj.name) {
 			Debug.Log (score);
-
 			thender3.SetActive (false);//to disable thinder
 			score = score + 1;
 			Debug.Log (score);
@@ -113,7 +115,6 @@ public LevelManger levelmanger;
 
 		if ( thender4.name==obj.name) {
 			Debug.Log (score);
-
 			thender4.SetActive (false);//to disable thinder
 			score = score + 1;
 			Debug.Log (score);
@@ -126,7 +127,6 @@ public LevelManger levelmanger;
 
 		if ( thender5.name==obj.name) {
 			Debug.Log (score);
-
 			thender5.SetActive (false);//to disable thinder
 			score = score + 1;
 			Debug.Log (score);
@@ -138,62 +138,76 @@ public LevelManger levelmanger;
 
 		if ( thender6.name==obj.name) {
 			Debug.Log (score);
-
 			thender6.SetActive (false);//to disable thinder
 			score = score + 1;
 			Debug.Log (score);
 			if (score > 6) {
+				scordis1.SetActive (false);
+				scordis.SetActive (true);
+				StartCoroutine (disable (num));
 				text1.SetActive (true);
-				scoreText.text = score.ToString ();
-				scoreText.color = newColor;
+				scoreText2.text = score.ToString ();
 				finalScore.text = score.ToString ();
 				scoreTextWin.text = score.ToString ();
-				//text1.SetActive (false);
+			} else {
+				scoreText.text = score.ToString ();
+				finalScore.text = score.ToString ();
+				scoreTextWin.text = score.ToString ();
+				scordis.SetActive (false);
+				scordis1.SetActive (true);
+
 			}
-			scoreText.text = score.ToString ();
-			finalScore.text = score.ToString ();
-			scoreTextWin.text = score.ToString ();
-		
+
 		}
 
 		if ( thender7.name==obj.name) {
 			Debug.Log (score);
-
 			thender7.SetActive (false);//to disable thinder
 			score = score + 1;
 			Debug.Log (score);
-			if (score > 6) {				text2.SetActive (true);
-				
-				
-				scoreText.text = score.ToString ();
-				scoreText.color = newColor;
+			if (score > 6) {
+				scordis1.SetActive (false);
+				scordis.SetActive (true);
+				StartCoroutine (disable (num));
+				text2.SetActive (true);
+				scoreText2.text = score.ToString ();
 				finalScore.text = score.ToString ();
 				scoreTextWin.text = score.ToString ();
+			} else {
+				scoreText.text = score.ToString ();
+				finalScore.text = score.ToString ();
+				scoreTextWin.text = score.ToString ();
+				scordis.SetActive (false);
+				scordis1.SetActive (true);
+
 			}
-			scoreText.text = score.ToString ();
-			finalScore.text = score.ToString ();
-			scoreTextWin.text = score.ToString ();
+
 		}
 
 		if ( thender8.name==obj.name) {
 			Debug.Log (score);
-
 			thender8.SetActive (false);//to disable thinder
 			score = score + 1;
 			Debug.Log (score);
 			if (score > 6) {
+				scordis1.SetActive (false);
+				scordis.SetActive (true);
+				StartCoroutine (disable (num));
 				text3.SetActive (true);
-
+				scoreText2.text = score.ToString ();
+				finalScore.text = score.ToString ();
+				scoreTextWin.text = score.ToString ();
+			} else {
+				scordis.SetActive (false);
+				scordis1.SetActive (true);
 				scoreText.text = score.ToString ();
-				scoreText.color = newColor;
 				finalScore.text = score.ToString ();
 				scoreTextWin.text = score.ToString ();
 			}
-			scoreText.text = score.ToString ();
-			finalScore.text = score.ToString ();
-			scoreTextWin.text = score.ToString ();
 
 		}
+
+
 		if (score == 9) {
 
 			timer.enabled= false;
@@ -214,6 +228,22 @@ public LevelManger levelmanger;
 
 		}
 	
+	}
+	IEnumerator disable (int num)
+	{
+		yield return new WaitForSeconds (2f);
+		if (num == 0 && !thender6.activeInHierarchy) {
+			text1.SetActive (false);
+			num = 1;
+		}
+		yield return new WaitForSeconds (2f);
+		if (num == 1 && !thender7.activeInHierarchy) {
+			text2.SetActive (false);
+		}
+		yield return new WaitForSeconds (2f);
+		if (num == 2 && !thender8.activeInHierarchy) {
+			text3.SetActive (false);
+		}
 	}
 }
 
