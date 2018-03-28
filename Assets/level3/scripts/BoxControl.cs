@@ -83,10 +83,7 @@ public class BoxControl: MonoBehaviour
 	}
 	public void ActivateIt ()
 	{
-<<<<<<< HEAD
-		levelmanger.setDebugText ("close to "+boxnum);
-	}
-=======
+
 		
 		levelmanger.setDebugText ("close to "+boxnum);
 	}
