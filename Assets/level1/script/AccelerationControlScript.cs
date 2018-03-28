@@ -24,6 +24,7 @@ public class AccelerationControlScript : MonoBehaviour {
 	public GameObject thender8;
 	public AccelerationControlScript script;
 	public GameObject grass0,grass5,grass3,grass8,grass9,grass11,grass13,grass15,grass17;
+	public AudioSource grass_removing;
 	// Use this for initialization
 	void Start () {
 
@@ -43,6 +44,7 @@ public class AccelerationControlScript : MonoBehaviour {
 			//here to make grass hide
 			GameObject.Find (temp).GetComponent<Rigidbody2D> ().isKinematic = false;
 			GameObject.Find (temp).SetActive (false);
+			grass_removing.Play ();
 			//reset the time passed to restart to another object 
 			timePassed = 0;
 			StartCoroutine(disable(num));
