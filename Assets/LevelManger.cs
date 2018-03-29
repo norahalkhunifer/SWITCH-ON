@@ -17,7 +17,7 @@ public class LevelManger : MonoBehaviour {
 		levelpassed = PlayerPrefs.GetInt ("LevelPassed");
 	}
 
-	public void win (int levelnum,int cscore, string ctime){
+	public void win (Scene levelnum,int cscore, string ctime){
 		leveltopscore = getTopScore (levelnum);
 		leveltime = getTime (levelnum);
 
@@ -88,7 +88,7 @@ public class LevelManger : MonoBehaviour {
 		*Sound type:bool*/
 	/// </summary>
 
-	public int getTopScore (int levelnum){
+	public int getTopScore (Scene levelnum){
 		string t = levelnum.ToString ();
 		string top = "Level" + t + "Score";
 		return PlayerPrefs.GetInt (top);

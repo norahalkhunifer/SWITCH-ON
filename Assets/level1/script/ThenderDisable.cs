@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+
 public class ThenderDisable : MonoBehaviour {
 	public GameObject thender;
 	public GameObject thender1;
@@ -13,7 +15,6 @@ public class ThenderDisable : MonoBehaviour {
 	public GameObject thender7;
 	public GameObject thender8;
 	public int num=0;
-	public int level;
 	public AccelerationControlScript grass;
 	public ThenderDisable script;
 	public BattryChange battryHide;
@@ -35,13 +36,14 @@ public class ThenderDisable : MonoBehaviour {
 	public GameObject text3;
 	public GameObject scordis;
 	public GameObject scordis1;
-
+	public Scene scene;
 public LevelManger levelmanger;
 
 	public int score=0;
 
 
 	void Start(){
+		Debug.Log (level);
 		gameWin.SetActive (false);
 		back.SetActive (false);
 		scoreText.text = score.ToString ();
@@ -222,7 +224,9 @@ public LevelManger levelmanger;
 			jump.enabled = false;
 			resume.enabled = false;
 			string winT=timer.finalTimerWin.text;
-			levelmanger.win (level,score , winT);
+			 scene = SceneManager.GetActiveScene();
+
+			levelmanger.win (scene,score , winT);
 			topScore.text=levelmanger.getTopScore (level).ToString();
 
 
