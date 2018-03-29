@@ -253,7 +253,7 @@ public class level3manger : MonoBehaviour
 			Topscore.text = scorenum.ToString();
 			scene = SceneManager.GetActiveScene();
 
-			levelmanger.win (scene,scorenum,timetext.text.ToString());
+			levelmanger.win (scene.GetHashCode(),scorenum,timetext.text.ToString());
 			debugbox.SetActive(true);
 			Text t =debugbox.GetComponentInChildren(typeof(Text))as Text;
 			t.text =  "tries: " + nroftries;

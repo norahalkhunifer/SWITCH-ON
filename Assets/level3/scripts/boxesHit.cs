@@ -121,7 +121,7 @@ using UnityEngine.XR.iOS;
 			matrix.SetColumn (3, cam.worldTransform.column3);
 			return UnityARMatrixOps.GetPosition (matrix);
 		}
-	GameObject FindClosestBox() {
+	/*GameObject FindClosestBox() {
 		GameObject[] gos;
 		gos = GameObject.FindGameObjectsWithTag("Enemy");
 		GameObject closest=null;
@@ -136,7 +136,7 @@ using UnityEngine.XR.iOS;
 			}
 		}
 		return closest;
-	}
+	}*/
 	}
 
 

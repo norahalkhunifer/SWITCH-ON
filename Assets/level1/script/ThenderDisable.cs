@@ -43,7 +43,7 @@ public LevelManger levelmanger;
 
 
 	void Start(){
-		Debug.Log (level);
+		//Debug.Log (level);
 		gameWin.SetActive (false);
 		back.SetActive (false);
 		scoreText.text = score.ToString ();
@@ -226,8 +226,8 @@ public LevelManger levelmanger;
 			string winT=timer.finalTimerWin.text;
 			 scene = SceneManager.GetActiveScene();
 
-			levelmanger.win (scene,score , winT);
-			topScore.text=levelmanger.getTopScore (scene).ToString();
+			levelmanger.win (scene.GetHashCode(),score , winT);
+			topScore.text=levelmanger.getTopScore (scene.GetHashCode()).ToString();
 
 
 		}
