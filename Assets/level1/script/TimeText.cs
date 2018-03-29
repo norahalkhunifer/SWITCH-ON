@@ -2,10 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+
 public class TimeText : MonoBehaviour {
 	public Text timer;
 	public Text finalTimer;
 	public Text finalTimerWin;
+
 	//private LevelManger m;
 	public float timeStamp;
 	public bool usingT=false;
@@ -23,6 +26,7 @@ public class TimeText : MonoBehaviour {
 	public GameObject gameWin;
 	public LevelManger levelmanger;
 	public TimeText timeScript;
+	public Scene scene;
 	// Use this for initialization
 	void Start () {
 		//here to set how many time you want
@@ -109,8 +113,10 @@ public class TimeText : MonoBehaviour {
 			battryHide.enabled = false;
 			jump.enabled = false;
 			resume.enabled = false;
-			levelmanger.win (5,thender.score , "00");
-			thender.topScore.text=levelmanger.getTopScore (1).ToString();
+			 scene = SceneManager.GetActiveScene();
+
+			levelmanger.win (scene,thender.score , "00");
+			thender.topScore.text=levelmanger.getTopScore (scene).ToString();
 			thender.enabled = false;
 			timeScript.enabled = false;
 			usingT = false;
