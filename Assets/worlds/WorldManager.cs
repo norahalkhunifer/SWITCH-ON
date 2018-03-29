@@ -43,6 +43,7 @@ public class WorldManager : MonoBehaviour {
 	public float fakeIncrement=0f;
 	public float fakeTiming=0f;
 
+	//to change the parent 
 	public Transform world2;
 	public Transform BlueC;
 	public Transform RedC;
