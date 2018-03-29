@@ -13,7 +13,7 @@ public class ThenderDisable : MonoBehaviour {
 	public GameObject thender7;
 	public GameObject thender8;
 	public int num=0;
-
+	public int level;
 	public AccelerationControlScript grass;
 	public ThenderDisable script;
 	public BattryChange battryHide;
@@ -222,8 +222,8 @@ public LevelManger levelmanger;
 			jump.enabled = false;
 			resume.enabled = false;
 			string winT=timer.finalTimerWin.text;
-			levelmanger.win (1,score , winT);
-			topScore.text=levelmanger.getTopScore (1).ToString();
+			levelmanger.win (level,score , winT);
+			topScore.text=levelmanger.getTopScore (level).ToString();
 
 
 		}

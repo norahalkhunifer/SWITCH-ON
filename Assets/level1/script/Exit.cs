@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class Exit : MonoBehaviour {
@@ -10,7 +11,8 @@ public class Exit : MonoBehaviour {
 	public GameObject back;
 	private LevelManger level;
 	public Resume_Paused re;
-
+	public GameObject resumeDe;
+	public Button resumeButton;
 
 	// Use this for initialization
 	void Start () {
@@ -29,12 +31,15 @@ public class Exit : MonoBehaviour {
 			Time.timeScale = 1;
 			exitDilog.SetActive (false);
 			back.SetActive (false);
-			bool pause=re.GetPause();
-			if (pause) {
-				Time.timeScale = 0;
-				back.SetActive (true);
+			resumeDe.SetActive (false);
+			resumeButton.interactable = true;
 
-			}
+//			bool pause=re.GetPause();
+//			if (pause) {
+//				Time.timeScale = 0;
+//				back.SetActive (true);
+
+			//}
 		} 
 
 
