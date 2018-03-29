@@ -38,7 +38,6 @@ public class BattryShow : MonoBehaviour {
 			//to make sure the count in battry red
 			if (count == 0) {
 				//active of battry red and disactive jumping dailoge
-				grass.enabled= false;
 				battry0.SetActive (true);
 				charecter.SetActive (true);
 				jump.SetActive (false);
@@ -46,7 +45,6 @@ public class BattryShow : MonoBehaviour {
 			}
 			if (count == 1) {
 				//disactive of battry red and active battry yallow
-				grass.enabled= false;
 
 				battry0.SetActive (false);
 				increse.Play();
@@ -54,7 +52,6 @@ public class BattryShow : MonoBehaviour {
 			}
 			if (count == 2) {
 				//disactive of battry yallow and active battry green
-				grass.enabled= false;
 
 				increse.Play();
 				battry1.SetActive (false);

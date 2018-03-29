@@ -113,8 +113,7 @@ public class TimeText : MonoBehaviour {
 			battryHide.enabled = false;
 			jump.enabled = false;
 			resume.enabled = false;
-			 scene = SceneManager.GetActiveScene();
-
+			// scene = SceneManager.GetActiveScene();
 			levelmanger.win (scene.GetHashCode(),thender.score , "00");
 			thender.topScore.text=levelmanger.getTopScore (scene.GetHashCode()).ToString();
 			thender.enabled = false;
@@ -128,7 +127,6 @@ public class TimeText : MonoBehaviour {
 		chare.SetActive (false);
 		finalTimer.text ="40";
 		resume.enabled = false;
-		//thender.enabled = false;
 		grass.enabled = false;
 		battryHide.enabled = false;
 		jump.enabled = false;

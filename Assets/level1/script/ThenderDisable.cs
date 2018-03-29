@@ -43,7 +43,7 @@ public LevelManger levelmanger;
 
 
 	void Start(){
-		//Debug.Log (level);
+	//	Debug.Log (level);
 		gameWin.SetActive (false);
 		back.SetActive (false);
 		scoreText.text = score.ToString ();
@@ -224,13 +224,42 @@ public LevelManger levelmanger;
 			jump.enabled = false;
 			resume.enabled = false;
 			string winT=timer.finalTimerWin.text;
-			 scene = SceneManager.GetActiveScene();
+			// scene = SceneManager.
 
 			levelmanger.win (scene.GetHashCode(),score , winT);
 			topScore.text=levelmanger.getTopScore (scene.GetHashCode()).ToString();
 
 
 		}
+		if (!grass.grass17.activeInHierarchy&&score>=6) {
+			timer.enabled= false;
+			instruc.enabled = false;
+			finalScore.text=score.ToString();
+			scoreTextWin.text=score.ToString();
+			gameWin.SetActive (true);
+			back.SetActive (true);
+			script.enabled = false;
+			grass.enabled = false;
+			battryHide.enabled = false;
+			jump.enabled = false;
+			resume.enabled = false;
+			string winT=timer.finalTimerWin.text;
+			//scene = SceneManager.Gethashcode;
+			levelmanger.win (scene.GetHashCode(),score , winT);
+			topScore.text=levelmanger.getTopScore (scene.GetHashCode()).ToString();
+
+
+		}
+		if (!grass.grass17.activeInHierarchy && score < 6) {
+			timer.gameOver.SetActive (true);
+			back.SetActive (true);
+			timer.chare.SetActive (false);
+			resume.enabled = false;
+			grass.enabled = false;
+			battryHide.enabled = false;
+			jump.enabled = false;
+		}
+
 	
 	}
 	IEnumerator disable (int num)

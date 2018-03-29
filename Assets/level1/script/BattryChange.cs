@@ -55,7 +55,6 @@ public ThenderDisable thender;
 			battry_r.SetActive (true);
 			jump.SetActive (true);
 			charecter.SetActive (true);
-			grass.enabled= false;
 
 			dec.Play ();
 

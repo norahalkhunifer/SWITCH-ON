@@ -1577,7 +1577,6 @@ MonoBehaviour:
   thender7: {fileID: 310326263}
   thender8: {fileID: 1742666925}
   num: 0
-  level: 1
   grass: {fileID: 342927298}
   script: {fileID: 435100765}
   battryHide: {fileID: 1704666269}
@@ -6860,7 +6859,7 @@ MonoBehaviour:
   thender: {fileID: 435100765}
   charecter: {fileID: 1808829806}
   dec: {fileID: 1704666271}
-  back: {fileID: 0}
+  back: {fileID: 1514889679}
 --- !u!4 &1704666270
 Transform:
   m_ObjectHideFlags: 0
@@ -7876,7 +7875,7 @@ MonoBehaviour:
   jump: {fileID: 1711739362}
   charecter: {fileID: 1808829806}
   thender: {fileID: 435100765}
-  back: {fileID: 0}
+  back: {fileID: 1514889679}
   ShowBattry: {fileID: 1926818290}
   increse: {fileID: 1926818293}
 --- !u!4 &1926818292

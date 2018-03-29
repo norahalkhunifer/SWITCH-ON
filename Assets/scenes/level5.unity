@@ -5549,7 +5549,6 @@ MonoBehaviour:
   thender7: {fileID: 197953926}
   thender8: {fileID: 1647641530}
   num: 0
-  level: 5
   grass: {fileID: 1684934836}
   script: {fileID: 1292393599}
   battryHide: {fileID: 417534971}
@@ -8155,7 +8154,7 @@ MonoBehaviour:
   grass13: {fileID: 1073807162}
   grass15: {fileID: 1170754802}
   grass17: {fileID: 1009114742}
-  grass_removing: {fileID: 0}
+  grass_removing: {fileID: 1684934838}
 --- !u!4 &1684934837
 Transform:
   m_ObjectHideFlags: 0
