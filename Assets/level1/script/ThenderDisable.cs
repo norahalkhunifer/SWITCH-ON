@@ -227,7 +227,7 @@ public LevelManger levelmanger;
 			 scene = SceneManager.GetActiveScene();
 
 			levelmanger.win (scene,score , winT);
-			topScore.text=levelmanger.getTopScore (level).ToString();
+			topScore.text=levelmanger.getTopScore (scene).ToString();
 
 
 		}
