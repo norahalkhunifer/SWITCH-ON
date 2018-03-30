@@ -7,19 +7,25 @@ using UnityEngine.EventSystems;
 [RequireComponent (typeof(AudioSource))]
 public class BoxControl: MonoBehaviour
 {
+	//animating box +blinking
 	private Animation opining;
+	AudioSource boxAudio;
 	private bool isopen = false;
+	//public bool blinking=false;
 	public static Ray ray;
-//this will be the ray that we cast from our touch into the scene
+	//Renderer rend;
+	public Material blink_material, normal_material;
+    //this will be the ray that we cast from our touch into the scene
 	private static level3manger levelmanger;
 	public int boxnum;
+	//to get des 
 	public Camera player;
-//each box have uniqe num
+    //each box have uniqe num
 	public GameObject insaideobj;
+	//for learping 
 	private float speed = 0.7f;
 	private float startTime;
 	private float journeyLength;
-	AudioSource boxAudio;
 	// Use this for initialization
 	//Awake
 	void Start ()
@@ -29,6 +35,8 @@ public class BoxControl: MonoBehaviour
 		boxAudio = GetComponent<AudioSource> ();
 		startTime = Time.time;
 		journeyLength = Vector3.Distance (insaideobj.transform.position, new Vector3 (insaideobj.transform.position.x, insaideobj.transform.position.y + 0.3f, insaideobj.transform.position.z));
+		//blink_material=	GetComponent<Renderer>().material;
+		normal_material=GetComponent<Renderer>().material;
 
 	}
 	// Update is called once per frame
@@ -38,7 +46,12 @@ public class BoxControl: MonoBehaviour
 			hideIt (true);
 		else
 			hideIt (false);
-
+		
+		if (Vector3.Distance(transform.position, player.transform.position)<3f)
+			Blinking ();
+		else {
+			StopBlinking ();
+		}
 	}
 
 	public void openit ()
@@ -87,11 +100,29 @@ public class BoxControl: MonoBehaviour
 	{
 		return isopen;
 	}
-	public void ActivateIt ()
+	public void ActivateIt (bool active)
 	{
-
-		
 		levelmanger.setDebugText ("close to "+boxnum);
+		//blinking = active;
+
+	}
+	 void Blinking ()
+	{
+		//blink_material.SetFloat ("_MKGlowTexStrength",10f);
+		//blink_material.SetFloat ("_MKGlowPower",5f);
+		GetComponent<Renderer>().material=blink_material;
+		//thisRend.material.SetColor("_Color", Color.Lerp(thisRend.material.color, newColor, Time.deltaTime * transitionRate));
+		//_MKGlowTexStrength
+		//_MKGlowPower
+		Invoke("StopBlinking",1f);
+	}
+	void StopBlinking ()
+	{
+		GetComponent<Renderer>().material=normal_material;
+
+		//blink_material.SetFloat ("_MKGlowTexStrength",0f);
+	//	blink_material.SetFloat ("_MKGlowPower",0f);
+
 	}
 	/*public Shader shader1;
 	public Shader shader2;

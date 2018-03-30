@@ -18,7 +18,7 @@ public class SenseAround : MonoBehaviour
 		Array.Sort (coll, new DistanceCompare (transform));
 		foreach (Collider box in coll) {
 			Debug.Log (box.name);
-			box.GetComponent<BoxControl>().ActivateIt();
+			//box.GetComponent<BoxControl>().ActivateIt(true);
 		}
 	
 
