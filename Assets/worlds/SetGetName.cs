@@ -18,7 +18,7 @@ public class SetGetName : MonoBehaviour {
 	public WorldManager worldObject;
 	public bool welcombbool=false; 
 
-
+	public GameObject mainInputField;
 
 	public GameObject rightIcon;
 
@@ -127,8 +127,26 @@ public class SetGetName : MonoBehaviour {
 	}
 	void Update (){
 		changeNameFeild.GetComponent<InputField>().placeholder.GetComponent<Text>().text =GetUsername ();
+		if (mainInputField.GetComponent<InputField> ().isFocused == true) {
+			//mainInputField.GetComponent<Image>().color = Color.green;
+			SetUsername (changeNameFeild.text);
+			//to save the written name into playerprefs
+			PlayerPrefs.Save ();
+			//to display user in the next welcome dialouge 
+			dispname.text = changeNameFeild.text;
 
+		}  else {
+			if (changeNameFeild.text == "") {
+			}  else {
+				//right icon timer 
+				StartCoroutine (ShowRight (true, 0f));
+				StartCoroutine (ShowRight (false, 2f));
+
+			}
+		}
 	}
+
+
 	void Start (){
 
 		        //Application.Quit();
