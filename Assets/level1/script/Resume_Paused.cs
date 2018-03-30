@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class Resume_Paused : MonoBehaviour {
@@ -7,8 +8,7 @@ public class Resume_Paused : MonoBehaviour {
 	public GameObject resume;
 	public GameObject back;
 	public GameObject inss;
-	//public GameObject inssAnim;
-
+	public Button resumeButton;
 	// Use this for initialization
 	void Start () {
 
@@ -16,15 +16,15 @@ public class Resume_Paused : MonoBehaviour {
 		instru ();
 	}
 	public void instru(){
-		
+		resumeButton.interactable = false;
 		pause = false;
 		resume.SetActive (false);
 		back.SetActive (false);
-	
 		inss.SetActive (true);
-		//inssAnim.SetActive(true);
 	}
 	public void onResume(){
+		resumeButton.interactable = true;
+
 		pause = !pause;
 		//to resume the game
 		if (!pause) {
@@ -35,6 +35,8 @@ public class Resume_Paused : MonoBehaviour {
 	//to pause the level
 
 		public void OnPause (){
+		resumeButton.interactable = false;
+
 		pause = true;
  		if (pause) {
 
@@ -53,6 +55,8 @@ public class Resume_Paused : MonoBehaviour {
 		 pause=pa;	}
 	
 	public void OnIns(){
+		resumeButton.interactable = false;
+
 		//pause = !pause;
 		if (pause) {
 			Time.timeScale = 0;
@@ -63,6 +67,8 @@ public class Resume_Paused : MonoBehaviour {
 		}
 	}
 	public void onSkip(){
+		resumeButton.interactable = true;
+
 		pause = true;
 		//to no button press
 		if (pause) {

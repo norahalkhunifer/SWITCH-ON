@@ -9,7 +9,8 @@ public class SenseAround : MonoBehaviour
 	private void onDrawGizmos() {
 		Gizmos.DrawSphere (transform.position, checkRadius);
 	}
-	
+
+
 	// Update is called once per frame
 	void Update ()
 	{
@@ -19,6 +20,9 @@ public class SenseAround : MonoBehaviour
 			Debug.Log (box.name);
 			box.GetComponent<BoxControl>().ActivateIt();
 		}
+	
+
+
 	}
 }
 

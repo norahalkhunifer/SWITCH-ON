@@ -43,7 +43,10 @@ public class WorldManager : MonoBehaviour {
 	public float fakeIncrement=0f;
 	public float fakeTiming=0f;
 
-
+	//to change the parent 
+	public Transform world2;
+	public Transform BlueC;
+	public Transform RedC;
 
 
 	public GameObject loadingscreen;
@@ -99,6 +102,7 @@ public class WorldManager : MonoBehaviour {
 		changePosition (levelPassed);
 		worldtopscore = levelsmanger.getTotalScreore ();
 		totalScore.text = worldtopscore.ToString ();
+
 	}
 
 	void Update(){
@@ -249,16 +253,25 @@ public class WorldManager : MonoBehaviour {
 			setting.charcter1.transform.localPosition = new Vector3 (204f, 55f, 0f);
 			break;
 		case 4:
-			setting.charcter2.transform.localPosition = new Vector3 (536.1f, 52.3f, 0f);
-			setting.charcter1.transform.localPosition = new Vector3 (536.1f, 52.3f, 0f);
+			RedC.SetParent (world2);
+			BlueC.SetParent (world2);
+
+			setting.charcter2.transform.localPosition = new Vector3 (-269.6f,49.3f, 0f);
+			setting.charcter1.transform.localPosition = new Vector3 (-269.6f,49.3f, 0f);
 			break;		
 		case 5:
-			setting.charcter2.transform.localPosition = new Vector3 (755.9f, -75.8f, 0f);
-			setting.charcter1.transform.localPosition = new Vector3 (755.9f, -75.8f, 0f);
+			RedC.SetParent (world2);
+			BlueC.SetParent (world2);
+
+			setting.charcter2.transform.localPosition = new Vector3 (-49.7f,-73.1f, 0f);
+			setting.charcter1.transform.localPosition = new Vector3 (-49.7f,-73.1f, 0f);
 			break;
 		case 6:
-			setting.charcter2.transform.localPosition = new Vector3 (1050.4f, -9.8f, 0f);
-			setting.charcter1.transform.localPosition = new Vector3 (1050.4f, -9.8f, 0f);
+			RedC.SetParent (world2);
+			BlueC.SetParent (world2);
+
+			setting.charcter2.transform.localPosition = new Vector3 (245f,-9f, 0f);
+			setting.charcter1.transform.localPosition = new Vector3 (245f,-9f, 0f);
 			break;
 
 		}//end switch 

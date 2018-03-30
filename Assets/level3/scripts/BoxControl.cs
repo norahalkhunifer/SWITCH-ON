@@ -13,6 +13,7 @@ public class BoxControl: MonoBehaviour
 //this will be the ray that we cast from our touch into the scene
 	private static level3manger levelmanger;
 	public int boxnum;
+	public Camera player;
 //each box have uniqe num
 	public GameObject insaideobj;
 	private float speed = 0.7f;
@@ -33,6 +34,11 @@ public class BoxControl: MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{
+		if(isopen)//Vector3.Distance(transform.position, player.transform.position)<0.5f && (isopen))
+			hideIt (true);
+		else
+			hideIt (false);
+
 	}
 
 	public void openit ()
@@ -103,4 +109,8 @@ public class BoxControl: MonoBehaviour
 			rend.material.shader = shader1;
 
 	}*/
+	public void hideIt (bool hide)
+	{
+		insaideobj.SetActive (hide);
+	}
 }

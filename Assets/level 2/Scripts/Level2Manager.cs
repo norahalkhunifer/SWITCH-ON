@@ -123,9 +123,9 @@ public class Level2Manager : MonoBehaviour {
 				print ("No>2");
 				Destroy (b);
 			} else{
-				
-				b.changePos(hitObject);
+				debugbox.text = "";
 				debugbox.text = "Opps,pocket it again ";
+				b.changePos(hitObject);
 
 			}
 		    

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BattryChange : MonoBehaviour {
 
@@ -17,6 +18,7 @@ public class BattryChange : MonoBehaviour {
 public ThenderDisable thender;
 	public GameObject charecter;
 	public AudioSource dec;
+	public GameObject back;
 
 
 
@@ -44,7 +46,7 @@ public ThenderDisable thender;
 
 			battry_g.SetActive (false);
 			battry_y.SetActive (true);
-			dec.Play ();
+		dec.Play ();
 		}
 		//after 10 sec make battry yallow disactive and red active and jumping dailoge active
 
@@ -53,6 +55,7 @@ public ThenderDisable thender;
 			battry_r.SetActive (true);
 			jump.SetActive (true);
 			charecter.SetActive (true);
+
 			dec.Play ();
 
 			//here make time passed is 0
@@ -60,12 +63,11 @@ public ThenderDisable thender;
 
 
 			//make disenable this three script for grass remove and battry timer and thender
-
 			thender.enabled=false;
 			grass.enabled= false;
 			BatrryHide.enabled = false;
 			ShowBattry.SetActive (true);
-
+			back.SetActive (true);
 			//make script of jumping to charging the battry active
 
 		}

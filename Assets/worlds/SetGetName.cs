@@ -57,6 +57,10 @@ public class SetGetName : MonoBehaviour {
 		changeNameFeild.text = "";
 	}
 
+	public void settingBack () {
+		changeNameFeild.text = "";
+
+		}
 
 	public void setget () {
 		if (nameFeild.text == "") {

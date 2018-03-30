@@ -114,13 +114,16 @@ public class settingManger : MonoBehaviour {
 
 	//change maute to unmute and the icon
 	void Mute(){
+
+		AudioSource WorldAudio = GameObject.Find("WorldMusic").GetComponent<AudioSource>();
+
 		if(PlayerPrefs.GetInt("Mute",0) == 0)
 		{
-			AudioListener.volume = 1;
+			WorldAudio.mute = false;
 			MusicToggle.image.overrideSprite = MusicOn;
 		}
 		else{
-			AudioListener.volume = 0;
+			WorldAudio.mute = true;
 			MusicToggle.image.overrideSprite = MusicOff;
 		}
 	}

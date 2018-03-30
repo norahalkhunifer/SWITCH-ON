@@ -19,6 +19,7 @@ public class BattryShow : MonoBehaviour {
 	public GameObject jump ;
 	public GameObject charecter;
 	public ThenderDisable thender;
+	public GameObject back;
 
 	public GameObject ShowBattry;
 	public AudioSource increse;
@@ -44,12 +45,14 @@ public class BattryShow : MonoBehaviour {
 			}
 			if (count == 1) {
 				//disactive of battry red and active battry yallow
+
 				battry0.SetActive (false);
 				increse.Play();
 				battry1.SetActive (true);
 			}
 			if (count == 2) {
 				//disactive of battry yallow and active battry green
+
 				increse.Play();
 				battry1.SetActive (false);
 
@@ -70,6 +73,7 @@ public class BattryShow : MonoBehaviour {
 			thender.enabled =true;
 			BatrryHide.enabled= true;
 			grass.enabled=true;  
+			back.SetActive (false);
 
 		ShowBattry.SetActive (false);
 

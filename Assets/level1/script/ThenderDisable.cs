@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+
 public class ThenderDisable : MonoBehaviour {
 	public GameObject thender;
 	public GameObject thender1;
@@ -13,7 +15,6 @@ public class ThenderDisable : MonoBehaviour {
 	public GameObject thender7;
 	public GameObject thender8;
 	public int num=0;
-
 	public AccelerationControlScript grass;
 	public ThenderDisable script;
 	public BattryChange battryHide;
@@ -35,13 +36,14 @@ public class ThenderDisable : MonoBehaviour {
 	public GameObject text3;
 	public GameObject scordis;
 	public GameObject scordis1;
-
+	public Scene scene;
 public LevelManger levelmanger;
 
 	public int score=0;
 
 
 	void Start(){
+	//	Debug.Log (level);
 		gameWin.SetActive (false);
 		back.SetActive (false);
 		scoreText.text = score.ToString ();
@@ -222,11 +224,42 @@ public LevelManger levelmanger;
 			jump.enabled = false;
 			resume.enabled = false;
 			string winT=timer.finalTimerWin.text;
-			levelmanger.win (1,score , winT);
-			topScore.text=levelmanger.getTopScore (1).ToString();
+			// scene = SceneManager.
+
+			levelmanger.win (scene.GetHashCode(),score , winT);
+			topScore.text=levelmanger.getTopScore (scene.GetHashCode()).ToString();
 
 
 		}
+		if (!grass.grass17.activeInHierarchy&&score>=6) {
+			timer.enabled= false;
+			instruc.enabled = false;
+			finalScore.text=score.ToString();
+			scoreTextWin.text=score.ToString();
+			gameWin.SetActive (true);
+			back.SetActive (true);
+			script.enabled = false;
+			grass.enabled = false;
+			battryHide.enabled = false;
+			jump.enabled = false;
+			resume.enabled = false;
+			string winT=timer.finalTimerWin.text;
+			//scene = SceneManager.Gethashcode;
+			levelmanger.win (scene.GetHashCode(),score , winT);
+			topScore.text=levelmanger.getTopScore (scene.GetHashCode()).ToString();
+
+
+		}
+		if (!grass.grass17.activeInHierarchy && score < 6) {
+			timer.gameOver.SetActive (true);
+			back.SetActive (true);
+			timer.chare.SetActive (false);
+			resume.enabled = false;
+			grass.enabled = false;
+			battryHide.enabled = false;
+			jump.enabled = false;
+		}
+
 	
 	}
 	IEnumerator disable (int num)
