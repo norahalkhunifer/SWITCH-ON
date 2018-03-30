@@ -62,7 +62,8 @@ public class level3manger : MonoBehaviour
 			placeRandomobj (box);
 		}
 		setScore ();
-
+		if (!instructionpanle.activeInHierarchy)
+			Showinstruction (false);
 
 	}
 

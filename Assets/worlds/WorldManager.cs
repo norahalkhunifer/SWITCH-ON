@@ -52,7 +52,7 @@ public class WorldManager : MonoBehaviour {
 	public GameObject loadingscreen;
 	public Slider slider;
 
-
+	public AudioSource button_sound;
 
 	//do once in the bigining 
 	void Start(){
@@ -104,16 +104,6 @@ public class WorldManager : MonoBehaviour {
 		totalScore.text = worldtopscore.ToString ();
 
 	}
-
-	void Update(){
-
-
-	}
-
-
-
-
-
 	//to made animation between the world and level we use invoke("method",sf)
 	public void levelToLoad ()
 	{
@@ -138,8 +128,11 @@ public class WorldManager : MonoBehaviour {
 
 	//settings page animations 
 	public void opensettings(Animator anim){
-		if(!isDActivated())
+		if (!isDActivated ()) {
 			anim.SetBool ("settings", true);
+			button_sound.Play ();
+		}
+
 	}
 
 	public void closesettings(Animator anim){
@@ -149,6 +142,7 @@ public class WorldManager : MonoBehaviour {
 	//world animations 
 	public void next(Animator anim){
 		if (nextavi&& !isDActivated()) {
+			button_sound.Play ();
 			anim.SetBool ("thereisnext", true);
 			nextavi = false;
 		}
