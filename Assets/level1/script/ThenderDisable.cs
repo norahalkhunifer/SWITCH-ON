@@ -36,6 +36,9 @@ public class ThenderDisable : MonoBehaviour {
 	public GameObject text3;
 	public GameObject scordis;
 	public GameObject scordis1;
+	public GameObject grass17;
+	public GameObject gameOver;
+	public Button resumeButton;
 	public Scene scene;
 public LevelManger levelmanger;
 
@@ -229,9 +232,10 @@ public LevelManger levelmanger;
 			levelmanger.win (scene.GetHashCode(),score , winT);
 			topScore.text=levelmanger.getTopScore (scene.GetHashCode()).ToString();
 
+			resumeButton.interactable = false;
 
 		}
-		if (!grass.grass17.activeInHierarchy&&score>=6) {
+		if (!grass17.activeInHierarchy&&score>=6&&!thender8.activeInHierarchy) {
 			timer.enabled= false;
 			instruc.enabled = false;
 			finalScore.text=score.ToString();
@@ -244,20 +248,25 @@ public LevelManger levelmanger;
 			jump.enabled = false;
 			resume.enabled = false;
 			string winT=timer.finalTimerWin.text;
-			//scene = SceneManager.Gethashcode;
 			levelmanger.win (scene.GetHashCode(),score , winT);
 			topScore.text=levelmanger.getTopScore (scene.GetHashCode()).ToString();
 
+			resumeButton.interactable = false;
+
 
 		}
-		if (!grass.grass17.activeInHierarchy && score < 6) {
-			timer.gameOver.SetActive (true);
+		if (!grass17.activeInHierarchy && score < 6&&!thender8.activeInHierarchy) {
+			gameOver.SetActive (true);
 			back.SetActive (true);
 			timer.chare.SetActive (false);
 			resume.enabled = false;
 			grass.enabled = false;
 			battryHide.enabled = false;
 			jump.enabled = false;
+			timer.usingT = false;
+			timer.enabled = false;
+			resumeButton.interactable = false;
+
 		}
 
 	

@@ -18,7 +18,7 @@ public class BattryChange : MonoBehaviour {
 public ThenderDisable thender;
 	public GameObject charecter;
 	public AudioSource dec;
-	public GameObject back;
+	//public GameObject back;
 
 
 
@@ -67,7 +67,7 @@ public ThenderDisable thender;
 			grass.enabled= false;
 			BatrryHide.enabled = false;
 			ShowBattry.SetActive (true);
-			back.SetActive (true);
+		//	back.SetActive (true);
 			//make script of jumping to charging the battry active
 
 		}
