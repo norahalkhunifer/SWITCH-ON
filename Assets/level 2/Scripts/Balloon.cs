@@ -19,7 +19,6 @@ public class Balloon: MonoBehaviour {
 	public GameObject balloon9;
 	public GameObject balloon10;
 
-	 Balloon object1=null;
 	 GameObject object1=null;
 
 
@@ -53,11 +52,9 @@ public class Balloon: MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		
-		//startLerp ();
 		startLerp ();
 	}
 
-	/*public void startLerp(){
 	public void startLerp(){
 	
 		print ("update");
@@ -70,7 +67,6 @@ public class Balloon: MonoBehaviour {
 
 		if(object1!=null)
 		object1.transform.position = Vector3.Lerp (startPos, endPos, t);
-	}*/
 	}
 
 	//set no. of hits(toutch) on that obj
@@ -166,29 +162,19 @@ public class Balloon: MonoBehaviour {
 
 	public void changePos(GameObject obj){
 		
-		//object1 = obj.getcomponent<Balloon>;
-
 		object1 = obj;
 		startPos = obj.transform.position;
 		print ("lerp");
-
-		//v = new Vector3 ((transform.position.x + randomNO [i]), transform.position.y, (transform.position.z + randomNO [i]));
 
 		v = new Vector3 ((transform.position.x + randomNO [i]), transform.position.y, (transform.position.z + randomNO [i]));
 		i++;
 		if (i == 5)//to prevent out of boud
 			i = 0;
 		
-		//startPos = obj.transform.position;
-		//endPos = obj.transform.position + v * dis;
 
 		endPos = obj.transform.position + (2*v) * dis;
 
 		//endPos = specificEnd()+transform.position + v * dis;
-		transform.position = new Vector3 ((transform.position.x+randomNO [i]), transform.position.y,( transform.position.z) );
-		i++;
-		if (i == 5)
-			i = 0;
 		//transform.position = new Vector3 ((transform.position.x+randomNO [i]), transform.position.y,( transform.position.z) );
 
 	}
