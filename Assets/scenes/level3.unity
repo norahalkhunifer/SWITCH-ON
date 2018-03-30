@@ -2120,6 +2120,7 @@ GameObject:
   - component: {fileID: 460615751}
   - component: {fileID: 460615750}
   - component: {fileID: 460615749}
+  - component: {fileID: 460615752}
   m_Layer: 0
   m_Name: manger
   m_TagString: manger
@@ -2586,6 +2587,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!114 &460615752
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 460615744}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04aff2272f2c341c2b1c769a55894a0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  music: {fileID: 460615747}
 --- !u!1 &468080325
 GameObject:
   m_ObjectHideFlags: 0

@@ -252,8 +252,8 @@ public class level3manger : MonoBehaviour
 			wining.SetActive (true);
 			Topscore.text = scorenum.ToString();
 			scene = SceneManager.GetActiveScene();
-
-			levelmanger.win (scene.GetHashCode(),scorenum,timetext.text.ToString());
+			//.buildIndex ,GetHashCode()
+			levelmanger.win (scene.buildIndex,scorenum,timetext.text.ToString());
 			debugbox.SetActive(true);
 			Text t =debugbox.GetComponentInChildren(typeof(Text))as Text;
 			t.text =  "tries: " + nroftries;
@@ -264,14 +264,9 @@ public class level3manger : MonoBehaviour
 	}
 	string doneTime(){
 		return((int)(timer - timeongoing)/60).ToString ()+":"+((int)(timer - timeongoing) % 60).ToString();
-
 	}
 
-	public void save (int winscore)
-	{
-		PlayerPrefs.SetInt ("Level3Score", winscore);
 
-	}
 	public void pause (bool open)
 	{
 		if (instructionpanle.activeInHierarchy)
