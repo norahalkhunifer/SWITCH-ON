@@ -3195,7 +3195,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 706940499}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.8858032, y: 307.7262, z: 0}
+  m_LocalPosition: {x: 0.51416016, y: 300.94818, z: 0}
   m_LocalScale: {x: 0.40107098, y: 0.40107098, z: 0.40107098}
   m_Children: []
   m_Father: {fileID: 1251979972}
@@ -3203,8 +3203,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.13142237, y: 0.76968867}
   m_AnchorMax: {x: 0.851733, y: 0.92972845}
-  m_AnchoredPosition: {x: 4.4999847, y: -6.600006}
-  m_SizeDelta: {x: 577.1, y: 114.3}
+  m_AnchoredPosition: {x: 6.9, y: -13.378}
+  m_SizeDelta: {x: 668.2, y: 148.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &706940501
 MonoBehaviour:
@@ -4155,8 +4155,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Go to room center \nThen try to mach what's hidden in the  boxes around
-    you "
+  m_Text: 'Look around you and try to match what''s hidden in the  boxes  '
 --- !u!222 &1032172412
 CanvasRenderer:
   m_ObjectHideFlags: 0

@@ -145,7 +145,7 @@ public class level3manger : MonoBehaviour
 			print ("not box!");//message that says tuch me again!
 	}
 	public void farAway(){
-		StartCoroutine("setDebugText", "get closer to it "); 
+		StartCoroutine("setDebugText", "Get closer"); 
 
 
 	}
@@ -188,7 +188,6 @@ public class level3manger : MonoBehaviour
 		currentboxes [1].mached ();
 		size--;
 		StartCoroutine("setDebugText", "YaaY +4 "); 
-		//play yay sound 
 		pickup.Play();
 		addscore (4);
 		if (size == 0)
@@ -197,6 +196,9 @@ public class level3manger : MonoBehaviour
 
 	public void BoxesNotMatching ()
 	{
+		StartCoroutine("setDebugText", "OH NO -2 "); 
+		removescore (2);
+
 		mismatch.Play ();
 		StartCoroutine("closeCurrentBoxes");
 		//closeCurrentBoxes();
@@ -255,8 +257,8 @@ public class level3manger : MonoBehaviour
 			//.buildIndex ,GetHashCode()
 			levelmanger.win (scene.buildIndex,scorenum,timetext.text.ToString());
 			debugbox.SetActive(true);
-			Text t =debugbox.GetComponentInChildren(typeof(Text))as Text;
-			t.text =  "tries: " + nroftries;
+			/*Text t =debugbox.GetComponentInChildren(typeof(Text))as Text;
+			t.text =  "tries: " + nroftries;*/
 		} else {
 			Endlose.Play ();
 			lose.SetActive (true);
@@ -304,10 +306,8 @@ public class level3manger : MonoBehaviour
 	}
 	public IEnumerator setDebugText(string textin )
 	{
-		//debugbox.SetA
 		debugbox.SetActive(true);
 		Text t =debugbox.GetComponentInChildren(typeof(Text))as Text;
-		//	.SetActive(false);
 		t.text = textin;
 		yield return new WaitForSeconds(1);
 		t.text = "";
