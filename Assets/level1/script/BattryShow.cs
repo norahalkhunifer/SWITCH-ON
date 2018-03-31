@@ -45,9 +45,8 @@ public class BattryShow : MonoBehaviour {
 			}
 			if (count == 1) {
 				//disactive of battry red and active battry yallow
-
-				battry0.SetActive (false);
 				increse.Play();
+				battry0.SetActive (false);
 				battry1.SetActive (true);
 			}
 			if (count == 2) {

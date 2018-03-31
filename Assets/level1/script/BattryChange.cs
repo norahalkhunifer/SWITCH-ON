@@ -46,7 +46,7 @@ public ThenderDisable thender;
 
 			battry_g.SetActive (false);
 			battry_y.SetActive (true);
-		dec.Play ();
+		//dec.Play ();
 		}
 		//after 10 sec make battry yallow disactive and red active and jumping dailoge active
 

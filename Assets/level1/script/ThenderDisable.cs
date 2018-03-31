@@ -229,8 +229,8 @@ public LevelManger levelmanger;
 			string winT=timer.finalTimerWin.text;
 			// scene = SceneManager.
 
-			levelmanger.win (scene.GetHashCode(),score , winT);
-			topScore.text=levelmanger.getTopScore (scene.GetHashCode()).ToString();
+			levelmanger.win (scene.buildIndex,score , winT);
+			topScore.text=levelmanger.getTopScore (scene.buildIndex).ToString();
 
 			resumeButton.interactable = false;
 
@@ -248,8 +248,8 @@ public LevelManger levelmanger;
 			jump.enabled = false;
 			resume.enabled = false;
 			string winT=timer.finalTimerWin.text;
-			levelmanger.win (scene.GetHashCode(),score , winT);
-			topScore.text=levelmanger.getTopScore (scene.GetHashCode()).ToString();
+			levelmanger.win (scene.buildIndex,score , winT);
+			topScore.text=levelmanger.getTopScore (scene.buildIndex).ToString();
 
 			resumeButton.interactable = false;
 

@@ -114,8 +114,9 @@ public class TimeText : MonoBehaviour {
 			battryHide.enabled = false;
 			jump.enabled = false;
 			resume.enabled = false;
-			// scene = SceneManager.GetActiveScene();
-			levelmanger.win (scene.GetHashCode(),thender.score , "00");
+			scene = SceneManager.GetActiveScene();
+			//.buildIndex ,GetHashCode()
+			levelmanger.win (scene.buildIndex,thender.score , "00");
 			thender.topScore.text=levelmanger.getTopScore (scene.GetHashCode()).ToString();
 			thender.enabled = false;
 			timeScript.enabled = false;
