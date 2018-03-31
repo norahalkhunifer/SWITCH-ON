@@ -41,7 +41,11 @@ public class LevelManger : MonoBehaviour {
 
 	public void subTotalScore(int csore)
 	{
-		PlayerPrefs.SetInt ("TotalScore", getTotalScreore() -  csore);
+		if (getTotalScreore() -  csore<0)
+		PlayerPrefs.SetInt ("TotalScore", 0);
+		else
+			PlayerPrefs.SetInt ("TotalScore", getTotalScreore() -  csore);
+		
 
 	}
 
