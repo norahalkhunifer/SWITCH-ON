@@ -5110,6 +5110,7 @@ MonoBehaviour:
   hit: {fileID: 1286139110}
   panleOncamera1: {fileID: 1182683349}
   levelM: {fileID: 109893354}
+  level: 0
   debugbox: {fileID: 619981878}
   exitDilog: {fileID: 1040440444}
   back: {fileID: 717303116}
@@ -5198,6 +5199,7 @@ MonoBehaviour:
   hit: {fileID: 1286139110}
   panleOncamera1: {fileID: 1182683349}
   levelM: {fileID: 109893354}
+  level: 3
   debugbox: {fileID: 619981878}
   exitDilog: {fileID: 1040440444}
   back: {fileID: 717303116}
