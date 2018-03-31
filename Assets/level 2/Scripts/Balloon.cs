@@ -42,6 +42,8 @@ public class Balloon: MonoBehaviour {
 	private float lerpt = 1;
 	private float currentt=0;
 	Vector3 v;
+	public Camera player;
+	public Material blink_material, normal_material;
 
 	//public GameObject thunder;
 	//public GameObject score;
@@ -55,6 +57,10 @@ public class Balloon: MonoBehaviour {
 		if(t1==true)
 		startLerp ();
 
+		if (Vector3.Distance(transform.position, player.transform.position)<3f)
+			Blinking ();
+		else 
+			StopBlinking ();
 	}
 
 	public void startLerp(){
@@ -200,7 +206,19 @@ public class Balloon: MonoBehaviour {
 		Baudio.Play ();
 	}
 
+	void Blinking ()
+	{
 
+		GetComponent<Renderer>().material=blink_material;
+	
+		Invoke("StopBlinking",3f);
+	}
+	void StopBlinking ()
+	{
+		GetComponent<Renderer>().material=normal_material;
+
+
+	}
 
 }
 
