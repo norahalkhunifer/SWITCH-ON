@@ -8,8 +8,8 @@ public class Balloon: MonoBehaviour {
 	public AudioSource Baudio;
 
 
-	public GameObject balloon1;
-	public GameObject balloon2;
+	public GameObject balloon;
+	/*public GameObject balloon2;
 	public GameObject balloon3;
 	public GameObject balloon4;
 	public GameObject balloon5;
@@ -17,14 +17,14 @@ public class Balloon: MonoBehaviour {
 	public GameObject balloon7;
 	public GameObject balloon8;
 	public GameObject balloon9;
-	public GameObject balloon10;
+	public GameObject balloon10;*/
 
-	 GameObject object1=null;
+	 //GameObject object1=null;
 
 
 
-	private int NO1=0;
-	private int NO2=0;
+	private int NO=0;
+	/*private int NO2=0;
 	private int NO3=0;
 	private int NO4=0;
 	private int NO5=0;
@@ -32,14 +32,14 @@ public class Balloon: MonoBehaviour {
 	private int NO7=0;
 	private int NO8=0;
 	private int NO9=0;
-	private int NO10=0;
+	private int NO10=0;*/
 
 	private int[] randomNO = new int[]{10,13,14,-10,-13,-14};
 	int i=0;
 	private Vector3 startPos;
 	private Vector3 endPos;
-	private float dis = 30f;
-	private float lerpt = 5;
+	private float dis = 1f;
+	private float lerpt = 3;
 	private float currentt=0;
 	Vector3 v;
 
@@ -53,6 +53,7 @@ public class Balloon: MonoBehaviour {
 	void Update () {
 		
 		//startLerp ();
+
 	}
 
 	/*public void startLerp(){
@@ -70,9 +71,9 @@ public class Balloon: MonoBehaviour {
 	}*/
 
 	//set no. of hits(toutch) on that obj
-	public void setNo(GameObject obj){
-
-		if (obj.CompareTag ("B1")) {
+	public void setNo(){
+		NO++;
+	/*	if (obj.CompareTag ("B1")) {
 			NO1++;
 		}
 		if (obj.CompareTag ("B2")) {
@@ -101,14 +102,14 @@ public class Balloon: MonoBehaviour {
 		}
 		if (obj.CompareTag ("B10")) {
 			NO10++;
-		}
+		}*/
 	}
 
 	//get no. of hits on that object
-	public int getNo(GameObject obj){
-		int NO=0;
+	public int getNo(){
+		//int NO=0;
 
-		if (obj.CompareTag ("B1")) {
+		/*if (obj.CompareTag ("B1")) {
 			NO = NO1;
 			print ("NO1"+NO);
 		}
@@ -155,12 +156,12 @@ public class Balloon: MonoBehaviour {
 		if (obj.CompareTag ("B10")) {
 			NO = NO10;
 			print ("NO10"+NO);
-		}
+		}*/
 		return NO;
 	}
 
 
-	public void changePos(GameObject obj){
+	public void changePos(){
 		
 		/*object1 = obj;
 		startPos = obj.transform.position;
@@ -169,7 +170,7 @@ public class Balloon: MonoBehaviour {
 		//v = new Vector3 ((transform.position.x + randomNO [i]), transform.position.y, (transform.position.z + randomNO [i]));
 
 
-		//endPos = obj.transform.position + (2*v) * dis;
+		//endPos = obj.transform.position + v * dis;
 
 		//endPos = specificEnd()+transform.position + v * dis;
 		transform.position = new Vector3 ((transform.position.x+randomNO [i]), transform.position.y,( transform.position.z) );
@@ -192,6 +193,7 @@ public class Balloon: MonoBehaviour {
 	}
 
 	public void playSound(){
+		
 		print ("play sounds");
 		Baudio.clip = aC;
 		Baudio.Play ();
