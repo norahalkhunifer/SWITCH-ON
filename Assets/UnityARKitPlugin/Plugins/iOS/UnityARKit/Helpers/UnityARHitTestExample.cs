@@ -24,7 +24,7 @@ namespace UnityEngine.XR.iOS
 				foreach (var hitResult in hitResults) {
 					Debug.Log ("Got hit!");
 					// m_HitTransform.position = UnityARMatrixOps.GetPosition (hitResult.worldTransform);
-					m_HitTransform.position = UnityARMatrixOps.GetPosition (hitResults[0].worldTransform);
+					m_HitTransform.position = UnityARMatrixOps.GetPosition (hitResult.worldTransform);
 					m_HitTransform.rotation = UnityARMatrixOps.GetRotation (hitResult.worldTransform);
 					// Face the camera (assume it's level and rotate around y-axis only)
 					//m_HitTransform.LookAt (Camera.main.transform.position);
@@ -38,7 +38,7 @@ namespace UnityEngine.XR.iOS
 
 		void Awake () {
 			//get the mager to send tutched object to it 
-			levelmanager = GameObject.Find("Balloons").GetComponent<Level2Manager> ();
+			levelmanager = GameObject.Find("Manager").GetComponent<Level2Manager> ();
 			//place the boxes container on detected ground 
 			ARPoint point = new ARPoint { 
 				x = 0.1f, //do a hit test at the center of the screen
@@ -46,11 +46,11 @@ namespace UnityEngine.XR.iOS
 			};
 			// prioritize reults types
 			ARHitTestResultType[] resultTypes = {
-				ARHitTestResultType.ARHitTestResultTypeExistingPlaneUsingExtent, 
+				//ARHitTestResultType.ARHitTestResultTypeExistingPlaneUsingExtent, 
 				// if you want to use infinite planes use this:
-				ARHitTestResultType.ARHitTestResultTypeExistingPlane,
-				//ARHitTestResultType.ARHitTestResultTypeHorizontalPlane, 
-				//ARHitTestResultType.ARHitTestResultTypeFeaturePoint
+				//ARHitTestResultType.ARHitTestResultTypeExistingPlane,
+				ARHitTestResultType.ARHitTestResultTypeHorizontalPlane, 
+				ARHitTestResultType.ARHitTestResultTypeFeaturePoint
 			};
 
 			foreach (ARHitTestResultType resultType in resultTypes)
@@ -66,19 +66,18 @@ namespace UnityEngine.XR.iOS
 		// Update is called once per frame
 		void Update () {
 
-			if (Input.touchCount > 0)
+			if (Input.touchCount > 0 &&(!EventSystem.current.IsPointerOverGameObject(Input.GetTouch (0).fingerId))) 
 			{
 				var touch = Input.GetTouch(0);
 
-					var ray = Camera.main.ScreenPointToRay (touch.position);//creates ray from screen point position
+					 ray = Camera.main.ScreenPointToRay (touch.position);//creates ray from screen point position
 					
-				if (Physics.Raycast (ray, out hit)){//&& EventSystem.current.IsPointerOverGameObject()) {//Physics.Raycast (ray, out hit, maxRayDistance, collisionLayer)
+				if (Physics.Raycast (ray, out hit)&& (!EventSystem.current.IsPointerOverGameObject(touch.fingerId))) {//Physics.Raycast (ray, out hit, maxRayDistance, collisionLayer)
 						GameObject item = hit.collider.transform.gameObject; //parent is what is stored in our area;
 
 					distance=Vector3.Distance(item.transform.position,cam.transform.position);
 
 					if (distance < 20f) {
-						print ("near");
 						levelmanager.touchsomething (item);
 					}
 
@@ -96,6 +95,11 @@ namespace UnityEngine.XR.iOS
 
 }
 		}//end of update
+		private Vector3 GetCameraPosition(UnityARCamera cam) {
+			Matrix4x4 matrix = new Matrix4x4 ();
+			matrix.SetColumn (3, cam.worldTransform.column3);
+			return UnityARMatrixOps.GetPosition (matrix);
+		}
 	}
 }
 

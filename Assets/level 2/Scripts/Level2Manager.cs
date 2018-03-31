@@ -106,7 +106,7 @@ public class Level2Manager : MonoBehaviour {
 			b.setNo ();
 
 			if (b.getNo () == 2) {
-				
+				debugbox.text = "";
 				print ("NO==2");
 
 				b.playSound ();
@@ -124,6 +124,7 @@ public class Level2Manager : MonoBehaviour {
 				Destroy (b);
 			} else{
 				
+				print ("n" + b.getNo ());
 				debugbox.text = "";
 				debugbox.text = "Opps,pocket it again ";
 				b.changePos();

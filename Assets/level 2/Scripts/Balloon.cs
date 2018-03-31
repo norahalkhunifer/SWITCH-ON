@@ -20,7 +20,7 @@ public class Balloon: MonoBehaviour {
 	public GameObject balloon10;*/
 
 	 //GameObject object1=null;
-
+	bool t1=false;
 
 
 	private int NO=0;
@@ -52,13 +52,12 @@ public class Balloon: MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		
-		//startLerp ();
+		if(t1==true)
+		startLerp ();
 
 	}
 
-	/*public void startLerp(){
-	
-		print ("update");
+	public void startLerp(){
 
 		currentt += Time.deltaTime;
 		if (currentt > lerpt)
@@ -66,9 +65,9 @@ public class Balloon: MonoBehaviour {
 
 		float t = currentt / lerpt;
 
-		if(object1!=null)
-		object1.transform.position = Vector3.Lerp (startPos, endPos, t);
-	}*/
+		balloon.transform.position = Vector3.Lerp (startPos, endPos, t);
+		t1 = false;
+	}
 
 	//set no. of hits(toutch) on that obj
 	public void setNo(){
@@ -162,18 +161,17 @@ public class Balloon: MonoBehaviour {
 
 
 	public void changePos(){
-		
-		/*object1 = obj;
-		startPos = obj.transform.position;
-		print ("lerp");*/
+		t1 = true;
+		//object1 = obj;
+		startPos = balloon.transform.position;
+		print ("lerp");
 
-		//v = new Vector3 ((transform.position.x + randomNO [i]), transform.position.y, (transform.position.z + randomNO [i]));
+		v = new Vector3 ((transform.position.x + randomNO [i]), transform.position.y, (transform.position.z + randomNO [i]));
 
 
-		//endPos = obj.transform.position + v * dis;
+		endPos = balloon.transform.position + v * dis;
 
-		//endPos = specificEnd()+transform.position + v * dis;
-		transform.position = new Vector3 ((transform.position.x+randomNO [i]), transform.position.y,( transform.position.z) );
+		//transform.position = new Vector3 ((transform.position.x+randomNO [i]), transform.position.y,( transform.position.z) );
 		i++;
 		if (i == 5)//to prevent out of boud
 			i = 0;
@@ -187,13 +185,13 @@ public class Balloon: MonoBehaviour {
 	}*/
 
 	public void showParticle(GameObject obj){
+		
 		print ("show particle");
 		ForkParticlePlugin.Instance.Test(obj);
 
 	}
 
 	public void playSound(){
-		
 		print ("play sounds");
 		Baudio.clip = aC;
 		Baudio.Play ();
