@@ -73,8 +73,9 @@ public LevelManger levelmanger;
 			jump.enabled = false;
 			resume.enabled = false;
 			string winT=timer.finalTimerWin.text;
-			levelmanger.win (scene.buildIndex,score , winT);
-			topScore.text=levelmanger.getTopScore (scene.buildIndex).ToString();
+			levelmanger.win (level,score , winT);
+			topScore.text=levelmanger.getTopScore (level).ToString();
+			Debug.Log (topScore);
 
 			resumeButton.interactable = false;
 
@@ -259,6 +260,7 @@ public LevelManger levelmanger;
 
 			levelmanger.win (level,score , winT);
 			topScore.text=levelmanger.getTopScore (level).ToString();
+			Debug.Log (topScore);
 
 			resumeButton.interactable = false;
 
@@ -278,7 +280,7 @@ public LevelManger levelmanger;
 			string winT=timer.finalTimerWin.text;
 			levelmanger.win (level,score , winT);
 			topScore.text=levelmanger.getTopScore (level).ToString();
-
+			Debug.Log (topScore);
 			resumeButton.interactable = false;
 
 
