@@ -15,7 +15,7 @@ public class Level2Manager : MonoBehaviour {
 	public GameObject panleOncamera1;
 	public LevelManger levelM;
 	Balloon b;
-	int size=5;
+	int size=10;
 
 	public Text debugbox;
 
@@ -141,7 +141,7 @@ public class Level2Manager : MonoBehaviour {
 	}
 
 	public void farAway(){
-		
+		debugbox.text = "";
 		debugbox.text = "get closer to it ";
 		playSound ();
 	}
