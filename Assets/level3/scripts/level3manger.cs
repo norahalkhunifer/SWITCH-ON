@@ -198,8 +198,8 @@ public class level3manger : MonoBehaviour
 
 	public void BoxesNotMatching ()
 	{
-		StartCoroutine("setDebugText", "OH NO -2 "); 
-		removescore (2);
+		//StartCoroutine("setDebugText", "OH NO -2 "); 
+		//removescore (2);
 
 		mismatch.Play ();
 		StartCoroutine("closeCurrentBoxes");

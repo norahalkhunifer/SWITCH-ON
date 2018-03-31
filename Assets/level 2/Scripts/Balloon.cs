@@ -209,14 +209,13 @@ public class Balloon: MonoBehaviour {
 
 	void Blinking ()
 	{
-
-		GetComponent<Renderer>().material=blink_material;
+		balloon.transform.GetChild (0).gameObject.GetComponent<Renderer>().material=blink_material;
 	
 		//Invoke("StopBlinking",3f);
 	}
 	void StopBlinking ()
 	{
-		GetComponent<Renderer>().material=normal_material;
+		balloon.transform.GetChild (0).gameObject.GetComponent<Renderer>().material=normal_material;
 
 
 	}
