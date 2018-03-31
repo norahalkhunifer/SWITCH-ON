@@ -34,7 +34,7 @@ public class Balloon: MonoBehaviour {
 	private int NO9=0;
 	private int NO10=0;*/
 
-	private int[] randomNO = new int[]{10,13,14,-10,-13,-14};
+	private int[] randomNO = new int[]{5,6,4,-5,-6,-4};
 	int i=0;
 	private Vector3 startPos;
 	private Vector3 endPos;
@@ -110,6 +110,8 @@ public class Balloon: MonoBehaviour {
 	public int getNo(){
 		//int NO=0;
 		t1=false;
+		return NO;
+	}
 		/*if (obj.CompareTag ("B1")) {
 			NO = NO1;
 			print ("NO1"+NO);
@@ -158,8 +160,7 @@ public class Balloon: MonoBehaviour {
 			NO = NO10;
 			print ("NO10"+NO);
 		}*/
-		return NO;
-	}
+
 
 
 	public void changePos(){
@@ -168,7 +169,7 @@ public class Balloon: MonoBehaviour {
 		startPos = balloon.transform.position;
 		print ("lerp");
 
-		v = new Vector3 ((transform.position.x + randomNO [i]), transform.position.y, (transform.position.z + randomNO [i]));
+		v = new Vector3 ((transform.position.x + randomNO [i]), transform.position.y, transform.position.z);
 
 
 		endPos = balloon.transform.position + v * dis;
