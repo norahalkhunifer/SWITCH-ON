@@ -38,8 +38,8 @@ public class Balloon: MonoBehaviour {
 	int i=0;
 	private Vector3 startPos;
 	private Vector3 endPos;
-	private float dis = 1f;
-	private float lerpt = 3;
+	private float dis = 10f;
+	private float lerpt = 1;
 	private float currentt=0;
 	Vector3 v;
 
@@ -66,12 +66,14 @@ public class Balloon: MonoBehaviour {
 		float t = currentt / lerpt;
 
 		balloon.transform.position = Vector3.Lerp (startPos, endPos, t);
-		t1 = false;
+
 	}
 
 	//set no. of hits(toutch) on that obj
 	public void setNo(){
 		NO++;
+		t1 = false;
+	}
 	/*	if (obj.CompareTag ("B1")) {
 			NO1++;
 		}
@@ -102,12 +104,12 @@ public class Balloon: MonoBehaviour {
 		if (obj.CompareTag ("B10")) {
 			NO10++;
 		}*/
-	}
+	
 
 	//get no. of hits on that object
 	public int getNo(){
 		//int NO=0;
-
+		t1=false;
 		/*if (obj.CompareTag ("B1")) {
 			NO = NO1;
 			print ("NO1"+NO);
@@ -185,13 +187,14 @@ public class Balloon: MonoBehaviour {
 	}*/
 
 	public void showParticle(GameObject obj){
-		
+		t1 = false;
 		print ("show particle");
 		ForkParticlePlugin.Instance.Test(obj);
 
 	}
 
 	public void playSound(){
+		t1 = false;
 		print ("play sounds");
 		Baudio.clip = aC;
 		Baudio.Play ();

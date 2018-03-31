@@ -148,9 +148,7 @@ public class Level2Manager : MonoBehaviour {
 		playSound ();
 	}
 
-	public void emptyit (){
-		debugbox.text = "   ";
-	}
+
 
 	public void Score(int sc){
 		
