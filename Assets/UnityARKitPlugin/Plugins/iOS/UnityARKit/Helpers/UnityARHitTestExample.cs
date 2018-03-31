@@ -83,6 +83,7 @@ namespace UnityEngine.XR.iOS
 					}
 
 					else{
+						
 						levelmanager.farAway ();
 						print("D"+distance);
 					}

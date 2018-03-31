@@ -16,7 +16,7 @@ public class Level2Manager : MonoBehaviour {
 	public LevelManger levelM;
 	Balloon b;
 	int size=10;
-
+	public int level;
 	public Text debugbox;
 
 	//on home
@@ -103,9 +103,9 @@ public class Level2Manager : MonoBehaviour {
 
 		if (b != null) {
 
-			b.setNo (hitobject);
+			b.setNo ();
 
-			if (b.getNo (hitobject) == 2) {
+			if (b.getNo () == 2) {
 				
 				print ("NO==2");
 
@@ -119,13 +119,14 @@ public class Level2Manager : MonoBehaviour {
 				if (size == 0)
 					GameEnd (true);
 
-			} else if (b.getNo (hitobject) > 2) {
+			} else if (b.getNo () > 2) {
 				print ("No>2");
 				Destroy (b);
 			} else{
+				
 				debugbox.text = "";
 				debugbox.text = "Opps,pocket it again ";
-				b.changePos(hitObject);
+				b.changePos();
 
 			}
 		    
@@ -175,8 +176,9 @@ public class Level2Manager : MonoBehaviour {
 		if (win) {
 			
 			wining.SetActive (true);
-			Topscore.text = scoreint.ToString();
-			levelM.win (2,scoreint,timetext.text.ToString());
+
+			levelM.win (level,scoreint,timetext.text.ToString());
+			Topscore.text = levelM.getTopScore (level).ToString ();
 			//debugbox.text = "tries: " + nroftries;
 		
 		} else {
