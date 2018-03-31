@@ -43,12 +43,14 @@ public class Resumepaused : MonoBehaviour {
 
 		public void onResume(){
 		paused = !paused;
+
 			//to resume the game
 		if (!paused) {
 				Time.timeScale = 1;
 			pauseOBJ.SetActive (false);
 			l2m.activateGray (false);
-				//back.SetActive (false);
+			pausePar.interactable = true;
+				
 			}}
 		//to pause the level
 
@@ -81,6 +83,7 @@ public class Resumepaused : MonoBehaviour {
 		if (paused) {
 				Time.timeScale = 0;
 			    pauseOBJ.SetActive (false);
+			pausePar.interactable = false;
 				//back.SetActive (false);
 			l2m.activateGray (true);
 				inss.SetActive (true);

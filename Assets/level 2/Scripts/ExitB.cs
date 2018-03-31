@@ -45,11 +45,12 @@ public class ExitB : MonoBehaviour {
 		print ("yest entered");
 		Time.timeScale = 1;
 		exitDilog.SetActive (false);
-
+		re.pausePar.interactable = true;
 
 	}
 
 	public void onHome(){
+		re.pausePar.interactable = false;
 		exitDilog.SetActive (true);
 		Time.timeScale = 0;
 			back.SetActive (false);
