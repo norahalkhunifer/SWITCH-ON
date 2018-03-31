@@ -38,7 +38,7 @@ public class Balloon: MonoBehaviour {
 	int i=0;
 	private Vector3 startPos;
 	private Vector3 endPos;
-	private float dis = 10f;
+	private float dis = 5f;
 	private float lerpt = 1;
 	private float currentt=0;
 	Vector3 v;
@@ -57,7 +57,7 @@ public class Balloon: MonoBehaviour {
 		if(t1==true)
 		startLerp ();
 
-		if (Vector3.Distance(transform.position, player.transform.position)<3f)
+		if (Vector3.Distance(transform.position, player.transform.position)<10f)
 			Blinking ();
 		else 
 			StopBlinking ();
