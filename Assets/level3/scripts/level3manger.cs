@@ -236,7 +236,10 @@ public class level3manger : MonoBehaviour
 	}
 	public void removescore (int removedscore)
 	{
+		
 		scorenum -= removedscore;
+		if (scorenum <= 0)
+			scorenum = 0;
 		setScore ();
 	}
 	private void setScore(){
