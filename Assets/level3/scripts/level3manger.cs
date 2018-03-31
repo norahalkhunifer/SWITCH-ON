@@ -30,7 +30,8 @@ public class level3manger : MonoBehaviour
 	private int scorenum=0;
 	//if anyy thing goes wrong
 	public GameObject debugbox;
-	public Scene scene;
+	//public Scene scene;
+	public int levelnum;
 	//instruction dialog 
 	public GameObject instructionpanle;
 	//exit + pause dialog
@@ -254,9 +255,9 @@ public class level3manger : MonoBehaviour
 			Endwin.Play();
 			wining.SetActive (true);
 			Topscore.text = scorenum.ToString();
-			scene = SceneManager.GetActiveScene();
+			//scene = SceneManager.GetActiveScene();
 			//.buildIndex ,GetHashCode()
-			levelmanger.win (scene.buildIndex,scorenum,timetext.text.ToString());
+			levelmanger.win (levelnum,scorenum,timetext.text.ToString());
 			debugbox.SetActive(true);
 			/*Text t =debugbox.GetComponentInChildren(typeof(Text))as Text;
 			t.text =  "tries: " + nroftries;*/
