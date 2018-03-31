@@ -3743,7 +3743,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "You Win  \u26A1"
+  m_Text: YOUWIN
 --- !u!222 &706940502
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5028,7 +5028,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: GameOver
+  m_Text: GAMEOVER
 --- !u!222 &1072947724
 CanvasRenderer:
   m_ObjectHideFlags: 0

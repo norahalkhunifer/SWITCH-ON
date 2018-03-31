@@ -60,7 +60,6 @@ public class WorldManager : MonoBehaviour {
 
 		//ShowInstruction (true);
 		//get total score 
-		totalScore.text=getTotalScore().ToString();
 		levelsmanger=new LevelManger();
 		setting = GameObject.Find("setting manger").GetComponent<settingManger> ();
 		playbtn.onClick.AddListener(levelToLoad);
@@ -221,12 +220,7 @@ public class WorldManager : MonoBehaviour {
 	public void reset(){
 		PlayerPrefs.DeleteAll();
 	}
-	public int getTotalScore(){
-		return PlayerPrefs.GetInt("TotalScore");
-	}
-	public void setTotalScore(int totalscore){
-		PlayerPrefs.SetInt("TotalScore",totalscore);
-	}
+
 	public bool isDActivated(){
 		if (dialogsmanger.nameDialouge.activeInHierarchy || dialogsmanger.welcomeBack.activeInHierarchy || dialogsmanger.welcomeDialouge.activeInHierarchy)
 			return true;
