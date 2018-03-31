@@ -114,7 +114,7 @@ public class BoxControl: MonoBehaviour
 		//thisRend.material.SetColor("_Color", Color.Lerp(thisRend.material.color, newColor, Time.deltaTime * transitionRate));
 		//_MKGlowTexStrength
 		//_MKGlowPower
-		Invoke("StopBlinking",1f);
+		Invoke("StopBlinking",2f);
 	}
 	void StopBlinking ()
 	{
