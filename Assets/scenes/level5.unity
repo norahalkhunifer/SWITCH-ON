@@ -1077,6 +1077,7 @@ MonoBehaviour:
   timer: {fileID: 966867104}
   finalTimer: {fileID: 1512029284}
   finalTimerWin: {fileID: 1041453703}
+  resumeButton: {fileID: 554201703}
   timeStamp: 40
   usingT: 0
   gameOver: {fileID: 223405914}
@@ -2189,7 +2190,6 @@ MonoBehaviour:
   thender: {fileID: 1292393599}
   charecter: {fileID: 1583079876}
   dec: {fileID: 417534973}
-  back: {fileID: 1196034595}
 --- !u!4 &417534972
 Transform:
   m_ObjectHideFlags: 0
@@ -5570,6 +5570,9 @@ MonoBehaviour:
   text3: {fileID: 1876615530}
   scordis: {fileID: 462505448}
   scordis1: {fileID: 1079470196}
+  grass17: {fileID: 1009114742}
+  gameOver: {fileID: 223405914}
+  resumeButton: {fileID: 554201703}
   levelmanger: {fileID: 1968356562}
   score: 0
 --- !u!4 &1292393600
@@ -9609,7 +9612,6 @@ MonoBehaviour:
   jump: {fileID: 1413195618}
   charecter: {fileID: 1583079876}
   thender: {fileID: 1292393599}
-  back: {fileID: 1196034595}
   ShowBattry: {fileID: 2030091818}
   increse: {fileID: 2030091821}
 --- !u!82 &2030091821

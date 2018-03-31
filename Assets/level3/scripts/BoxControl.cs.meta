@@ -1,11 +1,15 @@
 fileFormatVersion: 2
 guid: d0dbd5d5106114d91a14bb8f20e413f1
-timeCreated: 1518690673
+timeCreated: 1522419694
 licenseType: Free
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - blink_material: {fileID: 2100000, guid: 702e611fb39d44549b2d077820d6858d, type: 2}
+  - normal_material: {fileID: 2100000, guid: 97d70fed0b8e1a74d8665e00b50bf7c7, type: 2}
+  - player: {instanceID: 0}
+  - insaideobj: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

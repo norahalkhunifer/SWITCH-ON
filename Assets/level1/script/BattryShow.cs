@@ -19,7 +19,7 @@ public class BattryShow : MonoBehaviour {
 	public GameObject jump ;
 	public GameObject charecter;
 	public ThenderDisable thender;
-	public GameObject back;
+//	public GameObject back;
 
 	public GameObject ShowBattry;
 	public AudioSource increse;
@@ -73,7 +73,7 @@ public class BattryShow : MonoBehaviour {
 			thender.enabled =true;
 			BatrryHide.enabled= true;
 			grass.enabled=true;  
-			back.SetActive (false);
+			//back.SetActive (false);
 
 		ShowBattry.SetActive (false);
 

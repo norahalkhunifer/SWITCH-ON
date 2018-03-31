@@ -74,7 +74,6 @@ using UnityEngine.XR.iOS;
 					levelmanger.touchsomething (item);
 				else{
 					levelmanger.farAway ();
-				    Debug.Log (destance);
 				}
 
 					

@@ -8,6 +8,7 @@ public class TimeText : MonoBehaviour {
 	public Text timer;
 	public Text finalTimer;
 	public Text finalTimerWin;
+	public Button resumeButton;
 
 	//private LevelManger m;
 	public float timeStamp;
@@ -119,6 +120,8 @@ public class TimeText : MonoBehaviour {
 			thender.enabled = false;
 			timeScript.enabled = false;
 			usingT = false;
+			resumeButton.interactable = false;
+
 
 		}
 		else{
@@ -131,6 +134,8 @@ public class TimeText : MonoBehaviour {
 		battryHide.enabled = false;
 		jump.enabled = false;
 		usingT = false;
+			resumeButton.interactable = false;
+
 		}
 	}
 }
