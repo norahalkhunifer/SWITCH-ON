@@ -211,7 +211,7 @@ public class Balloon: MonoBehaviour {
 
 		GetComponent<Renderer>().material=blink_material;
 	
-		Invoke("StopBlinking",3f);
+		//Invoke("StopBlinking",3f);
 	}
 	void StopBlinking ()
 	{
