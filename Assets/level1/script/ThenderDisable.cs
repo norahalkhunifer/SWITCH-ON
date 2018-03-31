@@ -41,7 +41,7 @@ public class ThenderDisable : MonoBehaviour {
 	public Button resumeButton;
 	public Scene scene;
 public LevelManger levelmanger;
-
+	public int level;
 	public int score=0;
 
 
@@ -257,8 +257,8 @@ public LevelManger levelmanger;
 			string winT=timer.finalTimerWin.text;
 			// scene = SceneManager.
 
-			levelmanger.win (scene.buildIndex,score , winT);
-			topScore.text=levelmanger.getTopScore (scene.buildIndex).ToString();
+			levelmanger.win (level,score , winT);
+			topScore.text=levelmanger.getTopScore (level).ToString();
 
 			resumeButton.interactable = false;
 
@@ -276,8 +276,8 @@ public LevelManger levelmanger;
 			jump.enabled = false;
 			resume.enabled = false;
 			string winT=timer.finalTimerWin.text;
-			levelmanger.win (scene.buildIndex,score , winT);
-			topScore.text=levelmanger.getTopScore (scene.buildIndex).ToString();
+			levelmanger.win (level,score , winT);
+			topScore.text=levelmanger.getTopScore (level).ToString();
 
 			resumeButton.interactable = false;
 
