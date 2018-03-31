@@ -236,7 +236,10 @@ public class level3manger : MonoBehaviour
 	}
 	public void removescore (int removedscore)
 	{
+		
 		scorenum -= removedscore;
+		if (scorenum <= 0)
+			scorenum = 0;
 		setScore ();
 	}
 	private void setScore(){
@@ -254,7 +257,8 @@ public class level3manger : MonoBehaviour
 		if (win) {
 			Endwin.Play();
 			wining.SetActive (true);
-			Topscore.text = scorenum.ToString();
+			Topscore.text = levelmanger.getTopScore (levelnum).ToString();
+				//scorenum.ToString();
 			//scene = SceneManager.GetActiveScene();
 			//.buildIndex ,GetHashCode()
 			levelmanger.win (levelnum,scorenum,timetext.text.ToString());
