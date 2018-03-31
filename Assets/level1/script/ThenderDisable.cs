@@ -60,11 +60,39 @@ public LevelManger levelmanger;
 
 	}
 	void Update(){
+		if (!grass17.activeInHierarchy&&score>=6&&!thender8.activeInHierarchy) {
+			timer.enabled= false;
+			instruc.enabled = false;
+			finalScore.text=score.ToString();
+			scoreTextWin.text=score.ToString();
+			gameWin.SetActive (true);
+			back.SetActive (true);
+			script.enabled = false;
+			grass.enabled = false;
+			battryHide.enabled = false;
+			jump.enabled = false;
+			resume.enabled = false;
+			string winT=timer.finalTimerWin.text;
+			levelmanger.win (scene.buildIndex,score , winT);
+			topScore.text=levelmanger.getTopScore (scene.buildIndex).ToString();
 
-//		scoreText.text = score.ToString ();
-//		scoreText.color = oldColor;
-//		finalScore.text = score.ToString ();
-//		scoreTextWin.text = score.ToString ();
+			resumeButton.interactable = false;
+
+
+		}
+		if (!grass17.activeInHierarchy && score < 6&&!thender8.activeInHierarchy) {
+			gameOver.SetActive (true);
+			back.SetActive (true);
+			timer.chare.SetActive (false);
+			resume.enabled = false;
+			grass.enabled = false;
+			battryHide.enabled = false;
+			jump.enabled = false;
+			timer.usingT = false;
+			timer.enabled = false;
+			resumeButton.interactable = false;
+
+		}
 	}
 	public void diseble(GameObject obj)
 	{
