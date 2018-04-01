@@ -257,7 +257,7 @@ public class level3manger : MonoBehaviour
 		if (win) {
 			Endwin.Play();
 			wining.SetActive (true);
-			levelmanger.win (levelnum, scorenum, doneTime ());//timetext.text.ToString());//doneTime()
+			levelmanger.win (levelnum, scorenum, timetext.text.ToString());//doneTime()
 			Topscore.text = levelmanger.getTopScore (levelnum).ToString();
 				//scorenum.ToString();
 			//scene = SceneManager.GetActiveScene();
