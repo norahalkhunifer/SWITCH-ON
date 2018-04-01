@@ -34,14 +34,15 @@ public class Balloon: MonoBehaviour {
 	private int NO9=0;
 	private int NO10=0;
 
-	private int[] randomNO = new int[]{5,6,4,-5,-6,-4};
+	private int[] randomNO = new int[]{2,3,4,-2,-3,-4};
 	int i=0;
+	Vector3 v;
 	private Vector3 startPos;
 	private Vector3 endPos;
 	private float dis = 5f;
 	private float lerpt = 1;
 	private float currentt=0;
-	Vector3 v;
+
 	public Camera player;
 	public Material blink_material, normal_material;
 
@@ -111,7 +112,6 @@ public class Balloon: MonoBehaviour {
 		if (obj.CompareTag ("B10")) {
 			NO10++;
 		}
-
 	}
 	
 
