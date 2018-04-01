@@ -73,7 +73,6 @@ public class BattryShow : MonoBehaviour {
 			BatrryHide.enabled= true;
 			grass.enabled=true;  
 			//back.SetActive (false);
-
 		ShowBattry.SetActive (false);
 
 					}
