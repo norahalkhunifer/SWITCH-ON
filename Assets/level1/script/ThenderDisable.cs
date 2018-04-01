@@ -254,6 +254,8 @@ public LevelManger levelmanger;
 			finalScore.text=score.ToString();
 			scoreTextWin.text=score.ToString();
 			gameWin.SetActive (true);
+			background.Stop ();
+			Endwin.Play ();
 			back.SetActive (true);
 			script.enabled = false;
 			grass.enabled = false;
@@ -276,6 +278,8 @@ public LevelManger levelmanger;
 			finalScore.text=score.ToString();
 			scoreTextWin.text=score.ToString();
 			gameWin.SetActive (true);
+			background.Stop ();
+			Endwin.Play ();
 			back.SetActive (true);
 			script.enabled = false;
 			grass.enabled = false;
@@ -292,6 +296,8 @@ public LevelManger levelmanger;
 		}
 		if (!grass17.activeInHierarchy && score < 6&&!thender8.activeInHierarchy) {
 			gameOver.SetActive (true);
+			background.Stop ();
+			Endlose.Play ();
 			back.SetActive (true);
 			timer.chare.SetActive (false);
 			resume.enabled = false;
