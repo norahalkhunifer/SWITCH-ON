@@ -59,7 +59,6 @@ public class Balloon: MonoBehaviour {
 		startLerp ();
 
 		if (Vector3.Distance (transform.position, player.transform.position) < 2f) {
-			print ("blink");
 			Blinking ();
 		}
 		else 
@@ -67,7 +66,7 @@ public class Balloon: MonoBehaviour {
 	}
 
 	public void startLerp(){
-
+		print ("lerp");
 		currentt += Time.deltaTime;
 		if (currentt > lerpt)
 			currentt = lerpt;
@@ -158,6 +157,7 @@ public class Balloon: MonoBehaviour {
 
 
 	public void changePos(){
+		
 		t1 = true;
 		//object1 = obj;
 		startPos = balloon.transform.position;
