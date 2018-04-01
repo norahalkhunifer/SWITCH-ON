@@ -4985,7 +4985,7 @@ RectTransform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1072947721}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -13.450012, y: 178.2351, z: 0}
+  m_LocalPosition: {x: -13.450012, y: 153.03511, z: 0}
   m_LocalScale: {x: 0.40107098, y: 0.40107098, z: 0.40107098}
   m_Children: []
   m_Father: {fileID: 342319882}
@@ -4993,8 +4993,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.13142237, y: 0.76968867}
   m_AnchorMax: {x: 0.851733, y: 0.92972845}
-  m_AnchoredPosition: {x: -6.7122, y: -319}
-  m_SizeDelta: {x: 653.4, y: 216.8}
+  m_AnchoredPosition: {x: -6.7122, y: -344.2}
+  m_SizeDelta: {x: 653.4, y: 342.4}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1072947723
 MonoBehaviour:
@@ -5028,7 +5028,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: GAMEOVER
+  m_Text: "GAME\n OVER"
 --- !u!222 &1072947724
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6324,7 +6324,7 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: 'You will lose all your progress!
 
-    Are you sure ysou want to exit the game?'
+    Are you sure you want to exit the game?'
 --- !u!222 &1436579418
 CanvasRenderer:
   m_ObjectHideFlags: 0

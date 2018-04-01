@@ -5230,7 +5230,7 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: 'You will lose all your progress!
 
-    Are you sure ysou want to exit the game?'
+    Are you sure you want to exit the game?'
 --- !u!222 &1436579418
 CanvasRenderer:
   m_ObjectHideFlags: 0
