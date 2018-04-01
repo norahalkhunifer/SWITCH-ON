@@ -15,7 +15,7 @@ public class Level2Manager : MonoBehaviour {
 	public GameObject panleOncamera1;
 	public LevelManger levelM;
 	Balloon b;
-	int size=8;
+	int size=7;
 	public int level;
 	public Text debugbox;
 
@@ -88,7 +88,7 @@ public class Level2Manager : MonoBehaviour {
 	public void timeend ()
 	{
 
-		if (size == 0)
+		if (size == 0 || size==2)
 			GameEnd (true);
 		else
 			GameEnd (false);
@@ -103,7 +103,7 @@ public class Level2Manager : MonoBehaviour {
 
 		if (b != null) {
 
-			if (b.getNo() == 1) {
+			if (b.getNo(hitobject) == 1) {
 				debugbox.text = "";
 				print ("NO==1");
 
@@ -117,18 +117,17 @@ public class Level2Manager : MonoBehaviour {
 				if (size == 0)
 					GameEnd (true);
 
-			} else if (b.getNo () > 1) {
+			} else if (b.getNo (hitobject) > 1) {
 				print ("No>2");
 				Destroy (b);
 			} else{
 				
-				print ("n" + b.getNo ());
 				debugbox.text = "";
 				debugbox.text = "Opps,pocket it again ";
 				b.changePos();
 
 			}
-			b.setNo ();
+			b.setNo (hitobject);
 		    
 		} 
 	}

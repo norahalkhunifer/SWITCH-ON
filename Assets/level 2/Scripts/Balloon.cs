@@ -9,7 +9,7 @@ public class Balloon: MonoBehaviour {
 
 
 	public GameObject balloon;
-	/*public GameObject balloon2;
+	public GameObject balloon2;
 	public GameObject balloon3;
 	public GameObject balloon4;
 	public GameObject balloon5;
@@ -17,14 +17,14 @@ public class Balloon: MonoBehaviour {
 	public GameObject balloon7;
 	public GameObject balloon8;
 	public GameObject balloon9;
-	public GameObject balloon10;*/
+	public GameObject balloon10;
 
 	 //GameObject object1=null;
 	bool t1=false;
 
 
-	private int NO=0;
-	/*private int NO2=0;
+	//private int NO=0;
+	private int NO2=0;
 	private int NO3=0;
 	private int NO4=0;
 	private int NO5=0;
@@ -32,7 +32,7 @@ public class Balloon: MonoBehaviour {
 	private int NO7=0;
 	private int NO8=0;
 	private int NO9=0;
-	private int NO10=0;*/
+	private int NO10=0;
 
 	private int[] randomNO = new int[]{2,3,4,-2,-3,-4};
 	int i=0;
@@ -79,13 +79,9 @@ public class Balloon: MonoBehaviour {
 	}
 
 	//set no. of hits(toutch) on that obj
-	public void setNo(){
+	public void setNo(GameObject obj){
 		t1 = false;
-		NO++;
-	}
-	/*if (obj.CompareTag ("B1")) {
-			NO1++;
-		}
+
 		if (obj.CompareTag ("B2")) {
 			NO2++;
 		}
@@ -106,21 +102,19 @@ public class Balloon: MonoBehaviour {
 		}
 		if (obj.CompareTag ("B8")) {
 			NO8++;
-		}*/
+		}
+	}
 
 	
 	
 
 	//get no. of hits on that object
-	public int getNo(){
-		
+	public int getNo(GameObject obj){
+		int NO = 0;
 		t1 = false;
-		return NO;
-	}
-		/*if (obj.CompareTag ("B1")) {
-			NO = NO1;
-			print ("NO1"+NO);
-		}
+
+	
+
 		if (obj.CompareTag ("B2")) {
 			NO = NO2;
 			print ("NO2"+NO);
@@ -155,7 +149,9 @@ public class Balloon: MonoBehaviour {
 			NO = NO8;
 			print ("NO8"+NO);
 
-		}*/
+		}
+		return NO;
+	}
 	
 
 	
