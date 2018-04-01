@@ -153,6 +153,8 @@ public class SetGetName : MonoBehaviour {
 		        if (firstTime ()) {
 			            //if first time open app show enter username dialouge
 			            disapearDialouge (true);
+			welcombbool = false;
+			PlayerPrefs.SetInt("welcombbool1", welcombbool ? 1 : 0);
 
 		        } else {
 
