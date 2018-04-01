@@ -2268,8 +2268,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2, y: 4.3883476, z: 0.8322514}
-  m_Center: {x: 0.6652441, y: 2.829727, z: -13.871075}
+  m_Size: {x: 2, y: 4.081847, z: 1.0621262}
+  m_Center: {x: 0.6652441, y: 2.676477, z: -13.756138}
 --- !u!54 &615113889
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4174,8 +4174,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2, y: 2.4184484, z: 1.6171927}
-  m_Center: {x: 3.8203137, y: 1.6352229, z: 0.044150047}
+  m_Size: {x: 1.731813, y: 2.3035116, z: 1.6171927}
+  m_Center: {x: 3.8777826, y: 1.5777545, z: 0.044150054}
 --- !u!114 &1069765712
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5227,8 +5227,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.0237901, y: 3.0731683, z: 1.9370813}
-  m_Center: {x: 0.09225931, y: 1.3102319, z: 0.056508526}
+  m_Size: {x: 1.9088527, y: 2.2302928, z: 1.9370813}
+  m_Center: {x: 0.034790576, y: 1.7316697, z: 0.05650854}
 --- !u!54 &1470031945
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5344,8 +5344,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2, y: 4.667629, z: 1.0218213}
-  m_Center: {x: -5.5776887, y: 2.9494119, z: -8.879162}
+  m_Size: {x: 1.1188116, y: 3.9780025, z: 1.021822}
+  m_Center: {x: -5.5202203, y: 2.604599, z: -8.879162}
 --- !u!54 &1515369048
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5498,8 +5498,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.1352892, y: 4.274626, z: 1.0578312}
-  m_Center: {x: 0.004379477, y: 2.4191182, z: -0.06917516}
+  m_Size: {x: 1.1352892, y: 4.04475, z: 1.0578312}
+  m_Center: {x: 0.0043794513, y: 2.5340557, z: -0.069175184}
 --- !u!54 &1544699532
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -6462,8 +6462,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.9257078, y: 4.62308, z: 1.8916149}
-  m_Center: {x: 0.017146349, y: 2.616865, z: -4.06314}
+  m_Size: {x: 1.1594579, y: 4.048392, z: 1.316927}
+  m_Center: {x: -0.021166205, y: 2.6360214, z: -3.775796}
 --- !u!54 &2004565151
 Rigidbody:
   m_ObjectHideFlags: 0
