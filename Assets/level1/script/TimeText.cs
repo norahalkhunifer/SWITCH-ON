@@ -28,6 +28,7 @@ public class TimeText : MonoBehaviour {
 	public LevelManger levelmanger;
 	public TimeText timeScript;
 	public Scene scene;
+	public AudioSource Endwin,Endlose,background;
 
 	// Use this for initialization
 	void Start () {
@@ -110,6 +111,8 @@ public class TimeText : MonoBehaviour {
 			thender.finalScore.text=thender.score.ToString();
 			thender.scoreTextWin.text=thender.score.ToString();
 			gameWin.SetActive (true);
+			background.Stop ();
+			Endwin.Play ();
 			back.SetActive (true);
 			grass.enabled = false;
 			battryHide.enabled = false;
@@ -128,6 +131,8 @@ public class TimeText : MonoBehaviour {
 		}
 		else{
 			gameOver.SetActive (true);
+			background.Stop ();
+			Endlose.Play ();
 		back.SetActive (true);
 		chare.SetActive (false);
 		finalTimer.text ="40";
