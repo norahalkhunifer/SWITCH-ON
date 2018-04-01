@@ -248,7 +248,7 @@ public class WorldManager : MonoBehaviour {
 	}
 
 	public bool isDActivated(){
-		if (dialogsmanger.nameDialouge.activeInHierarchy || dialogsmanger.welcomeBack.activeInHierarchy || dialogsmanger.welcomeDialouge.activeInHierarchy)
+		if (dialogsmanger.nameDialouge.activeInHierarchy ||levelDetailsG.activeInHierarchy || dialogsmanger.welcomeBack.activeInHierarchy || dialogsmanger.welcomeDialouge.activeInHierarchy)
 			return true;
 		return false;
 	}
