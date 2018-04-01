@@ -24,12 +24,8 @@ public class Level2Manager : MonoBehaviour {
 	public GameObject back;
 
 	//error audio
-	public AudioClip aC;
-	public AudioSource Baudio;
-	public AudioClip aC1;
-	public AudioSource Baudio1;
-	public AudioClip aC2;
-	public AudioSource Baudio2;
+	public AudioSource farAud,loseAud,winAud;
+
 
 	//score
 	public int scoreint;//for each hit and total
@@ -147,9 +143,9 @@ public class Level2Manager : MonoBehaviour {
 	}
 
 	public void farAway(){
-		debugbox.text = "";
+		
 		debugbox.text = "get closer to it ";
-		playSound (2);
+		farAud.Play ();
 	}
 
 
@@ -179,14 +175,14 @@ public class Level2Manager : MonoBehaviour {
 		if (win) {
 			
 			wining.SetActive (true);
-			playSound (1);
+			winAud.Play ();
 			levelM.win (level,scoreint,timetext.text.ToString());
 			Topscore.text = levelM.getTopScore (level).ToString ();
 			//debugbox.text = "tries: " + nroftries;
 		
 		} else {
 			lose.SetActive (true);
-			playSound (0);
+			loseAud.Play ();
 		}
 	}
 
@@ -201,7 +197,7 @@ public class Level2Manager : MonoBehaviour {
 
 	}
 
-	public void playSound(int s){
+	/*public void playSound(int s){
 		
 		if (s ==1) {
 			Baudio2.clip = aC2;
@@ -214,7 +210,7 @@ public class Level2Manager : MonoBehaviour {
 		else{ Baudio.clip = aC;
 			Baudio.Play ();
 		}
-	}
+	}*/
 
 
 }
