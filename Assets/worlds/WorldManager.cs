@@ -175,7 +175,7 @@ public class WorldManager : MonoBehaviour {
 
 	//slide to previos world
 	public void previos(Animator anim){
-		if (!nextavi) {
+		if (!nextavi && !isDActivated() ) {
 			anim.SetBool ("thereisnext", false);
 			nextavi = true;
 		}
@@ -248,7 +248,7 @@ public class WorldManager : MonoBehaviour {
 	}
 
 	public bool isDActivated(){
-		if (dialogsmanger.nameDialouge.activeInHierarchy ||levelDetailsG.activeInHierarchy || dialogsmanger.welcomeBack.activeInHierarchy || dialogsmanger.welcomeDialouge.activeInHierarchy)
+		if (dialogsmanger.nameDialouge.activeInHierarchy ||levelDetailsG.activeInHierarchy ||levelDetailsY.activeInHierarchy || dialogsmanger.welcomeBack.activeInHierarchy || dialogsmanger.welcomeDialouge.activeInHierarchy)
 			return true;
 		return false;
 	}
