@@ -90,7 +90,7 @@ public class Level2Manager : MonoBehaviour {
 	public void timeend ()
 	{
 
-		if (size == 0 || size==2)
+		if (size == 0 || size==2|| size<2)
 			GameEnd (true);
 		else
 			GameEnd (false);
@@ -105,14 +105,14 @@ public class Level2Manager : MonoBehaviour {
 
 		if (b != null) {
 			
-			if(b.getNo() == 0){
+		/*	if(b.getNo() == 0){
 				
 				StartCoroutine("changeDebug", "Opps,pocket it again "); 
 
 				b.changePos();
 			}
 
-			if (b.getNo() == 1) {
+			if (b.getNo() == 1) {*/
 				print ("NO==1");
 
 				b.playSound1 ();
@@ -129,13 +129,13 @@ public class Level2Manager : MonoBehaviour {
 				if (size == 0)
 					GameEnd (true);
 
-			} 
+			/*} 
 			if (b.getNo () > 1) {
 				print ("No>2");
 				Destroy (b);
 			} 
 
-			b.setNo ();
+			b.setNo ();*/
 		    
 		} 
 	}
@@ -158,7 +158,7 @@ public class Level2Manager : MonoBehaviour {
 	public void Score(int sc){
 		scoreint += sc;
 
-		if (size == 2) {
+		if (size == 2 || size <2  ) {
 			scoret.text =" ";
 			Btext.text = scoreint + "";
 		} 
