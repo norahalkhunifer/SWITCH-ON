@@ -48,7 +48,7 @@ public class WorldManager : MonoBehaviour {
 	public Transform BlueC;
 	public Transform RedC;
 
-
+	public AsyncOperation async;
 	public GameObject loadingscreen;
 	public Slider slider;
 
@@ -106,21 +106,47 @@ public class WorldManager : MonoBehaviour {
 	//to made animation between the world and level we use invoke("method",sf)
 	public void levelToLoad ()
 	{
-		loadingscreen.SetActive (true);
-		slider.gameObject.SetActive (true);
-		StartCoroutine (LoudAsyncroulsly (clevel));
+		//slider.gameObject.SetActive (true);
+
+
+		if (clevel != -1) {
+			loadingscreen.SetActive (true);
+
+			StartCoroutine (LoudAsyncroulsly (clevel));
+			//Screen.orientation = ScreenOrientation.AutoRotation;
+			Screen.orientation = ScreenOrientation.Portrait;
+			//SceneManager.LoadScene (levelnum);
+
+
+		}
 	}
 
 
 
 	IEnumerator LoudAsyncroulsly (int levelnum){
-		yield return new WaitForSeconds(1);
+
+
+		/*yield return new WaitForSeconds(1);
 
 		slider.value+=fakeIncrement;
 		yield return new WaitForSeconds(fakeTiming);
 		levelsmanger.LoudLevel (levelnum);
 
 			yield return null; 
+*/
+
+		//loadingscreen.SetActive ();
+		async=SceneManager.LoadSceneAsync(levelnum);
+		async.allowSceneActivation =false;
+		while(async.isDone==false){
+			slider.value = async.progress;
+			if(async.progress==0.9f){
+				slider.value = 1f;
+				async.allowSceneActivation = true;
+			}
+			yield return null;
+			print ("hhkk");
+		}
 
 	}
 
