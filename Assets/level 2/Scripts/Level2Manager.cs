@@ -105,13 +105,14 @@ public class Level2Manager : MonoBehaviour {
 
 		if (b != null) {
 			
-			if(b.getNo(hitobject) == 0){
+			if(b.getNo() == 0){
+				
+				StartCoroutine("changeDebug", "Opps,pocket it again "); 
 
-				changeDebug("Opps,pocket it again ");
 				b.changePos();
 			}
 
-			if (b.getNo(hitobject) == 1) {
+			if (b.getNo() == 1) {
 				print ("NO==1");
 
 				b.playSound1 ();
@@ -120,8 +121,7 @@ public class Level2Manager : MonoBehaviour {
 				b.showParticle (hitobject);
 				//for bonus if it more than 5
 				if (size == 2) 
-					changeDebug ("Yay,you got +1!");
-				
+					StartCoroutine("changeDebug", "Yay,you got +1!");
 				//count scores 
 				Score (1);
 				//to stop the game
@@ -130,12 +130,12 @@ public class Level2Manager : MonoBehaviour {
 					GameEnd (true);
 
 			} 
-			if (b.getNo (hitobject) > 1) {
+			if (b.getNo () > 1) {
 				print ("No>2");
 				Destroy (b);
 			} 
 
-			b.setNo (hitobject);
+			b.setNo ();
 		    
 		} 
 	}
@@ -149,7 +149,7 @@ public class Level2Manager : MonoBehaviour {
 	}
 
 	public void farAway(){
-		changeDebug ("get closer");
+		StartCoroutine("changeDebug", "Get closer"); 
 		farAud.Play ();
 	}
 
@@ -158,12 +158,14 @@ public class Level2Manager : MonoBehaviour {
 	public void Score(int sc){
 		scoreint += sc;
 
-		if (size == 2) 
-			Btext.text=scoreint +"";
-		
-		else 
-			scoret.text = scoreint +"";
-			
+		if (size == 2) {
+			scoret.text =" ";
+			Btext.text = scoreint + "";
+		} 
+		else {
+			Btext.text = " ";
+			scoret.text = scoreint + "";
+		}
 	}
 
 	public void ReplayLevel ()
