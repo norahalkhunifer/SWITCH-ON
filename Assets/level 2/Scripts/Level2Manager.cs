@@ -202,6 +202,7 @@ public class Level2Manager : MonoBehaviour {
 	}
 
 	public void onHome(){
+		exitDilog.SetActive (false);
 		levelM.LoudHome ();
 
 	}
