@@ -66,13 +66,13 @@ namespace UnityEngine.XR.iOS
 		// Update is called once per frame
 		void Update () {
 
-			if (Input.touchCount > 0 &&(!EventSystem.current.IsPointerOverGameObject(Input.GetTouch (0).fingerId))) 
+			if (Input.touchCount > 0 ) 
 			{
 				var touch = Input.GetTouch(0);
 
 					 ray = Camera.main.ScreenPointToRay (touch.position);//creates ray from screen point position
 					
-				if (Physics.Raycast (ray, out hit)&& (!EventSystem.current.IsPointerOverGameObject(touch.fingerId))) {//Physics.Raycast (ray, out hit, maxRayDistance, collisionLayer)
+				if (Physics.Raycast (ray, out hit)) {//Physics.Raycast (ray, out hit, maxRayDistance, collisionLayer)
 						GameObject item = hit.collider.transform.gameObject; //parent is what is stored in our area;
 
 					distance=Vector3.Distance(item.transform.position,cam.transform.position);

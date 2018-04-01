@@ -27,7 +27,6 @@ public class Resumepaused : MonoBehaviour {
 	public void instru(){
 		
 		pausePar.interactable = false;
-
 		l2m.activateGray (true);
 		pauseOBJ.SetActive (false);
 		//back.SetActive (false);
@@ -99,9 +98,8 @@ public class Resumepaused : MonoBehaviour {
 		print ("skip");
 			//to no button press
 		if (paused) {
+			Time.timeScale = 1;
 			pausePar.interactable = true;
-				Time.timeScale = 1;
-				//back.SetActive (false);
 			    pauseOBJ.SetActive (false);
 				inss.SetActive (false);
 			    l2m.activateGray (false);
