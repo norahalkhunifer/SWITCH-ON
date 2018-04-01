@@ -154,15 +154,7 @@ public class Balloon: MonoBehaviour {
 			print ("NO8"+NO);
 
 		}
-		if (obj.CompareTag ("B9")) {
-			NO = NO9;
-			print ("NO9"+NO);
-
-		}
-		if (obj.CompareTag ("B10")) {
-			NO = NO10;
-			print ("NO10"+NO);
-		}
+	
 		return NO;
 	}
 
@@ -173,16 +165,16 @@ public class Balloon: MonoBehaviour {
 		//object1 = obj;
 		startPos = balloon.transform.position;
 		print ("change pos");
-
+		i++;
+		if (i == 5)//to prevent out of boud
+			i = 0;
 		v = new Vector3 ((transform.position.x + randomNO [i]), transform.position.y, transform.position.z);
 
 
 		endPos = balloon.transform.position + v * dis;
 
 		//transform.position = new Vector3 ((transform.position.x+randomNO [i]), transform.position.y,( transform.position.z) );
-		i++;
-		if (i == 5)//to prevent out of boud
-			i = 0;
+
 		
 	}
 
