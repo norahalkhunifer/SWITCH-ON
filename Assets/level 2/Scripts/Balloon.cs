@@ -23,8 +23,8 @@ public class Balloon: MonoBehaviour {
 	bool t1=false;
 
 
-	private int NO1=0;
-	private int NO2=0;
+	private int NO=0;
+	/*private int NO2=0;
 	private int NO3=0;
 	private int NO4=0;
 	private int NO5=0;
@@ -32,7 +32,7 @@ public class Balloon: MonoBehaviour {
 	private int NO7=0;
 	private int NO8=0;
 	private int NO9=0;
-	private int NO10=0;
+	private int NO10=0;*/
 
 	private int[] randomNO = new int[]{2,3,4,-2,-3,-4};
 	int i=0;
@@ -79,10 +79,11 @@ public class Balloon: MonoBehaviour {
 	}
 
 	//set no. of hits(toutch) on that obj
-	public void setNo(GameObject obj){
+	public void setNo(){
 		t1 = false;
-	
-	if (obj.CompareTag ("B1")) {
+		NO++;
+	}
+	/*if (obj.CompareTag ("B1")) {
 			NO1++;
 		}
 		if (obj.CompareTag ("B2")) {
@@ -105,17 +106,18 @@ public class Balloon: MonoBehaviour {
 		}
 		if (obj.CompareTag ("B8")) {
 			NO8++;
-		}
+		}*/
 
-	}
+	
 	
 
 	//get no. of hits on that object
-	public int getNo(GameObject obj ){
-		int NO=0;
-		t1=false;
-	
-		if (obj.CompareTag ("B1")) {
+	public int getNo(){
+		
+		t1 = false;
+		return NO;
+	}
+		/*if (obj.CompareTag ("B1")) {
 			NO = NO1;
 			print ("NO1"+NO);
 		}
@@ -153,10 +155,10 @@ public class Balloon: MonoBehaviour {
 			NO = NO8;
 			print ("NO8"+NO);
 
-		}
+		}*/
 	
-		return NO;
-	}
+
+	
 
 
 

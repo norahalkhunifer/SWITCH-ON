@@ -86,7 +86,7 @@ public class ForkParticlePlugin : MonoBehaviour {
 	private bool bForkSDKShutdown = false;
 	public bool bForkSDKInit	= false; 
 	//No. of effects in the secne
-	public GameObject effect1;
+	//public GameObject effect1;
 	public GameObject effect2;
 	public GameObject effect3;
 	public GameObject effect4;
@@ -172,8 +172,8 @@ public class ForkParticlePlugin : MonoBehaviour {
 	}
 	public void Test1(){
 		print ("i enter it");
-	effect1.GetComponent<ForkParticleEffect>().PlayEffect();
-	effect1.GetComponent<ForkParticleEffect>().RestartEffect();
+	effect2.GetComponent<ForkParticleEffect>().PlayEffect();
+	effect2.GetComponent<ForkParticleEffect>().RestartEffect();
 	}
 
     public void Test(GameObject obj) {
@@ -182,10 +182,6 @@ public class ForkParticlePlugin : MonoBehaviour {
            // GameObject obj = (GameObject)effectsList [i];
 
 
-	if (obj.CompareTag("B1") ){
-			print ("test");
-	effect1.GetComponent<ForkParticleEffect>().PlayEffect();
-	effect1.GetComponent<ForkParticleEffect>().RestartEffect();}
 
 	if (obj.CompareTag("B2") ){
 	print ("test");
@@ -226,19 +222,6 @@ public class ForkParticlePlugin : MonoBehaviour {
 	effect8.GetComponent<ForkParticleEffect>().PlayEffect();
 	effect8.GetComponent<ForkParticleEffect>().RestartEffect();	}
 
-	if (obj.CompareTag("B9") ){
-	print ("test");
-
-	effect9.GetComponent<ForkParticleEffect>().PlayEffect();
-	effect9.GetComponent<ForkParticleEffect>().RestartEffect();	}
-
-	if (obj.CompareTag("B10") ){
-	print ("test");
-
-	effect10.GetComponent<ForkParticleEffect>().PlayEffect();
-	effect10.GetComponent<ForkParticleEffect>().RestartEffect();}
-
-           
-    }
 
 }
+	}
