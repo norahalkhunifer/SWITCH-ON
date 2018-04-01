@@ -29,9 +29,10 @@ public class Level2Manager : MonoBehaviour {
 
 	//score
 	public int scoreint;//for each hit and total
+	public Text Btext;
 	public Text scoret; //to show it in panel
 	public Text Topscore,timetext,cscoretext;//for ach details
-	public GameObject score;
+	public GameObject score ;
 	//GameObject winD;
 
 	//time
@@ -117,8 +118,13 @@ public class Level2Manager : MonoBehaviour {
 				b.gameObject.SetActive (false);
 
 				b.showParticle (hitobject);
-
+				//for bonus if it more than 5
+				if (size == 2) 
+					changeDebug ("Yay,you got +1!");
+				
+				//count scores 
 				Score (1);
+				//to stop the game
 				size--;
 				if (size == 0)
 					GameEnd (true);
@@ -150,9 +156,13 @@ public class Level2Manager : MonoBehaviour {
 
 
 	public void Score(int sc){
-		
 		scoreint += sc;
-		scoret.text = scoreint +"";
+
+		if (size == 2) 
+			Btext.text=scoreint +"";
+		
+		else 
+			scoret.text = scoreint +"";
 			
 	}
 
