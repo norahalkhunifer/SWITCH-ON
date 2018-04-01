@@ -57,10 +57,10 @@ public class Balloon: MonoBehaviour {
 		if(t1==true)
 		startLerp ();
 
-		if (Vector3.Distance(transform.position, player.transform.position)<10f)
+		/*if (Vector3.Distance(transform.position, player.transform.position)<5f)
 			Blinking ();
 		else 
-			StopBlinking ();
+			StopBlinking ();*/
 	}
 
 	public void startLerp(){
@@ -173,7 +173,7 @@ public class Balloon: MonoBehaviour {
 		t1 = true;
 		//object1 = obj;
 		startPos = balloon.transform.position;
-		print ("lerp");
+		print ("change pos");
 
 		v = new Vector3 ((transform.position.x + randomNO [i]), transform.position.y, transform.position.z);
 

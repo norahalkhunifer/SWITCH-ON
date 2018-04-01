@@ -77,6 +77,7 @@ public class Resumepaused : MonoBehaviour {
 		public void setPause(bool pa){
 		paused=pa;	}
 
+
 		public void OnIns(){
 		//pausePar.interactable () = true;
 			//pause = !pause;
@@ -95,7 +96,7 @@ public class Resumepaused : MonoBehaviour {
 		
 
 		paused = true;
-	
+		print ("skip");
 			//to no button press
 		if (paused) {
 			pausePar.interactable = true;

@@ -15,7 +15,7 @@ public class Level2Manager : MonoBehaviour {
 	public GameObject panleOncamera1;
 	public LevelManger levelM;
 	Balloon b;
-	int size=10;
+	int size=8;
 	public int level;
 	public Text debugbox;
 
@@ -192,11 +192,7 @@ public class Level2Manager : MonoBehaviour {
 	}
 
 	public void onHome(){
-		exitDilog.SetActive (true);
-		Time.timeScale = 0;
-		back.SetActive (false);
-		wining.SetActive (false);
-		lose.SetActive (false);
+		levelM.LoudHome ();
 
 	}
 	public void playSound(){
