@@ -120,7 +120,7 @@ public class TimeText : MonoBehaviour {
 			resume.enabled = false;
 		//	scene = SceneManager.GetActiveScene();
 			//.buildIndex ,GetHashCode()
-			levelmanger.win (thender.level,thender.score , "00");
+			levelmanger.win (thender.level,thender.score , "0:00");
 			thender.topScore.text=levelmanger.getTopScore (thender.level).ToString();
 			thender.enabled = false;
 			timeScript.enabled = false;
@@ -135,7 +135,7 @@ public class TimeText : MonoBehaviour {
 			Endlose.Play ();
 		back.SetActive (true);
 		chare.SetActive (false);
-		finalTimer.text ="40";
+			finalTimer.text ="0:40";
 		resume.enabled = false;
 		grass.enabled = false;
 		battryHide.enabled = false;
