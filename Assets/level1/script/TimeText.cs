@@ -128,7 +128,7 @@ public class TimeText : MonoBehaviour {
 			resume.enabled = false;
 		//	scene = SceneManager.GetActiveScene();
 			//.buildIndex ,GetHashCode()
-			levelmanger.win (thender.level,thender.score ,"0"+" "+":"+" "+" 40");
+			levelmanger.win (thender.level,thender.score ,"0:40");
 			thender.topScore.text=levelmanger.getTopScore (thender.level).ToString();
 			thender.enabled = false;
 			timeScript.enabled = false;

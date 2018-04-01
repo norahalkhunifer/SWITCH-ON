@@ -75,7 +75,7 @@ public LevelManger levelmanger;
 			battryHide.enabled = false;
 			jump.enabled = false;
 			resume.enabled = false;
-			string winT="0 "+" "+":"+" "+timer.finalTimerWin.text;
+			string winT="0:"+timer.finalTimerWin.text;
 			levelmanger.win (level,score , winT);
 			topScore.text=levelmanger.getTopScore (level).ToString();
 			Debug.Log (topScore);
