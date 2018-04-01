@@ -154,9 +154,6 @@ public class level3manger : MonoBehaviour
 
 
 	}
-	public void gettingClose(GameObject hitobject){
-
-	}
 
 	//check if there is 2 opened before
 	public void CheckBoxes (BoxControl bc)
@@ -290,7 +287,6 @@ public class level3manger : MonoBehaviour
 	{
 		exitD.SetActive(open);
 		activateGray (open);
-		//paused = open;
 	}
 	 void activateGray (bool open)
 	{
@@ -301,7 +297,10 @@ public class level3manger : MonoBehaviour
 	}
 	public void closeLevel ()
 	{
-		levelmanger.LoudHome ();
+		SceneManager.LoadScene ("world");
+		Time.timeScale = 1;
+		home (false);
+		//levelmanger.LoudHome ();
 	}
 	public void ReplayLevel ()
 	{
