@@ -55,8 +55,8 @@ public class Balloon: MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		
-		if(t1==true)
-		startLerp ();
+		/*if(t1==true)
+		startLerp ();*/
 
 		if (Vector3.Distance (transform.position, player.transform.position) < 2f) {
 			Blinking ();
@@ -65,7 +65,7 @@ public class Balloon: MonoBehaviour {
 			StopBlinking ();
 	}
 
-	public void startLerp(){
+	/*public void startLerp(){
 		print ("lerp");
 		currentt += Time.deltaTime;
 		if (currentt > lerpt)
@@ -75,7 +75,7 @@ public class Balloon: MonoBehaviour {
 
 		balloon.transform.position = Vector3.Lerp (startPos, endPos, t);
 
-	}
+	}*/
 
 	//set no. of hits(toutch) on that obj
 	public void setNo(){
