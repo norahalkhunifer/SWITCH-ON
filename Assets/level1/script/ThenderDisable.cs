@@ -43,7 +43,7 @@ public class ThenderDisable : MonoBehaviour {
 public LevelManger levelmanger;
 	public int level;
 	public int score=0;
-
+	public bool stop=true;
 	public AudioSource Endwin,Endlose,background;
 
 	void Start(){
@@ -84,7 +84,7 @@ public LevelManger levelmanger;
 
 
 		}
-		if (!grass17.activeInHierarchy && score < 6&&!thender8.activeInHierarchy) {
+		if (!grass17.activeInHierarchy && score < 6&&!thender8.activeInHierarchy&& stop) {
 			gameOver.SetActive (true);
 			background.Stop ();
 			Endlose.Play ();
@@ -97,7 +97,7 @@ public LevelManger levelmanger;
 			timer.usingT = false;
 			timer.enabled = false;
 			resumeButton.interactable = false;
-
+			stop = false;
 		}
 	}
 	public void diseble(GameObject obj)
