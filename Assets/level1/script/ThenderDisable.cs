@@ -75,7 +75,7 @@ public LevelManger levelmanger;
 			battryHide.enabled = false;
 			jump.enabled = false;
 			resume.enabled = false;
-			string winT="0:"+timer.finalTimerWin.text;
+			string winT="0 "+" "+":"+" "+timer.finalTimerWin.text;
 			levelmanger.win (level,score , winT);
 			topScore.text=levelmanger.getTopScore (level).ToString();
 			Debug.Log (topScore);
@@ -262,7 +262,7 @@ public LevelManger levelmanger;
 			battryHide.enabled = false;
 			jump.enabled = false;
 			resume.enabled = false;
-			string winT="0:"+timer.finalTimerWin.text;
+			string winT="0 "+" "+":"+" "+timer.finalTimerWin.text;
 			// scene = SceneManager.
 
 			levelmanger.win (level,score , winT);
@@ -286,7 +286,7 @@ public LevelManger levelmanger;
 			battryHide.enabled = false;
 			jump.enabled = false;
 			resume.enabled = false;
-			string winT="0:"+timer.finalTimerWin.text;
+			string winT="0 "+" "+":"+" "+timer.finalTimerWin.text;
 			levelmanger.win (level,score , winT);
 			topScore.text=levelmanger.getTopScore (level).ToString();
 			Debug.Log (topScore);

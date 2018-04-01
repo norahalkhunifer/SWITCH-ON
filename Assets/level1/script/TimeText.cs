@@ -74,24 +74,32 @@ public class TimeText : MonoBehaviour {
 			finalTimer.text = string.Format ("{0}", hours, minu);
 			winT=finalTimer.text;
 			int tt = 40-int.Parse (winT);
+
+			finalTimer.text="0"+" "+":"+" "+tt.ToString ();
+
 			string ww = tt.ToString ();
-			finalTimerWin.text = ww;
+			finalTimerWin.text = "0"+" "+":"+" "+ww;
 
 		} else if (minu > 0) {
 			timer.text = string.Format ("{0}", minu, sec);
 			finalTimer.text = string.Format ("{0}", minu, sec);
+			int tt = 40-int.Parse (winT);
 
 			winT=finalTimer.text;
-			int tt = 40-int.Parse (winT);
+			finalTimer.text="0"+" "+":"+" "+tt.ToString ();
+
 			string ww = tt.ToString ();
-			finalTimerWin.text = ww;
+			finalTimerWin.text = "0"+" "+":"+" "+ww;
 		} else {
 			timer.text = string.Format ("{0}", sec, minisSecound);
 			finalTimer.text=string.Format ("{0}", sec, minisSecound);
 			winT=finalTimer.text;
 			int tt = 40-int.Parse (winT);
+
+			finalTimer.text="0"+" "+":"+" "+tt.ToString ();;
+
 			string ww = tt.ToString ();
-			finalTimerWin.text = ww;
+			finalTimerWin.text ="0"+" "+":"+" "+ww;
 		}
 		
 	}
@@ -120,7 +128,7 @@ public class TimeText : MonoBehaviour {
 			resume.enabled = false;
 		//	scene = SceneManager.GetActiveScene();
 			//.buildIndex ,GetHashCode()
-			levelmanger.win (thender.level,thender.score , "0:40");
+			levelmanger.win (thender.level,thender.score ,"0"+" "+":"+" "+" 40");
 			thender.topScore.text=levelmanger.getTopScore (thender.level).ToString();
 			thender.enabled = false;
 			timeScript.enabled = false;
@@ -135,7 +143,7 @@ public class TimeText : MonoBehaviour {
 			Endlose.Play ();
 		back.SetActive (true);
 		chare.SetActive (false);
-			finalTimer.text ="0:40";
+			finalTimer.text ="0"+" "+":"+" "+" 40";
 		resume.enabled = false;
 		grass.enabled = false;
 		battryHide.enabled = false;
