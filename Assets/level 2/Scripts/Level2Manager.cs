@@ -105,7 +105,7 @@ public class Level2Manager : MonoBehaviour {
 
 			b.setNo (hitobject);
 
-			if (b.getNo (hitobject) == 2) {
+			if (b.getNo(hitobject) == 2) {
 				debugbox.text = "";
 				print ("NO==2");
 
