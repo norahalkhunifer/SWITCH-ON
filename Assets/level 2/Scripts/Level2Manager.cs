@@ -103,33 +103,32 @@ public class Level2Manager : MonoBehaviour {
 
 		if (b != null) {
 
-			b.setNo (hitobject);
-
-			if (b.getNo(hitobject) == 1) {
+			if (b.getNo() == 1) {
 				debugbox.text = "";
 				print ("NO==1");
 
 				b.playSound ();
 				b.gameObject.SetActive (false);
 
-				b.showParticle (hitobject);
+				b.showParticle ();
 
 				Score (2);
 				size--;
 				if (size == 0)
 					GameEnd (true);
 
-			} else if (b.getNo (hitobject) > 1) {
+			} else if (b.getNo () > 1) {
 				print ("No>2");
 				Destroy (b);
 			} else{
 				
-				print ("n" + b.getNo (hitobject));
+				print ("n" + b.getNo ());
 				debugbox.text = "";
 				debugbox.text = "Opps,pocket it again ";
 				b.changePos();
 
 			}
+			b.setNo ();
 		    
 		} 
 	}
