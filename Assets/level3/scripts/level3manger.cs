@@ -297,10 +297,8 @@ public class level3manger : MonoBehaviour
 	}
 	public void closeLevel ()
 	{
-		
 		home (false);
 		//SceneManager.LoadScene ("world");
-	
 		levelmanger.LoudHome ();
 	}
 	public void ReplayLevel ()
