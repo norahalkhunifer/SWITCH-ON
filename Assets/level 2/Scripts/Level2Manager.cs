@@ -110,7 +110,7 @@ public class Level2Manager : MonoBehaviour {
 				b.playSound ();
 				b.gameObject.SetActive (false);
 
-				b.showParticle ();
+				b.showParticle (hitobject);
 
 				Score (2);
 				size--;
