@@ -3220,7 +3220,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: 1:30
+  m_Text: 1:00
 --- !u!222 &888655949
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3449,6 +3449,15 @@ MonoBehaviour:
   aC: {fileID: 8300000, guid: 6af7dbd6b8f0c40d8b133de602a46c8e, type: 3}
   Baudio: {fileID: 73861866}
   balloon: {fileID: 894336788}
+  balloon2: {fileID: 0}
+  balloon3: {fileID: 0}
+  balloon4: {fileID: 0}
+  balloon5: {fileID: 0}
+  balloon6: {fileID: 0}
+  balloon7: {fileID: 0}
+  balloon8: {fileID: 0}
+  balloon9: {fileID: 0}
+  balloon10: {fileID: 0}
   player: {fileID: 10}
   blink_material: {fileID: 2100000, guid: 9e104f749e915f14b8a01b384c5baa77, type: 2}
   normal_material: {fileID: 2100000, guid: 4fbc1fd1026eb4e788697aa609d9a6bc, type: 2}
@@ -3909,6 +3918,15 @@ MonoBehaviour:
   aC: {fileID: 8300000, guid: 6af7dbd6b8f0c40d8b133de602a46c8e, type: 3}
   Baudio: {fileID: 73861866}
   balloon: {fileID: 1069765708}
+  balloon2: {fileID: 0}
+  balloon3: {fileID: 0}
+  balloon4: {fileID: 0}
+  balloon5: {fileID: 0}
+  balloon6: {fileID: 0}
+  balloon7: {fileID: 0}
+  balloon8: {fileID: 0}
+  balloon9: {fileID: 0}
+  balloon10: {fileID: 0}
   player: {fileID: 10}
   blink_material: {fileID: 2100000, guid: 9e104f749e915f14b8a01b384c5baa77, type: 2}
   normal_material: {fileID: 2100000, guid: 7f6fb8fc921940e498fa87b84d594610, type: 2}
@@ -4450,7 +4468,7 @@ MonoBehaviour:
   cscoretext: {fileID: 838610148}
   score: {fileID: 1221088621}
   time: {fileID: 888655948}
-  timelimitbysec: 90
+  timelimitbysec: 60
   re: {fileID: 451779906}
   paused: 0
   end: 0
@@ -4976,6 +4994,15 @@ MonoBehaviour:
   aC: {fileID: 8300000, guid: 6af7dbd6b8f0c40d8b133de602a46c8e, type: 3}
   Baudio: {fileID: 73861866}
   balloon: {fileID: 1470031943}
+  balloon2: {fileID: 0}
+  balloon3: {fileID: 0}
+  balloon4: {fileID: 0}
+  balloon5: {fileID: 0}
+  balloon6: {fileID: 0}
+  balloon7: {fileID: 0}
+  balloon8: {fileID: 0}
+  balloon9: {fileID: 0}
+  balloon10: {fileID: 0}
   player: {fileID: 10}
   blink_material: {fileID: 2100000, guid: 9e104f749e915f14b8a01b384c5baa77, type: 2}
   normal_material: {fileID: 2100000, guid: a03a699e92f2f7146aa057af39e384ee, type: 2}
@@ -5093,6 +5120,15 @@ MonoBehaviour:
   aC: {fileID: 8300000, guid: 6af7dbd6b8f0c40d8b133de602a46c8e, type: 3}
   Baudio: {fileID: 73861866}
   balloon: {fileID: 1515369046}
+  balloon2: {fileID: 0}
+  balloon3: {fileID: 0}
+  balloon4: {fileID: 0}
+  balloon5: {fileID: 0}
+  balloon6: {fileID: 0}
+  balloon7: {fileID: 0}
+  balloon8: {fileID: 0}
+  balloon9: {fileID: 0}
+  balloon10: {fileID: 0}
   player: {fileID: 10}
   blink_material: {fileID: 2100000, guid: 9e104f749e915f14b8a01b384c5baa77, type: 2}
   normal_material: {fileID: 2100000, guid: 2e4337a100d77514e86ad702d0f486ed, type: 2}
@@ -5247,6 +5283,15 @@ MonoBehaviour:
   aC: {fileID: 8300000, guid: 6af7dbd6b8f0c40d8b133de602a46c8e, type: 3}
   Baudio: {fileID: 73861866}
   balloon: {fileID: 1544699530}
+  balloon2: {fileID: 0}
+  balloon3: {fileID: 0}
+  balloon4: {fileID: 0}
+  balloon5: {fileID: 0}
+  balloon6: {fileID: 0}
+  balloon7: {fileID: 0}
+  balloon8: {fileID: 0}
+  balloon9: {fileID: 0}
+  balloon10: {fileID: 0}
   player: {fileID: 10}
   blink_material: {fileID: 2100000, guid: 9e104f749e915f14b8a01b384c5baa77, type: 2}
   normal_material: {fileID: 2100000, guid: 87ee0557a8bad5e4d858db98f6bc6b8b, type: 2}
@@ -6148,6 +6193,15 @@ MonoBehaviour:
   aC: {fileID: 8300000, guid: 6af7dbd6b8f0c40d8b133de602a46c8e, type: 3}
   Baudio: {fileID: 73861866}
   balloon: {fileID: 2004565148}
+  balloon2: {fileID: 0}
+  balloon3: {fileID: 0}
+  balloon4: {fileID: 0}
+  balloon5: {fileID: 0}
+  balloon6: {fileID: 0}
+  balloon7: {fileID: 0}
+  balloon8: {fileID: 0}
+  balloon9: {fileID: 0}
+  balloon10: {fileID: 0}
   player: {fileID: 10}
   blink_material: {fileID: 2100000, guid: 9e104f749e915f14b8a01b384c5baa77, type: 2}
   normal_material: {fileID: 2100000, guid: 8450331f6eba0064baf0f01e415a90db, type: 2}
@@ -6709,6 +6763,15 @@ MonoBehaviour:
   aC: {fileID: 8300000, guid: 6af7dbd6b8f0c40d8b133de602a46c8e, type: 3}
   Baudio: {fileID: 73861866}
   balloon: {fileID: 2133430162}
+  balloon2: {fileID: 0}
+  balloon3: {fileID: 0}
+  balloon4: {fileID: 0}
+  balloon5: {fileID: 0}
+  balloon6: {fileID: 0}
+  balloon7: {fileID: 0}
+  balloon8: {fileID: 0}
+  balloon9: {fileID: 0}
+  balloon10: {fileID: 0}
   player: {fileID: 10}
   blink_material: {fileID: 2100000, guid: 9e104f749e915f14b8a01b384c5baa77, type: 2}
   normal_material: {fileID: 2100000, guid: 25123db7fee221842aec9833a6700aac, type: 2}

@@ -123,7 +123,7 @@ public class Level2Manager : MonoBehaviour {
 			} else{
 				
 				debugbox.text = "";
-				debugbox.text = "Opps,pocket it again ";
+				//debugbox.text = "Opps,pocket it again ";
 				b.changePos();
 
 			}
