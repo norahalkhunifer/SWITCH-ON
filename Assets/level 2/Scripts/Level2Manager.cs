@@ -103,9 +103,9 @@ public class Level2Manager : MonoBehaviour {
 
 		if (b != null) {
 
-			b.setNo ();
+			b.setNo (hitobject);
 
-			if (b.getNo () == 2) {
+			if (b.getNo (hitobject) == 2) {
 				debugbox.text = "";
 				print ("NO==2");
 
@@ -119,12 +119,12 @@ public class Level2Manager : MonoBehaviour {
 				if (size == 0)
 					GameEnd (true);
 
-			} else if (b.getNo () > 2) {
+			} else if (b.getNo (hitobject) > 2) {
 				print ("No>2");
 				Destroy (b);
 			} else{
 				
-				print ("n" + b.getNo ());
+				print ("n" + b.getNo (hitobject));
 				debugbox.text = "";
 				debugbox.text = "Opps,pocket it again ";
 				b.changePos();
