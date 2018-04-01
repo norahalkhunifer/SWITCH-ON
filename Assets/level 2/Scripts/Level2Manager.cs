@@ -102,7 +102,14 @@ public class Level2Manager : MonoBehaviour {
 		b = hitobject.GetComponent<Balloon> ();
 
 		if (b != null) {
+			
+			if(b.getNo(hitobject) == 0){
 
+				debugbox.text = "";
+				//debugbox.text = "Opps,pocket it again ";
+				b.changePos();
+
+			}
 			if (b.getNo(hitobject) == 1) {
 				debugbox.text = "";
 				print ("NO==1");
@@ -112,21 +119,16 @@ public class Level2Manager : MonoBehaviour {
 
 				b.showParticle (hitobject);
 
-				Score (2);
+				Score (1);
 				size--;
 				if (size == 0)
 					GameEnd (true);
 
-			} else if (b.getNo (hitobject) > 1) {
+			} 
+			if (b.getNo (hitobject) > 1) {
 				print ("No>2");
 				Destroy (b);
-			} else{
-				
-				debugbox.text = "";
-				//debugbox.text = "Opps,pocket it again ";
-				b.changePos();
-
-			}
+			} 
 			b.setNo (hitobject);
 		    
 		} 

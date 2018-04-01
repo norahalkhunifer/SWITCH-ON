@@ -814,7 +814,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Go to the room center .\nThen, move your phone up\n and pop the 10 balloons."
+  m_Text: Search for the balloons and then pop them!
 --- !u!222 &200519941
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2246,7 +2246,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 0.15093663, g: 0.64705884, b: 0.133218, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -2880,7 +2880,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: bcf63894e65e46f40be7aeb69ae0be10, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2300002, guid: bcf63894e65e46f40be7aeb69ae0be10, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -4418,7 +4418,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: /14
+  m_Text: /7
 --- !u!222 &1242493536
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4516,8 +4516,8 @@ Transform:
   m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_Children:
   - {fileID: 1154900342}
-  - {fileID: 753001464}
   - {fileID: 792170988}
+  - {fileID: 753001464}
   - {fileID: 1018939840}
   - {fileID: 894336787}
   - {fileID: 1470031942}
