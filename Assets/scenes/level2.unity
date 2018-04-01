@@ -814,7 +814,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Search for the balloons and then pop them!
+  m_Text: Search for the balloons and pop them!
 --- !u!222 &200519941
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4520,7 +4520,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 1
     m_VerticalOverflow: 1
     m_LineSpacing: 1
-  m_Text: /7
+  m_Text: /5
 --- !u!222 &1242493536
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4561,7 +4561,7 @@ MonoBehaviour:
   panleOncamera1: {fileID: 1182683349}
   levelM: {fileID: 109893354}
   level: 2
-  debugbox: {fileID: 619981878}
+  debugbox: {fileID: 0}
   exitDilog: {fileID: 1040440444}
   back: {fileID: 717303116}
   farAud: {fileID: 1274038469}

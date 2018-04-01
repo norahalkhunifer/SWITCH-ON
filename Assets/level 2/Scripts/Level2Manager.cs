@@ -17,7 +17,7 @@ public class Level2Manager : MonoBehaviour {
 	Balloon b;
 	int size=7;
 	public int level;
-	public Text debugbox;
+	public GameObject debugbox;
 
 	//on home
 	public GameObject exitDilog;
@@ -58,6 +58,7 @@ public class Level2Manager : MonoBehaviour {
 
 	void Update ()
 	{
+		
 		started = re.getStarted ();
 		paused = re.GetPause ();
 
@@ -105,13 +106,11 @@ public class Level2Manager : MonoBehaviour {
 			
 			if(b.getNo(hitobject) == 0){
 
-				debugbox.text = "";
-				//debugbox.text = "Opps,pocket it again ";
+				changeDebug("Opps,pocket it again ");
 				b.changePos();
-
 			}
+
 			if (b.getNo(hitobject) == 1) {
-				debugbox.text = "";
 				print ("NO==1");
 
 				b.playSound1 ();
@@ -129,6 +128,7 @@ public class Level2Manager : MonoBehaviour {
 				print ("No>2");
 				Destroy (b);
 			} 
+
 			b.setNo (hitobject);
 		    
 		} 
@@ -143,8 +143,7 @@ public class Level2Manager : MonoBehaviour {
 	}
 
 	public void farAway(){
-		
-		debugbox.text = "get closer to it ";
+		changeDebug ("get closer");
 		farAud.Play ();
 	}
 
@@ -197,20 +196,16 @@ public class Level2Manager : MonoBehaviour {
 
 	}
 
-	/*public void playSound(int s){
+	public IEnumerator changeDebug(string text){
 		
-		if (s ==1) {
-			Baudio2.clip = aC2;
-			Baudio2.Play ();
-		}
-		if (s == 0) {
-			Baudio1.clip = aC1;
-			Baudio1.Play ();
-		}
-		else{ Baudio.clip = aC;
-			Baudio.Play ();
-		}
-	}*/
+		debugbox.SetActive(true);
+		Text t =debugbox.GetComponentInChildren(typeof(Text))as Text;
+		t.text= text;
+		yield return new WaitForSeconds(1);
+		t.text = "";
+		debugbox.SetActive(false);
+
+	}
 
 
 }
