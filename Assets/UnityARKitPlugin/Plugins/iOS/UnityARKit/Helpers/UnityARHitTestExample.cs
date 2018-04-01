@@ -77,7 +77,7 @@ namespace UnityEngine.XR.iOS
 
 					distance=Vector3.Distance(item.transform.position,cam.transform.position);
 
-					if (distance < 10f) {
+					if (distance < 2f) {
 						levelmanager.touchsomething (item);
 					}
 

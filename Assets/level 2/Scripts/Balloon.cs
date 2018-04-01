@@ -57,10 +57,12 @@ public class Balloon: MonoBehaviour {
 		if(t1==true)
 		startLerp ();
 
-		/*if (Vector3.Distance(transform.position, player.transform.position)<10f)
+		if (Vector3.Distance (transform.position, player.transform.position) < 2f) {
+			print ("blink");
 			Blinking ();
+		}
 		else 
-			StopBlinking ();*/
+			StopBlinking ();
 	}
 
 	public void startLerp(){
