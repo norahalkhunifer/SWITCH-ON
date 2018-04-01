@@ -105,9 +105,9 @@ public class Level2Manager : MonoBehaviour {
 
 			b.setNo (hitobject);
 
-			if (b.getNo(hitobject) == 2) {
+			if (b.getNo(hitobject) == 1) {
 				debugbox.text = "";
-				print ("NO==2");
+				print ("NO==1");
 
 				b.playSound ();
 				b.gameObject.SetActive (false);
@@ -119,7 +119,7 @@ public class Level2Manager : MonoBehaviour {
 				if (size == 0)
 					GameEnd (true);
 
-			} else if (b.getNo (hitobject) > 2) {
+			} else if (b.getNo (hitobject) > 1) {
 				print ("No>2");
 				Destroy (b);
 			} else{

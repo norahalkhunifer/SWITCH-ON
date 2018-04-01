@@ -106,12 +106,7 @@ public class Balloon: MonoBehaviour {
 		if (obj.CompareTag ("B8")) {
 			NO8++;
 		}
-		if (obj.CompareTag ("B9")) {
-			NO9++;
-		}
-		if (obj.CompareTag ("B10")) {
-			NO10++;
-		}
+
 	}
 	
 
