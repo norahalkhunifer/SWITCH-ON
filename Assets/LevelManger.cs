@@ -54,6 +54,7 @@ public class LevelManger : MonoBehaviour {
 
 
 	public void LoudHome(){
+		Time.timeScale = 1;
 		SceneManager.LoadScene ("world");
 
 	}
@@ -93,9 +94,9 @@ public class LevelManger : MonoBehaviour {
 	/// </summary>
 
 	public int getTopScore (int levelnum){
-		string t = levelnum.ToString ();
-		string top = "Level" + t + "Score";
-		return PlayerPrefs.GetInt (top);
+		//string t = levelnum.ToString ();
+	//	string top = "Level" + levelnum + "Score";
+		return PlayerPrefs.GetInt ("Level" + levelnum + "Score");
 
 	}
 	public string getTime (int levelnum){

@@ -42,10 +42,10 @@ public class BoxControl: MonoBehaviour
 	// Update is called once per frame
 	void Update ()
 	{
-		if(isopen)//Vector3.Distance(transform.position, player.transform.position)<0.5f && (isopen))
+		/*if(isopen)//Vector3.Distance(transform.position, player.transform.position)<0.5f && (isopen))
 			hideIt (true);
 		else
-			hideIt (false);
+			hideIt (false);*/
 		
 		if (Vector3.Distance(transform.position, player.transform.position)<3f)
 			Blinking ();

@@ -61,6 +61,7 @@ public class level3manger : MonoBehaviour
 		randomthingsrepet = new int[random.Length];
 		foreach (GameObject box in boxes) {
 			placeRandomobj (box);
+			//depend on random integer from 1-10 if its 7 placeBounsStar (box) 
 		}
 		setScore ();
 		if (!instructionpanle.activeInHierarchy)
@@ -73,28 +74,30 @@ public class level3manger : MonoBehaviour
 	{
 		int randomInt = GetRandom ();
 		//to be fair check if it not od or not all have same object 
-		if (randomthingsrepet [randomInt] % 2 != 0 || (randomthingsrepet [randomInt] < (size / 2))) {
+		if (randomthingsrepet [randomInt] % 2 != 0 ||(randomthingsrepet [randomInt]<2))// (randomthingsrepet [randomInt] < (size / 2))) 
+		{
 			Vector3 newpos = new Vector3 (box.transform.position.x, box.transform.position.y + 0.05f, box.transform.position.z);
 			GameObject newObject = (GameObject)Instantiate (random [randomInt],newpos, box.transform.rotation, box.transform)as GameObject;
 			if(newObject)
 			newObject.transform.localScale = new Vector3 (0.007f, 0.007f, 0.007f);// (box.transform.localScale.x-1f, box.transform.localScale.y-1f, box.transform.localScale.z-1f);//(0.005f, 0.005f, 0.005f);// // change its local scale in x y z format
-			//newObject.AddComponent(LightType.Spot);
-		//	Behaviour halo = (Behaviour)gameObject.GetComponent("Halo");
-		//	halo.enabled = true;
-			//.AddComponent<Halo>();
-
+			
 			#if UNITY_EDITOR
 			UnityEditor.Selection.activeObject = newObject;
 			#endif
 			//newObject.AddComponent<>();
 			//NetworkServer.Spawn (newObject);
-
-
 			randomthingsrepet [randomInt] += 1;
 			box.GetComponent<BoxControl> ().insaideobj = newObject;
 		} else
 			placeRandomobj (box);
+
+
 	}
+	public void placeBounsStar (GameObject box){
+		//add 3D star above 3 boxes or 4  
+
+	}
+
 
 	int GetRandom ()
 	{
@@ -143,7 +146,7 @@ public class level3manger : MonoBehaviour
 			} else {
 				current.openit ();
 			}	
-		} else
+		} else//if its star then go to star script
 			print ("not box!");//message that says tuch me again!
 	}
 	public void farAway(){
@@ -257,13 +260,13 @@ public class level3manger : MonoBehaviour
 		if (win) {
 			Endwin.Play();
 			wining.SetActive (true);
+			levelmanger.win (levelnum, scorenum, doneTime ());//timetext.text.ToString());//doneTime()
 			Topscore.text = levelmanger.getTopScore (levelnum).ToString();
 				//scorenum.ToString();
 			//scene = SceneManager.GetActiveScene();
 			//.buildIndex ,GetHashCode()
-			levelmanger.win (levelnum,scorenum,timetext.text.ToString());
-			debugbox.SetActive(true);
-			/*Text t =debugbox.GetComponentInChildren(typeof(Text))as Text;
+			/*debugbox.SetActive(true);
+			Text t =debugbox.GetComponentInChildren(typeof(Text))as Text;
 			t.text =  "tries: " + nroftries;*/
 		} else {
 			Endlose.Play ();
