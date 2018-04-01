@@ -28,6 +28,7 @@ public class TimeText : MonoBehaviour {
 	public LevelManger levelmanger;
 	public TimeText timeScript;
 	public Scene scene;
+
 	// Use this for initialization
 	void Start () {
 		//here to set how many time you want
@@ -114,10 +115,10 @@ public class TimeText : MonoBehaviour {
 			battryHide.enabled = false;
 			jump.enabled = false;
 			resume.enabled = false;
-			scene = SceneManager.GetActiveScene();
+		//	scene = SceneManager.GetActiveScene();
 			//.buildIndex ,GetHashCode()
-			levelmanger.win (scene.buildIndex,thender.score , "00");
-			thender.topScore.text=levelmanger.getTopScore (scene.GetHashCode()).ToString();
+			levelmanger.win (thender.level,thender.score , "00");
+			thender.topScore.text=levelmanger.getTopScore (thender.level).ToString();
 			thender.enabled = false;
 			timeScript.enabled = false;
 			usingT = false;
