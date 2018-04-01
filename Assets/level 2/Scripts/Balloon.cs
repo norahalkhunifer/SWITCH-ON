@@ -9,7 +9,7 @@ public class Balloon: MonoBehaviour {
 
 
 	public GameObject balloon;
-	public GameObject balloon2;
+	/*public GameObject balloon2;
 	public GameObject balloon3;
 	public GameObject balloon4;
 	public GameObject balloon5;
@@ -17,7 +17,7 @@ public class Balloon: MonoBehaviour {
 	public GameObject balloon7;
 	public GameObject balloon8;
 	public GameObject balloon9;
-	public GameObject balloon10;
+	public GameObject balloon10;*/
 
 	 //GameObject object1=null;
 	bool t1=false;
@@ -113,7 +113,6 @@ public class Balloon: MonoBehaviour {
 		int NO = 0;
 		t1 = false;
 
-	
 
 		if (obj.CompareTag ("B2")) {
 			NO = NO2;
@@ -176,11 +175,7 @@ public class Balloon: MonoBehaviour {
 		
 	}
 
-/*public GameObject getObj(GameObject obj){//////stooop here
 
-		return obj;
-	
-	}*/
 
 	public void showParticle(GameObject obj){
 		t1 = false;
@@ -189,7 +184,8 @@ public class Balloon: MonoBehaviour {
 
 	}
 
-	public void playSound(){
+	public void playSound1(){
+
 		t1 = false;
 		print ("play sounds");
 		Baudio.clip = aC;
