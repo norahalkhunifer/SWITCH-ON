@@ -13,7 +13,7 @@ public class Exit : MonoBehaviour {
 	public Resume_Paused re;
 	public GameObject resumeDe;
 	public Button resumeButton;
-
+	public LevelManger levelmaneger;
 	// Use this for initialization
 	void Start () {
 		exitButton = false;
@@ -58,7 +58,8 @@ public class Exit : MonoBehaviour {
 		exitButton = !exitButton;
 		//to no button press
 		if (!exitButton) {
-			SceneManager.LoadScene ("world");
+			levelmaneger.LoudHome ();
+			//SceneManager.LoadScene ("world");
 			Time.timeScale = 1;
 			exitDilog.SetActive (false);
 			back.SetActive (false);
