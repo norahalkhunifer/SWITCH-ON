@@ -31,18 +31,7 @@ public class AudioManager : MonoBehaviour {
 
 		}
 	}
-
-	//set mute2 status 
-	public void ToggleSound(){
-
-		if (GetMuteSound()) {
-			SetMuteSound(1);
-
-		}else{
-			SetMuteSound( 0);
-
-		}
-	}
+		
 
 	public void SetMute(int mute){
 		PlayerPrefs.SetInt ("Mute", mute);
@@ -51,13 +40,6 @@ public class AudioManager : MonoBehaviour {
 	public bool GetMute(){
 		return PlayerPrefs.GetInt ("Mute", 0) == 0;
 	}
-
-	public void SetMuteSound(int mute){
-		PlayerPrefs.SetInt ("MuteAll", mute);
-
-	}
-	public bool GetMuteSound(){
-		return PlayerPrefs.GetInt ("MuteAll", 0) == 0;
-	}
+		
 
 }
