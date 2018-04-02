@@ -45,6 +45,7 @@ public class Balloon: MonoBehaviour {
 
 	public Camera player;
 	public Material blink_material, normal_material;
+	public GameObject effect;
 
 	//public GameObject thunder;
 	//public GameObject score;
@@ -169,6 +170,7 @@ public class Balloon: MonoBehaviour {
 		//endPos = balloon.transform.position + v * dis;
 
 		transform.position = new Vector3 ((transform.position.x+randomNO [i]), transform.position.y,( transform.position.z) );
+		effect.transform.position=new Vector3 ((transform.position.x+randomNO [i]), transform.position.y,( transform.position.z) );
 
 		i++;
 		if (i == 5)//to prevent out of boud

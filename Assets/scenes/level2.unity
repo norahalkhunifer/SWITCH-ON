@@ -930,7 +930,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1.6479408, y: 2.1184192, z: 1.6911367}
-  m_Center: {x: 0.00000017029899, y: 2.6326196, z: 0.0000000851495}
+  m_Center: {x: 0.00000017029899, y: 1.5, z: 0.0000000851495}
 --- !u!54 &218099306
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -963,6 +963,7 @@ MonoBehaviour:
   player: {fileID: 10}
   blink_material: {fileID: 2100000, guid: 9e104f749e915f14b8a01b384c5baa77, type: 2}
   normal_material: {fileID: 2100000, guid: 60b27de8c7caeb944848726b844a647d, type: 2}
+  effect: {fileID: 890969966}
 --- !u!1 &226856950
 GameObject:
   m_ObjectHideFlags: 0
@@ -2071,6 +2072,7 @@ MonoBehaviour:
   player: {fileID: 10}
   blink_material: {fileID: 2100000, guid: 9e104f749e915f14b8a01b384c5baa77, type: 2}
   normal_material: {fileID: 2100000, guid: 8450331f6eba0064baf0f01e415a90db, type: 2}
+  effect: {fileID: 1342515288}
 --- !u!65 &568386157
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2082,7 +2084,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1.8292087, y: 1.986644, z: 1.9247253}
-  m_Center: {x: -0.08667197, y: 2.6257489, z: 0.025561111}
+  m_Center: {x: -0.08667197, y: 1.5, z: 0.025561111}
 --- !u!54 &568386158
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3485,6 +3487,7 @@ MonoBehaviour:
   player: {fileID: 10}
   blink_material: {fileID: 2100000, guid: 9e104f749e915f14b8a01b384c5baa77, type: 2}
   normal_material: {fileID: 2100000, guid: 25123db7fee221842aec9833a6700aac, type: 2}
+  effect: {fileID: 0}
 --- !u!65 &828705935
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3989,7 +3992,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 2, y: 2.1007543, z: 2.0507007}
-  m_Center: {x: 0.008941634, y: 2.6305327, z: 0.032551117}
+  m_Center: {x: 0.008941634, y: 1.5, z: 0.032551117}
 --- !u!114 &894336793
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4007,6 +4010,7 @@ MonoBehaviour:
   player: {fileID: 10}
   blink_material: {fileID: 2100000, guid: 9e104f749e915f14b8a01b384c5baa77, type: 2}
   normal_material: {fileID: 2100000, guid: 4fbc1fd1026eb4e788697aa609d9a6bc, type: 2}
+  effect: {fileID: 1569407764}
 --- !u!1 &895109405
 GameObject:
   m_ObjectHideFlags: 0
@@ -4449,7 +4453,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1.6401206, y: 1.671691, z: 1.6171927}
-  m_Center: {x: 3.8319364, y: 2.5355172, z: 0.0441501}
+  m_Center: {x: 3.8319364, y: 1.5, z: 0.0441501}
 --- !u!114 &1069765712
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4467,6 +4471,7 @@ MonoBehaviour:
   player: {fileID: 10}
   blink_material: {fileID: 2100000, guid: 9e104f749e915f14b8a01b384c5baa77, type: 2}
   normal_material: {fileID: 2100000, guid: 7f6fb8fc921940e498fa87b84d594610, type: 2}
+  effect: {fileID: 442508046}
 --- !u!1 &1089723314
 GameObject:
   m_ObjectHideFlags: 0
@@ -5871,7 +5876,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1.9088528, y: 1.960428, z: 1.9370813}
-  m_Center: {x: 0.03479055, y: 2.5308805, z: 0.056508526}
+  m_Center: {x: 0.03479055, y: 1.5, z: 0.056508526}
 --- !u!54 &1470031945
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5904,6 +5909,7 @@ MonoBehaviour:
   player: {fileID: 10}
   blink_material: {fileID: 2100000, guid: 9e104f749e915f14b8a01b384c5baa77, type: 2}
   normal_material: {fileID: 2100000, guid: a03a699e92f2f7146aa057af39e384ee, type: 2}
+  effect: {fileID: 320265116}
 --- !u!1 &1482855187
 GameObject:
   m_ObjectHideFlags: 0
@@ -6021,6 +6027,7 @@ MonoBehaviour:
   player: {fileID: 10}
   blink_material: {fileID: 2100000, guid: 9e104f749e915f14b8a01b384c5baa77, type: 2}
   normal_material: {fileID: 2100000, guid: 2e4337a100d77514e86ad702d0f486ed, type: 2}
+  effect: {fileID: 0}
 --- !u!1 &1527869899
 GameObject:
   m_ObjectHideFlags: 0
@@ -6249,6 +6256,7 @@ MonoBehaviour:
   player: {fileID: 10}
   blink_material: {fileID: 2100000, guid: 9e104f749e915f14b8a01b384c5baa77, type: 2}
   normal_material: {fileID: 2100000, guid: 87ee0557a8bad5e4d858db98f6bc6b8b, type: 2}
+  effect: {fileID: 0}
 --- !u!1001 &1569407763
 Prefab:
   m_ObjectHideFlags: 0
@@ -7136,6 +7144,7 @@ MonoBehaviour:
   player: {fileID: 10}
   blink_material: {fileID: 2100000, guid: 9e104f749e915f14b8a01b384c5baa77, type: 2}
   normal_material: {fileID: 2100000, guid: 87ee0557a8bad5e4d858db98f6bc6b8b, type: 2}
+  effect: {fileID: 226944910}
 --- !u!54 &1954793539
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -7162,7 +7171,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1.4808335, y: 1.8237636, z: 1.4514228}
-  m_Center: {x: 3.858492, y: 2.5350528, z: -0.009028358}
+  m_Center: {x: 3.858492, y: 1.5, z: -0.009028358}
 --- !u!1 &2004565148 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 100000, guid: 3e7b438c693790d4f9c67acef4e43944, type: 3}
@@ -7211,6 +7220,7 @@ MonoBehaviour:
   player: {fileID: 10}
   blink_material: {fileID: 2100000, guid: 9e104f749e915f14b8a01b384c5baa77, type: 2}
   normal_material: {fileID: 2100000, guid: 8450331f6eba0064baf0f01e415a90db, type: 2}
+  effect: {fileID: 0}
 --- !u!1 &2055898563
 GameObject:
   m_ObjectHideFlags: 0
@@ -7613,7 +7623,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: bcf63894e65e46f40be7aeb69ae0be10, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.59
+      value: 1.683
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: bcf63894e65e46f40be7aeb69ae0be10, type: 3}
       propertyPath: m_LocalPosition.z
@@ -7645,7 +7655,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 1.7262064, y: 1.8775063, z: 1.569909}
-  m_Center: {x: -0.025968961, y: 1.5799948, z: -0.0020253318}
+  m_Center: {x: -0.025968961, y: 1.5, z: -0.0020253318}
 --- !u!54 &2133430164
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -7678,3 +7688,4 @@ MonoBehaviour:
   player: {fileID: 10}
   blink_material: {fileID: 2100000, guid: 9e104f749e915f14b8a01b384c5baa77, type: 2}
   normal_material: {fileID: 2100000, guid: 25123db7fee221842aec9833a6700aac, type: 2}
+  effect: {fileID: 1583385159}
