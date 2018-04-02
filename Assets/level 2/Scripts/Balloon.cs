@@ -160,19 +160,19 @@ public class Balloon: MonoBehaviour {
 		
 		t1 = true;
 		//object1 = obj;
-		startPos = balloon.transform.position;
-		print ("change pos");
+		//startPos = balloon.transform.position;
+		//print ("change pos");
+
+		//v = new Vector3 ((transform.position.x + randomNO [i]), transform.position.y, transform.position.z);
+
+
+		//endPos = balloon.transform.position + v * dis;
+
+		transform.position = new Vector3 ((transform.position.x+randomNO [i]), transform.position.y,( transform.position.z) );
+
 		i++;
 		if (i == 5)//to prevent out of boud
 			i = 0;
-		v = new Vector3 ((transform.position.x + randomNO [i]), transform.position.y, transform.position.z);
-
-
-		endPos = balloon.transform.position + v * dis;
-
-		//transform.position = new Vector3 ((transform.position.x+randomNO [i]), transform.position.y,( transform.position.z) );
-
-		
 	}
 
 
