@@ -59,7 +59,7 @@ public class Balloon: MonoBehaviour {
 		/*if(t1==true)
 		startLerp ();*/
 
-		if (Vector3.Distance (transform.position, player.transform.position) < 2f) {
+		if (Vector3.Distance (transform.position, player.transform.position) < 3f) {
 			Blinking ();
 		}
 		else 
