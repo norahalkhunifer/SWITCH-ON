@@ -50,7 +50,8 @@ public class Level6Manager : MonoBehaviour {
 	public Material[] myMaterials = new Material[3];
 	Material Rmatiral;
 	int i=0;
-
+	//selected color
+	string seleColor;
 	// Use this for initialization
 	void Start () {
 //assign random matirals
@@ -121,29 +122,26 @@ public class Level6Manager : MonoBehaviour {
 
 		if (b != null) {
 
-			if((b.getSNo(b.normal_material)).Equals("(instance) ")){
+			if ((b.getSNo (b.normal_material)).Equals (seleColor+"(instance) ")) {//replace it with the one that in the instruction
 				b.playSound1 ();
 				b.gameObject.SetActive (false);
 
 				b.showParticle (hitobject);
 				//for bonus if it more than 5
-				if (size == 2) 
-					StartCoroutine("changeDebug", "Yay,you got +1!");
+				if (size == 2)
+					StartCoroutine ("changeDebug", "Yay,you got +1!");
 				//count scores 
 				Score (1);
 				//to stop the game
 				size--;
 				if (size == 0)
 					GameEnd (true);
-			}
-			/*if (b.normal_material.Equals ("")) {
-			}
-			if (b.normal_material.Equals ("")) {
-			}*/
-			//else if (b.getNo() == 1) {
-				//print ("NO==1");
+			} 
+			else {
+				StartCoroutine("changeDebug", "Try again!"); 
 
-
+				farAud.Play ();
+			}
 
 			}
 			
@@ -217,6 +215,10 @@ public class Level6Manager : MonoBehaviour {
 		exitDilog.SetActive (false);
 		levelM.LoudHome ();
 
+	}
+
+	public void setColor(string c){
+		c = seleColor;
 	}
 
 	public IEnumerator changeDebug(string text){

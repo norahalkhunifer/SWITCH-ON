@@ -6626,7 +6626,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Pop the              balloons only.
+  m_Text: Pop the                  balloons only.
 --- !u!222 &1707004395
 CanvasRenderer:
   m_ObjectHideFlags: 0

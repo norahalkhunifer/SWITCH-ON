@@ -13,23 +13,24 @@ public class Resumepaused : MonoBehaviour {
 		public GameObject pauseOBJ;
 		//public GameObject back;
 		public GameObject inss;
+
 		//public GameObject inssAnim;
 	 public Level2Manager l2m;
 	public Level6Manager l6m;
-	public Text rColor;
-	int i=0;
+	public Text rColor;//text of color on ins dialouge
 
+	System.Random random = new System.Random();
 	private string[] randomNO = new string[]{"Red" , "Blue" , "Green"};
+
 		// Use this for initialization
 		void Start () {
 
 			Time.timeScale = 0;
-		rColor.text = randomNO [i];
-
+		string r=randomNO [random.Next (0, randomNO.Length)];
+		rColor.text = r;
+		l6m.setColor (r);//send it to level manager
 			instru ();
-		i++;
-		if (i == 2)
-			i = 0;
+
 		}
 
 	public void instru(){
