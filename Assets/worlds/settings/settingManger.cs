@@ -12,8 +12,9 @@ public class settingManger : MonoBehaviour {
 	GameObject text1, text2;
 
 	private AudioManager audiomanager;
-	public Button MusicToggle; 
-	public Sprite MusicOff, MusicOn;
+	public Button MusicToggle;
+	public Button SoundToggle;
+	public Sprite MusicOff, MusicOn, SoundOn, SoundOff;
 
 	public void Start(){
 		manger= GameObject.Find("worlds manger").GetComponent<WorldManager> ();
@@ -112,6 +113,8 @@ public class settingManger : MonoBehaviour {
 		Mute ();
 	}
 
+
+
 	//change maute to unmute and the icon
 	void Mute(){
 
@@ -120,12 +123,14 @@ public class settingManger : MonoBehaviour {
 		if(PlayerPrefs.GetInt("Mute",0) == 0)
 		{
 			WorldAudio.mute = false;
-			MusicToggle.image.overrideSprite = MusicOn;
+			MusicToggle.image.overrideSprite = SoundOn;
 		}
 		else{
 			WorldAudio.mute = true;
-			MusicToggle.image.overrideSprite = MusicOff;
+			MusicToggle.image.overrideSprite = SoundOff;
 		}
 	}
+
+
 
 }

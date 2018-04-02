@@ -34,7 +34,7 @@ public class Balloon: MonoBehaviour {
 	private int NO9=0;
 	private int NO10=0;*/
 
-	private int[] randomNO = new int[]{2,3,4,-2,-3,-4};
+	private int[] randomNO = new int[]{3,4,5,-6,-4,-5};
 	int i=0;
 	Vector3 v;
 	private Vector3 startPos;
@@ -45,6 +45,7 @@ public class Balloon: MonoBehaviour {
 
 	public Camera player;
 	public Material blink_material, normal_material;
+	public GameObject effect;
 
 	//public GameObject thunder;
 	//public GameObject score;
@@ -58,7 +59,7 @@ public class Balloon: MonoBehaviour {
 		/*if(t1==true)
 		startLerp ();*/
 
-		if (Vector3.Distance (transform.position, player.transform.position) < 2f) {
+		if (Vector3.Distance (transform.position, player.transform.position) < 3f) {
 			Blinking ();
 		}
 		else 
@@ -160,19 +161,20 @@ public class Balloon: MonoBehaviour {
 		
 		t1 = true;
 		//object1 = obj;
-		startPos = balloon.transform.position;
-		print ("change pos");
+		//startPos = balloon.transform.position;
+		//print ("change pos");
+
+		//v = new Vector3 ((transform.position.x + randomNO [i]), transform.position.y, transform.position.z);
+
+
+		//endPos = balloon.transform.position + v * dis;
+
+		transform.position = new Vector3 ((transform.position.x+randomNO [i]), transform.position.y,( transform.position.z) );
+		effect.transform.position=new Vector3 ((transform.position.x+randomNO [i]), transform.position.y,( transform.position.z) );
+
 		i++;
 		if (i == 5)//to prevent out of boud
 			i = 0;
-		v = new Vector3 ((transform.position.x + randomNO [i]), transform.position.y, transform.position.z);
-
-
-		endPos = balloon.transform.position + v * dis;
-
-		//transform.position = new Vector3 ((transform.position.x+randomNO [i]), transform.position.y,( transform.position.z) );
-
-		
 	}
 
 
