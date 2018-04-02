@@ -181,7 +181,7 @@ public class Level2Manager : MonoBehaviour {
 		activateGray (true);
 		endpanle.SetActive (true);
 		timetext.text = doneTime();
-		cscoretext.text = scoret.text;
+		cscoretext.text = scoreint+"";
 
 		if (win) {
 			
@@ -198,9 +198,7 @@ public class Level2Manager : MonoBehaviour {
 	}
 
 	string doneTime(){
-		
 		return((int)(timer - timeongoing)/60).ToString ()+":"+((int)(timer - timeongoing) % 60).ToString();
-
 	}
 
 	public void onHome(){
