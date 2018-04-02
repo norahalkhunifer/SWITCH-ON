@@ -9,30 +9,13 @@ public class Balloon: MonoBehaviour {
 
 
 	public GameObject balloon;
-	/*public GameObject balloon2;
-	public GameObject balloon3;
-	public GameObject balloon4;
-	public GameObject balloon5;
-	public GameObject balloon6;
-	public GameObject balloon7;
-	public GameObject balloon8;
-	public GameObject balloon9;
-	public GameObject balloon10;*/
+
 
 	 //GameObject object1=null;
 	bool t1=false;
 
 
 	private int NO=0;
-	/*private int NO2=0;
-	private int NO3=0;
-	private int NO4=0;
-	private int NO5=0;
-	private int NO6=0;
-	private int NO7=0;
-	private int NO8=0;
-	private int NO9=0;
-	private int NO10=0;*/
 
 	private int[] randomNO = new int[]{3,4,5,-6,-4,-5};
 	int i=0;
@@ -47,8 +30,7 @@ public class Balloon: MonoBehaviour {
 	public Material blink_material, normal_material;
 	public GameObject effect;
 
-	//public GameObject thunder;
-	//public GameObject score;
+
 	void Start(){
 		
 	}
@@ -83,28 +65,7 @@ public class Balloon: MonoBehaviour {
 		t1 = false;
 		NO++;
 	}
-		/*if (obj.CompareTag ("B2")) {
-			NO2++;
-		}
-		if (obj.CompareTag ("B3")) {
-			NO3++;
-		}
-		if (obj.CompareTag ("B4")) {
-			NO4++;
-		}
-		if (obj.CompareTag ("B5")) {
-			NO5++;
-		}
-		if (obj.CompareTag ("B6")) {
-			NO6++;
-		}
-		if (obj.CompareTag ("B7")) {
-			NO7++;
-		}
-		if (obj.CompareTag ("B8")) {
-			NO8++;
-		}*/
-	
+		
 
 	
 	
@@ -114,49 +75,7 @@ public class Balloon: MonoBehaviour {
 		t1 = false;
 		return NO;
 	}
-
-		/*if (obj.CompareTag ("B2")) {
-			NO = NO2;
-			print ("NO2"+NO);
-
-		}
-		if (obj.CompareTag ("B3")) {
-			NO = NO3;
-			print ("NO3"+NO);
-
-		}
-		if (obj.CompareTag ("B4")) {
-			NO = NO4;
-			print ("NO4"+NO);
-
-		}
-		if (obj.CompareTag ("B5")) {
-			NO = NO5;
-			print ("NO5"+NO);
-
-		}
-		if (obj.CompareTag ("B6")) {
-			NO = NO6;
-			print ("NO6"+NO);
-
-		}
-		if (obj.CompareTag ("B7")) {
-			NO = NO7;
-			print ("NO7"+NO);
-
-		}
-		if (obj.CompareTag ("B8")) {
-			NO = NO8;
-			print ("NO8"+NO);
-
-		}*/
-	
-	
-
-	
-
-
-
+		//change pos of object
 	public void changePos(){
 		
 		t1 = true;
@@ -207,6 +126,15 @@ public class Balloon: MonoBehaviour {
 
 	}
 
+public void setMatiral(Material m){
+		normal_material = m;
+	}
+
+	public string getSNo(Material m){
+		
+		return	(m.name.Replace("(Instance)",""));
+
+	}
 }
 
 

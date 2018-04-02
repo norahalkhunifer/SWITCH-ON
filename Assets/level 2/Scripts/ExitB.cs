@@ -13,6 +13,7 @@ public class ExitB : MonoBehaviour {
 
 	public LevelManger lm;
 	public Level2Manager l2m;
+	public Level6Manager l6m;
 
      public Resumepaused re;
 
@@ -29,15 +30,25 @@ public class ExitB : MonoBehaviour {
 		Time.timeScale = 0;
 		exitDilog.SetActive (false);
 		l2m.activateGray (true);
+		l6m.activateGray (true);
+
 		re.setPause (true);
 
-
-		if(l2m.end==true)
-		back2.SetActive (true);	
-		else
-			back.SetActive (true);
-	
+		if (l2m != null) {
+			if (l2m.end == true)
+				back2.SetActive (true);
+			else
+				back.SetActive (true);
+		}
+		if (l6m != null) {
+			if (l6m.end == true)
+				back2.SetActive (true);
+			else
+				back.SetActive (true);
+		}
 	}
+
+
 
 	public void onyes(){
 		

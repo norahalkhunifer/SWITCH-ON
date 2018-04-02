@@ -5,13 +5,12 @@ using UnityEngine.UI;//importaaant
 using UnityEngine.SceneManagement;
 using UnityEngine.XR.iOS;//important for unityARhitTestexample
 
-public class Level2Manager : MonoBehaviour {
-
+public class Level6Manager : MonoBehaviour {
 
 
 	//for disactivate onplanecamera
 	GameObject hitObject;
-	public UnityARHitTestExample hit;
+	public bHitLevel6 hit;
 	public GameObject panleOncamera1;
 	public LevelManger levelM;
 	Balloon b;
@@ -26,14 +25,6 @@ public class Level2Manager : MonoBehaviour {
 	//error audio
 	public AudioSource farAud,loseAud,winAud;
 
-	//level6 balloons
-	public GameObject B1;
-	public GameObject B2;
-
-	//Matirals of l6
-	public GameObject Mat1;
-	public GameObject Mat2;
-
 	//score
 	public int scoreint;//for each hit and total
 	public Text Btext;
@@ -47,16 +38,23 @@ public class Level2Manager : MonoBehaviour {
 	private float timer,timeongoing;
 	public float timelimitbysec;
 	public Resumepaused re;
-	 public bool paused =false ,end=false ,started=false;
+	public bool paused =false ,end=false ,started=false;
 
 	//win and lose
 	public GameObject endpanle,wining,lose;
 
-
+	//balloons to assign materials
+	public GameObject [] balloons=new GameObject[3];
+	//matirals
+	System.Random random = new System.Random();
+	public Material[] myMaterials = new Material[3];
+	Material Rmatiral;
+	int i=0;
 
 	// Use this for initialization
 	void Start () {
-		//Particle.gameObject.SetActive (false);
+//assign random matirals
+		ChooseRandomMaterial ();
 
 		//start timer depend on the complexity 
 		timer = Time.time + timelimitbysec;
@@ -66,7 +64,7 @@ public class Level2Manager : MonoBehaviour {
 
 	void Update ()
 	{
-		
+
 		started = re.getStarted ();
 		paused = re.GetPause ();
 
@@ -82,8 +80,19 @@ public class Level2Manager : MonoBehaviour {
 
 	}
 
-	void Timedecrising(){
+	//choose random matirals
+	void ChooseRandomMaterial(){
 		
+		for (i = 0; i < 3; i++) {
+			Rmatiral=myMaterials [random.Next (0, myMaterials.Length)];
+			balloons [i].GetComponent<Balloon> ().setMatiral (Rmatiral);
+			balloons [i].transform.GetChild (0).gameObject.GetComponent<Renderer> ().material = Rmatiral;
+		    
+		}
+	}
+
+	void Timedecrising(){
+
 		timeongoing= timer - Time.time;
 		string min = ((int)timeongoing / 60).ToString ();
 		string sec = ((int)timeongoing % 60).ToString ();
@@ -111,17 +120,8 @@ public class Level2Manager : MonoBehaviour {
 		b = hitobject.GetComponent<Balloon> ();
 
 		if (b != null) {
-			
-			if(b.getNo() == 0){
-				
-				StartCoroutine("changeDebug", "Opps,pocket it again "); 
 
-				b.changePos();
-			}
-
-			else if (b.getNo() == 1) {
-				//print ("NO==1");
-
+			if((b.getSNo(b.normal_material)).Equals("(instance) ")){
 				b.playSound1 ();
 				b.gameObject.SetActive (false);
 
@@ -135,17 +135,22 @@ public class Level2Manager : MonoBehaviour {
 				size--;
 				if (size == 0)
 					GameEnd (true);
+			}
+			/*if (b.normal_material.Equals ("")) {
+			}
+			if (b.normal_material.Equals ("")) {
+			}*/
+			//else if (b.getNo() == 1) {
+				//print ("NO==1");
 
-			} 
-			else if (b.getNo () > 1) {
-				print ("No>2");
-				Destroy (b);
-			} 
 
-			b.setNo ();
-		    
+
+			}
+			
+
+
 		} 
-	}
+	
 
 	public void activateGray (bool open)
 	{
@@ -196,7 +201,7 @@ public class Level2Manager : MonoBehaviour {
 			levelM.win (level,scoreint,timetext.text.ToString());
 			Topscore.text = levelM.getTopScore (level).ToString ();
 			//debugbox.text = "tries: " + nroftries;
-		
+
 		} else {
 			loseAud.Play ();
 			lose.SetActive (true);
@@ -215,7 +220,7 @@ public class Level2Manager : MonoBehaviour {
 	}
 
 	public IEnumerator changeDebug(string text){
-		
+
 		debugbox.SetActive(true);
 		Text t =debugbox.GetComponentInChildren(typeof(Text))as Text;
 		t.text= text;

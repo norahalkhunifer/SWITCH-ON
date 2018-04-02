@@ -15,19 +15,28 @@ public class Resumepaused : MonoBehaviour {
 		public GameObject inss;
 		//public GameObject inssAnim;
 	 public Level2Manager l2m;
+	public Level6Manager l6m;
+	public Text rColor;
+	int i=0;
 
-
+	private string[] randomNO = new string[]{"Red" , "Blue" , "Green"};
 		// Use this for initialization
 		void Start () {
 
 			Time.timeScale = 0;
+		rColor.text = randomNO [i];
+
 			instru ();
+		i++;
+		if (i == 2)
+			i = 0;
 		}
 
 	public void instru(){
 		
 		pausePar.interactable = false;
 		l2m.activateGray (true);
+		l6m.activateGray (true);
 		pauseOBJ.SetActive (false);
 		//back.SetActive (false);
 		inss.SetActive (true);
@@ -48,6 +57,7 @@ public class Resumepaused : MonoBehaviour {
 				Time.timeScale = 1;
 			pauseOBJ.SetActive (false);
 			l2m.activateGray (false);
+			l6m.activateGray (false);
 			pausePar.interactable = true;
 				
 			}}
@@ -62,6 +72,7 @@ public class Resumepaused : MonoBehaviour {
 				Time.timeScale = 0;
 			pauseOBJ.SetActive (true);
 			l2m.activateGray (true);
+			l6m.activateGray (true);
 				//back.SetActive (true);
 			Debug.Log (paused);
 			setPause (paused);
@@ -86,6 +97,7 @@ public class Resumepaused : MonoBehaviour {
 			pausePar.interactable = false;
 				//back.SetActive (false);
 			l2m.activateGray (true);
+			l6m.activateGray (true);
 				inss.SetActive (true);
 				//inssAnim.SetActive (true);
 			}
@@ -103,6 +115,7 @@ public class Resumepaused : MonoBehaviour {
 			    pauseOBJ.SetActive (false);
 				inss.SetActive (false);
 			    l2m.activateGray (false);
+			l6m.activateGray (false);
 				//inssAnim.SetActive (false);
 			started = true;
 			paused = false;
