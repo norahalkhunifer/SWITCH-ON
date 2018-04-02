@@ -34,7 +34,7 @@ public class Balloon: MonoBehaviour {
 	private int NO9=0;
 	private int NO10=0;*/
 
-	private int[] randomNO = new int[]{2,3,4,-2,-3,-4};
+	private int[] randomNO = new int[]{3,4,5,-3,-4,-5};
 	int i=0;
 	Vector3 v;
 	private Vector3 startPos;
