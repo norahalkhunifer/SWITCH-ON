@@ -128,6 +128,7 @@ public class level3manger : MonoBehaviour
 		timeongoing= timer - Time.time;
 		string min = ((int)timeongoing / 60).ToString ();
 		string sec = ((int)timeongoing % 60).ToString ();
+		//Debug.Log (timeongoing);
 		if (timeongoing <= 0) {//if time is up 
 			timeend();
 		} else//we can change it to red if its close to end by 5 or 10 sec 
@@ -271,7 +272,10 @@ public class level3manger : MonoBehaviour
 			}
 	}
 	string doneTime(){
-		return((int)(timer - timeongoing)/60).ToString ()+":"+((int)(timer - timeongoing) % 60).ToString();
+		float DoneTime =  timelimitbysec-timeongoing;
+		//timer = Time.time + timelimitbysec;
+
+		return((int)DoneTime/60).ToString ()+":"+((int)DoneTime % 60).ToString();
 	}
 
 

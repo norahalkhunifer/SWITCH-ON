@@ -184,22 +184,22 @@ public class Level2Manager : MonoBehaviour {
 		cscoretext.text = scoreint+"";
 
 		if (win) {
-			
-			wining.SetActive (true);
 			winAud.Play ();
+			wining.SetActive (true);
 			levelM.win (level,scoreint,timetext.text.ToString());
 			Topscore.text = levelM.getTopScore (level).ToString ();
 			//debugbox.text = "tries: " + nroftries;
 		
 		} else {
-			lose.SetActive (true);
 			loseAud.Play ();
+			lose.SetActive (true);
 		}
 	}
 
 	string doneTime(){
-		return((int)(timer - timeongoing)/60).ToString ()+":"+((int)(timer - timeongoing) % 60).ToString();
-	}
+		float DoneTime =  timelimitbysec-timeongoing;
+
+		return((int)DoneTime/60).ToString ()+":"+((int)DoneTime % 60).ToString();	}
 
 	public void onHome(){
 		exitDilog.SetActive (false);
