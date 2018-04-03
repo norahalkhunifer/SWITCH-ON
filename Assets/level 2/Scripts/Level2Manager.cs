@@ -25,15 +25,8 @@ public class Level2Manager : MonoBehaviour {
 
 	//error audio
 	public AudioSource farAud,loseAud,winAud;
-
-	//level6 balloons
-	public GameObject B1;
-	public GameObject B2;
-
-	//Matirals of l6
-	public GameObject Mat1;
-	public GameObject Mat2;
-
+	//prefabs
+	public GameObject partiWin;
 	//score
 	public int scoreint;//for each hit and total
 	public Text Btext;
@@ -193,6 +186,7 @@ public class Level2Manager : MonoBehaviour {
 		if (win) {
 			winAud.Play ();
 			wining.SetActive (true);
+			ForkParticlePlugin.Instance.Test(partiWin);//show win particle
 			levelM.win (level,scoreint,timetext.text.ToString());
 			Topscore.text = levelM.getTopScore (level).ToString ();
 			//debugbox.text = "tries: " + nroftries;

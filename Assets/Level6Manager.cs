@@ -44,7 +44,7 @@ public class Level6Manager : MonoBehaviour {
 	public GameObject endpanle,wining,lose;
 
 	//balloons to assign materials
-	public GameObject [] balloons=new GameObject[3];
+	public GameObject [] balloons=new GameObject[15];
 	//matirals
 	System.Random random = new System.Random();
 	public Material[] myMaterials = new Material[3];
@@ -52,6 +52,10 @@ public class Level6Manager : MonoBehaviour {
 	int i=0;
 	//selected color
 	string seleColor;
+
+	//prefabs
+	public GameObject partiWin;
+
 	// Use this for initialization
 	void Start () {
 //assign random matirals
@@ -84,7 +88,7 @@ public class Level6Manager : MonoBehaviour {
 	//choose random matirals
 	void ChooseRandomMaterial(){
 		
-		for (i = 0; i < 3; i++) {
+		for (i = 0; i < 15; i++) {
 			Rmatiral=myMaterials [random.Next (0, myMaterials.Length)];
 			balloons [i].GetComponent<Balloon> ().setMatiral (Rmatiral);
 			balloons [i].transform.GetChild (0).gameObject.GetComponent<Renderer> ().material = Rmatiral;
@@ -125,13 +129,14 @@ public class Level6Manager : MonoBehaviour {
 			if ((b.getSNo (b.normal_material)).Equals (seleColor+"(instance) ")) {//replace it with the one that in the instruction
 				b.playSound1 ();
 				b.gameObject.SetActive (false);
-
 				b.showParticle (hitobject);
 				//for bonus if it more than 5
 				if (size == 2)
 					StartCoroutine ("changeDebug", "Yay,you got +1!");
+				
 				//count scores 
 				Score (1);
+
 				//to stop the game
 				size--;
 				if (size == 0)
@@ -196,6 +201,7 @@ public class Level6Manager : MonoBehaviour {
 		if (win) {
 			winAud.Play ();
 			wining.SetActive (true);
+			ForkParticlePlugin.Instance.Test(partiWin);//show win particle
 			levelM.win (level,scoreint,timetext.text.ToString());
 			Topscore.text = levelM.getTopScore (level).ToString ();
 			//debugbox.text = "tries: " + nroftries;
@@ -220,6 +226,8 @@ public class Level6Manager : MonoBehaviour {
 	public void setColor(string c){
 		c = seleColor;
 	}
+
+
 
 	public IEnumerator changeDebug(string text){
 
