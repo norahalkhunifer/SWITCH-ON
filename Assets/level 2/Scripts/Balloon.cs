@@ -125,11 +125,12 @@ public class Balloon: MonoBehaviour {
 
 
 	}
-
+	//assign normal matiral 
 public void setMatiral(Material m){
 		normal_material = m;
 	}
 
+	//convert matiral to string
 	public string getSNo(Material m){
 		
 		return	(m.name.Replace("(Instance)",""));

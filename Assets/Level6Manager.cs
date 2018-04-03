@@ -94,6 +94,7 @@ public class Level6Manager : MonoBehaviour {
 			balloons [i].transform.GetChild (0).gameObject.GetComponent<Renderer> ().material = Rmatiral;
 		    
 		}
+		print (b.getSNo (b.normal_material));
 	}
 
 	void Timedecrising(){
@@ -126,7 +127,7 @@ public class Level6Manager : MonoBehaviour {
 
 		if (b != null) {
 
-			if ((b.getSNo (b.normal_material)).Equals (seleColor+"(instance) ")) {//replace it with the one that in the instruction
+			if ((b.getSNo (b.normal_material)).Equals (seleColor+"(instance)")) {//replace it with the one that in the instruction
 				b.playSound1 ();
 				b.gameObject.SetActive (false);
 				b.showParticle (hitobject);
@@ -143,7 +144,7 @@ public class Level6Manager : MonoBehaviour {
 					GameEnd (true);
 			} 
 			else {
-				StartCoroutine("changeDebug", "Try again!"); 
+				StartCoroutine("changeDebug", "Wrong color!try again!"); 
 
 				farAud.Play ();
 			}
