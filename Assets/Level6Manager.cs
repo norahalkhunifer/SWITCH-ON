@@ -71,8 +71,7 @@ public class Level6Manager : MonoBehaviour {
 
 		started = re.getStarted ();
 		paused = re.GetPause ();
-		print ("s"+started);
-		print ("p"+paused);
+
 
 		if (!paused && started) {
 			Time.timeScale = 1;
@@ -93,9 +92,8 @@ public class Level6Manager : MonoBehaviour {
 			Rmatiral=myMaterials [random.Next (0, myMaterials.Length)];
 			balloons [i].GetComponent<Balloon> ().setMatiral (Rmatiral);
 			balloons [i].transform.GetChild (0).gameObject.GetComponent<Renderer> ().material = Rmatiral;
-		    
+
 		}
-		print (b.getSNo (b.normal_material));
 	}
 
 	void Timedecrising(){
@@ -125,6 +123,7 @@ public class Level6Manager : MonoBehaviour {
 
 		//get it and openit or close it the mange will be in other method 
 		b = hitobject.GetComponent<Balloon> ();
+		print ("needed"+b.getSNo (b.normal_material));
 
 		if (b != null) {
 

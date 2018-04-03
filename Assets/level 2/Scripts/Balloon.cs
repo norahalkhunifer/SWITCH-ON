@@ -128,6 +128,7 @@ public class Balloon: MonoBehaviour {
 	//assign normal matiral 
 public void setMatiral(Material m){
 		normal_material = m;
+		//blink_material=
 	}
 
 	//convert matiral to string

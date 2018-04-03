@@ -11,7 +11,7 @@ public class bHitLevel6 : MonoBehaviour {
 	public Transform m_HitTransform;
 	public static Ray ray;//this will be the ray that we cast from our touch into the scene
 	private static RaycastHit hit;
-	private static Level2Manager levelmanager;
+	private static Level6Manager levelmanager;
 	private float distance;
 	public GameObject cam;
 
@@ -37,7 +37,7 @@ public class bHitLevel6 : MonoBehaviour {
 
 	void Awake () {
 		//get the mager to send tutched object to it 
-		levelmanager = GameObject.Find("Manager").GetComponent<Level2Manager> ();
+		levelmanager = GameObject.Find("Manager").GetComponent<Level6Manager> ();
 		//place the boxes container on detected ground 
 		ARPoint point = new ARPoint { 
 			x = 0.1f, //do a hit test at the center of the screen
