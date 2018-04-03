@@ -29,7 +29,9 @@ public class ExitB : MonoBehaviour {
 
 		Time.timeScale = 0;
 		exitDilog.SetActive (false);
+		if(l2m!=null)
 		l2m.activateGray (true);
+		if(l6m!=null)
 		l6m.activateGray (true);
 
 		re.setPause (true);

@@ -31,8 +31,6 @@ public class Level6Manager : MonoBehaviour {
 	public Text scoret; //to show it in panel
 	public Text Topscore,timetext,cscoretext;//for ach details
 	public GameObject score ;
-	//GameObject winD;
-
 	//time
 	public Text time;
 	private float timer,timeongoing;
@@ -58,12 +56,13 @@ public class Level6Manager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-//assign random matirals
-		ChooseRandomMaterial ();
+
 
 		//start timer depend on the complexity 
 		timer = Time.time + timelimitbysec;
 
+		//assign random matirals
+		ChooseRandomMaterial ();
 
 	}
 
@@ -72,6 +71,8 @@ public class Level6Manager : MonoBehaviour {
 
 		started = re.getStarted ();
 		paused = re.GetPause ();
+		print ("s"+started);
+		print ("p"+paused);
 
 		if (!paused && started) {
 			Time.timeScale = 1;
@@ -164,7 +165,9 @@ public class Level6Manager : MonoBehaviour {
 		hit.enabled = !open;
 	}
 
+
 	public void farAway(){
+		
 		StartCoroutine("changeDebug", "Get closer!"); 
 		farAud.Play ();
 	}
