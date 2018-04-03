@@ -119,9 +119,6 @@ public class level3manger : MonoBehaviour
 		if (started && (!end)) {
 			Timedecrising();
 		}
-
-
-
 	}
 
 	void Timedecrising(){
