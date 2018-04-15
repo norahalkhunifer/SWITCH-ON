@@ -8222,7 +8222,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'This game suggested to be played in empty space,
+  m_Text: 'This game suggested to be played in an empty space,
 
     you should be aware of the things around you while playing!'
 --- !u!222 &2145648247
