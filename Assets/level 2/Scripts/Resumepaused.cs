@@ -13,6 +13,8 @@ public class Resumepaused : MonoBehaviour {
 		public GameObject pauseOBJ;
 		//public GameObject back;
 		public GameObject inss;
+	//disclimanar
+	public GameObject Dis;
 
 		//public GameObject inssAnim;
 	 public Level2Manager l2m;
@@ -32,12 +34,26 @@ public class Resumepaused : MonoBehaviour {
 
 			l6m.setColor (r);//send it to level manager
 		}
-			instru ();
+			Disc ();
 
 		}
 
+	public void Disc(){
+
+		pausePar.interactable = false;
+		if(l2m!=null)
+			l2m.activateGray (true);
+
+		if(l6m!=null)
+			l6m.activateGray (true);
+
+		pauseOBJ.SetActive (false);
+		Dis.SetActive (true);
+		paused = false;
+	}
+
 	public void instru(){
-		
+		Dis.SetActive (false);
 		pausePar.interactable = false;
 		if(l2m!=null)
 		l2m.activateGray (true);
@@ -142,6 +158,10 @@ public class Resumepaused : MonoBehaviour {
 		} 
 
 
+	public void onAgree(){
+		instru ();
+	}
+		
 	}
 
 
