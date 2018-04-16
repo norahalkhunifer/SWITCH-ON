@@ -35,7 +35,7 @@ public class SetGetName : MonoBehaviour {
 
 		if (changeNameFeild.text == "") {
 
-
+			randomName ();
 		} else {
 			SetUsername (changeNameFeild.text);
 			//to save the written name into playerprefs
@@ -121,8 +121,6 @@ public class SetGetName : MonoBehaviour {
 		
 		yield return new WaitForSeconds(delayTime);
 		welcomeBack.SetActive (show); 
-
-
 
 	}
 	void Update (){
