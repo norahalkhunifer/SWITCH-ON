@@ -249,7 +249,6 @@ public LevelManger levelmanger;
 
 		if (score == 9) {
 
-			timer.enabled= false;
 			instruc.enabled = false;
 			finalScore.text=score.ToString();
 			scoreTextWin.text=score.ToString();
@@ -263,6 +262,8 @@ public LevelManger levelmanger;
 			jump.enabled = false;
 			resume.enabled = false;
 			string winT=timer.finalTimerWin.text;
+			timer.enabled= false;
+
 			// scene = SceneManager.
 
 			levelmanger.win (level,score , winT);
@@ -273,7 +274,6 @@ public LevelManger levelmanger;
 
 		}
 		if (!grass17.activeInHierarchy&&score>=6&&!thender8.activeInHierarchy) {
-			timer.enabled= false;
 			instruc.enabled = false;
 			finalScore.text=score.ToString();
 			scoreTextWin.text=score.ToString();
@@ -288,6 +288,8 @@ public LevelManger levelmanger;
 			resume.enabled = false;
 			string winT=timer.finalTimerWin.text;
 			levelmanger.win (level,score , winT);
+			timer.enabled= false;
+
 			topScore.text=levelmanger.getTopScore (level).ToString();
 			Debug.Log (topScore);
 			resumeButton.interactable = false;
