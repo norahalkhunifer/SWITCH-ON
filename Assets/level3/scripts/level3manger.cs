@@ -33,7 +33,7 @@ public class level3manger : MonoBehaviour
 	//public Scene scene;
 	public int levelnum;
 	//instruction dialog 
-	public GameObject instructionpanle;
+	public GameObject instructionpanle,warning;
 	//exit + pause dialog
 	public GameObject exitD,pauseslider,panleOncamera;
 	GameObject hitObject;
@@ -64,7 +64,7 @@ public class level3manger : MonoBehaviour
 			//depend on random integer from 1-10 if its 7 placeBounsStar (box) 
 		}
 		setScore ();
-		if (!instructionpanle.activeInHierarchy)
+		if (!instructionpanle.activeInHierarchy && !warning.activeInHierarchy)
 			Showinstruction (false);
 
 	}
@@ -324,5 +324,11 @@ public class level3manger : MonoBehaviour
 
 	
 	}
+	public void Showarning ()
+	{
+		warning.SetActive (false);
+		Showinstruction (true);
+	}
+
 
 }
