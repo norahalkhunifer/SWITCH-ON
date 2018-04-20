@@ -139,11 +139,11 @@ public class TimeText : MonoBehaviour {
 		}
 		else{
 			gameOver.SetActive (true);
+			finalTimer.text ="0"+" "+":"+" 40";
 			background.Stop ();
 			Endlose.Play ();
 		back.SetActive (true);
 		chare.SetActive (false);
-			finalTimer.text ="0"+" "+":"+" "+" 40";
 		resume.enabled = false;
 		grass.enabled = false;
 		battryHide.enabled = false;

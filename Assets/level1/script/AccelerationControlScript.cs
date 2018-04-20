@@ -57,7 +57,7 @@ public class AccelerationControlScript : MonoBehaviour {
 		}
 	}
 	IEnumerator disable(int num)
-	{ 				yield return new WaitForSeconds(4f);
+	{ 				yield return new WaitForSeconds(5f);
 
 		if (num==0 && !grass0.activeInHierarchy) {
 			thender0.SetActive (false);//to disable thinder
@@ -68,7 +68,7 @@ public class AccelerationControlScript : MonoBehaviour {
 			timer = 0f;
 			Debug.Log (timer);
 
-		}yield return new WaitForSeconds(4f);
+		}yield return new WaitForSeconds(5f);
 		if (num==1&&!grass3.activeInHierarchy) {
 			thender1.SetActive (false);//to disable thinder
 			Debug.Log (str + "dd");
@@ -79,7 +79,7 @@ public class AccelerationControlScript : MonoBehaviour {
 			Debug.Log (timer);
 
 
-		}yield return new WaitForSeconds(4f);
+		}yield return new WaitForSeconds(5f);
 		if (num==2&&!grass5.activeInHierarchy) {
 			thender2.SetActive (false);//to disable thinder
 			Debug.Log (str + "dd");
@@ -89,7 +89,7 @@ public class AccelerationControlScript : MonoBehaviour {
 			timer = 0f;
 			Debug.Log (timer);
 
-		}yield return new WaitForSeconds(4f);
+		}yield return new WaitForSeconds(5f);
 		if (num==3&&!grass8.activeInHierarchy) {
 			thender3.SetActive (false);//to disable thinder
 			Debug.Log (str + "dd");
@@ -100,7 +100,7 @@ public class AccelerationControlScript : MonoBehaviour {
 			Debug.Log (timer);
 
 
-		}yield return new WaitForSeconds(4f);
+		}yield return new WaitForSeconds(5f);
 		if (num==4&&!grass9.activeInHierarchy) {
 			thender4.SetActive (false);//to disable thinder
 			Debug.Log (str + "dd");
@@ -109,7 +109,7 @@ public class AccelerationControlScript : MonoBehaviour {
 
 			timer = 0f;
 			Debug.Log (timer);
-		}yield return new WaitForSeconds(4f);
+		}yield return new WaitForSeconds(5f);
 		if (num==5&&!grass11.activeInHierarchy) {
 			thender5.SetActive (false);//to disable thinder
 			Debug.Log (str + "dd");
@@ -121,7 +121,7 @@ public class AccelerationControlScript : MonoBehaviour {
 
 
 		}
-		yield return new WaitForSeconds(4f);
+		yield return new WaitForSeconds(5f);
 		if (num==6&&!grass13.activeInHierarchy) {
 			thender6.SetActive (false);//to disable thinder
 			Debug.Log (str + "dd");
@@ -133,7 +133,7 @@ public class AccelerationControlScript : MonoBehaviour {
 
 
 		}
-		yield return new WaitForSeconds(4f);
+		yield return new WaitForSeconds(5f);
 		if (num==7&&!grass15.activeInHierarchy) {
 			thender7.SetActive (false);//to disable thinder
 			Debug.Log (str + "dd");
@@ -144,7 +144,7 @@ public class AccelerationControlScript : MonoBehaviour {
 			Debug.Log (timer);
 
 		}
-		yield return new WaitForSeconds(4f);
+		yield return new WaitForSeconds(5f);
 		if (num==8&&!grass17.activeInHierarchy) {
 			thender8.SetActive (false);//to disable thinder
 			Debug.Log (str + "dd");
