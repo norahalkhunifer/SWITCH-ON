@@ -127,13 +127,13 @@ public class Level6Manager : MonoBehaviour {
 
 		if (b != null) {
 
-			if ((b.getSNo (b.normal_material)).Equals (seleColor+"(instance)")) {//replace it with the one that in the instruction
+			if ((b.getSNo (b.normal_material)).Equals (seleColor)) {//replace it with the one that in the instruction
 				b.playSound1 ();
 				b.gameObject.SetActive (false);
 				b.showParticle (hitobject);
 				//for bonus if it more than 5
 				if (size == 2)
-					StartCoroutine ("changeDebug", "Yay,you got +1!");
+					StartCoroutine ("changeDebug", "YaY,you got +1!");
 				
 				//count scores 
 				Score (1);
