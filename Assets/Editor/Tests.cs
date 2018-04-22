@@ -6,10 +6,10 @@ using System.Collections;
 
 public class Tests {
 
+
 	[Test]
 	public void TestsSimplePasses() {
-		// Use the Assert class to test conditions.
-
+		Assert.IsTrue(SetGetName.firstTime());
 	}
 
 	// A UnityTest behaves like a coroutine in PlayMode

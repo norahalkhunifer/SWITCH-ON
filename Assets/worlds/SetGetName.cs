@@ -188,10 +188,10 @@ public class SetGetName : MonoBehaviour {
 
 
 	public static bool firstTime(){
-		if (!PlayerPrefs.HasKey("Username")) {
-			return true;
+		if (PlayerPrefs.HasKey("Username")) {
+			return false;
 		}
-		return false;
+		return true;
 	}
 
 
