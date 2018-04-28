@@ -21,7 +21,14 @@ public class settingManger : MonoBehaviour {
 		audiomanager = GameObject.FindObjectOfType<AudioManager> ();
 		Mute ();
 		RedChar.image.overrideSprite = RedOn;
+
+		string color = getCapeColor ();
+		if (color == "Blue")
+			swapToBlue ();
+		else if (color == "Red")
+			swapToRed ();
 	}
+
 
 	//method to send email 
 	public void ContactUs()
@@ -45,7 +52,7 @@ public class settingManger : MonoBehaviour {
 		BlueChar.image.overrideSprite = BlueOn;
 		RedChar.image.overrideSprite = RedOff;
 
-		setCape ("Blue");
+		setCapecolor("Blue");
 
 	}
 
@@ -58,23 +65,18 @@ public class settingManger : MonoBehaviour {
 		BlueChar.image.overrideSprite = BlueOff;
 		RedChar.image.overrideSprite = RedOn;
 
-		setCape ("Red");
+		setCapecolor ("Red");
 
 
 	}
-	public void setCape(string color){
+	public void setCapecolor(string color){
 		PlayerPrefs.SetString("CapeColor",color);
 
 	}
 	public string getCapeColor(){
-		string color =PlayerPrefs.GetString("CapeColor");
-		if (color == "Blue")
-			swapToBlue ();
-		else if (color == "Red")
-			swapToRed ();
-		return color;
-
+		return PlayerPrefs.GetString("CapeColor");
 	}
+
 	public void showinst(Animator anim){
 		manger.closesettings (anim);
 

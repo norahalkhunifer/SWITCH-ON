@@ -80,13 +80,16 @@ public class SetGetName : MonoBehaviour {
 
 
 	//this method to generate random name from array of names
-	public string randomName(){
-		string nameGenerated= names[Random.Range(0, names.Length)];
-		dispname.text =nameGenerated;
+	public void randomName(){
+		dispname.text =getRandomName ();
+	
+	}
+	public string getRandomName(){
+		string nameGenerated = names[Random.Range(0, names.Length)];
 		SetUsername (nameGenerated);
 		PlayerPrefs.Save ();
 		return nameGenerated;
-	
+
 	}
 
 	//right icon 
@@ -170,9 +173,7 @@ public class SetGetName : MonoBehaviour {
 				                welcombbool = false;
 				                PlayerPrefs.SetInt("welcombbool1", welcombbool ? 1 : 0);
 				                PlayerPrefs.Save();
-
-				                    print ("a"+welcombbool);
-
+			
 				            }//if
 			        }
 

@@ -97,7 +97,6 @@ public class WorldManager : MonoBehaviour {
 			level01Button.image.overrideSprite = win;
 			break;
 		}
-		setting.getCapeColor ();
 		changePosition (levelPassed);
 		worldtopscore = levelsmanger.getTotalScreore ();
 		totalScore.text = worldtopscore.ToString ();

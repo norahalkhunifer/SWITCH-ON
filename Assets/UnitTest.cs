@@ -7,6 +7,8 @@ using UnityEditor;
 public class UnitTest {
 	SetGetName welcometest =new SetGetName();
 	AudioManager audiotest=new AudioManager();
+	settingManger settingtest =new settingManger();
+	LevelManger levelmangertest=new LevelManger();
 
 	[Test]
 	public void UnitTestSimplePasses() {
@@ -41,14 +43,21 @@ public class UnitTest {
 
 
 	}*/
-	/*[UnityTest]
+	[UnityTest]
 	public IEnumerator TestsRandomNamePasses() {
-		string username = welcometest.randomName();
+		string username = welcometest.getRandomName();
 		Debug.Log (username);
 		yield return new WaitForSeconds(1);
-		Assert.Equals (username, SetGetName.GetUsername ());
+		Assert.AreEqual (username, SetGetName.GetUsername ());
 
-	}*/
+	}
+	[UnityTest]
+	public IEnumerator TestsLevelPasses() {
+		levelmangertest.win (1,7,"0:22");
+		yield return new WaitForSeconds(1);
+		Assert.AreEqual (levelmangertest.getlevelpassed(),1);
+
+	}
 	[UnityTest]
 	public IEnumerator TestsMutePasses() {
 		audiotest.SetMute (1);
@@ -56,5 +65,24 @@ public class UnitTest {
 		yield return new WaitForSeconds(1);
 		Assert.IsFalse (audiotest.GetMute());
 
+	}
+	[UnityTest]
+	public IEnumerator TestsCapePasses() {
+		settingtest.setCapecolor ("Blue");
+		yield return new WaitForSeconds(1);
+		Assert.AreEqual ("Blue",settingtest.getCapeColor());
+
+	}
+	[UnityTest]
+	public IEnumerator TestAddTotalscorePasses() {
+		levelmangertest.win (1,7,"0:22");
+		yield return new WaitForSeconds(0.1f);
+		Assert.AreEqual (levelmangertest.getTotalScreore(),7);
+	}
+	[UnityTest]
+	public IEnumerator TestSubTotalscorePasses() {
+		yield return new WaitForSeconds(1);
+		levelmangertest.subTotalScore (7);
+		Assert.AreEqual (levelmangertest.getTotalScreore(),0);
 	}
 }
