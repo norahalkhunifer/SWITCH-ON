@@ -5,10 +5,10 @@ using NUnit.Framework;
 using System.Collections;
 
 public class Tests {
-
+	SetGetName welcometest =new SetGetName();
 
 	[Test]
-	public void TestsSimplePasses() {
+	public void TestsFirstTimePasses() {
 		Assert.IsTrue(SetGetName.firstTime());
 	}
 
@@ -20,4 +20,5 @@ public class Tests {
 		// yield to skip a frame
 		yield return null;
 	}
+
 }

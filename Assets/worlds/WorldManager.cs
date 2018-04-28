@@ -65,7 +65,7 @@ public class WorldManager : MonoBehaviour {
 		playbtn.onClick.AddListener(levelToLoad);
 
 		//get the last passed level from playerprefs
-		levelPassed = PlayerPrefs.GetInt ("LevelPassed");
+		levelPassed = levelsmanger.getlevelpassed();
 		//to change doors images depend on last passed level
 		switch (levelPassed) {
 		case 6:
@@ -103,6 +103,7 @@ public class WorldManager : MonoBehaviour {
 		totalScore.text = worldtopscore.ToString ();
 
 	}
+
 	//to made animation between the world and level we use invoke("method",sf)
 	public void levelToLoad ()
 	{
@@ -145,7 +146,6 @@ public class WorldManager : MonoBehaviour {
 				async.allowSceneActivation = true;
 			}
 			yield return null;
-			print ("hhkk");
 		}
 
 	}

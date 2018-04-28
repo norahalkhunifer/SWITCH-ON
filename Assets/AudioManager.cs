@@ -10,25 +10,19 @@ public class AudioManager : MonoBehaviour {
 	public AudioSource music;
 	void Start () {
 		if (GetMute()) {
-
 				music.mute = false;
 		}
 		else{
 				music.mute = true;
 		}
-
-
-
 	}
 	//set mute status 
 	public void ToggleMute(){
 
 		if (GetMute()) {
 			SetMute(1);
-
 		}else{
-			SetMute( 0);
-
+			SetMute(0);
 		}
 	}
 		

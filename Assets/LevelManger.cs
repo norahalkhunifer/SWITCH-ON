@@ -14,7 +14,7 @@ public class LevelManger : MonoBehaviour {
 	/// this class is countain the shared metods for all levels 
 	/// </summary>
 	void Start(){
-		levelpassed = PlayerPrefs.GetInt ("LevelPassed");
+		levelpassed = getlevelpassed();
 	}
 
 	public void win (int levelnum,int cscore, string ctime){
@@ -28,8 +28,14 @@ public class LevelManger : MonoBehaviour {
 			setTime (levelnum, ctime);
 		} 
 		if (levelnum > levelpassed) {
-			PlayerPrefs.SetInt ("LevelPassed", levelnum);
+			setlevelpassed (levelnum);
 		}
+	}
+	public int getlevelpassed(){
+		return PlayerPrefs.GetInt ("LevelPassed");
+	}
+	public void setlevelpassed(int levelnum){
+		PlayerPrefs.SetInt ("LevelPassed", levelnum);
 	}
 
 	public void addTotalScore(int csore)

@@ -62,16 +62,17 @@ public class settingManger : MonoBehaviour {
 
 
 	}
-	private void setCape(string color){
+	public void setCape(string color){
 		PlayerPrefs.SetString("CapeColor",color);
 
 	}
-	public void getCapeColor(){
+	public string getCapeColor(){
 		string color =PlayerPrefs.GetString("CapeColor");
 		if (color == "Blue")
 			swapToBlue ();
 		else if (color == "Red")
 			swapToRed ();
+		return color;
 
 	}
 	public void showinst(Animator anim){

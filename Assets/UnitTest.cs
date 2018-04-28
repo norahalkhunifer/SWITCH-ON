@@ -2,13 +2,16 @@
 using UnityEngine.TestTools;
 using NUnit.Framework;
 using System.Collections;
+using UnityEditor;
 
 public class UnitTest {
+	SetGetName welcometest =new SetGetName();
+	AudioManager audiotest=new AudioManager();
 
 	[Test]
 	public void UnitTestSimplePasses() {
 		// Use the Assert class to test conditions.
-		Assert.AreEqual(SetGetName.firstTime(),true);
+		//Assert.AreEqual(SetGetName.firstTime(),true);
 
 	}
 
@@ -20,8 +23,38 @@ public class UnitTest {
 		//var prefabs =
 		// Use the Assert class to test conditions.
 		// yield to skip a frame
+		//var prefap=PrefabUtility.GetPrefabParent(3);
+
+		//Assert.AreEqual(RandomObj,prefap);
+
 		yield return null;
-		Assert.AreEqual(SetGetName.firstTime(),true);
+		//Assert.AreEqual(SetGetName.firstTime(),true);
+
+
+	}
+	/*[UnityTest]
+	public IEnumerator TestsRegisterPasses() {
+		string username = "Sara";
+		SetGetName.SetUsername (username);
+		yield return new WaitForSeconds(1);
+		Assert.AreEqual (username, SetGetName.GetUsername ());
+
+
+	}*/
+	/*[UnityTest]
+	public IEnumerator TestsRandomNamePasses() {
+		string username = welcometest.randomName();
+		Debug.Log (username);
+		yield return new WaitForSeconds(1);
+		Assert.Equals (username, SetGetName.GetUsername ());
+
+	}*/
+	[UnityTest]
+	public IEnumerator TestsMutePasses() {
+		audiotest.SetMute (1);
+		Debug.Log (audiotest.GetMute());
+		yield return new WaitForSeconds(1);
+		Assert.IsFalse (audiotest.GetMute());
 
 	}
 }

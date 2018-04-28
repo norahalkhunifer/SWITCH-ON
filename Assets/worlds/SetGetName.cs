@@ -80,11 +80,12 @@ public class SetGetName : MonoBehaviour {
 
 
 	//this method to generate random name from array of names
-	public void randomName(){
-		string nameGenerated=names[Random.Range(0, names.Length)];
+	public string randomName(){
+		string nameGenerated= names[Random.Range(0, names.Length)];
 		dispname.text =nameGenerated;
 		SetUsername (nameGenerated);
 		PlayerPrefs.Save ();
+		return nameGenerated;
 	
 	}
 
