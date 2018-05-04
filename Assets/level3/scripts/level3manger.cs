@@ -44,7 +44,7 @@ public class level3manger : MonoBehaviour
 	public Text Topscore,timetext,cscoretext;
 	bool end=false,started=false;
 	//sounds 
-	public AudioSource pickup,mismatch,Endwin,Endlose,background;
+	public AudioSource pickup,mismatch,Endwin,Youwin,Endlose,background,getCloser,hurryup,noo,yay;
 
 	//to mange level detels 
 	LevelManger levelmanger=new LevelManger();
@@ -126,6 +126,8 @@ public class level3manger : MonoBehaviour
 		string min = ((int)timeongoing / 60).ToString ();
 		string sec = ((int)timeongoing % 60).ToString ();
 		//Debug.Log (timeongoing);
+		if (timeongoing == 5f)
+			hurryup.Play ();
 		if (timeongoing <= 0) {//if time is up 
 			timeend();
 		} else//we can change it to red if its close to end by 5 or 10 sec 
@@ -148,6 +150,7 @@ public class level3manger : MonoBehaviour
 			print ("not box!");//message that says tuch me again!
 	}
 	public void farAway(){
+		getCloser.Play ();
 		StartCoroutine("setDebugText", "Get closer"); 
 
 
@@ -189,6 +192,7 @@ public class level3manger : MonoBehaviour
 		size--;
 		StartCoroutine("setDebugText", "YaaY +4 "); 
 		pickup.Play();
+		yay.Play ();
 		addscore (4);
 		if (size == 0)
 			GameEnd (true);
@@ -200,6 +204,7 @@ public class level3manger : MonoBehaviour
 		//removescore (2);
 
 		mismatch.Play ();
+		noo.Play ();
 		StartCoroutine("closeCurrentBoxes");
 		//closeCurrentBoxes();
 	}
@@ -254,6 +259,7 @@ public class level3manger : MonoBehaviour
 		cscoretext.text = score.text;
 		if (win) {
 			Endwin.Play();
+			Youwin.Play ();
 			wining.SetActive (true);
 			levelmanger.win (levelnum, scorenum, timetext.text.ToString());//doneTime()
 			Topscore.text = levelmanger.getTopScore (levelnum).ToString();
