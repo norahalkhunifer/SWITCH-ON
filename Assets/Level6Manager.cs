@@ -49,7 +49,7 @@ public class Level6Manager : MonoBehaviour {
 	Material Rmatiral;
 	int i=0;
 	//selected color
-	string seleColor;
+	 string seleColor;
 
 	//prefabs
 	public GameObject partiWin;
@@ -227,7 +227,8 @@ public class Level6Manager : MonoBehaviour {
 	}
 
 	public void setColor(string c){
-		c = seleColor;
+		seleColor = c ;
+		print ("c"+c+"select"+setColor);
 	}
 
 

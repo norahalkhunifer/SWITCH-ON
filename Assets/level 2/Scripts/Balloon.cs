@@ -133,8 +133,10 @@ public void setMatiral(Material m){
 
 	//convert matiral to string
 	public string getSNo(Material m){
-		
+		print (m.name+"material name");
+		print (m.name.Replace("(Instance)","")+"material name after replace ");
 		return	(m.name.Replace("(Instance)",""));
+
 
 	}
 }
