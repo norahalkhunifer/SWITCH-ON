@@ -228,7 +228,8 @@ public class Level6Manager : MonoBehaviour {
 
 	public void setColor(string c){
 		seleColor = c ;
-		print ("c"+c+"select"+setColor);
+		print ("c"+c);
+		print ("select" + seleColor);
 	}
 
 
