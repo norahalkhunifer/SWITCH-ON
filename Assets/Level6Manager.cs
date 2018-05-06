@@ -14,7 +14,7 @@ public class Level6Manager : MonoBehaviour {
 	public GameObject panleOncamera1;
 	public LevelManger levelM;
 	Balloon b;
-	int size=7;
+	int size=0;
 	public int level;
 	public GameObject debugbox;
 
@@ -29,6 +29,7 @@ public class Level6Manager : MonoBehaviour {
 	public int scoreint;//for each hit and total
 	public Text Btext;
 	public Text scoret; //to show it in panel
+	public Text randomNoText;
 	public Text Topscore,timetext,cscoretext;//for ach details
 	public GameObject score ;
 	//time
@@ -94,6 +95,8 @@ public class Level6Manager : MonoBehaviour {
 			balloons [i].transform.GetChild (0).gameObject.GetComponent<Renderer> ().material = Rmatiral;
 
 		}
+		size=NumberOfColor();
+
 	}
 
 	void Timedecrising(){
@@ -123,7 +126,9 @@ public class Level6Manager : MonoBehaviour {
 
 		//get it and openit or close it the mange will be in other method 
 		b = hitobject.GetComponent<Balloon> ();
-		print ("needed"+b.getSNo (b.normal_material));
+		//print ("needed"+b.getSNo (b.normal_material));
+		//get no. of ballons has the selected color
+
 
 		if (b != null) {
 
@@ -131,8 +136,9 @@ public class Level6Manager : MonoBehaviour {
 				b.playSound1 ();
 				b.gameObject.SetActive (false);
 				b.showParticle (hitobject);
+
 				//for bonus if it more than 5
-				if (size == 2)
+				if (size == 0)
 					StartCoroutine ("changeDebug", "YaY,you got +1!");
 				
 				//count scores 
@@ -172,6 +178,14 @@ public class Level6Manager : MonoBehaviour {
 	}
 
 
+	public int NumberOfColor(){
+		for(i=0;i<15;i++){
+			if (balloons[i].transform.GetChild (0).gameObject.GetComponent<Renderer> ().material.name.Replace("(Instance)","").Equals(seleColor))
+				size++;
+			}	
+		randomNoText.text = size+" ";
+		return size;
+	}
 
 	public void Score(int sc){
 		scoreint += sc;
