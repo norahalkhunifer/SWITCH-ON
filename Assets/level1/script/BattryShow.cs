@@ -22,7 +22,7 @@ public class BattryShow : MonoBehaviour {
 //	public GameObject back;
 
 	public GameObject ShowBattry;
-	public AudioSource increse;
+	public AudioSource increse ,jumpsound;
 
 
 	// Update is called once per frame
@@ -41,7 +41,8 @@ public class BattryShow : MonoBehaviour {
 
 				battry0.SetActive (true);
 				charecter.SetActive (true);
-				jump.SetActive (false);		//here jump sound
+				jump.SetActive (false);		
+				jumpsound.Play ();
 
 
 			}
@@ -49,7 +50,9 @@ public class BattryShow : MonoBehaviour {
 				//disactive of battry red and active battry yallow
 				increse.Play();
 				battry0.SetActive (false);
-				battry1.SetActive (true);		//here jump sound
+				battry1.SetActive (true);	
+				jumpsound.Play ();
+
 
 			}
 			if (count == 2) {

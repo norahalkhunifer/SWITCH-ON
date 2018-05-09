@@ -19,6 +19,7 @@ public ThenderDisable thender;
 	public GameObject charecter;
 	public AudioSource dec;
 	//public GameObject back;
+	public AudioSource jumpsound;
 
 
 
@@ -58,8 +59,8 @@ public ThenderDisable thender;
 			jump.SetActive (true);
 			charecter.SetActive (true);
 
-			dec.Play ();		//here jump sound
-
+			dec.Play ();		
+			jumpsound.Play ();
 
 			//here make time passed is 0
 			timer = 0;
