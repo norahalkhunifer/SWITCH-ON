@@ -44,8 +44,7 @@ public LevelManger levelmanger;
 	public int level;
 	public int score=0;
 	public bool stop=true;
-	public AudioSource Endwin,Endlose,background;
-	public AudioSource Youwin,pickup;
+	public AudioSource Endwin,Endlose,background,Youwin;
 
 	void Start(){
 	//	Debug.Log (level);
