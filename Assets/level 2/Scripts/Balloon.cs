@@ -5,7 +5,7 @@ using UnityEngine;
 public class Balloon: MonoBehaviour {
 
 	public AudioClip aC;
-	public AudioSource Baudio;
+	public AudioSource Baudio,yay;
 
 
 	public GameObject balloon;
@@ -111,6 +111,8 @@ public class Balloon: MonoBehaviour {
 		print ("play sounds");
 		Baudio.clip = aC;
 		Baudio.Play ();
+		yay.Play (); 
+
 	}
 
 	void Blinking ()

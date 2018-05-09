@@ -24,7 +24,7 @@ public class Level2Manager : MonoBehaviour {
 	public GameObject back;
 
 	//error audio
-	public AudioSource farAud,loseAud,winAud;
+	public AudioSource farAud,loseAud,winAud,youwin,hurryup,opps,getcloser;
 	//prefabs
 	public GameObject partiWin;
 	//score
@@ -81,9 +81,11 @@ public class Level2Manager : MonoBehaviour {
 		string min = ((int)timeongoing / 60).ToString ();
 		string sec = ((int)timeongoing % 60).ToString ();
 
-		if (timeongoing <= 0) {//if time is up 
+		if (timeongoing <= 0) //if time is up 
 			timeend();
-		} else//we can change it to red if its close to end by 5 or 10 sec 
+	    if (timeongoing == 7f)
+				hurryup.Play ();
+		else//we can change it to red if its close to end by 5 or 10 sec 
 			time.text = min + ":" + sec;
 	}
 
@@ -108,7 +110,7 @@ public class Level2Manager : MonoBehaviour {
 			if(b.getNo() == 0){
 				
 				StartCoroutine("changeDebug", "Opps,pocket it again "); 
-
+				opps.Play ();
 				b.changePos();
 			}
 
@@ -124,6 +126,7 @@ public class Level2Manager : MonoBehaviour {
 					StartCoroutine("changeDebug", "Yay,you got +1!");
 				//count scores 
 				Score (1);
+
 				//to stop the game
 				size--;
 				if (size == 0)
@@ -150,6 +153,7 @@ public class Level2Manager : MonoBehaviour {
 
 	public void farAway(){
 		StartCoroutine("changeDebug", "Get closer!"); 
+		getcloser.Play ();
 		farAud.Play ();
 	}
 
@@ -185,6 +189,7 @@ public class Level2Manager : MonoBehaviour {
 
 		if (win) {
 			winAud.Play ();
+			youwin.Play ();
 			wining.SetActive (true);
 			ForkParticlePlugin.Instance.Test(partiWin);//show win particle
 			levelM.win (level,scoreint,timetext.text.ToString());
