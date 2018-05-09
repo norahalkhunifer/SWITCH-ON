@@ -64,6 +64,8 @@ public class Level6Manager : MonoBehaviour {
 
 		//assign random matirals
 		ChooseRandomMaterial ();
+		if(size==0)
+			ChooseRandomMaterial ();	
 
 	}
 
@@ -94,8 +96,14 @@ public class Level6Manager : MonoBehaviour {
 			balloons [i].GetComponent<Balloon> ().setMatiral (Rmatiral);
 			balloons [i].transform.GetChild (0).gameObject.GetComponent<Renderer> ().material = Rmatiral;
 
+			if ((balloons[i].transform.GetChild (0).gameObject.GetComponent<Renderer> ().material.name.Replace("(Instance)","")).Equals(seleColor)) {
+				print ("R1"+balloons [i].transform.GetChild (0).gameObject.GetComponent<Renderer> ().material.name.Replace("(Instance)",""));
+				size++;
+				print ("s" + size);
+			}
 		}
-		size=NumberOfColor();
+
+		randomNoText.text = size+" ";
 
 	}
 
@@ -178,14 +186,7 @@ public class Level6Manager : MonoBehaviour {
 	}
 
 
-	public int NumberOfColor(){
-		for(i=0;i<15;i++){
-			if (balloons[i].transform.GetChild (0).gameObject.GetComponent<Renderer> ().material.name.Replace("(Instance)","").Equals(seleColor))
-				size++;
-			}	
-		randomNoText.text = size+" ";
-		return size;
-	}
+
 
 	public void Score(int sc){
 		scoreint += sc;
