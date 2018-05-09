@@ -50,13 +50,16 @@ public ThenderDisable thender;
 		}
 		//after 10 sec make battry yallow disactive and red active and jumping dailoge active
 
+
+
 		if (timer >= 12) {
 			battry_y.SetActive (false);
 			battry_r.SetActive (true);
 			jump.SetActive (true);
 			charecter.SetActive (true);
 
-			dec.Play ();
+			dec.Play ();		//here jump sound
+
 
 			//here make time passed is 0
 			timer = 0;

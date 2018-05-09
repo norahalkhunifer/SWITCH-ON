@@ -38,16 +38,19 @@ public class BattryShow : MonoBehaviour {
 			//to make sure the count in battry red
 			if (count == 0) {
 				//active of battry red and disactive jumping dailoge
+
 				battry0.SetActive (true);
 				charecter.SetActive (true);
-				jump.SetActive (false);
+				jump.SetActive (false);		//here jump sound
+
 
 			}
 			if (count == 1) {
 				//disactive of battry red and active battry yallow
 				increse.Play();
 				battry0.SetActive (false);
-				battry1.SetActive (true);
+				battry1.SetActive (true);		//here jump sound
+
 			}
 			if (count == 2) {
 				//disactive of battry yallow and active battry green
