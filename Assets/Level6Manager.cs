@@ -192,7 +192,7 @@ public class Level6Manager : MonoBehaviour {
 	public void Score(int sc){
 		scoreint += sc;
 
-		scoret.text =scoreint;
+		scoret.text =scoreint + " ";
 	}
 
 	public void ReplayLevel ()
