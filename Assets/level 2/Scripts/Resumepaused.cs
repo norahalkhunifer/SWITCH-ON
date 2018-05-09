@@ -93,7 +93,6 @@ public class Resumepaused : MonoBehaviour {
 		paused = true;
 		if (paused ) {
 			
-			print ("paused");
 				Time.timeScale = 0;
 			pauseOBJ.SetActive (true);
 			if(l2m!=null)
@@ -101,7 +100,6 @@ public class Resumepaused : MonoBehaviour {
 			if(l6m!=null)
 			l6m.activateGray (true);
 				//back.SetActive (true);
-			Debug.Log (paused);
 			setPause (paused);
 			}
 		}
@@ -137,7 +135,6 @@ public class Resumepaused : MonoBehaviour {
 		
 
 		paused = true;
-		print ("skip");
 			//to no button press
 		if (paused) {
 			Time.timeScale = 1;

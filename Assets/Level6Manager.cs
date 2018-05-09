@@ -64,8 +64,14 @@ public class Level6Manager : MonoBehaviour {
 
 		//assign random matirals
 		ChooseRandomMaterial ();
-		if(size==0)
-			ChooseRandomMaterial ();	
+		if (size < 5) {
+			size = 0;
+			ChooseRandomMaterial ();
+		}
+
+
+
+
 
 	}
 
@@ -96,10 +102,8 @@ public class Level6Manager : MonoBehaviour {
 			balloons [i].GetComponent<Balloon> ().setMatiral (Rmatiral);
 			balloons [i].transform.GetChild (0).gameObject.GetComponent<Renderer> ().material = Rmatiral;
 
-			if ((balloons[i].transform.GetChild (0).gameObject.GetComponent<Renderer> ().material.name.Replace("(Instance)","")).Equals(seleColor)) {
-				print ("R1"+balloons [i].transform.GetChild (0).gameObject.GetComponent<Renderer> ().material.name.Replace("(Instance)",""));
+			if (Rmatiral.name.Replace("(Instance)","").Equals(seleColor)) {
 				size++;
-				print ("s" + size);
 			}
 		}
 
@@ -124,11 +128,10 @@ public class Level6Manager : MonoBehaviour {
 	public void timeend ()
 	{
 
-		if (size == 0 || size==2|| size<2)
+		if (size < scoreint)
 			GameEnd (true);
 		else
 			GameEnd (false);
-
 	}
 
 	public void touchsomething (GameObject hitobject)//if player hit something the hit example will send the hited object to her e
@@ -146,15 +149,9 @@ public class Level6Manager : MonoBehaviour {
 				b.playSound1 ();
 				b.gameObject.SetActive (false);
 				b.showParticle (hitobject);
-
-				//for bonus if it more than 5
-				if (size == 0)
-					StartCoroutine ("changeDebug", "YaY,you got +1!");
-				
+				StartCoroutine ("changeDebug", "YaY,you got +1!");
 				//count scores 
 				Score (1);
-
-
 				//to stop the game
 				size--;
 				if (size == 0)
@@ -163,7 +160,6 @@ public class Level6Manager : MonoBehaviour {
 			else {
 				StartCoroutine("changeDebug", "Wrong color!try again!"); 
 				opps.Play ();
-
 				farAud.Play ();
 			}
 
@@ -196,14 +192,7 @@ public class Level6Manager : MonoBehaviour {
 	public void Score(int sc){
 		scoreint += sc;
 
-		if (size == 2 || size <2  ) {
-			scoret.text =" ";
-			Btext.text = scoreint + "";
-		} 
-		else {
-			Btext.text = " ";
-			scoret.text = scoreint + "";
-		}
+		scoret.text =scoreint;
 	}
 
 	public void ReplayLevel ()
@@ -249,8 +238,6 @@ public class Level6Manager : MonoBehaviour {
 
 	public void setColor(string c){
 		seleColor = c ;
-		print ("c"+c);
-		print ("select" + seleColor);
 	}
 
 
