@@ -25,6 +25,8 @@ public class AccelerationControlScript : MonoBehaviour {
 	public AccelerationControlScript script;
 	public GameObject grass0,grass5,grass3,grass8,grass9,grass11,grass13,grass15,grass17;
 	public AudioSource grass_removing;
+	public AudioSource pickup;
+
 	// Use this for initialization
 	void Start () {
 
@@ -67,7 +69,7 @@ public class AccelerationControlScript : MonoBehaviour {
 
 			timer = 0f;
 			Debug.Log (timer);
-			//here 1
+			pickup.Play ();
 		}yield return new WaitForSeconds(5f);
 		if (num==1&&!grass3.activeInHierarchy) {
 			thender1.SetActive (false);//to disable thinder
@@ -120,7 +122,7 @@ public class AccelerationControlScript : MonoBehaviour {
 			Debug.Log (timer);
 
 
-		}//here another one
+		}pickup.Play ();
 		yield return new WaitForSeconds(5f);
 		if (num==6&&!grass13.activeInHierarchy) {
 			thender6.SetActive (false);//to disable thinder
