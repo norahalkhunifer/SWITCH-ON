@@ -60,15 +60,23 @@ public class Level6Manager : MonoBehaviour {
 
 
 		//start timer depend on the complexity 
+		//
+		timelimitbysec = 60f;
 		timer = Time.time + timelimitbysec;
-
 		//assign random matirals
 		ChooseRandomMaterial ();
+
 		if (size < 5) {
 			size = 0;
 			ChooseRandomMaterial ();
+		} else if (size < 8) {
+			timelimitbysec = 60f;
+			timer = Time.time + timelimitbysec;
+		
+		} else {
+			timelimitbysec = 90f;
+			timer = Time.time + timelimitbysec;
 		}
-
 
 
 
@@ -147,13 +155,16 @@ public class Level6Manager : MonoBehaviour {
 
 			if ((b.getSNo (b.normal_material)).Equals (seleColor)) {//replace it with the one that in the instruction
 				b.playSound1 ();
+				//b.showParticle (hitobject);
 				b.gameObject.SetActive (false);
-				b.showParticle (hitobject);
-				StartCoroutine ("changeDebug", "YaY,you got +1!");
+				print ("Bb  scoreint" + scoreint +"size"+size);
 				//count scores 
 				Score (1);
 				//to stop the game
 				size--;
+
+				StartCoroutine ("changeDebug", "Yay!");
+				print ("AA scoreint" + scoreint +"size"+size);
 				if (size == 0)
 					GameEnd (true);
 			} 
@@ -192,7 +203,9 @@ public class Level6Manager : MonoBehaviour {
 	public void Score(int sc){
 		scoreint += sc;
 
-		scoret.text =scoreint + " ";
+		scoret.text =scoreint + "";
+		print ("in scor sc" + sc);
+		print ("scoreint" + scoreint +"size"+size);
 	}
 
 	public void ReplayLevel ()

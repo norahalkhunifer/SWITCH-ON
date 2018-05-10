@@ -119,7 +119,7 @@ public class LevelManger : MonoBehaviour {
 	}
 
 	public void Replay(){//or could be astring 
-		
+		Time.timeScale = 1;
 		SceneManager.LoadScene (SceneManager.GetActiveScene ().name);
 		}
 
