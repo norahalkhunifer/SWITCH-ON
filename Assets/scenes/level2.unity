@@ -1188,8 +1188,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.0045447, y: 2.4383008, z: 1.6911367}
-  m_Center: {x: -0.17830186, y: 1.8599409, z: 0.000000085149495}
+  m_Size: {x: 1.5795115, y: 1.9, z: 1.5355822}
+  m_Center: {x: 3.385511, y: 2.3400002, z: 0.73220885}
 --- !u!54 &218099306
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1715,7 +1715,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 400000, guid: bcf63894e65e46f40be7aeb69ae0be10, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -29.8
+      value: -54.9
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: bcf63894e65e46f40be7aeb69ae0be10, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1787,7 +1787,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400004, guid: bcf63894e65e46f40be7aeb69ae0be10, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.01
+      value: -0.02
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: bcf63894e65e46f40be7aeb69ae0be10, type: 3}
       propertyPath: m_TagString
@@ -1800,6 +1800,10 @@ Prefab:
     - target: {fileID: 400002, guid: bcf63894e65e46f40be7aeb69ae0be10, type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400004, guid: bcf63894e65e46f40be7aeb69ae0be10, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3.85
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bcf63894e65e46f40be7aeb69ae0be10, type: 3}
