@@ -69,7 +69,7 @@ public class AccelerationControlScript : MonoBehaviour {
 
 			timer = 0f;
 			Debug.Log (timer);
-			pickup.Play ();
+			//pickup.Play ();
 		}yield return new WaitForSeconds(5f);
 		if (num==1&&!grass3.activeInHierarchy) {
 			thender1.SetActive (false);//to disable thinder
@@ -120,7 +120,7 @@ public class AccelerationControlScript : MonoBehaviour {
 
 			timer = 0f;
 			Debug.Log (timer);
-			pickup.Play ();
+			//pickup.Play ();
 
 		}
 		yield return new WaitForSeconds(5f);
