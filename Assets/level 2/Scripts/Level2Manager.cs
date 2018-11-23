@@ -92,7 +92,7 @@ public class Level2Manager : MonoBehaviour {
 	public void timeend ()
 	{
 
-		if (size == 0 || size==2|| size<2)
+		if (size == 2 || size <2 )
 			GameEnd (true);
 		else
 			GameEnd (false);
@@ -115,7 +115,6 @@ public class Level2Manager : MonoBehaviour {
 			}
 
 			else if (b.getNo() == 1) {
-				//print ("NO==1");
 
 				b.playSound1 ();
 				b.gameObject.SetActive (false);
