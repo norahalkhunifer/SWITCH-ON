@@ -1,5 +1,10 @@
+![RoundedIcon](https://user-images.githubusercontent.com/14138050/55812276-5c15dc00-5af3-11e9-97a3-045ec853108e.png)
+
 # SWITCH-ON
 Switch On is fitness mobile game application for children made for King Saud University,  computer science college, software engineering department
+
+## Demo 
+https://www.youtube.com/watch?v=-xrg-9EpZF0
 
 ## About
 One common way for motivating children is games. Recently, children spend their time either plays games on their own handheld/mobile devices or play console-based games (for example: Xbox, PS4). Exergames have emerged as a way of combining exercise with digital gaming to gain the entertainment element of the game and blend it with fitness, and it has been shown to yield physical benefits for children [5]. The recent console video games such as Xbox Kinect allows players to physically interact with the game. However, the biggest limitation of console exergames is that they require a computer monitor or television set to operate and cannot be played outdoors as in the case of a mobile device.
@@ -30,19 +35,25 @@ The objective of this project is to motivate children between the age of 5 to 10
 21.The game should show welcome message included with the player’s username. 22.The game should show welcome back message included with the player’s username.
 
 
+## charecter
+![editedcharecter](https://user-images.githubusercontent.com/14138050/55812335-751e8d00-5af3-11e9-9837-a2dc813d5b8e.png)
+![bluecharecter](https://user-images.githubusercontent.com/14138050/55812336-751e8d00-5af3-11e9-9c6c-91320d6ce4b0.png)
 
 ## Usability Test
 
+we applied full usability test on 5 participants for ages between 5-10 years-old 
+https://www.youtube.com/watch?v=6cbTWOtze7I&feature=youtu.be&app=desktop
 
+to find more check the document on the repository 
 
 ## Instlation
 
 *you need Xcode and Unity 
 
 open the project in Unity 
-go to 
-click on 
-then press 
+go to deploy
+click on ios device
+then press build and run
 after that click run from xcode after u type the name and developer account and connecting ur ios device with your computer.
 
 
